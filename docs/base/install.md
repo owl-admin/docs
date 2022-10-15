@@ -36,7 +36,7 @@ composer require slowlyo/slow-admin
 
 然后运行下面的命令来发布资源：
 
-```
+```shell
 php artisan vendor:publish --provider="Slowlyo\SlowAdmin\SlowAdminServiceProvider" --force
 ```
 
@@ -46,7 +46,7 @@ php artisan vendor:publish --provider="Slowlyo\SlowAdmin\SlowAdminServiceProvide
 
 > {tip} 执行这一步命令可能会报以下错误`Specified key was too long ... 767 bytes`，如果出现这个报错，请在`app/Providers/AppServiceProvider.php`文件的`boot`方法中加上代码`\Schema::defaultStringLength(191);`，然后删除掉数据库中的所有数据表，再重新运行一遍`php artisan admin:install`命令即可。
 
-```
+```shell
 php artisan admin:install
 ```
 

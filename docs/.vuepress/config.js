@@ -1,50 +1,103 @@
-module.exports = {
+import {defineUserConfig, defaultTheme} from 'vuepress'
+import {searchPlugin} from '@vuepress/plugin-search'
+
+export default defineUserConfig({
+    lang: 'zh-CN',
     title: 'Slow Admin',
-    description: 'slow admin 文档',
+    description: 'slow admin 中文文档',
     head: [
         ['link', {rel: 'icon', href: '/logo.png'}]
     ],
     port: 8080,
-    themeConfig: {
+    theme: defaultTheme({
         logo: '/logo.png',
-        lastUpdated: 'Last Updated',
-        nav: [
-            {text: 'Gitee', link: 'https://gitee.com/slowlyo/slow-admin'}
-        ],
+        editLinkText: '在 Gitee 上编辑此页',
+        repo: 'https://gitee.com/slowlyo/slow-admin',
+        docsRepo: 'https://gitee.com/slowlyo/slow-admin-doc',
+        docsBranch: 'master',
+        docsDir: 'docs',
+        lastUpdatedText: '更新于',
+        contributorsText: '贡献者',
+        backToHome: '返回首页',
+        // 侧边栏数组
         sidebar: [
-            ['/', '介绍'],
             {
-                title: '入门',
+                text: '介绍',
+                link: '/introduce'
+            },
+            {
+                text: '入门',
+                collapsible: true,
                 children: [
-                    ['/base/install', '安装'],
-                    ['/base/dir', '目录结构'],
-                    ['/base/helper-function', '助手函数']
+                    {
+                        text: '安装',
+                        link: '/base/install'
+                    },
+                    {
+                        text: '目录结构',
+                        link: '/base/dir'
+                    },
+                    {
+                        text: '助手函数',
+                        link: '/base/helper-function'
+                    }
                 ]
             },
             {
-                title: '组件',
+                text: '组件',
+                collapsible: true,
                 children: [
-                    ['/components/base-use', '基础使用'],
-                    ['/components/complex-page', '构建复杂页面']
+                    {
+                        text: '基础使用',
+                        link: '/components/base-use'
+                    },
+                    {
+                        text: '构建复杂页面',
+                        link: '/components/complex-page'
+                    }
                 ]
             },
             {
-                title: 'CRUD',
+                text: 'CRUD',
+                collapsible: true,
                 children: [
-
-                    ['/crud/diy', '自定义业务逻辑'],
-                    ['/crud/controller', 'Controller'],
-                    ['/crud/service', 'Service'],
-                    ['/crud/dialog-action', '弹窗操作']
+                    {
+                        text: '自定义业务逻辑',
+                        link: '/crud/diy'
+                    },
+                    {
+                        text: 'Controller',
+                        link: '/crud/controller'
+                    },
+                    {
+                        text: 'Service',
+                        link: '/crud/service'
+                    },
+                    {
+                        text: '弹窗操作',
+                        link: '/crud/dialog-action'
+                    }
                 ]
             },
             {
-                title: '开发者工具',
+                text: '开发者工具',
+                collapsible: true,
                 children: [
-                    ['/dev-tools/code-generator', '代码生成器']
+                    {
+                        text: '代码生成器',
+                        link: '/dev-tools/code-generator'
+                    }
                 ]
             },
-            ['update-record', '更新记录']
+            {
+                text: '更新记录',
+                link: '/update-record'
+            }
         ]
-    }
-}
+    }),
+    plugins: [
+        searchPlugin({
+            // 配置项
+        })
+    ]
+})
