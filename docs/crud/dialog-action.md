@@ -15,22 +15,21 @@ public function list(): Page
 
 ### 修改&详情
 ```php
-    public function list(): Page
-    {
-        $crud = $this->baseCRUD()
-            ->columns([
-                Column::make()->label('ID')->name('id')->sortable(true),
-                // ...
-                amis('operation')->label('操作')->buttons([
-					// 给方法添加参数 true
-					$this->rowEditButton(true),
-                    $this->rowEditButton(true),
-                ]),
-            ]);
+public function list(): Page
+{
+    $crud = $this->baseCRUD()
+        ->columns([
+            Column::make()->label('ID')->name('id')->sortable(true),
+            // ...
+            amis('operation')->label('操作')->buttons([
+                // 给方法添加参数 true
+                $this->rowEditButton(true),
+                $this->rowEditButton(true),
+            ]),
+        ]);
 
-        // ...
-    }
-
+    // ...
+}
 ```
 
 ### 其他方法

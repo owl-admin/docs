@@ -15,5 +15,4 @@ class AdminRoleService extends AdminService
 	// 几乎所有的数据库操作都在 Service 中
 	// 不满足的地方, 在此处重写即可
 }
-
 ```

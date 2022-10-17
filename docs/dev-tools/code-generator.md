@@ -19,9 +19,9 @@
 你还需要两步:
 1. 在app/Admin/routes.php 中添加你的路由
 ```php
-	// 使用 resource , 它包含了基础功能需要的所有路由
-	// 如:
-    $router->resource('home', \App\Admin\Controllers\HomeController::class);
+// 使用 resource , 它包含了基础功能需要的所有路由
+// 如:
+$router->resource('home', \App\Admin\Controllers\HomeController::class);
 ```
 
 2. 在 [菜单管理] 功能中配置你的菜单, 链接/页面api 两项需要与你的controller中的 `$queryPath` 一致

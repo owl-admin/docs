@@ -16,7 +16,7 @@ $page->title('我是标题');
 ```php
 // ...
 $page->body(
-\Slowlyo\SlowAdmin\Renderers\Button::make()->label('我是按钮')->level('primary');
+    \Slowlyo\SlowAdmin\Renderers\Button::make()->label('我是按钮')->level('primary');
 );
 // ...
 ```
@@ -36,6 +36,8 @@ $page->body([
 #### 如果你没找到你想要的组件
 ```php
 \Slowlyo\SlowAdmin\Renderers\Component::make()->setType('page')->title('我是标题');
+// 或者
+amis('page')->title('我是标题');
 
 // 等效于
 \Slowlyo\SlowAdmin\Renderers\Page::make()->title('我是标题');
