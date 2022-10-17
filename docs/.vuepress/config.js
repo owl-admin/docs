@@ -80,6 +80,20 @@ export default defineUserConfig({
                 ]
             },
             {
+                text: '高度定制',
+                collapsible: true,
+                children: [
+                    {
+                        text: 'plan A',
+                        link: '/custom/plan-a'
+                    },
+                    {
+                        text: 'plan B',
+                        link: '/custom/plan-b'
+                    }
+                ]
+            },
+            {
                 text: '开发者工具',
                 collapsible: true,
                 children: [
@@ -88,6 +102,10 @@ export default defineUserConfig({
                         link: '/dev-tools/code-generator'
                     }
                 ]
+            },
+            {
+                text: '多语言',
+                link: '/multi-language'
             },
             {
                 text: '更新记录',

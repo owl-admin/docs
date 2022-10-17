@@ -13,4 +13,4 @@ app/Admin
 config/admin.php
 ```
 ## 静态文件
-后台所需的前端静态文件在 /public/vendor/admin 目录下
+后台所需的前端静态文件在 `/public/vendor/admin` 目录下
