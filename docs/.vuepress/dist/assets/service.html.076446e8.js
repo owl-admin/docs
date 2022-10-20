@@ -1,4 +1,4 @@
-import{_ as s,o as n,c as a,e}from"./app.3e6a5630.js";const c={},i=e(`<h4 id="\u4EE5\u89D2\u8272service\u4E3E\u4F8B" tabindex="-1"><a class="header-anchor" href="#\u4EE5\u89D2\u8272service\u4E3E\u4F8B" aria-hidden="true">#</a> \u4EE5\u89D2\u8272Service\u4E3E\u4F8B</h4><div class="language-php ext-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+import{_ as s,o as n,c as a,e}from"./app.c185ebb8.js";const c={},i=e(`<h4 id="\u4EE5\u89D2\u8272service\u4E3E\u4F8B" tabindex="-1"><a class="header-anchor" href="#\u4EE5\u89D2\u8272service\u4E3E\u4F8B" aria-hidden="true">#</a> \u4EE5\u89D2\u8272Service\u4E3E\u4F8B</h4><div class="language-php ext-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
 
 <span class="token keyword">namespace</span> <span class="token package">Slowlyo<span class="token punctuation">\\</span>SlowAdmin<span class="token punctuation">\\</span>Services</span><span class="token punctuation">;</span>
 

@@ -111,6 +111,10 @@ export default defineUserConfig({
             {
                 text: '更新记录',
                 link: '/update-record'
+            },
+            {
+                text: '开发计划',
+                link: '/dev-todo'
             }
         ]
     }),
