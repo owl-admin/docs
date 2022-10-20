@@ -1,4 +1,4 @@
-import{_ as e,o as n,c as a,e as i}from"./app.d7c3b2d1.js";const d={},r=i(`<h2 id="\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55" tabindex="-1"><a class="header-anchor" href="#\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55" aria-hidden="true">#</a> \u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>app/Admin
+import{_ as e,o as n,c as a,e as i}from"./app.e9e118ac.js";const d={},r=i(`<h2 id="\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55" tabindex="-1"><a class="header-anchor" href="#\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55" aria-hidden="true">#</a> \u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>app/Admin
 \u251C\u2500\u2500 Controllers
 \u2502   \u251C\u2500\u2500 AuthController.php
 \u2502   \u2514\u2500\u2500 HomeController.php
