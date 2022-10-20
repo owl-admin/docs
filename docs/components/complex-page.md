@@ -1,6 +1,6 @@
 如果基础 crud 页面满足不了你的需求, 可参考以下代码实现
 
-![](https://cdn.learnku.com/uploads/images/202208/26/80143/TcablCb6K6.png!large)
+![](../images/complex-page.png)
 
 ##### 完整代码
 

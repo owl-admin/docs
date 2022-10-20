@@ -40,9 +40,9 @@ amis 是一个低代码前端框架，它使用 JSON 配置来生成页面，可
 
 ### 截图
 
-![首页](https://cdn.learnku.com/uploads/images/202209/06/80143/UYXOi0rvQE.png!large)
-![管理员](https://cdn.learnku.com/uploads/images/202209/06/80143/pZlLduqM71.png!large)
-![代码生成器](https://cdn.learnku.com/uploads/images/202209/06/80143/lMX2seeU3Z.png!large)
+![首页](./images/home-page.png)
+![管理员](./images/admin-page.png)
+![代码生成器](./images/code-generator-page.png)
 
 ### 在线体验
 
