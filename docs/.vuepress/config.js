@@ -7,7 +7,7 @@ export default defineUserConfig({
     title: 'Slow Admin',
     description: 'slow admin 中文文档',
     head: [
-        ['link', {rel: 'icon', href: '/logo.png'}]
+        ['link', {rel: 'icon', href: '/slow-admin-doc/logo.png'}]
     ],
     port: 8080,
     theme: defaultTheme({
