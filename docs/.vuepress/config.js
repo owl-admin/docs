@@ -2,7 +2,7 @@ import {defineUserConfig, defaultTheme} from 'vuepress'
 import {searchPlugin} from '@vuepress/plugin-search'
 
 export default defineUserConfig({
-    base: '/slow-admin-doc/',
+    // base: '/slow-admin-doc/',
     lang: 'zh-CN',
     title: 'Slow Admin',
     description: 'slow admin 中文文档',
