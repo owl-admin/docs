@@ -2,156 +2,10 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.7.1":
-  "integrity" "sha512-eiZw+fxMzNQn01S8dA/hcCpoWCOCwcIIEUtHHdzN5TGB3IpzLbuhqFeTfh2OUhhgkE8Uo17+wH+QJ/wYyQmmzg=="
-  "resolved" "https://registry.npmmirror.com/@algolia/autocomplete-core/-/autocomplete-core-1.7.1.tgz"
-  "version" "1.7.1"
-  dependencies:
-    "@algolia/autocomplete-shared" "1.7.1"
-
-"@algolia/autocomplete-preset-algolia@1.7.1":
-  "integrity" "sha512-pJwmIxeJCymU1M6cGujnaIYcY3QPOVYZOXhFkWVM7IxKzy272BwCvMFMyc5NpG/QmiObBxjo7myd060OeTNJXg=="
-  "resolved" "https://registry.npmmirror.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.7.1.tgz"
-  "version" "1.7.1"
-  dependencies:
-    "@algolia/autocomplete-shared" "1.7.1"
-
-"@algolia/autocomplete-shared@1.7.1":
-  "integrity" "sha512-eTmGVqY3GeyBTT8IWiB2K5EuURAqhnumfktAEoHxfDY2o7vg2rSnO16ZtIG0fMgt3py28Vwgq42/bVEuaQV7pg=="
-  "resolved" "https://registry.npmmirror.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.7.1.tgz"
-  "version" "1.7.1"
-
-"@algolia/cache-browser-local-storage@4.14.2":
-  "integrity" "sha512-FRweBkK/ywO+GKYfAWbrepewQsPTIEirhi1BdykX9mxvBPtGNKccYAxvGdDCumU1jL4r3cayio4psfzKMejBlA=="
-  "resolved" "https://registry.npmmirror.com/@algolia/cache-browser-local-storage/-/cache-browser-local-storage-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/cache-common" "4.14.2"
-
-"@algolia/cache-common@4.14.2":
-  "integrity" "sha512-SbvAlG9VqNanCErr44q6lEKD2qoK4XtFNx9Qn8FK26ePCI8I9yU7pYB+eM/cZdS9SzQCRJBbHUumVr4bsQ4uxg=="
-  "resolved" "https://registry.npmmirror.com/@algolia/cache-common/-/cache-common-4.14.2.tgz"
-  "version" "4.14.2"
-
-"@algolia/cache-in-memory@4.14.2":
-  "integrity" "sha512-HrOukWoop9XB/VFojPv1R5SVXowgI56T9pmezd/djh2JnVN/vXswhXV51RKy4nCpqxyHt/aGFSq2qkDvj6KiuQ=="
-  "resolved" "https://registry.npmmirror.com/@algolia/cache-in-memory/-/cache-in-memory-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/cache-common" "4.14.2"
-
-"@algolia/client-account@4.14.2":
-  "integrity" "sha512-WHtriQqGyibbb/Rx71YY43T0cXqyelEU0lB2QMBRXvD2X0iyeGl4qMxocgEIcbHyK7uqE7hKgjT8aBrHqhgc1w=="
-  "resolved" "https://registry.npmmirror.com/@algolia/client-account/-/client-account-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/client-common" "4.14.2"
-    "@algolia/client-search" "4.14.2"
-    "@algolia/transporter" "4.14.2"
-
-"@algolia/client-analytics@4.14.2":
-  "integrity" "sha512-yBvBv2mw+HX5a+aeR0dkvUbFZsiC4FKSnfqk9rrfX+QrlNOKEhCG0tJzjiOggRW4EcNqRmaTULIYvIzQVL2KYQ=="
-  "resolved" "https://registry.npmmirror.com/@algolia/client-analytics/-/client-analytics-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/client-common" "4.14.2"
-    "@algolia/client-search" "4.14.2"
-    "@algolia/requester-common" "4.14.2"
-    "@algolia/transporter" "4.14.2"
-
-"@algolia/client-common@4.14.2":
-  "integrity" "sha512-43o4fslNLcktgtDMVaT5XwlzsDPzlqvqesRi4MjQz2x4/Sxm7zYg5LRYFol1BIhG6EwxKvSUq8HcC/KxJu3J0Q=="
-  "resolved" "https://registry.npmmirror.com/@algolia/client-common/-/client-common-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/requester-common" "4.14.2"
-    "@algolia/transporter" "4.14.2"
-
-"@algolia/client-personalization@4.14.2":
-  "integrity" "sha512-ACCoLi0cL8CBZ1W/2juehSltrw2iqsQBnfiu/Rbl9W2yE6o2ZUb97+sqN/jBqYNQBS+o0ekTMKNkQjHHAcEXNw=="
-  "resolved" "https://registry.npmmirror.com/@algolia/client-personalization/-/client-personalization-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/client-common" "4.14.2"
-    "@algolia/requester-common" "4.14.2"
-    "@algolia/transporter" "4.14.2"
-
-"@algolia/client-search@^4.9.1", "@algolia/client-search@4.14.2":
-  "integrity" "sha512-L5zScdOmcZ6NGiVbLKTvP02UbxZ0njd5Vq9nJAmPFtjffUSOGEp11BmD2oMJ5QvARgx2XbX4KzTTNS5ECYIMWw=="
-  "resolved" "https://registry.npmmirror.com/@algolia/client-search/-/client-search-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/client-common" "4.14.2"
-    "@algolia/requester-common" "4.14.2"
-    "@algolia/transporter" "4.14.2"
-
-"@algolia/logger-common@4.14.2":
-  "integrity" "sha512-/JGlYvdV++IcMHBnVFsqEisTiOeEr6cUJtpjz8zc0A9c31JrtLm318Njc72p14Pnkw3A/5lHHh+QxpJ6WFTmsA=="
-  "resolved" "https://registry.npmmirror.com/@algolia/logger-common/-/logger-common-4.14.2.tgz"
-  "version" "4.14.2"
-
-"@algolia/logger-console@4.14.2":
-  "integrity" "sha512-8S2PlpdshbkwlLCSAB5f8c91xyc84VM9Ar9EdfE9UmX+NrKNYnWR1maXXVDQQoto07G1Ol/tYFnFVhUZq0xV/g=="
-  "resolved" "https://registry.npmmirror.com/@algolia/logger-console/-/logger-console-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/logger-common" "4.14.2"
-
-"@algolia/requester-browser-xhr@4.14.2":
-  "integrity" "sha512-CEh//xYz/WfxHFh7pcMjQNWgpl4wFB85lUMRyVwaDPibNzQRVcV33YS+63fShFWc2+42YEipFGH2iPzlpszmDw=="
-  "resolved" "https://registry.npmmirror.com/@algolia/requester-browser-xhr/-/requester-browser-xhr-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/requester-common" "4.14.2"
-
-"@algolia/requester-common@4.14.2":
-  "integrity" "sha512-73YQsBOKa5fvVV3My7iZHu1sUqmjjfs9TteFWwPwDmnad7T0VTCopttcsM3OjLxZFtBnX61Xxl2T2gmG2O4ehg=="
-  "resolved" "https://registry.npmmirror.com/@algolia/requester-common/-/requester-common-4.14.2.tgz"
-  "version" "4.14.2"
-
-"@algolia/requester-node-http@4.14.2":
-  "integrity" "sha512-oDbb02kd1o5GTEld4pETlPZLY0e+gOSWjWMJHWTgDXbv9rm/o2cF7japO6Vj1ENnrqWvLBmW1OzV9g6FUFhFXg=="
-  "resolved" "https://registry.npmmirror.com/@algolia/requester-node-http/-/requester-node-http-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/requester-common" "4.14.2"
-
-"@algolia/transporter@4.14.2":
-  "integrity" "sha512-t89dfQb2T9MFQHidjHcfhh6iGMNwvuKUvojAj+JsrHAGbuSy7yE4BylhLX6R0Q1xYRoC4Vvv+O5qIw/LdnQfsQ=="
-  "resolved" "https://registry.npmmirror.com/@algolia/transporter/-/transporter-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/cache-common" "4.14.2"
-    "@algolia/logger-common" "4.14.2"
-    "@algolia/requester-common" "4.14.2"
-
 "@babel/parser@^7.16.4":
   "integrity" "sha512-qpVT7gtuOLjWeDTKLkJ6sryqLliBaFpAtGeqw5cs5giLldvh+Ch0plqnUMKoVAUS6ZEueQQiZV+p5pxtPitEsA=="
   "resolved" "https://registry.npmmirror.com/@babel/parser/-/parser-7.19.4.tgz"
   "version" "7.19.4"
-
-"@docsearch/css@^3.2.1", "@docsearch/css@3.2.1":
-  "integrity" "sha512-gaP6TxxwQC+K8D6TRx5WULUWKrcbzECOPA2KCVMuI+6C7dNiGUk5yXXzVhc5sld79XKYLnO9DRTI4mjXDYkh+g=="
-  "resolved" "https://registry.npmmirror.com/@docsearch/css/-/css-3.2.1.tgz"
-  "version" "3.2.1"
-
-"@docsearch/js@^3.2.1":
-  "integrity" "sha512-H1PekEtSeS0msetR2YGGey2w7jQ2wAKfGODJvQTygSwMgUZ+2DHpzUgeDyEBIXRIfaBcoQneqrzsljM62pm6Xg=="
-  "resolved" "https://registry.npmmirror.com/@docsearch/js/-/js-3.2.1.tgz"
-  "version" "3.2.1"
-  dependencies:
-    "@docsearch/react" "3.2.1"
-    "preact" "^10.0.0"
-
-"@docsearch/react@^3.2.1", "@docsearch/react@3.2.1":
-  "integrity" "sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ=="
-  "resolved" "https://registry.npmmirror.com/@docsearch/react/-/react-3.2.1.tgz"
-  "version" "3.2.1"
-  dependencies:
-    "@algolia/autocomplete-core" "1.7.1"
-    "@algolia/autocomplete-preset-algolia" "1.7.1"
-    "@docsearch/css" "3.2.1"
-    "algoliasearch" "^4.0.0"
 
 "@mdit-vue/plugin-component@^0.10.0":
   "integrity" "sha512-cfxmPVcp6880TRUgpT3eUjem1gCkg3vsBHOcjOoiD2gAu3hWg48d3woz5+F9WVrAhv8P6wpDYBzFqt29D6D4MQ=="
@@ -514,22 +368,6 @@
     "markdown-it" "^13.0.1"
     "markdown-it-container" "^3.0.0"
 
-"@vuepress/plugin-docsearch@^2.0.0-beta.51":
-  "integrity" "sha512-qVrsji7YgGqzOuxRdfeAtfJQL7hFCbc6W9pxNlxsYteIm3HR6V/SQ0xD3aetow/U0c3qJGTTm73i0IcRfdLjIg=="
-  "resolved" "https://registry.npmmirror.com/@vuepress/plugin-docsearch/-/plugin-docsearch-2.0.0-beta.51.tgz"
-  "version" "2.0.0-beta.51"
-  dependencies:
-    "@docsearch/css" "^3.2.1"
-    "@docsearch/js" "^3.2.1"
-    "@docsearch/react" "^3.2.1"
-    "@vuepress/client" "2.0.0-beta.51"
-    "@vuepress/core" "2.0.0-beta.51"
-    "@vuepress/shared" "2.0.0-beta.51"
-    "@vuepress/utils" "2.0.0-beta.51"
-    "ts-debounce" "^4.0.0"
-    "vue" "^3.2.37"
-    "vue-router" "^4.1.4"
-
 "@vuepress/plugin-external-link-icon@2.0.0-beta.51":
   "integrity" "sha512-6ITMmvD/6DX2MLCCnGOJBXkB+rFbRkVboWzBibCzITHfUORsmFwLMjmrDxnIbZl74F0VZ7533zk/BRJIy4uYLA=="
   "resolved" "https://registry.npmmirror.com/@vuepress/plugin-external-link-icon/-/plugin-external-link-icon-2.0.0-beta.51.tgz"
@@ -685,26 +523,6 @@
   "version" "9.3.0"
   dependencies:
     "vue-demi" "*"
-
-"algoliasearch@^4.0.0", "algoliasearch@^4.9.1":
-  "integrity" "sha512-ngbEQonGEmf8dyEh5f+uOIihv4176dgbuOZspiuhmTTBRBuzWu3KCGHre6uHj5YyuC7pNvQGzB6ZNJyZi0z+Sg=="
-  "resolved" "https://registry.npmmirror.com/algoliasearch/-/algoliasearch-4.14.2.tgz"
-  "version" "4.14.2"
-  dependencies:
-    "@algolia/cache-browser-local-storage" "4.14.2"
-    "@algolia/cache-common" "4.14.2"
-    "@algolia/cache-in-memory" "4.14.2"
-    "@algolia/client-account" "4.14.2"
-    "@algolia/client-analytics" "4.14.2"
-    "@algolia/client-common" "4.14.2"
-    "@algolia/client-personalization" "4.14.2"
-    "@algolia/client-search" "4.14.2"
-    "@algolia/logger-common" "4.14.2"
-    "@algolia/logger-console" "4.14.2"
-    "@algolia/requester-browser-xhr" "4.14.2"
-    "@algolia/requester-common" "4.14.2"
-    "@algolia/requester-node-http" "4.14.2"
-    "@algolia/transporter" "4.14.2"
 
 "ansi-regex@^6.0.1":
   "integrity" "sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA=="
@@ -1383,11 +1201,6 @@
     "nanoid" "^3.3.4"
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.2"
-
-"preact@^10.0.0":
-  "integrity" "sha512-1Wz5PCRm6Fg+6BTXWJHhX4wRK9MZbZBHuwBqfZlOdVm2NqPe8/rjYpufvYCwJSGb9layyzB2jTTXfpCTynLqFQ=="
-  "resolved" "https://registry.npmmirror.com/preact/-/preact-10.11.1.tgz"
-  "version" "10.11.1"
 
 "prismjs@^1.28.0":
   "integrity" "sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q=="

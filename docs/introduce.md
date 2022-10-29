@@ -46,7 +46,7 @@ amis 是一个低代码前端框架，它使用 JSON 配置来生成页面，可
 
 ### 在线体验
 
-[演示站点](http://slow-demo.kmhnkj.cn/)
+[演示站点](http://admin-demo.slowlyo.top/)
 
 ### 交流
 
