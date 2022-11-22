@@ -5,7 +5,7 @@ export default defineConfig({
   publicPath: '/slow-admin-doc/',
   themeConfig: {
     name: 'slow admin',
-    logo: '/logo.png',
+    logo: '/slow-admin-doc/logo.png',
     footer: '<br>',
     nav: [
       {
