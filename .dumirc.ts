@@ -22,5 +22,5 @@ export default defineConfig({
       }
     ]
   },
-  favicons: ['/logo.png'],
+  favicons: ['/slow-admin-doc/logo.png'],
 })
