@@ -18,383 +18,383 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}var et=!0,ht=!1,xt;return{s:function(){Y=Y.call(B)},n:function(){var Bt=Y.next();return et=Bt.done,Bt},e:function(Bt){ht=!0,xt=Bt},f:function(){try{!et&&Y.return!=null&&Y.return()}finally{if(ht)throw xt}}}}function bu(B){return ls(B)||tl(B)||Xa(B)||ss()}function ss(){throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function tl(B){if(typeof Symbol!="undefined"&&B[Symbol.iterator]!=null||B["@@iterator"]!=null)return Array.from(B)}function ls(B){if(Array.isArray(B))return ci(B)}function tn(B,te){return rl(B)||fi(B,te)||Xa(B,te)||li()}function li(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function Xa(B,te){if(!!B){if(typeof B=="string")return ci(B,te);var Y=Object.prototype.toString.call(B).slice(8,-1);if(Y==="Object"&&B.constructor&&(Y=B.constructor.name),Y==="Map"||Y==="Set")return Array.from(B);if(Y==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(Y))return ci(B,te)}}function ci(B,te){(te==null||te>B.length)&&(te=B.length);for(var Y=0,pe=new Array(te);Y<te;Y++)pe[Y]=B[Y];return pe}function fi(B,te){var Y=B==null?null:typeof Symbol!="undefined"&&B[Symbol.iterator]||B["@@iterator"];if(Y!=null){var pe=[],Ue=!0,et=!1,ht,xt;try{for(Y=Y.call(B);!(Ue=(ht=Y.next()).done)&&(pe.push(ht.value),!(te&&pe.length===te));Ue=!0);}catch(jt){et=!0,xt=jt}finally{try{!Ue&&Y.return!=null&&Y.return()}finally{if(et)throw xt}}return pe}}function rl(B){if(Array.isArray(B))return B}var Fi="$default-group-title",No=function(te,Y){return"base"in Y?te.replace(Y.base.slice(1),"").replace(/^\//,""):te},Jn=function(){var te=(0,ft.b)(),Y=(0,me.RX)(),pe=(0,E.W)(),Ue=pe.themeConfig,et=(0,me.M7)(),ht=(0,n.useState)(function(){var Bt=Object.values(Y).reduce(function(sr,ar){var yr=No(ar.path,te);if(yr&&ar.meta){var Er,kr,Fr,Or="/".concat(ar.path.replace(/\/[^/]+$/,"")),Qa=(0,me.qu)({order:0},"group",ar.meta.frontmatter),Wn=Qa.title,mo=Qa.order,hi=Wn||Fi;(Er=sr[Or])!==null&&Er!==void 0||(sr[Or]={}),sr[Or][hi]={title:Wn,order:((kr=sr[Or][hi])===null||kr===void 0?void 0:kr.order)||mo,children:[].concat(bu(((Fr=sr[Or][hi])===null||Fr===void 0?void 0:Fr.children)||[]),[{title:ar.meta.frontmatter.title,link:"/".concat(ar.path),order:ar.meta.frontmatter.order||0,frontmatter:ar.meta.frontmatter}])}}return sr},{}),or=Object.entries(Bt).reduce(function(sr,ar){var yr=tn(ar,2),Er=yr[0],kr=yr[1];return sr[Er]=Object.values(kr).sort(et),sr[Er].forEach(function(Fr){return Fr.children.sort(et)}),sr},{});return Object.assign(or,Ue.sidebar)}),xt=tn(ht,1),jt=xt[0];return jt};function Bi(B){var te={order:0,title:""},Y=ho(B),pe;try{for(Y.s();!(pe=Y.n()).done;){var Ue=pe.value,et=ho(Ue.children),ht;try{for(et.s();!(ht=et.n()).done;){var xt=ht.value;"frontmatter"in xt&&pickRouteSortMeta(te,"nav",xt.frontmatter)}}catch(jt){et.e(jt)}finally{et.f()}}}catch(jt){Y.e(jt)}finally{Y.f()}return te}var ia=function(){var te=Jn(),Y=useRouteDataComparer(),pe=useState(function(){var ht=Object.entries(te).sort(function(xt,jt){return jt[0].split("/").length-xt[0].split("/").length}).reduce(function(xt,jt){var Bt=tn(jt,2),or=Bt[0],sr=Bt[1],ar=or.replace(/\/[^/]+$/,"");if(ar){var yr;if((yr=xt[ar])!==null&&yr!==void 0||(xt[ar]=Eu({path:ar,children:te[ar]||[]},Bi(te[ar]||[]))),xt[or])xt[or].children.sort(Y),xt[ar].children.push(xt[or]),delete xt[or];else{var Er;(Er=xt[ar].children).push.apply(Er,bu(sr))}}else sr.sort(Y),xt[or]=Eu({path:or,children:sr},Bi(sr));return xt},{});return Object.values(ht)}),Ue=tn(pe,1),et=Ue[0];return et},Ui=function(){var te=(0,ft.b)(),Y=Jn(),pe=(0,o.TH)(),Ue=pe.pathname,et=No(Ue.slice(1),te),ht=et?Ue.replace(/(\/[^/]+)(\/[^/]+\/?)$/,"$1"):Ue;return ht?Y[ht]:[]};function Lo(B,te){var Y=Object.keys(B);if(Object.getOwnPropertySymbols){var pe=Object.getOwnPropertySymbols(B);te&&(pe=pe.filter(function(Ue){return Object.getOwnPropertyDescriptor(B,Ue).enumerable})),Y.push.apply(Y,pe)}return Y}function Su(B){for(var te=1;te<arguments.length;te++){var Y=arguments[te]!=null?arguments[te]:{};te%2?Lo(Object(Y),!0).forEach(function(pe){Do(B,pe,Y[pe])}):Object.getOwnPropertyDescriptors?Object.defineProperties(B,Object.getOwnPropertyDescriptors(Y)):Lo(Object(Y)).forEach(function(pe){Object.defineProperty(B,pe,Object.getOwnPropertyDescriptor(Y,pe))})}return B}function Do(B,te,Y){return te in B?Object.defineProperty(B,te,{value:Y,enumerable:!0,configurable:!0,writable:!0}):B[te]=Y,B}function Za(B,te){return pi(B)||cs(B,te)||di(B,te)||jo()}function jo(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.
-In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function di(B,te){if(!!B){if(typeof B=="string")return xu(B,te);var Y=Object.prototype.toString.call(B).slice(8,-1);if(Y==="Object"&&B.constructor&&(Y=B.constructor.name),Y==="Map"||Y==="Set")return Array.from(B);if(Y==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(Y))return xu(B,te)}}function xu(B,te){(te==null||te>B.length)&&(te=B.length);for(var Y=0,pe=new Array(te);Y<te;Y++)pe[Y]=B[Y];return pe}function cs(B,te){var Y=B==null?null:typeof Symbol!="undefined"&&B[Symbol.iterator]||B["@@iterator"];if(Y!=null){var pe=[],Ue=!0,et=!1,ht,xt;try{for(Y=Y.call(B);!(Ue=(ht=Y.next()).done)&&(pe.push(ht.value),!(te&&pe.length===te));Ue=!0);}catch(jt){et=!0,xt=jt}finally{try{!Ue&&Y.return!=null&&Y.return()}finally{if(et)throw xt}}return pe}}function pi(B){if(Array.isArray(B))return B}var fa;typeof window!="undefined"&&(fa=new Worker(new URL(t.p+t.u(833),t.b)));var vi=function(){var te=(0,n.useRef)(),Y=(0,me.RX)(),pe=(0,E.W)(),Ue=pe.demos,et=(0,n.useState)(!1),ht=Za(et,2),xt=ht[0],jt=ht[1],Bt=(0,n.useState)(""),or=Za(Bt,2),sr=or[0],ar=or[1],yr=vn(),Er=(0,n.useState)([]),kr=Za(Er,2),Fr=kr[0],Or=kr[1],Qa=(0,n.useCallback)(function(Wn){jt(!0),ar(Wn)},[]);return(0,n.useEffect)(function(){fa.onmessage=function(Wn){Or(Wn.data),jt(!1)}},[]),(0,n.useEffect)(function(){var Wn=Object.entries(Ue).reduce(function(mo,hi){var $i=Za(hi,2),mi=$i[0],_i=$i[1],Hi=_i.asset,ko=_i.routeId;return Su(Su({},mo),{},Do({},mi,{asset:Hi,routeId:ko}))},{});fa.postMessage({action:"generate-metadata",args:{routes:JSON.parse(JSON.stringify(Y)),nav:yr,demos:Wn}})},[Y,Ue,yr]),(0,n.useEffect)(function(){var Wn=sr.trim();Wn?(clearTimeout(te.current),te.current=window.setTimeout(function(){fa.postMessage({action:"get-search-result",args:{keywords:Wn}})},200)):Or([])},[sr]),{keywords:sr,setKeywords:Qa,result:Fr,loading:xt}}},90482:function(f,y,t){"use strict";t.d(y,{k:function(){return o},s:function(){return i}});var o=[{id:"zh-CN",name:"\u4E2D\u6587",base:"/"}],i={"en-US":{a:"A","header.search.placeholder":"Type keywords...","previewer.actions.code.expand":"Show Code","previewer.actions.code.shrink":"Hide Code","previewer.actions.codesandbox":"Open in CodeSandbox","previewer.actions.codepen":"Open in CodePen (Not implemented)","previewer.actions.stackblitz":"Open in StackBlitz","previewer.actions.separate":"Open in separate page","404.title":"PAGE NOT FOUND","404.back":"Back to homepage","api.component.name":"Name","api.component.description":"Description","api.component.type":"Type","api.component.default":"Default","api.component.required":"(required)","api.component.loading":"Properties definition is resolving, wait a moment...","api.component.not.found":"Properties definition not found for {id} component","content.tabs.default":"Doc","search.not.found":"No content was found","layout.sidebar.btn":"Sidebar"},"zh-CN":{a:"\u563F","header.search.placeholder":"\u8F93\u5165\u5173\u952E\u5B57\u641C\u7D22...","previewer.actions.code.expand":"\u5C55\u5F00\u4EE3\u7801","previewer.actions.code.shrink":"\u6536\u8D77\u4EE3\u7801","previewer.actions.codesandbox":"\u5728 CodeSandbox \u4E2D\u6253\u5F00","previewer.actions.codepen":"\u5728 CodePen \u4E2D\u6253\u5F00\uFF08\u672A\u5B9E\u73B0\uFF09","previewer.actions.stackblitz":"\u5728 StackBlitz \u4E2D\u6253\u5F00","previewer.actions.separate":"\u5728\u72EC\u7ACB\u9875\u9762\u4E2D\u6253\u5F00","404.title":"\u9875\u9762\u672A\u627E\u5230","404.back":"\u8FD4\u56DE\u9996\u9875","api.component.name":"\u5C5E\u6027\u540D","api.component.description":"\u63CF\u8FF0","api.component.type":"\u7C7B\u578B","api.component.default":"\u9ED8\u8BA4\u503C","api.component.required":"(\u5FC5\u9009)","api.component.loading":"\u5C5E\u6027\u5B9A\u4E49\u6B63\u5728\u89E3\u6790\u4E2D\uFF0C\u7A0D\u7B49\u7247\u523B...","api.component.not.found":"\u672A\u627E\u5230 {id} \u7EC4\u4EF6\u7684\u5C5E\u6027\u5B9A\u4E49","content.tabs.default":"\u6587\u6863","search.not.found":"\u672A\u627E\u5230\u76F8\u5173\u5185\u5BB9","layout.sidebar.btn":"\u4FA7\u8FB9\u83DC\u5355"}}},62035:function(f,y,t){"use strict";t.d(y,{wx:function(){return vt},DE:function(){return Ie},C3:function(){return q},eA:function(){return T}});var o=t(5574),i=t.n(o),n=t(62435),s={},l={title:"\u5F39\u7A97\u64CD\u4F5C",toc:"menu",filename:"docs/docs/crud-dialog-action.md",group:"CRUD",order:4,description:"\u4EE5\u4E0B\u64CD\u4F5C\u5728\u4EE3\u7801\u751F\u6210\u5668\u751F\u6210\u540E\u9ED8\u8BA4\u4E3A\u9875\u9762\u6A21\u5F0F, \u53EF\u901A\u8FC7\u914D\u7F6E\u5B9E\u73B0\u5F39\u7A97\u6A21\u5F0F"},p=[{id:"\u65B0\u589E",depth:3,title:"\u65B0\u589E"},{id:"\u4FEE\u6539\u8BE6\u60C5",depth:3,title:"\u4FEE\u6539&\u8BE6\u60C5"},{id:"\u5176\u4ED6\u65B9\u6CD5",depth:3,title:"\u5176\u4ED6\u65B9\u6CD5"}],d=[{value:"\u4EE5\u4E0B\u64CD\u4F5C\u5728\u4EE3\u7801\u751F\u6210\u5668\u751F\u6210\u540E\u9ED8\u8BA4\u4E3A\u9875\u9762\u6A21\u5F0F, \u53EF\u901A\u8FC7\u914D\u7F6E\u5B9E\u73B0\u5F39\u7A97\u6A21\u5F0F",paraId:0},{value:`public function list(): Page
-{
-	// ...
-	
-	// \u66F4\u6539 controller \u4E2D list() \u65B9\u6CD5\u7684\u8FD4\u56DE\u503C
-	// \u8986\u76D6 list \u7684 toolbar \u5C5E\u6027
-	// \u7ED9 createButton() \u65B9\u6CD5\u6DFB\u52A0\u53C2\u6570 (\u9ED8\u8BA4\u6CA1\u6709)
-	return $this->baseList($crud)->toolbar([$this->createButton(true)]);
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function di(B,te){if(!!B){if(typeof B=="string")return xu(B,te);var Y=Object.prototype.toString.call(B).slice(8,-1);if(Y==="Object"&&B.constructor&&(Y=B.constructor.name),Y==="Map"||Y==="Set")return Array.from(B);if(Y==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(Y))return xu(B,te)}}function xu(B,te){(te==null||te>B.length)&&(te=B.length);for(var Y=0,pe=new Array(te);Y<te;Y++)pe[Y]=B[Y];return pe}function cs(B,te){var Y=B==null?null:typeof Symbol!="undefined"&&B[Symbol.iterator]||B["@@iterator"];if(Y!=null){var pe=[],Ue=!0,et=!1,ht,xt;try{for(Y=Y.call(B);!(Ue=(ht=Y.next()).done)&&(pe.push(ht.value),!(te&&pe.length===te));Ue=!0);}catch(jt){et=!0,xt=jt}finally{try{!Ue&&Y.return!=null&&Y.return()}finally{if(et)throw xt}}return pe}}function pi(B){if(Array.isArray(B))return B}var fa;typeof window!="undefined"&&(fa=new Worker(new URL(t.p+t.u(833),t.b)));var vi=function(){var te=(0,n.useRef)(),Y=(0,me.RX)(),pe=(0,E.W)(),Ue=pe.demos,et=(0,n.useState)(!1),ht=Za(et,2),xt=ht[0],jt=ht[1],Bt=(0,n.useState)(""),or=Za(Bt,2),sr=or[0],ar=or[1],yr=vn(),Er=(0,n.useState)([]),kr=Za(Er,2),Fr=kr[0],Or=kr[1],Qa=(0,n.useCallback)(function(Wn){jt(!0),ar(Wn)},[]);return(0,n.useEffect)(function(){fa.onmessage=function(Wn){Or(Wn.data),jt(!1)}},[]),(0,n.useEffect)(function(){var Wn=Object.entries(Ue).reduce(function(mo,hi){var $i=Za(hi,2),mi=$i[0],_i=$i[1],Hi=_i.asset,ko=_i.routeId;return Su(Su({},mo),{},Do({},mi,{asset:Hi,routeId:ko}))},{});fa.postMessage({action:"generate-metadata",args:{routes:JSON.parse(JSON.stringify(Y)),nav:yr,demos:Wn}})},[Y,Ue,yr]),(0,n.useEffect)(function(){var Wn=sr.trim();Wn?(clearTimeout(te.current),te.current=window.setTimeout(function(){fa.postMessage({action:"get-search-result",args:{keywords:Wn}})},200)):Or([])},[sr]),{keywords:sr,setKeywords:Qa,result:Fr,loading:xt}}},90482:function(f,y,t){"use strict";t.d(y,{k:function(){return o},s:function(){return i}});var o=[{id:"zh-CN",name:"\u4E2D\u6587",base:"/"}],i={"en-US":{a:"A","header.search.placeholder":"Type keywords...","previewer.actions.code.expand":"Show Code","previewer.actions.code.shrink":"Hide Code","previewer.actions.codesandbox":"Open in CodeSandbox","previewer.actions.codepen":"Open in CodePen (Not implemented)","previewer.actions.stackblitz":"Open in StackBlitz","previewer.actions.separate":"Open in separate page","404.title":"PAGE NOT FOUND","404.back":"Back to homepage","api.component.name":"Name","api.component.description":"Description","api.component.type":"Type","api.component.default":"Default","api.component.required":"(required)","api.component.loading":"Properties definition is resolving, wait a moment...","api.component.not.found":"Properties definition not found for {id} component","content.tabs.default":"Doc","search.not.found":"No content was found","layout.sidebar.btn":"Sidebar"},"zh-CN":{a:"\u563F","header.search.placeholder":"\u8F93\u5165\u5173\u952E\u5B57\u641C\u7D22...","previewer.actions.code.expand":"\u5C55\u5F00\u4EE3\u7801","previewer.actions.code.shrink":"\u6536\u8D77\u4EE3\u7801","previewer.actions.codesandbox":"\u5728 CodeSandbox \u4E2D\u6253\u5F00","previewer.actions.codepen":"\u5728 CodePen \u4E2D\u6253\u5F00\uFF08\u672A\u5B9E\u73B0\uFF09","previewer.actions.stackblitz":"\u5728 StackBlitz \u4E2D\u6253\u5F00","previewer.actions.separate":"\u5728\u72EC\u7ACB\u9875\u9762\u4E2D\u6253\u5F00","404.title":"\u9875\u9762\u672A\u627E\u5230","404.back":"\u8FD4\u56DE\u9996\u9875","api.component.name":"\u5C5E\u6027\u540D","api.component.description":"\u63CF\u8FF0","api.component.type":"\u7C7B\u578B","api.component.default":"\u9ED8\u8BA4\u503C","api.component.required":"(\u5FC5\u9009)","api.component.loading":"\u5C5E\u6027\u5B9A\u4E49\u6B63\u5728\u89E3\u6790\u4E2D\uFF0C\u7A0D\u7B49\u7247\u523B...","api.component.not.found":"\u672A\u627E\u5230 {id} \u7EC4\u4EF6\u7684\u5C5E\u6027\u5B9A\u4E49","content.tabs.default":"\u6587\u6863","search.not.found":"\u672A\u627E\u5230\u76F8\u5173\u5185\u5BB9","layout.sidebar.btn":"\u4FA7\u8FB9\u83DC\u5355"}}},62035:function(f,y,t){"use strict";t.d(y,{wx:function(){return vt},DE:function(){return Ie},C3:function(){return q},eA:function(){return T}});var o=t(5574),i=t.n(o),n=t(62435),s={},l={title:"\u5F39\u7A97\u64CD\u4F5C",toc:"menu",filename:"docs/docs/crud-dialog-action.md",group:"CRUD",order:4,description:"\u4EE5\u4E0B\u64CD\u4F5C\u5728\u4EE3\u7801\u751F\u6210\u5668\u751F\u6210\u540E\u9ED8\u8BA4\u4E3A\u9875\u9762\u6A21\u5F0F, \u53EF\u901A\u8FC7\u914D\u7F6E\u5B9E\u73B0\u5F39\u7A97\u6A21\u5F0F"},p=[{id:"\u65B0\u589E",depth:3,title:"\u65B0\u589E"},{id:"\u4FEE\u6539\u8BE6\u60C5",depth:3,title:"\u4FEE\u6539&\u8BE6\u60C5"},{id:"\u5176\u4ED6\u65B9\u6CD5",depth:3,title:"\u5176\u4ED6\u65B9\u6CD5"}],d=[{value:"\u4EE5\u4E0B\u64CD\u4F5C\u5728\u4EE3\u7801\u751F\u6210\u5668\u751F\u6210\u540E\u9ED8\u8BA4\u4E3A\u9875\u9762\u6A21\u5F0F, \u53EF\u901A\u8FC7\u914D\u7F6E\u5B9E\u73B0\u5F39\u7A97\u6A21\u5F0F",paraId:0},{value:`public function list(): Page\r
+{\r
+	// ...\r
+	\r
+	// \u66F4\u6539 controller \u4E2D list() \u65B9\u6CD5\u7684\u8FD4\u56DE\u503C\r
+	// \u8986\u76D6 list \u7684 toolbar \u5C5E\u6027\r
+	// \u7ED9 createButton() \u65B9\u6CD5\u6DFB\u52A0\u53C2\u6570 (\u9ED8\u8BA4\u6CA1\u6709)\r
+	return $this->baseList($crud)->toolbar([$this->createButton(true)]);\r
 }
-`,paraId:1},{value:`public function list(): Page
-{
-    $crud = $this->baseCRUD()
-        ->columns([
-            Column::make()->label('ID')->name('id')->sortable(true),
-            // ...
-            amis('operation')->label('\u64CD\u4F5C')->buttons([
-                // \u7ED9\u65B9\u6CD5\u6DFB\u52A0\u53C2\u6570 true
-                $this->rowEditButton(true),
-                $this->rowEditButton(true),
-            ]),
-        ]);
-
-    // ...
+`,paraId:1},{value:`public function list(): Page\r
+{\r
+    $crud = $this->baseCRUD()\r
+        ->columns([\r
+            Column::make()->label('ID')->name('id')->sortable(true),\r
+            // ...\r
+            amis('operation')->label('\u64CD\u4F5C')->buttons([\r
+                // \u7ED9\u65B9\u6CD5\u6DFB\u52A0\u53C2\u6570 true\r
+                $this->rowEditButton(true),\r
+                $this->rowEditButton(true),\r
+            ]),\r
+        ]);\r
+\r
+    // ...\r
 }
-`,paraId:1},{value:"\u4EE5\u4E0B\u4E24\u4E2A\u65B9\u6CD5\u662F\u5BF9\u64CD\u4F5C\u5217\u7684\u5C01\u88C5, \u4E5F\u53EF\u4EE5\u901A\u8FC7\u4F20\u53C2\u63A7\u5236\u6A21\u5F0F",paraId:2,tocIndex:2},{value:`rowActions($dialog = false)
+`,paraId:1},{value:"\u4EE5\u4E0B\u4E24\u4E2A\u65B9\u6CD5\u662F\u5BF9\u64CD\u4F5C\u5217\u7684\u5C01\u88C5, \u4E5F\u53EF\u4EE5\u901A\u8FC7\u4F20\u53C2\u63A7\u5236\u6A21\u5F0F",paraId:2,tocIndex:2},{value:`rowActions($dialog = false)\r
 rowActionsOnlyEditAndDelete($dialog = fals)
-`,paraId:1}],m={},b={title:"\u4EE3\u7801\u751F\u6210\u5668",toc:"menu",filename:"docs/docs/dev-code-generator.md",group:{title:"\u5F00\u53D1\u8005\u5DE5\u5177",order:5},description:"\u5F53 config/amdin.php \u4E2D\u7684 show_development_tools \u8BBE\u7F6E\u9879\u4E3A true \u65F6, \u4F60\u4F1A\u5728\u540E\u53F0\u83DC\u5355\u4E2D\u770B\u5230\u5B83."},h=[{id:"\u4EE3\u7801\u751F\u6210\u5668",depth:3,title:"\u4EE3\u7801\u751F\u6210\u5668"},{id:"\u4F7F\u7528",depth:4,title:"\u4F7F\u7528"},{id:"\u751F\u6210\u5B8C\u4E4B\u540E",depth:4,title:"\u751F\u6210\u5B8C\u4E4B\u540E"}],E=[{value:"\u5F53 ",paraId:0,tocIndex:0},{value:"config/amdin.php",paraId:0,tocIndex:0},{value:" \u4E2D\u7684 ",paraId:0,tocIndex:0},{value:"show_development_tools",paraId:0,tocIndex:0},{value:" \u8BBE\u7F6E\u9879\u4E3A ",paraId:0,tocIndex:0},{value:"true",paraId:0,tocIndex:0},{value:" \u65F6, \u4F60\u4F1A\u5728\u540E\u53F0\u83DC\u5355\u4E2D\u770B\u5230\u5B83.",paraId:0,tocIndex:0},{value:"\u586B\u4E0A\u4F60\u7684\u8868\u540D",paraId:1},{value:"\u586B\u4E0A\u4F60\u7684\u529F\u80FD\u540D",paraId:1},{value:"\u52FE\u4E0A\u4F60\u9700\u8981\u7684\u529F\u80FD\u6216\u9700\u8981\u751F\u6210\u7684\u6587\u4EF6",paraId:1},{value:"\u914D\u7F6E\u4F60\u7684\u5B57\u6BB5",paraId:1},{value:"\u70B9\u51FB\u63D0\u4EA4",paraId:1},{value:"\u5982\u679C\u4E0D\u51FA\u610F\u5916, \u4F60\u5E94\u8BE5\u4F1A\u770B\u5230\u4E00\u4E2A ",paraId:2,tocIndex:1},{value:"success",paraId:2,tocIndex:1},{value:" \u7684\u63D0\u793A\u6846, \u63D0\u793A\u5185\u5BB9\u5982\u4E0B",paraId:2,tocIndex:1},{value:"model \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"migration \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"controller \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"service \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"migrate \u6267\u884C\u7ED3\u679C",paraId:1},{value:"\u5728app/Admin/routes.php \u4E2D\u6DFB\u52A0\u4F60\u7684\u8DEF\u7531",paraId:3,tocIndex:2},{value:`// \u4F7F\u7528 resource , \u5B83\u5305\u542B\u4E86\u57FA\u7840\u529F\u80FD\u9700\u8981\u7684\u6240\u6709\u8DEF\u7531
-// \u5982:
+`,paraId:1}],m={},b={title:"\u4EE3\u7801\u751F\u6210\u5668",toc:"menu",filename:"docs/docs/dev-code-generator.md",group:{title:"\u5F00\u53D1\u8005\u5DE5\u5177",order:5},description:"\u5F53 config/amdin.php \u4E2D\u7684 show_development_tools \u8BBE\u7F6E\u9879\u4E3A true \u65F6, \u4F60\u4F1A\u5728\u540E\u53F0\u83DC\u5355\u4E2D\u770B\u5230\u5B83."},h=[{id:"\u4EE3\u7801\u751F\u6210\u5668",depth:3,title:"\u4EE3\u7801\u751F\u6210\u5668"},{id:"\u4F7F\u7528",depth:4,title:"\u4F7F\u7528"},{id:"\u751F\u6210\u5B8C\u4E4B\u540E",depth:4,title:"\u751F\u6210\u5B8C\u4E4B\u540E"}],E=[{value:"\u5F53 ",paraId:0,tocIndex:0},{value:"config/amdin.php",paraId:0,tocIndex:0},{value:" \u4E2D\u7684 ",paraId:0,tocIndex:0},{value:"show_development_tools",paraId:0,tocIndex:0},{value:" \u8BBE\u7F6E\u9879\u4E3A ",paraId:0,tocIndex:0},{value:"true",paraId:0,tocIndex:0},{value:" \u65F6, \u4F60\u4F1A\u5728\u540E\u53F0\u83DC\u5355\u4E2D\u770B\u5230\u5B83.",paraId:0,tocIndex:0},{value:"\u586B\u4E0A\u4F60\u7684\u8868\u540D",paraId:1},{value:"\u586B\u4E0A\u4F60\u7684\u529F\u80FD\u540D",paraId:1},{value:"\u52FE\u4E0A\u4F60\u9700\u8981\u7684\u529F\u80FD\u6216\u9700\u8981\u751F\u6210\u7684\u6587\u4EF6",paraId:1},{value:"\u914D\u7F6E\u4F60\u7684\u5B57\u6BB5",paraId:1},{value:"\u70B9\u51FB\u63D0\u4EA4",paraId:1},{value:"\u5982\u679C\u4E0D\u51FA\u610F\u5916, \u4F60\u5E94\u8BE5\u4F1A\u770B\u5230\u4E00\u4E2A ",paraId:2,tocIndex:1},{value:"success",paraId:2,tocIndex:1},{value:" \u7684\u63D0\u793A\u6846, \u63D0\u793A\u5185\u5BB9\u5982\u4E0B",paraId:2,tocIndex:1},{value:"model \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"migration \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"controller \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"service \u6587\u4EF6\u8DEF\u5F84",paraId:1},{value:"migrate \u6267\u884C\u7ED3\u679C",paraId:1},{value:"\u5728app/Admin/routes.php \u4E2D\u6DFB\u52A0\u4F60\u7684\u8DEF\u7531",paraId:3,tocIndex:2},{value:`// \u4F7F\u7528 resource , \u5B83\u5305\u542B\u4E86\u57FA\u7840\u529F\u80FD\u9700\u8981\u7684\u6240\u6709\u8DEF\u7531\r
+// \u5982:\r
 $router->resource('home', \\App\\Admin\\Controllers\\HomeController::class);
-`,paraId:1}],x={},g={title:"Controller",toc:"menu",filename:"docs/docs/crud-controller.md",group:"CRUD"},w=[{id:"\u4EE5\u89D2\u8272\u7BA1\u7406\u63A7\u5236\u5668\u4E3E\u4F8B",depth:4,title:"\u4EE5\u89D2\u8272\u7BA1\u7406\u63A7\u5236\u5668\u4E3E\u4F8B"}],R=[{value:`<?php
+`,paraId:1}],x={},g={title:"Controller",toc:"menu",filename:"docs/docs/crud-controller.md",group:"CRUD"},w=[{id:"\u4EE5\u89D2\u8272\u7BA1\u7406\u63A7\u5236\u5668\u4E3E\u4F8B",depth:4,title:"\u4EE5\u89D2\u8272\u7BA1\u7406\u63A7\u5236\u5668\u4E3E\u4F8B"}],R=[{value:`<?php\r
+\r
+namespace Slowlyo\\SlowAdmin\\Controllers;\r
+\r
+use ...;\r
+\r
+class AdminRoleController extends AdminController\r
+{\r
+	// \u529F\u80FD\u5BF9\u5E94\u7684Service\r
+	// \u4F5C\u7528: \u5728 AdminController \u4E2D\u7528\u4E8E\u5B9E\u73B0\u57FA\u7840\u7684 CRUD\r
+    protected string $serviceName = AdminRoleService::class;\r
+\r
+	// \u9875\u9762\u8DEF\u5F84, \u5305\u62EC\r
+	//     - \u5217\u8868\u9875\r
+	//     - \u6DFB\u52A0\u9875\u9762/\u6DFB\u52A0\u6570\u636E\u63A5\u53E3\u8BF7\u6C42\u5730\u5740\r
+	//     - \u4FEE\u6539\u9875\u9762/\u4FEE\u6539\u6570\u636E\u63A5\u53E3\u8BF7\u6C42\u5730\u5740\r
+	//     - \u8BE6\u60C5\u9875\u9762/\u8BE6\u60C5\u63A5\u53E3\r
+	// \u4EE5\u4E0A\u5730\u65B9\u90FD\u9700\u8981\u8FD9\u4E2A queryPath \u6765\u751F\u6210\r
+	// \u5177\u4F53\u7684\u4F7F\u7528\u65B9\u5F0F\u53EF\u4EE5\u81EA\u884C\u67E5\u770B Slowlyo\\SlowAdmin\\Traits\\QueryPath.php\r
+	// \u4E00\u822C\u6765\u8BF4\u4E0D\u7528\u4FEE\u6539\r
+    protected string $queryPath = 'admin_roles';\r
+\r
+	// \u4EE3\u7801\u751F\u6210\u5668\u4E2D\u586B\u5199\u7684\u529F\u80FD\u540D\u79F0\r
+	// \u7528\u4F5C\u9875\u9762\u6807\u9898\r
+    protected string $pageTitle = '\u89D2\u8272';\r
+\r
+	// \u8BE5\u65B9\u6CD5\u5B9E\u73B0\u4E86\u5217\u8868\u9875\u7684\u663E\u793A, \u4EE5\u53CA\u83B7\u53D6\u5217\u8868\u6570\u636E\r
+    public function index(Request $request): JsonResponse|JsonResource\r
+    {\r
+		// \u8FD4\u56DE\u5217\u8868\u6570\u636E\r
+        if ($this->actionOfGetData()) {\r
+			// \u6B64\u5904\u7684->query() \u7B49\u6548\u4E8E AdminRole::query()\r
+            $items = $this->service\r
+                ->query()\r
+                ->paginate($request->input('perPage', 20))\r
+                ->items();\r
+            $total = $this->service->query()->count();\r
+\r
+			// amis \u7684 crud \u7EC4\u4EF6\u9700\u8981\u7684\u4E24\u4E2A\u53C2\u6570\r
+            return $this->response()->success(compact('items', 'total'));\r
+        }\r
+\r
+		// \u8FD4\u56DE\u9875\u9762\u7ED3\u6784\r
+        return $this->response()->success($this->list());\r
+    }\r
+\r
+	// \u5217\u8868\u9875\u7684\u9875\u9762\u7ED3\u6784\r
+    public function list(): Page\r
+    {\r
+		// ->baseCRUD() \u5728AdminController \u4E2D\r
+		// \u5BF9\u4E00\u4E9B\u57FA\u7840\u7684\u9875\u9762\u914D\u7F6E\u4F5C\u4E86\u5C01\u88C5\r
+        $crud = $this->baseCRUD()\r
+			// \u5047\u5982\u4F60\u60F3\u5355\u72EC\u8BBE\u7F6E\u5217\u8868\u9875\u7684\u6807\u9898\r
+			// \u53EF\u4EE5\u5728\u6B64\u5904\u518D\u6B21\u8C03\u7528 ->title() \u65B9\u6CD5, \u4ED6\u4F1A\u8986\u76D6 baseCRUD() \u4E2D\u7684\u8BBE\u7F6E\r
+			// ->title('Title')\r
+			\r
+			// \u662F\u5426\u5C55\u793A\u7B5B\u9009\u6298\u53E0\u6309\u94AE\r
+            ->filterTogglable(false)\r
+			// \u5217\u8868\u7B5B\u9009\u90E8\u5206\u8868\u5355\r
+			->filter($this->baseFilter()->body([\r
+				// \u5185\u5BB9\u5C31\u662F Form \u7684 body \u5C5E\u6027\r
+				// \u6570\u636E\u7B5B\u9009\u7684\u67E5\u8BE2\u9700\u8981\u518D index() \u65B9\u6CD5\u4E2D\u81EA\u884C\u5B9E\u73B0\r
+                InputText::make()->name('name')->label('\u540D\u79F0')\r
+            ]))\r
+			// \u8FD9\u662F\u6570\u636E\u5217\r
+            ->columns([\r
+                Column::make()->label('ID')->name('id')->sortable(true),\r
+                Column::make()->label('\u540D\u79F0')->name('name'),\r
+                Column::make()->label('\u6807\u8BC6')->name('slug')->type('tag'),\r
+                Column::make()->label('\u521B\u5EFA\u65F6\u95F4')->name('created_at')->type('datetime')->sortable(true),\r
+                Column::make()->label('\u66F4\u65B0\u65F6\u95F4')->name('updated_at')->type('datetime')->sortable(true),\r
+				// \u8FD9\u4E2A\u65B9\u6CD5\u4F1A\u6DFB\u52A0\u64CD\u4F5C\u5217\r
+				// \u9ED8\u8BA4\u4F1A\u751F\u6210 ->rowActions()\r
+                $this->rowActionsOnlyEditAndDelete(),\r
+            ]);\r
+\r
+		// baseList() \u5C01\u88C5\u4E86\u57FA\u7840\u7684 Page \u4EE5\u53CA\u9ED8\u8BA4\u7684\u65B0\u589E\u6309\u94AE\r
+        return $this->baseList($crud);\r
+    }\r
+\r
+	// \u8868\u5355\u9875\u9762\u7ED3\u6784 (\u65B0\u589E/\u7F16\u8F91)\r
+    public function form(): Form\r
+    {\r
+        return $this->baseForm()->body([\r
+            InputText::make()->label('\u540D\u79F0')->name('name')->required(true),\r
+            InputText::make()->label('\u6807\u8BC6')->name('slug')->description('\u89D2\u8272\u7684\u552F\u4E00\u6807\u8BC6, \u4E0D\u53EF\u91CD\u590D')->required(true),\r
+            TreeSelect::make()\r
+                ->name('permissions')\r
+                ->label('\u6743\u9650')\r
+                ->searchable(true)\r
+                ->multiple(true)\r
+                ->options(AdminPermissionService::make()->getTree())\r
+                ->labelField('name')\r
+                ->valueField('id')\r
+                ->autoCheckChildren(false)\r
+                ->joinValues(false)\r
+                ->extractValue(true),\r
+        ]);\r
+    }\r
+\r
+	// \u8BE6\u60C5\u9875\u9762\u7ED3\u6784\r
+    public function detail($id): Form\r
+    {\r
+		// \u6B64\u5904 baseDetail() \u9700\u8981\u4F20\u5165 id , \u7528\u4E8E\u6784\u6210\u83B7\u53D6\u6570\u636E\u7684 api\u5730\u5740\r
+        return $this->baseDetail($id)->body([]);\r
+    }\r
+}\r
 
-namespace Slowlyo\\SlowAdmin\\Controllers;
-
-use ...;
-
-class AdminRoleController extends AdminController
-{
-	// \u529F\u80FD\u5BF9\u5E94\u7684Service
-	// \u4F5C\u7528: \u5728 AdminController \u4E2D\u7528\u4E8E\u5B9E\u73B0\u57FA\u7840\u7684 CRUD
-    protected string $serviceName = AdminRoleService::class;
-
-	// \u9875\u9762\u8DEF\u5F84, \u5305\u62EC
-	//     - \u5217\u8868\u9875
-	//     - \u6DFB\u52A0\u9875\u9762/\u6DFB\u52A0\u6570\u636E\u63A5\u53E3\u8BF7\u6C42\u5730\u5740
-	//     - \u4FEE\u6539\u9875\u9762/\u4FEE\u6539\u6570\u636E\u63A5\u53E3\u8BF7\u6C42\u5730\u5740
-	//     - \u8BE6\u60C5\u9875\u9762/\u8BE6\u60C5\u63A5\u53E3
-	// \u4EE5\u4E0A\u5730\u65B9\u90FD\u9700\u8981\u8FD9\u4E2A queryPath \u6765\u751F\u6210
-	// \u5177\u4F53\u7684\u4F7F\u7528\u65B9\u5F0F\u53EF\u4EE5\u81EA\u884C\u67E5\u770B Slowlyo\\SlowAdmin\\Traits\\QueryPath.php
-	// \u4E00\u822C\u6765\u8BF4\u4E0D\u7528\u4FEE\u6539
-    protected string $queryPath = 'admin_roles';
-
-	// \u4EE3\u7801\u751F\u6210\u5668\u4E2D\u586B\u5199\u7684\u529F\u80FD\u540D\u79F0
-	// \u7528\u4F5C\u9875\u9762\u6807\u9898
-    protected string $pageTitle = '\u89D2\u8272';
-
-	// \u8BE5\u65B9\u6CD5\u5B9E\u73B0\u4E86\u5217\u8868\u9875\u7684\u663E\u793A, \u4EE5\u53CA\u83B7\u53D6\u5217\u8868\u6570\u636E
-    public function index(Request $request): JsonResponse|JsonResource
-    {
-		// \u8FD4\u56DE\u5217\u8868\u6570\u636E
-        if ($this->actionOfGetData()) {
-			// \u6B64\u5904\u7684->query() \u7B49\u6548\u4E8E AdminRole::query()
-            $items = $this->service
-                ->query()
-                ->paginate($request->input('perPage', 20))
-                ->items();
-            $total = $this->service->query()->count();
-
-			// amis \u7684 crud \u7EC4\u4EF6\u9700\u8981\u7684\u4E24\u4E2A\u53C2\u6570
-            return $this->response()->success(compact('items', 'total'));
-        }
-
-		// \u8FD4\u56DE\u9875\u9762\u7ED3\u6784
-        return $this->response()->success($this->list());
-    }
-
-	// \u5217\u8868\u9875\u7684\u9875\u9762\u7ED3\u6784
-    public function list(): Page
-    {
-		// ->baseCRUD() \u5728AdminController \u4E2D
-		// \u5BF9\u4E00\u4E9B\u57FA\u7840\u7684\u9875\u9762\u914D\u7F6E\u4F5C\u4E86\u5C01\u88C5
-        $crud = $this->baseCRUD()
-			// \u5047\u5982\u4F60\u60F3\u5355\u72EC\u8BBE\u7F6E\u5217\u8868\u9875\u7684\u6807\u9898
-			// \u53EF\u4EE5\u5728\u6B64\u5904\u518D\u6B21\u8C03\u7528 ->title() \u65B9\u6CD5, \u4ED6\u4F1A\u8986\u76D6 baseCRUD() \u4E2D\u7684\u8BBE\u7F6E
-			// ->title('Title')
-			
-			// \u662F\u5426\u5C55\u793A\u7B5B\u9009\u6298\u53E0\u6309\u94AE
-            ->filterTogglable(false)
-			// \u5217\u8868\u7B5B\u9009\u90E8\u5206\u8868\u5355
-			->filter($this->baseFilter()->body([
-				// \u5185\u5BB9\u5C31\u662F Form \u7684 body \u5C5E\u6027
-				// \u6570\u636E\u7B5B\u9009\u7684\u67E5\u8BE2\u9700\u8981\u518D index() \u65B9\u6CD5\u4E2D\u81EA\u884C\u5B9E\u73B0
-                InputText::make()->name('name')->label('\u540D\u79F0')
-            ]))
-			// \u8FD9\u662F\u6570\u636E\u5217
-            ->columns([
-                Column::make()->label('ID')->name('id')->sortable(true),
-                Column::make()->label('\u540D\u79F0')->name('name'),
-                Column::make()->label('\u6807\u8BC6')->name('slug')->type('tag'),
-                Column::make()->label('\u521B\u5EFA\u65F6\u95F4')->name('created_at')->type('datetime')->sortable(true),
-                Column::make()->label('\u66F4\u65B0\u65F6\u95F4')->name('updated_at')->type('datetime')->sortable(true),
-				// \u8FD9\u4E2A\u65B9\u6CD5\u4F1A\u6DFB\u52A0\u64CD\u4F5C\u5217
-				// \u9ED8\u8BA4\u4F1A\u751F\u6210 ->rowActions()
-                $this->rowActionsOnlyEditAndDelete(),
-            ]);
-
-		// baseList() \u5C01\u88C5\u4E86\u57FA\u7840\u7684 Page \u4EE5\u53CA\u9ED8\u8BA4\u7684\u65B0\u589E\u6309\u94AE
-        return $this->baseList($crud);
-    }
-
-	// \u8868\u5355\u9875\u9762\u7ED3\u6784 (\u65B0\u589E/\u7F16\u8F91)
-    public function form(): Form
-    {
-        return $this->baseForm()->body([
-            InputText::make()->label('\u540D\u79F0')->name('name')->required(true),
-            InputText::make()->label('\u6807\u8BC6')->name('slug')->description('\u89D2\u8272\u7684\u552F\u4E00\u6807\u8BC6, \u4E0D\u53EF\u91CD\u590D')->required(true),
-            TreeSelect::make()
-                ->name('permissions')
-                ->label('\u6743\u9650')
-                ->searchable(true)
-                ->multiple(true)
-                ->options(AdminPermissionService::make()->getTree())
-                ->labelField('name')
-                ->valueField('id')
-                ->autoCheckChildren(false)
-                ->joinValues(false)
-                ->extractValue(true),
-        ]);
-    }
-
-	// \u8BE6\u60C5\u9875\u9762\u7ED3\u6784
-    public function detail($id): Form
-    {
-		// \u6B64\u5904 baseDetail() \u9700\u8981\u4F20\u5165 id , \u7528\u4E8E\u6784\u6210\u83B7\u53D6\u6570\u636E\u7684 api\u5730\u5740
-        return $this->baseDetail($id)->body([]);
-    }
-}
-
-`,paraId:0}],O={},A={title:"\u8F85\u52A9\u51FD\u6570",toc:"menu",filename:"docs/docs/helper-function.md",group:"\u5165\u95E8",order:2,description:"\u8C03\u7528 Component \u7C7B, \u5B9E\u73B0\u4E07\u80FD\u7EC4\u4EF6"},N=[{id:"amis",depth:3,title:"amis()"},{id:"admin_encode",depth:3,title:"admin_encode()"},{id:"admin_decode",depth:3,title:"admin_decode()"},{id:"array2tree",depth:3,title:"array2tree()"}],k=[{value:"amis()",paraId:0},{value:"\u8C03\u7528 Component \u7C7B, \u5B9E\u73B0\u4E07\u80FD\u7EC4\u4EF6",paraId:1,tocIndex:0},{value:`amis('page')->title('title')->body('content');
-// \u7B49\u6548\u4E8E
+`,paraId:0}],O={},A={title:"\u8F85\u52A9\u51FD\u6570",toc:"menu",filename:"docs/docs/helper-function.md",group:"\u5165\u95E8",order:2,description:"\u8C03\u7528 Component \u7C7B, \u5B9E\u73B0\u4E07\u80FD\u7EC4\u4EF6"},N=[{id:"amis",depth:3,title:"amis()"},{id:"admin_encode",depth:3,title:"admin_encode()"},{id:"admin_decode",depth:3,title:"admin_decode()"},{id:"array2tree",depth:3,title:"array2tree()"}],k=[{value:"amis()",paraId:0},{value:"\u8C03\u7528 Component \u7C7B, \u5B9E\u73B0\u4E07\u80FD\u7EC4\u4EF6",paraId:1,tocIndex:0},{value:`amis('page')->title('title')->body('content');\r
+// \u7B49\u6548\u4E8E\r
 Page::make()->title('title')->body('content');
 `,paraId:0},{value:"admin_encode()",paraId:0},{value:"\u52A0\u5BC6\u5B57\u7B26\u4E32",paraId:2,tocIndex:1},{value:`admin_encode(string $str, $key = null):string
 `,paraId:0},{value:"admin_decode()",paraId:0},{value:"\u89E3\u5BC6\u5B57\u7B26\u4E32",paraId:3,tocIndex:2},{value:`admin_decode(string $str, $key = null):string
 `,paraId:0},{value:"array2tree()",paraId:0},{value:"\u9012\u5F52\u751F\u6210\u6811\u72B6\u6570\u636E\uFF0C\u786E\u4FDD\u6570\u7EC4\u4E2D\u5305\u542B\u952E ",paraId:4,tocIndex:3},{value:"parent_id",paraId:4,tocIndex:3},{value:`array2tree($arr):array
-`,paraId:0}],F={},L={title:"\u6784\u5EFA\u590D\u6742\u9875\u9762",toc:"menu",filename:"docs/docs/complex-page.md",group:"\u7EC4\u4EF6",order:2,description:"\u5982\u679C\u57FA\u7840 crud \u9875\u9762\u6EE1\u8DB3\u4E0D\u4E86\u4F60\u7684\u9700\u6C42, \u53EF\u53C2\u8003\u4EE5\u4E0B\u4EE3\u7801\u5B9E\u73B0"},_=[{id:"\u5B8C\u6574\u4EE3\u7801",depth:5,title:"\u5B8C\u6574\u4EE3\u7801"}],D=[{value:"\u5982\u679C\u57FA\u7840 crud \u9875\u9762\u6EE1\u8DB3\u4E0D\u4E86\u4F60\u7684\u9700\u6C42, \u53EF\u53C2\u8003\u4EE5\u4E0B\u4EE3\u7801\u5B9E\u73B0",paraId:0},{value:`<?php
+`,paraId:0}],F={},L={title:"\u6784\u5EFA\u590D\u6742\u9875\u9762",toc:"menu",filename:"docs/docs/complex-page.md",group:"\u7EC4\u4EF6",order:2,description:"\u5982\u679C\u57FA\u7840 crud \u9875\u9762\u6EE1\u8DB3\u4E0D\u4E86\u4F60\u7684\u9700\u6C42, \u53EF\u53C2\u8003\u4EE5\u4E0B\u4EE3\u7801\u5B9E\u73B0"},_=[{id:"\u5B8C\u6574\u4EE3\u7801",depth:5,title:"\u5B8C\u6574\u4EE3\u7801"}],D=[{value:"\u5982\u679C\u57FA\u7840 crud \u9875\u9762\u6EE1\u8DB3\u4E0D\u4E86\u4F60\u7684\u9700\u6C42, \u53EF\u53C2\u8003\u4EE5\u4E0B\u4EE3\u7801\u5B9E\u73B0",paraId:0},{value:`<?php\r
+\r
+namespace App\\Admin\\Controllers;\r
+\r
+use Carbon\\Carbon;\r
+use Illuminate\\Http\\Request;\r
+use App\\Services\\TaskLogService;\r
+use App\\Services\\ProjectService;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Flex;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Table;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Grid2d;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Action;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Wrapper;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Service;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Calendar;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Component;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Form\\Form;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Form\\Select;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Form\\Textarea;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Form\\InputDate;\r
+use Slowlyo\\SlowAdmin\\Controllers\\AdminController;\r
+use Slowlyo\\SlowAdmin\\Renderers\\Form\\InputDateRange;\r
+\r
+class TaskLogController extends AdminController\r
+{\r
+    /** @var string */\r
+    protected string $serviceName = TaskLogService::class;\r
+\r
+    /** @var string \u9875\u9762\u8DEF\u5F84 */\r
+    protected string $queryPath = 'task_logs';\r
+\r
+    /** @var string \u9875\u9762\u6807\u9898 */\r
+    protected string $pageTitle = '\u4EFB\u52A1\u8BB0\u5F55';\r
+\r
+    /**\r
+     * \u6784\u5EFA\u9875\u9762\r
+     *\r
+     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource\r
+     */\r
+    public function index()\r
+    {\r
+        $page = $this->basePage()->css($this->style())->body([\r
+            // \u4F7F\u7528 Grid2d \u7EC4\u4EF6\u5E03\u5C40\u9875\u9762\r
+            Grid2d::make()->gap(15)->grids([\r
+                // \u65E5\u5386\u90E8\u5206\r
+                Wrapper::make()->size('none')->body($this->calendar())->x(1)->y(1)->w(7),\r
+                // \u53F3\u4FA7\u8868\u5355\u90E8\u5206\r
+                Wrapper::make()->size('none')->body([\r
+                    $this->form(),\r
+                    $this->generator(),\r
+                ])->x(8)->y(1),\r
+            ]),\r
+        ]);\r
+\r
+        return $this->response()->success($page);\r
+    }\r
+\r
+    /**\r
+     * \u6784\u5EFA\u65E5\u5386\r
+     *\r
+     * @return mixed\r
+     */\r
+    public function calendar()\r
+    {\r
+        $calendar = Calendar::make()->largeMode(true)->schedules('\${calendarData}')->scheduleAction(\r
+            // \u6B64\u5904\u91CD\u5199\u4E86\u65E5\u5386\u7EC4\u4EF6\u539F\u6709\u7684\u70B9\u51FB\u5F39\u7A97\u5185\u5BB9\r
+            Component::make()->actionType('dialog')->dialog(\r
+                Component::make()->setType('dialog')->body(\r
+                    Table::make()->columns([\r
+                        ['name' => 'project', 'label' => '\u9879\u76EE'],\r
+                        ['name' => 'showDate', 'label' => '\u65E5\u671F'],\r
+                        ['name' => 'content', 'label' => '\u5185\u5BB9'],\r
+                    ])->data('\${scheduleData}')\r
+                )->actions([])->title('')->size('lg')->closeOnEsc(true)\r
+            )\r
+        )->onEvent([\r
+            // calendar \u7EC4\u4EF6\u7684 change \u4E8B\u4EF6, \u89E6\u53D1\u540E\u5C06\u9009\u62E9\u7684\u65E5\u671F\u8D4B\u503C\u7ED9 \u65E5\u671F \u5B57\u6BB5\r
+            'change' => [\r
+                'actions' => [\r
+                    'actionType'  => 'setValue',\r
+                    'componentId' => 'create_form',\r
+                    'args'        => [\r
+                        'value' => [\r
+                            'currentDate' => '\${event.data.value}',\r
+                        ],\r
+                    ],\r
+                ],\r
+            ],\r
+        ]);\r
+\r
+        // \u4F7F\u7528 Service \u7EC4\u4EF6, \u5B9E\u73B0\u8868\u5355\u63D0\u4EA4\u540E\u5237\u65B0 calendar \u6570\u636E\r
+        // api() \u4E3A\u83B7\u53D6\u6570\u636E api \u5730\u5740\r
+        return Service::make()->api(admin_url('task_logs/calendar'))->body($calendar)->id('calendar_service');\r
+    }\r
+\r
+    /**\r
+     * \u83B7\u53D6\u65E5\u5386\u6570\u636E\r
+     *\r
+     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource\r
+     */\r
+    public function calendarData()\r
+    {\r
+        $calendarData = $this->service->getDate();\r
+\r
+        return $this->response()->success(compact('calendarData'));\r
+    }\r
+\r
+    /**\r
+     * \u6784\u5EFA\u8868\u5355\r
+     *\r
+     * @return mixed\r
+     */\r
+    public function form()\r
+    {\r
+        return $this->baseForm()\r
+            // \u8BBE\u7F6E form \u7684\u7EC4\u4EF6 id, \u4E3A\u4E86\u8BA9 calendar \u7684 change \u4E8B\u4EF6\u80FD\u627E\u5230\u76EE\u6807\r
+            ->id('create_form')\r
+            // \u8868\u5355\u63D0\u4EA4\u8DEF\u5F84\r
+            ->api($this->getStorePath())\r
+            // \u8868\u5355\u6570\u636E\u57DF\r
+            ->data([\r
+                'currentDate' => today()->timestamp,\r
+            ])->body([\r
+                Select::make()->name('project')->label('\u9879\u76EE')->options(ProjectService::make()->getOptions()),\r
+                InputDate::make()->name('date')->label('\u65E5\u671F')->value('\${currentDate}'),\r
+                Textarea::make()->name('content')->label('\u5185\u5BB9')->minRows(10),\r
+            ])->onEvent([\r
+                // \u8868\u5355\u63D0\u4EA4\u6210\u529F\u4E8B\u4EF6, \u5237\u65B0 calendar \u5916\u5C42\u7684 Service, \u91CD\u65B0\u83B7\u53D6\u65E5\u5386\u6570\u636E\r
+                'submitSucc' => [\r
+                    'actions' => [\r
+                        'actionType'  => 'reload',\r
+                        'componentId' => 'calendar_service',\r
+                    ],\r
+                ],\r
+            ]);\r
+    }\r
+\r
+    /**\r
+     * @return Form\r
+     */\r
+    public function generator()\r
+    {\r
+        // \u7ED9 title \u548C actions \u8D4B\u7A7A\u503C, \u9690\u85CF\u539F\u6709\u7684 form \u6807\u9898\u548C\u63D0\u4EA4\u6309\u94AE\r
+        return Form::make()->title('')->actions([])->api(admin_url('task_logs/generate'))->body([\r
+            // \u5E03\u5C40\r
+            Flex::make()->alignItems('center')->justify('space-between')->items([\r
+                InputDateRange::make()->name('date_range')->size('full')->required(true),\r
+                // \u6DFB\u52A0\u4E00\u4E2A\u884C\u4E3A\u6309\u94AE, \u5B9E\u73B0\u63D0\u4EA4\u529F\u80FD\r
+                Action::make()\r
+                    ->className('ml-3 mb-6')\r
+                    ->label('\u751F\u6210')\r
+                    ->level('success')\r
+                    ->actionType('submit'),\r
+            ]),\r
+            // \u7528\u6765\u663E\u793A form \u63D0\u4EA4\u540E\u8FD4\u56DE\u7684\u5185\u5BB9\r
+            Textarea::make()->name('content')->minRows(14)->className('my-3'),\r
+        ]);\r
+    }\r
+\r
+    /**\r
+     * \u4FDD\u5B58\u8BB0\u5F55\r
+     *\r
+     * @param Request $request\r
+     *\r
+     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource\r
+     */\r
+    public function store(Request $request)\r
+    {\r
+        if ($this->service->store($request->all())) {\r
+            // \u4FDD\u5B58\u6210\u529F\u540E, \u91CD\u65B0\u83B7\u53D6\u65E5\u5386\u6570\u636E\u5E76\u8FD4\u56DE\r
+            $calendar = $this->service->getDate();\r
+\r
+            return $this->response()->success(compact('calendar'), '\u4FDD\u5B58\u6210\u529F');\r
+        }\r
+\r
+        return $this->response()->fail($this->service->getError() ?? '\u4FDD\u5B58\u5931\u8D25');\r
+    }\r
+\r
+    /**\r
+     * \u8C03\u6574\u65E5\u5386\u7EC4\u4EF6\u6837\u5F0F\r
+     *\r
+     * @return array\r
+     */\r
+    private function style()\r
+    {\r
+        return [\r
+            '.amis-scope .cxd-ScheduleCalendar .rdt .rdtPicker td.rdtActive' => ['border-top' => '2px solid #2468F2',],\r
+            '.amis-scope .rdtHeader'                                         => ['margin-top' => 0,],\r
+            '.amis-scope .cxd-ScheduleCalendar-large .rdtDay'                => ['height' => '7.7rem',],\r
+            '.amis-scope .rdtPicker td, .amis-scope .rdtPicker th'           => ['line-height' => '1.25rem',],\r
+        ];\r
+    }\r
+\r
+    /**\r
+     * \u751F\u6210\u6570\u636E\r
+     *\r
+     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource\r
+     */\r
+    public function generate()\r
+    {\r
+        $date = explode(',', request()->date_range);\r
+\r
+        $start = Carbon::createFromTimestamp($date[0])->toDateString();\r
+        $end   = Carbon::createFromTimestamp($date[1])->toDateString();\r
+\r
+        $logs = $this->service->query()->whereBetween('date', [$start, $end])->get()->groupBy('project_id');\r
+\r
+        $projects = ProjectService::make()->query()->pluck('name', 'id');\r
+\r
+        $data = '';\r
+        foreach ($logs as $key => $log) {\r
+            $data .= "\\n" . $projects[$key];\r
+            foreach ($log as $item) {\r
+                $data .= "\\n\\t" . $item['content'];\r
+            }\r
+        }\r
+\r
+        return $this->response()->success(['content' => trim($data)]);\r
+    }\r
+}\r
 
-namespace App\\Admin\\Controllers;
-
-use Carbon\\Carbon;
-use Illuminate\\Http\\Request;
-use App\\Services\\TaskLogService;
-use App\\Services\\ProjectService;
-use Slowlyo\\SlowAdmin\\Renderers\\Flex;
-use Slowlyo\\SlowAdmin\\Renderers\\Table;
-use Slowlyo\\SlowAdmin\\Renderers\\Grid2d;
-use Slowlyo\\SlowAdmin\\Renderers\\Action;
-use Slowlyo\\SlowAdmin\\Renderers\\Wrapper;
-use Slowlyo\\SlowAdmin\\Renderers\\Service;
-use Slowlyo\\SlowAdmin\\Renderers\\Calendar;
-use Slowlyo\\SlowAdmin\\Renderers\\Component;
-use Slowlyo\\SlowAdmin\\Renderers\\Form\\Form;
-use Slowlyo\\SlowAdmin\\Renderers\\Form\\Select;
-use Slowlyo\\SlowAdmin\\Renderers\\Form\\Textarea;
-use Slowlyo\\SlowAdmin\\Renderers\\Form\\InputDate;
-use Slowlyo\\SlowAdmin\\Controllers\\AdminController;
-use Slowlyo\\SlowAdmin\\Renderers\\Form\\InputDateRange;
-
-class TaskLogController extends AdminController
-{
-    /** @var string */
-    protected string $serviceName = TaskLogService::class;
-
-    /** @var string \u9875\u9762\u8DEF\u5F84 */
-    protected string $queryPath = 'task_logs';
-
-    /** @var string \u9875\u9762\u6807\u9898 */
-    protected string $pageTitle = '\u4EFB\u52A1\u8BB0\u5F55';
-
-    /**
-     * \u6784\u5EFA\u9875\u9762
-     *
-     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource
-     */
-    public function index()
-    {
-        $page = $this->basePage()->css($this->style())->body([
-            // \u4F7F\u7528 Grid2d \u7EC4\u4EF6\u5E03\u5C40\u9875\u9762
-            Grid2d::make()->gap(15)->grids([
-                // \u65E5\u5386\u90E8\u5206
-                Wrapper::make()->size('none')->body($this->calendar())->x(1)->y(1)->w(7),
-                // \u53F3\u4FA7\u8868\u5355\u90E8\u5206
-                Wrapper::make()->size('none')->body([
-                    $this->form(),
-                    $this->generator(),
-                ])->x(8)->y(1),
-            ]),
-        ]);
-
-        return $this->response()->success($page);
-    }
-
-    /**
-     * \u6784\u5EFA\u65E5\u5386
-     *
-     * @return mixed
-     */
-    public function calendar()
-    {
-        $calendar = Calendar::make()->largeMode(true)->schedules('\${calendarData}')->scheduleAction(
-            // \u6B64\u5904\u91CD\u5199\u4E86\u65E5\u5386\u7EC4\u4EF6\u539F\u6709\u7684\u70B9\u51FB\u5F39\u7A97\u5185\u5BB9
-            Component::make()->actionType('dialog')->dialog(
-                Component::make()->setType('dialog')->body(
-                    Table::make()->columns([
-                        ['name' => 'project', 'label' => '\u9879\u76EE'],
-                        ['name' => 'showDate', 'label' => '\u65E5\u671F'],
-                        ['name' => 'content', 'label' => '\u5185\u5BB9'],
-                    ])->data('\${scheduleData}')
-                )->actions([])->title('')->size('lg')->closeOnEsc(true)
-            )
-        )->onEvent([
-            // calendar \u7EC4\u4EF6\u7684 change \u4E8B\u4EF6, \u89E6\u53D1\u540E\u5C06\u9009\u62E9\u7684\u65E5\u671F\u8D4B\u503C\u7ED9 \u65E5\u671F \u5B57\u6BB5
-            'change' => [
-                'actions' => [
-                    'actionType'  => 'setValue',
-                    'componentId' => 'create_form',
-                    'args'        => [
-                        'value' => [
-                            'currentDate' => '\${event.data.value}',
-                        ],
-                    ],
-                ],
-            ],
-        ]);
-
-        // \u4F7F\u7528 Service \u7EC4\u4EF6, \u5B9E\u73B0\u8868\u5355\u63D0\u4EA4\u540E\u5237\u65B0 calendar \u6570\u636E
-        // api() \u4E3A\u83B7\u53D6\u6570\u636E api \u5730\u5740
-        return Service::make()->api(admin_url('task_logs/calendar'))->body($calendar)->id('calendar_service');
-    }
-
-    /**
-     * \u83B7\u53D6\u65E5\u5386\u6570\u636E
-     *
-     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource
-     */
-    public function calendarData()
-    {
-        $calendarData = $this->service->getDate();
-
-        return $this->response()->success(compact('calendarData'));
-    }
-
-    /**
-     * \u6784\u5EFA\u8868\u5355
-     *
-     * @return mixed
-     */
-    public function form()
-    {
-        return $this->baseForm()
-            // \u8BBE\u7F6E form \u7684\u7EC4\u4EF6 id, \u4E3A\u4E86\u8BA9 calendar \u7684 change \u4E8B\u4EF6\u80FD\u627E\u5230\u76EE\u6807
-            ->id('create_form')
-            // \u8868\u5355\u63D0\u4EA4\u8DEF\u5F84
-            ->api($this->getStorePath())
-            // \u8868\u5355\u6570\u636E\u57DF
-            ->data([
-                'currentDate' => today()->timestamp,
-            ])->body([
-                Select::make()->name('project')->label('\u9879\u76EE')->options(ProjectService::make()->getOptions()),
-                InputDate::make()->name('date')->label('\u65E5\u671F')->value('\${currentDate}'),
-                Textarea::make()->name('content')->label('\u5185\u5BB9')->minRows(10),
-            ])->onEvent([
-                // \u8868\u5355\u63D0\u4EA4\u6210\u529F\u4E8B\u4EF6, \u5237\u65B0 calendar \u5916\u5C42\u7684 Service, \u91CD\u65B0\u83B7\u53D6\u65E5\u5386\u6570\u636E
-                'submitSucc' => [
-                    'actions' => [
-                        'actionType'  => 'reload',
-                        'componentId' => 'calendar_service',
-                    ],
-                ],
-            ]);
-    }
-
-    /**
-     * @return Form
-     */
-    public function generator()
-    {
-        // \u7ED9 title \u548C actions \u8D4B\u7A7A\u503C, \u9690\u85CF\u539F\u6709\u7684 form \u6807\u9898\u548C\u63D0\u4EA4\u6309\u94AE
-        return Form::make()->title('')->actions([])->api(admin_url('task_logs/generate'))->body([
-            // \u5E03\u5C40
-            Flex::make()->alignItems('center')->justify('space-between')->items([
-                InputDateRange::make()->name('date_range')->size('full')->required(true),
-                // \u6DFB\u52A0\u4E00\u4E2A\u884C\u4E3A\u6309\u94AE, \u5B9E\u73B0\u63D0\u4EA4\u529F\u80FD
-                Action::make()
-                    ->className('ml-3 mb-6')
-                    ->label('\u751F\u6210')
-                    ->level('success')
-                    ->actionType('submit'),
-            ]),
-            // \u7528\u6765\u663E\u793A form \u63D0\u4EA4\u540E\u8FD4\u56DE\u7684\u5185\u5BB9
-            Textarea::make()->name('content')->minRows(14)->className('my-3'),
-        ]);
-    }
-
-    /**
-     * \u4FDD\u5B58\u8BB0\u5F55
-     *
-     * @param Request $request
-     *
-     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource
-     */
-    public function store(Request $request)
-    {
-        if ($this->service->store($request->all())) {
-            // \u4FDD\u5B58\u6210\u529F\u540E, \u91CD\u65B0\u83B7\u53D6\u65E5\u5386\u6570\u636E\u5E76\u8FD4\u56DE
-            $calendar = $this->service->getDate();
-
-            return $this->response()->success(compact('calendar'), '\u4FDD\u5B58\u6210\u529F');
-        }
-
-        return $this->response()->fail($this->service->getError() ?? '\u4FDD\u5B58\u5931\u8D25');
-    }
-
-    /**
-     * \u8C03\u6574\u65E5\u5386\u7EC4\u4EF6\u6837\u5F0F
-     *
-     * @return array
-     */
-    private function style()
-    {
-        return [
-            '.amis-scope .cxd-ScheduleCalendar .rdt .rdtPicker td.rdtActive' => ['border-top' => '2px solid #2468F2',],
-            '.amis-scope .rdtHeader'                                         => ['margin-top' => 0,],
-            '.amis-scope .cxd-ScheduleCalendar-large .rdtDay'                => ['height' => '7.7rem',],
-            '.amis-scope .rdtPicker td, .amis-scope .rdtPicker th'           => ['line-height' => '1.25rem',],
-        ];
-    }
-
-    /**
-     * \u751F\u6210\u6570\u636E
-     *
-     * @return \\Illuminate\\Http\\JsonResponse|\\Illuminate\\Http\\Resources\\Json\\JsonResource
-     */
-    public function generate()
-    {
-        $date = explode(',', request()->date_range);
-
-        $start = Carbon::createFromTimestamp($date[0])->toDateString();
-        $end   = Carbon::createFromTimestamp($date[1])->toDateString();
-
-        $logs = $this->service->query()->whereBetween('date', [$start, $end])->get()->groupBy('project_id');
-
-        $projects = ProjectService::make()->query()->pluck('name', 'id');
-
-        $data = '';
-        foreach ($logs as $key => $log) {
-            $data .= "\\n" . $projects[$key];
-            foreach ($log as $item) {
-                $data .= "\\n\\t" . $item['content'];
-            }
-        }
-
-        return $this->response()->success(['content' => trim($data)]);
-    }
-}
-
-`,paraId:1}],K={},Q={title:"Service",toc:"menu",filename:"docs/docs/crud-service.md",group:"CRUD"},ae=[{id:"\u4EE5\u89D2\u8272service\u4E3E\u4F8B",depth:4,title:"\u4EE5\u89D2\u8272Service\u4E3E\u4F8B"}],Ee=[{value:`<?php
-
-namespace Slowlyo\\SlowAdmin\\Services;
-
-use ...;
-
-class AdminRoleService extends AdminService
-{
-	// \u529F\u80FD\u5BF9\u5E94\u7684 Model
-    protected string $modelName = AdminRole::class;
-	
-	// \u51E0\u4E4E\u6240\u6709\u7684\u6570\u636E\u5E93\u64CD\u4F5C\u90FD\u5728 Service \u4E2D
-	// \u4E0D\u6EE1\u8DB3\u7684\u5730\u65B9, \u5728\u6B64\u5904\u91CD\u5199\u5373\u53EF
+`,paraId:1}],K={},Q={title:"Service",toc:"menu",filename:"docs/docs/crud-service.md",group:"CRUD"},ae=[{id:"\u4EE5\u89D2\u8272service\u4E3E\u4F8B",depth:4,title:"\u4EE5\u89D2\u8272Service\u4E3E\u4F8B"}],Ee=[{value:`<?php\r
+\r
+namespace Slowlyo\\SlowAdmin\\Services;\r
+\r
+use ...;\r
+\r
+class AdminRoleService extends AdminService\r
+{\r
+	// \u529F\u80FD\u5BF9\u5E94\u7684 Model\r
+    protected string $modelName = AdminRole::class;\r
+	\r
+	// \u51E0\u4E4E\u6240\u6709\u7684\u6570\u636E\u5E93\u64CD\u4F5C\u90FD\u5728 Service \u4E2D\r
+	// \u4E0D\u6EE1\u8DB3\u7684\u5730\u65B9, \u5728\u6B64\u5904\u91CD\u5199\u5373\u53EF\r
 }
 `,paraId:0}],re={},X={title:"\u66F4\u65B0\u8BB0\u5F55",toc:"menu",filename:"docs/change-log/index.md",description:"\u4F7F\u7528 Ant Design Pro \u91CD\u6784\u524D\u7AEF"},V=[{id:"v130",depth:2,title:"\u{1F4CC}v1.3.0"},{id:"\u66F4\u65B0\u540E\u9700\u8981\u91CD\u65B0\u53D1\u5E03\u524D\u7AEF\u8D44\u6E90",depth:4,title:"\u66F4\u65B0\u540E\u9700\u8981\u91CD\u65B0\u53D1\u5E03\u524D\u7AEF\u8D44\u6E90"},{id:"v120",depth:2,title:"\u{1F4CC}v1.2.0"},{id:"v100",depth:2,title:"\u{1F4CC}v1.0.0"},{id:"v085-beta",depth:2,title:"\u{1F4CC}v0.8.5-beta"},{id:"v070-beta",depth:2,title:"\u{1F4CC}v0.7.0-beta"},{id:"v060-beta",depth:2,title:"\u{1F4CC}v0.6.0-beta"},{id:"\u767B\u5F55\u589E\u52A0\u56FE\u5F62\u9A8C\u8BC1\u7801",depth:5,title:"\u767B\u5F55\u589E\u52A0\u56FE\u5F62\u9A8C\u8BC1\u7801"},{id:"v050-beta",depth:2,title:"\u{1F4CC}v0.5.0-beta"},{id:"\u90E8\u5206\u7EC4\u4EF6\u6837\u5F0F\u4F18\u5316",depth:5,title:"\u90E8\u5206\u7EC4\u4EF6\u6837\u5F0F\u4F18\u5316"},{id:"v040-beta",depth:2,title:"\u{1F4CC}v0.4.0-beta"},{id:"\u6574\u4F53ui\u5347\u7EA7",depth:5,title:"\u6574\u4F53UI\u5347\u7EA7"},{id:"v030-beta",depth:2,title:"\u{1F4CC}v0.3.0-beta"},{id:"amis-\u66F4\u65B0\u81F3-220",depth:4,title:"amis \u66F4\u65B0\u81F3 2.2.0"},{id:"\u589E\u52A0\u4E3B\u9898\u5207\u6362\u529F\u80FD",depth:4,title:"\u589E\u52A0\u4E3B\u9898\u5207\u6362\u529F\u80FD"},{id:"v020-beta",depth:2,title:"\u{1F4CC}v0.2.0-beta"},{id:"\u8865\u5145\u90E8\u5206\u7EC4\u4EF6",depth:4,title:"\u8865\u5145\u90E8\u5206\u7EC4\u4EF6"},{id:"\u90E8\u5206\u7EC4\u4EF6\u65B9\u6CD5\u6DFB\u52A0\u9ED8\u8BA4\u503C",depth:4,title:"\u90E8\u5206\u7EC4\u4EF6\u65B9\u6CD5\u6DFB\u52A0\u9ED8\u8BA4\u503C"}],ue=[{value:" 2022\u5E7411\u670818\u65E510:22:09",paraId:0},{value:"amis \u66F4\u65B0\u81F32.4.0",paraId:0},{value:"\u83B7\u53D6\u5217\u8868\u4EE3\u7801\u4F18\u5316",paraId:0},{value:"\u524D\u7AEF\u589E\u52A0\u914D\u7F6E\u9879, \u589E\u52A0\u9875\u9762\u8FC7\u6E21\u52A8\u753B",paraId:0},{value:`php artisan admin:pulish --assets --force
 `,paraId:0},{value:"2022-11-12 17:57",paraId:0},{value:"\u4F7F\u7528 Ant Design Pro \u91CD\u6784\u524D\u7AEF",paraId:1,tocIndex:2},{value:"2022\u5E7410\u670820\u65E522:12:20",paraId:0},{value:"\u589E\u52A0: \u591A\u8BED\u8A00",paraId:0},{value:"\u589E\u52A0: \u4EE3\u7801\u751F\u6210\u5668\u53EF\u9009\u62E9\u5DF2\u6709\u7684\u6570\u636E\u8868\u751F\u6210\u4EE3\u7801",paraId:0},{value:"2022\u5E749\u670819\u65E523:29:43",paraId:0},{value:"\u589E\u52A0: \u6743\u9650 - \u81EA\u52A8\u751F\u6210\u6743\u9650\u529F\u80FD",paraId:0},{value:"\u589E\u52A0: \u4E2A\u4EBA\u8BBE\u7F6E-\u66F4\u6539\u5BC6\u7801\u9700\u8981\u8F93\u5165\u539F\u5BC6\u7801",paraId:0},{value:"2022\u5E749\u670819\u65E523:29:43",paraId:0},{value:"\u589E\u52A0\u5F39\u7A97\u64CD\u4F5C",paraId:0},{value:"\u8C03\u6574\u8FD4\u56DE\u5217\u8868\u6309\u94AE",paraId:0},{value:"\u7B5B\u9009\u8868\u5355\u91CD\u7F6E\u6309\u94AE\u8C03\u6574",paraId:0},{value:"2022\u5E749\u670815\u65E514:55:11",paraId:0},{value:"\u53EF\u5728 ",paraId:2,tocIndex:7},{value:"config/admin.php",paraId:2,tocIndex:7},{value:" \u4E2D\u5F00\u542F/\u5173\u95ED ",paraId:2,tocIndex:7},{value:"admin.auth.captcha",paraId:2,tocIndex:7},{value:" (true/false)",paraId:2,tocIndex:7},{value:"2022\u5E749\u67087\u65E511:43:17",paraId:0},{value:"\u9700\u8981\u66F4\u65B0\u9759\u6001\u8D44\u6E90, \u6267\u884C\u4EE5\u4E0B\u547D\u4EE4",paraId:3,tocIndex:9},{value:`php artisan vendor:publish --provider="Slowlyo\\SlowAdmin\\SlowAdminServiceProvider" --force
@@ -410,50 +410,50 @@ class AdminRoleService extends AdminService
 `,paraId:2},{value:`npm run start
 `,paraId:2},{value:`npm run build
 `,paraId:2},{value:"\u6253\u5305\u540E\u5C06\u6253\u5305\u6587\u4EF6 (\u9ED8\u8BA4\u5728 ",paraId:4,tocIndex:4},{value:"dist",paraId:4,tocIndex:4},{value:" \u76EE\u5F55\u4E0B), \u590D\u5236/\u79FB\u52A8\u5230 ",paraId:4,tocIndex:4},{value:"public/admin",paraId:4,tocIndex:4},{value:" \u4E0B\u5373\u53EF",paraId:4,tocIndex:4}],G={},ie={title:"\u6253\u5305\u6CE8\u610F\u4E8B\u9879",toc:"menu",filename:"docs/docs/views-build.md",group:"\u524D\u7AEF",order:3},ke=[{id:"\u76EE\u5F55",depth:2,title:"\u76EE\u5F55"}],Ze=[{value:"\u4F60\u53EF\u4EE5\u5728 public/SlowAdminConfig.js \u4E2D\u914D\u7F6E\u90E8\u5206\u4FE1\u606F",paraId:0},{value:"config/config.ts \u4E2D\u5728 12 \u884C, \u9700\u8981\u914D\u7F6E\u6253\u5305\u540E\u653E\u7F6E\u7684\u76EE\u5F55, \u9ED8\u8BA4\u4E3A /admin/",paraId:0}],Te={},Ae={title:"\u8FD0\u884C\u6CE8\u610F\u4E8B\u9879",toc:"menu",filename:"docs/docs/views-run.md",group:"\u524D\u7AEF",order:2},Xe=[{id:"\u4EE3\u7406",depth:2,title:"\u4EE3\u7406"}],ce=[{value:"\u8DE8\u57DF / 404 : \u9700\u8981\u5728 config/proxy.ts \u4E2D\u914D\u7F6E\u4EE3\u7406, \u9ED8\u8BA4\u8DEF\u7531\u524D\u7F00\u4E3A /admin-api/",paraId:0}],de={},me={title:"\u57FA\u7840\u4F7F\u7528",toc:"menu",filename:"docs/docs/base-use.md",group:{title:"\u7EC4\u4EF6",order:2},order:1,description:`\u5728\u4F60\u4E86\u89E3\u4E86 amis \u4E4B\u540E, \u4F60\u4F1A\u53D1\u73B0\u539F\u6765\u7528\u540E\u7AEF\u4EE3\u7801\u7EC4\u9875\u9762\u8FD9\u4E48\u7B80\u5355
-\u4F60\u53EF\u4EE5\u5728 slow admin \u4E2D\u627E\u5230\u51E0\u4E4E\u6240\u6709\u7684 amis \u7EC4\u4EF6(\u7EC4\u4EF6\u540D\u4E0E\u7C7B\u540D\u4E00\u81F4)`},wt=[{id:"\u6211\u60F3\u521B\u5EFA\u4E2A\u9875\u9762",depth:4,title:"\u6211\u60F3\u521B\u5EFA\u4E2A\u9875\u9762~"},{id:"\u6211\u60F3\u7ED9\u9875\u9762\u8BBE\u4E2A\u6807\u9898",depth:4,title:"\u6211\u60F3\u7ED9\u9875\u9762\u8BBE\u4E2A\u6807\u9898~"},{id:"\u6211\u60F3\u5728\u9875\u9762\u4E0A\u653E\u4E2A\u6309\u94AE",depth:4,title:"\u6211\u60F3\u5728\u9875\u9762\u4E0A\u653E\u4E2A\u6309\u94AE~"},{id:"\u6309\u94AE\u524D\u9762\u518D\u653E\u4E2A\u8F93\u5165\u6846\u5462",depth:4,title:"\u6309\u94AE\u524D\u9762\u518D\u653E\u4E2A\u8F93\u5165\u6846\u5462?"},{id:"\u5982\u679C\u4F60\u6CA1\u627E\u5230\u4F60\u60F3\u8981\u7684\u7EC4\u4EF6",depth:4,title:"\u5982\u679C\u4F60\u6CA1\u627E\u5230\u4F60\u60F3\u8981\u7684\u7EC4\u4EF6"}],Vt=[{value:`$page = \\Slowlyo\\SlowAdmin\\Renderers\\Page::make();
-
+\u4F60\u53EF\u4EE5\u5728 slow admin \u4E2D\u627E\u5230\u51E0\u4E4E\u6240\u6709\u7684 amis \u7EC4\u4EF6(\u7EC4\u4EF6\u540D\u4E0E\u7C7B\u540D\u4E00\u81F4)`},wt=[{id:"\u6211\u60F3\u521B\u5EFA\u4E2A\u9875\u9762",depth:4,title:"\u6211\u60F3\u521B\u5EFA\u4E2A\u9875\u9762~"},{id:"\u6211\u60F3\u7ED9\u9875\u9762\u8BBE\u4E2A\u6807\u9898",depth:4,title:"\u6211\u60F3\u7ED9\u9875\u9762\u8BBE\u4E2A\u6807\u9898~"},{id:"\u6211\u60F3\u5728\u9875\u9762\u4E0A\u653E\u4E2A\u6309\u94AE",depth:4,title:"\u6211\u60F3\u5728\u9875\u9762\u4E0A\u653E\u4E2A\u6309\u94AE~"},{id:"\u6309\u94AE\u524D\u9762\u518D\u653E\u4E2A\u8F93\u5165\u6846\u5462",depth:4,title:"\u6309\u94AE\u524D\u9762\u518D\u653E\u4E2A\u8F93\u5165\u6846\u5462?"},{id:"\u5982\u679C\u4F60\u6CA1\u627E\u5230\u4F60\u60F3\u8981\u7684\u7EC4\u4EF6",depth:4,title:"\u5982\u679C\u4F60\u6CA1\u627E\u5230\u4F60\u60F3\u8981\u7684\u7EC4\u4EF6"}],Vt=[{value:`$page = \\Slowlyo\\SlowAdmin\\Renderers\\Page::make();\r
+\r
 return $this->response()->success($page);
-`,paraId:0},{value:`// ...
-$page->title('\u6211\u662F\u6807\u9898');
+`,paraId:0},{value:`// ...\r
+$page->title('\u6211\u662F\u6807\u9898');\r
 // ...
-`,paraId:0},{value:`// ...
-$page->body(
-    \\Slowlyo\\SlowAdmin\\Renderers\\Button::make()->label('\u6211\u662F\u6309\u94AE')->level('primary');
-);
+`,paraId:0},{value:`// ...\r
+$page->body(\r
+    \\Slowlyo\\SlowAdmin\\Renderers\\Button::make()->label('\u6211\u662F\u6309\u94AE')->level('primary');\r
+);\r
 // ...
-`,paraId:0},{value:`// ...
-$page->body([
-	Slowlyo\\SlowAdmin\\Renderers\\Form\\InputText::make()->name('username')->label('\u59D3\u540D'),
-	// button
+`,paraId:0},{value:`// ...\r
+$page->body([\r
+	Slowlyo\\SlowAdmin\\Renderers\\Form\\InputText::make()->name('username')->label('\u59D3\u540D'),\r
+	// button\r
 ]);
 `,paraId:0},{value:"\u5728\u4F60\u4E86\u89E3\u4E86 ",paraId:1,tocIndex:3},{value:"amis",paraId:1,tocIndex:3},{value:" \u4E4B\u540E, \u4F60\u4F1A\u53D1\u73B0\u539F\u6765\u7528\u540E\u7AEF\u4EE3\u7801\u7EC4\u9875\u9762\u8FD9\u4E48\u7B80\u5355",paraId:1,tocIndex:3},{value:`
-\u4F60\u53EF\u4EE5\u5728 `,paraId:1,tocIndex:3},{value:"slow admin",paraId:1,tocIndex:3},{value:" \u4E2D\u627E\u5230\u51E0\u4E4E\u6240\u6709\u7684 ",paraId:1,tocIndex:3},{value:"amis",paraId:1,tocIndex:3},{value:" \u7EC4\u4EF6(\u7EC4\u4EF6\u540D\u4E0E\u7C7B\u540D\u4E00\u81F4)",paraId:1,tocIndex:3},{value:`\\Slowlyo\\SlowAdmin\\Renderers\\Component::make()->setType('page')->title('\u6211\u662F\u6807\u9898');
-// \u6216\u8005
-amis('page')->title('\u6211\u662F\u6807\u9898');
-
-// \u7B49\u6548\u4E8E
-\\Slowlyo\\SlowAdmin\\Renderers\\Page::make()->title('\u6211\u662F\u6807\u9898');
-
-// \u6216\u8005\u4F60\u53EF\u4EE5\u76F4\u63A5\u5199\u4E2A\u6570\u7EC4
-// [
-// 	'type'=>'page',
-// 	'title'=>'\u6211\u662F\u6807\u9898',
-// 	'body'=>'content'
+\u4F60\u53EF\u4EE5\u5728 `,paraId:1,tocIndex:3},{value:"slow admin",paraId:1,tocIndex:3},{value:" \u4E2D\u627E\u5230\u51E0\u4E4E\u6240\u6709\u7684 ",paraId:1,tocIndex:3},{value:"amis",paraId:1,tocIndex:3},{value:" \u7EC4\u4EF6(\u7EC4\u4EF6\u540D\u4E0E\u7C7B\u540D\u4E00\u81F4)",paraId:1,tocIndex:3},{value:`\\Slowlyo\\SlowAdmin\\Renderers\\Component::make()->setType('page')->title('\u6211\u662F\u6807\u9898');\r
+// \u6216\u8005\r
+amis('page')->title('\u6211\u662F\u6807\u9898');\r
+\r
+// \u7B49\u6548\u4E8E\r
+\\Slowlyo\\SlowAdmin\\Renderers\\Page::make()->title('\u6211\u662F\u6807\u9898');\r
+\r
+// \u6216\u8005\u4F60\u53EF\u4EE5\u76F4\u63A5\u5199\u4E2A\u6570\u7EC4\r
+// [\r
+// 	'type'=>'page',\r
+// 	'title'=>'\u6211\u662F\u6807\u9898',\r
+// 	'body'=>'content'\r
 // ]
 `,paraId:0},{value:"\u4F60\u53EF\u4EE5\u653E\u5FC3\u7684\u5728\u6BCF\u4E00\u4E2A\u7EE7\u627F\u4E86 ",paraId:2,tocIndex:4},{value:"Slowlyo\\SlowAdmin\\Renderers",paraId:2,tocIndex:4},{value:" \u7C7B\u7684\u7EC4\u4EF6\u7C7B\u540E\u9762\u8C03\u7528\u65B9\u6CD5, \u65B9\u6CD5\u540D\u5BF9\u5E94\u4E86 ",paraId:2,tocIndex:4},{value:"amis",paraId:2,tocIndex:4},{value:" \u7EC4\u5EFA\u7684\u5C5E\u6027\u540D, \u53C2\u6570\u5BF9\u5E94\u4E86 ",paraId:2,tocIndex:4},{value:"amis",paraId:2,tocIndex:4},{value:" \u5C5E\u6027\u7684\u503C",paraId:2,tocIndex:4},{value:"\u5728\u7EC4\u4EF6\u7684\u57FA\u7C7B\u4E2D\u4F7F\u7528\u4E86 ",paraId:3,tocIndex:4},{value:"__call()",paraId:3,tocIndex:4},{value:" \u65B9\u6CD5\u6765\u5B9E\u73B0\u81EA\u52A8\u6DFB\u52A0\u5C5E\u6027",paraId:3,tocIndex:4},{value:`
 \u5373\u4F7F\u65B9\u6CD5\u4E0D\u5B58\u5728, \u6216\u8005\u8BE5\u7EC4\u4EF6\u6CA1\u6709\u8FD9\u4E2A\u5C5E\u6027, \u4F60\u7684\u4EE3\u7801\u4E5F\u4E0D\u4F1A\u62A5\u9519, \u53EA\u662F\u6548\u679C\u51FA\u4E0D\u6765\u7F62\u4E86 (doge)`,paraId:3,tocIndex:4}],Tt={},Wt={title:"\u81EA\u5B9A\u4E49\u4E1A\u52A1\u903B\u8F91",toc:"menu",filename:"docs/docs/crud-diy.md",group:{title:"CRUD",order:3},description:"\u5728 Slowlyo\\SlowAdmin\\Controllers\\AdminController \u4E2D\u5DF2\u7ECF\u5B9E\u73B0\u4E86\u4EE5\u4E0B\u65B9\u6CD5:"},Yt=[],nr=[{value:"\u5728 ",paraId:0},{value:"Slowlyo\\SlowAdmin\\Controllers\\AdminController",paraId:0},{value:" \u4E2D\u5DF2\u7ECF\u5B9E\u73B0\u4E86\u4EE5\u4E0B\u65B9\u6CD5:",paraId:0},{value:"\u65B9\u6CD5",paraId:1},{value:"\u529F\u80FD",paraId:1},{value:"index()",paraId:1},{value:"\u5217\u8868\u9875\u53CA\u83B7\u53D6\u5217\u8868\u6570\u636E",paraId:1},{value:"create()",paraId:1},{value:"\u65B0\u589E\u9875\u9762",paraId:1},{value:"store()",paraId:1},{value:"\u65B0\u589E\u6570\u636E\u7684\u4FDD\u5B58\u903B\u8F91",paraId:1},{value:"show()",paraId:1},{value:"\u8BE6\u60C5\u9875\u9762\u53CA\u83B7\u53D6\u8BE6\u60C5\u6570\u636E",paraId:1},{value:"edit()",paraId:1},{value:"\u7F16\u8F91\u9875\u9762",paraId:1},{value:"update()",paraId:1},{value:"\u7F16\u8F91\u6570\u636E\u7684\u4FDD\u5B58\u903B\u8F91",paraId:1},{value:"destroy()",paraId:1},{value:"\u5220\u9664\u6570\u636E\u7684\u903B\u8F91",paraId:1},{value:"\u5C31\u662Fresource\u8DEF\u7531\u5BF9\u5E94\u7684\u90A3\u51E0\u4E2A\u65B9\u6CD5, \u5982\u679C\u4F60\u8FD8\u4E0D\u77E5\u9053\u8BF7\u770B ",paraId:2},{value:"\u6587\u6863",paraId:2},{value:"\u5F53\u9ED8\u8BA4\u7684\u65B9\u6CD5\u4E0D\u6EE1\u8DB3\u4F60\u7684\u9700\u6C42\u65F6, \u53EF\u4EE5\u5728\u4F60\u7684controller\u91CD\u5199\u8FD9\u51E0\u4E2A\u65B9\u6CD5",paraId:3}],Pe={},Ke={title:"\u5B89\u88C5",toc:"menu",filename:"docs/docs/install.md",group:{title:"\u5165\u95E8",order:1},nav:{title:"\u5FEB\u901F\u5F00\u59CB",order:1},description:`\u9996\u5148\u9700\u8981\u5B89\u88C5laravel\u6846\u67B6\uFF0C\u5982\u5DF2\u5B89\u88C5\u53EF\u4EE5\u8DF3\u8FC7\u6B64\u6B65\u9AA4\u3002\u5982\u679C\u60A8\u662F\u7B2C\u4E00\u6B21\u4F7F\u7528laravel
 \uFF0C\u8BF7\u52A1\u5FC5\u5148\u9605\u8BFB\u6587\u6863 https://learnku.com/docs/laravel/9.x/installation/12200 \uFF01`},Ve=[{id:"\u5B89\u88C5",depth:1,title:"\u5B89\u88C5"},{id:"\u73AF\u5883",depth:2,title:"\u73AF\u5883"},{id:"\u5F00\u59CB\u5B89\u88C5",depth:2,title:"\u5F00\u59CB\u5B89\u88C5"}],Re=[{value:"PHP >= ",paraId:0},{value:"8.0",paraId:0},{value:"Laravel ",paraId:0},{value:"9.*",paraId:0},{value:"\u9996\u5148\u9700\u8981\u5B89\u88C5",paraId:1,tocIndex:2},{value:"laravel",paraId:1,tocIndex:2},{value:"\u6846\u67B6\uFF0C\u5982\u5DF2\u5B89\u88C5\u53EF\u4EE5\u8DF3\u8FC7\u6B64\u6B65\u9AA4\u3002\u5982\u679C\u60A8\u662F\u7B2C\u4E00\u6B21\u4F7F\u7528",paraId:1,tocIndex:2},{value:"laravel",paraId:1,tocIndex:2},{value:`
-\uFF0C\u8BF7\u52A1\u5FC5\u5148\u9605\u8BFB\u6587\u6863 `,paraId:1,tocIndex:2},{value:"https://learnku.com/docs/laravel/9.x/installation/12200",paraId:1,tocIndex:2},{value:" \uFF01",paraId:1,tocIndex:2},{value:`composer create-project --prefer-dist laravel/laravel \u9879\u76EE\u540D\u79F0 9.*
-# \u6216
+\uFF0C\u8BF7\u52A1\u5FC5\u5148\u9605\u8BFB\u6587\u6863 `,paraId:1,tocIndex:2},{value:"https://learnku.com/docs/laravel/9.x/installation/12200",paraId:1,tocIndex:2},{value:" \uFF01",paraId:1,tocIndex:2},{value:`composer create-project --prefer-dist laravel/laravel \u9879\u76EE\u540D\u79F0 9.*\r
+# \u6216\r
 composer create-project --prefer-dist laravel/laravel \u9879\u76EE\u540D\u79F0
-`,paraId:0},{value:"\u5B89\u88C5\u5B8C",paraId:2,tocIndex:2},{value:"laravel",paraId:2,tocIndex:2},{value:"\u4E4B\u540E\u9700\u8981\u4FEE\u6539",paraId:2,tocIndex:2},{value:".env",paraId:2,tocIndex:2},{value:"\u6587\u4EF6\uFF0C\u8BBE\u7F6E\u6570\u636E\u5E93\u8FDE\u63A5\u8BBE\u7F6E\u6B63\u786E",paraId:2,tocIndex:2},{value:`DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=slow_admin
-DB_USERNAME=root
+`,paraId:0},{value:"\u5B89\u88C5\u5B8C",paraId:2,tocIndex:2},{value:"laravel",paraId:2,tocIndex:2},{value:"\u4E4B\u540E\u9700\u8981\u4FEE\u6539",paraId:2,tocIndex:2},{value:".env",paraId:2,tocIndex:2},{value:"\u6587\u4EF6\uFF0C\u8BBE\u7F6E\u6570\u636E\u5E93\u8FDE\u63A5\u8BBE\u7F6E\u6B63\u786E",paraId:2,tocIndex:2},{value:`DB_CONNECTION=mysql\r
+DB_HOST=127.0.0.1\r
+DB_PORT=3306\r
+DB_DATABASE=slow_admin\r
+DB_USERNAME=root\r
 DB_PASSWORD=
-`,paraId:0},{value:"\u5B89\u88C5",paraId:3,tocIndex:2},{value:"slow_admin",paraId:3,tocIndex:2},{value:`cd {\u9879\u76EE\u540D\u79F0}
-
+`,paraId:0},{value:"\u5B89\u88C5",paraId:3,tocIndex:2},{value:"slow_admin",paraId:3,tocIndex:2},{value:`cd {\u9879\u76EE\u540D\u79F0}\r
+\r
 composer require slowlyo/slow-admin
 `,paraId:0},{value:"\u7136\u540E\u8FD0\u884C\u4E0B\u9762\u7684\u547D\u4EE4\u6765\u53D1\u5E03\u8D44\u6E90\uFF1A",paraId:4,tocIndex:2},{value:`php artisan admin:publish
 `,paraId:0},{value:"\u5728\u8BE5\u547D\u4EE4\u4F1A\u751F\u6210\u914D\u7F6E\u6587\u4EF6",paraId:5,tocIndex:2},{value:"config/admin.php",paraId:5,tocIndex:2},{value:"\uFF0C\u53EF\u4EE5\u5728\u91CC\u9762\u4FEE\u6539\u5B89\u88C5\u7684\u5730\u5740\u3001\u6570\u636E\u5E93\u8FDE\u63A5\u3001\u4EE5\u53CA\u8868\u540D\uFF0C\u5EFA\u8BAE\u90FD\u662F\u7528\u9ED8\u8BA4\u914D\u7F6E\u4E0D\u4FEE\u6539\u3002",paraId:5,tocIndex:2},{value:"\u7136\u540E\u8FD0\u884C\u4E0B\u9762\u7684\u547D\u4EE4\u5B8C\u6210\u5B89\u88C5\uFF1A",paraId:6,tocIndex:2},{value:"{tip} \u6267\u884C\u8FD9\u4E00\u6B65\u547D\u4EE4\u53EF\u80FD\u4F1A\u62A5\u4EE5\u4E0B\u9519\u8BEF",paraId:7,tocIndex:2},{value:"Specified key was too long ... 767 bytes",paraId:7,tocIndex:2},{value:`
@@ -463,11 +463,11 @@ composer require slowlyo/slow-admin
 `,paraId:0},{value:"\u542F\u52A8\u670D\u52A1\u540E\uFF0C\u5728\u6D4F\u89C8\u5668\u6253\u5F00 ",paraId:8,tocIndex:2},{value:"http://localhost/admin",paraId:8,tocIndex:2},{value:"\uFF0C\u4F7F\u7528\u7528\u6237\u540D ",paraId:8,tocIndex:2},{value:"admin",paraId:8,tocIndex:2},{value:" \u548C\u5BC6\u7801 ",paraId:8,tocIndex:2},{value:"admin",paraId:8,tocIndex:2},{value:"\u767B\u9646\u3002",paraId:8,tocIndex:2}],gt={},be={title:"Slow Admin",toc:"menu",filename:"docs/docs/index.md",group:{title:"\u4ECB\u7ECD",order:-1},description:`\u57FA\u4E8E Laravel \u548C amis \u5F00\u53D1\u7684\u540E\u53F0\u6846\u67B6\u3002
 \u5B8C\u6574\u652F\u6301 amis \u7EC4\u4EF6120\u4F59\u4E2A`},H=[{id:"slow-admin",depth:1,title:"Slow Admin"},{id:"laravel",depth:4,title:"Laravel"},{id:"amis",depth:4,title:"amis"},{id:"\u6587\u6863",depth:3,title:"\u6587\u6863"},{id:"\u529F\u80FD",depth:3,title:"\u529F\u80FD"},{id:"\u73AF\u5883",depth:3,title:"\u73AF\u5883"},{id:"\u622A\u56FE",depth:3,title:"\u622A\u56FE"},{id:"\u4EA4\u6D41",depth:3,title:"\u4EA4\u6D41"},{id:"qq\u7FA4",depth:4,title:"QQ\u7FA4"}],oe=[{value:"\u57FA\u4E8E ",paraId:0,tocIndex:0},{value:"Laravel",paraId:0,tocIndex:0},{value:" \u548C ",paraId:0,tocIndex:0},{value:"amis",paraId:0,tocIndex:0},{value:" \u5F00\u53D1\u7684\u540E\u53F0\u6846\u67B6\u3002",paraId:0,tocIndex:0},{value:`
 \u5B8C\u6574\u652F\u6301 `,paraId:0,tocIndex:0},{value:"amis",paraId:0,tocIndex:0},{value:" \u7EC4\u4EF6120\u4F59\u4E2A",paraId:0,tocIndex:0},{value:"Laravel \u662F\u4E00\u4E2A\u5168\u6808Web\u5E94\u7528\u7A0B\u5E8F\u6846\u67B6\uFF0C\u5177\u6709\u5BCC\u6709\u8868\u73B0\u529B\u3001\u4F18\u96C5\u7684\u8BED\u6CD5\u3002",paraId:1,tocIndex:1},{value:"amis \u662F\u4E00\u4E2A\u4F4E\u4EE3\u7801\u524D\u7AEF\u6846\u67B6\uFF0C\u5B83\u4F7F\u7528 JSON \u914D\u7F6E\u6765\u751F\u6210\u9875\u9762\uFF0C\u53EF\u4EE5\u51CF\u5C11\u9875\u9762\u5F00\u53D1\u5DE5\u4F5C\u91CF\uFF0C\u6781\u5927\u63D0\u5347\u6548\u7387\u3002",paraId:2,tocIndex:2},{value:"Laravel 9 \u4E2D\u6587\u6587\u6863",paraId:3},{value:"amis \u4E2D\u6587\u6587\u6863",paraId:3},{value:"Gitee \u4ED3\u5E93",paraId:3},{value:`\u57FA\u7840\u540E\u53F0\u529F\u80FD
-`,paraId:3},{value:"\u540E\u53F0\u7528\u6237\u7BA1\u7406",paraId:3},{value:"\u89D2\u8272\u7BA1\u7406",paraId:3},{value:"\u6743\u9650\u7BA1\u7406",paraId:3},{value:"\u83DC\u5355\u7BA1\u7406",paraId:3},{value:"\u4EE3\u7801\u751F\u6210\u5668",paraId:3},{value:"\u521B\u5EFA\u6570\u636E\u8FC1\u79FB\u6587\u4EF6",paraId:3},{value:"\u521B\u5EFA\u6570\u636E\u8868",paraId:3},{value:"\u521B\u5EFA\u6A21\u578B",paraId:3},{value:"\u521B\u5EFA\u57FA\u7840\u63A7\u5236\u5668\u4EE3\u7801",paraId:3},{value:"\u521B\u5EFAService",paraId:3},{value:"amis",paraId:3},{value:" \u5168\u7EC4\u4EF6\u5C01\u88C5",paraId:3},{value:"PHP >= 8.0",paraId:3},{value:"Laravel 9",paraId:3},{value:"754544686",paraId:4,tocIndex:8}],le={},ve={title:"\u76EE\u5F55\u7ED3\u6784",toc:"menu",filename:"docs/docs/dir.md",group:"\u5165\u95E8",order:1,description:"\u524D\u7AEF\u6253\u5305\u6587\u4EF6\u9ED8\u8BA4\u4F4D\u7F6E\u4E3A public/admin/"},Qe=[{id:"\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55",depth:2,title:"\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55"},{id:"\u914D\u7F6E\u6587\u4EF6",depth:2,title:"\u914D\u7F6E\u6587\u4EF6"},{id:"\u9759\u6001\u6587\u4EF6",depth:2,title:"\u9759\u6001\u6587\u4EF6"}],ze=[{value:`app/Admin
-\u251C\u2500\u2500 Controllers
-\u2502   \u251C\u2500\u2500 AuthController.php
-\u2502   \u2514\u2500\u2500 HomeController.php
-\u251C\u2500\u2500 bootstrap.php
+`,paraId:3},{value:"\u540E\u53F0\u7528\u6237\u7BA1\u7406",paraId:3},{value:"\u89D2\u8272\u7BA1\u7406",paraId:3},{value:"\u6743\u9650\u7BA1\u7406",paraId:3},{value:"\u83DC\u5355\u7BA1\u7406",paraId:3},{value:"\u4EE3\u7801\u751F\u6210\u5668",paraId:3},{value:"\u521B\u5EFA\u6570\u636E\u8FC1\u79FB\u6587\u4EF6",paraId:3},{value:"\u521B\u5EFA\u6570\u636E\u8868",paraId:3},{value:"\u521B\u5EFA\u6A21\u578B",paraId:3},{value:"\u521B\u5EFA\u57FA\u7840\u63A7\u5236\u5668\u4EE3\u7801",paraId:3},{value:"\u521B\u5EFAService",paraId:3},{value:"amis",paraId:3},{value:" \u5168\u7EC4\u4EF6\u5C01\u88C5",paraId:3},{value:"PHP >= 8.0",paraId:3},{value:"Laravel 9",paraId:3},{value:"754544686",paraId:4,tocIndex:8}],le={},ve={title:"\u76EE\u5F55\u7ED3\u6784",toc:"menu",filename:"docs/docs/dir.md",group:"\u5165\u95E8",order:1,description:"\u524D\u7AEF\u6253\u5305\u6587\u4EF6\u9ED8\u8BA4\u4F4D\u7F6E\u4E3A public/admin/"},Qe=[{id:"\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55",depth:2,title:"\u5B89\u88C5\u5B8C\u6210\u540E\u751F\u6210\u7684\u76EE\u5F55"},{id:"\u914D\u7F6E\u6587\u4EF6",depth:2,title:"\u914D\u7F6E\u6587\u4EF6"},{id:"\u9759\u6001\u6587\u4EF6",depth:2,title:"\u9759\u6001\u6587\u4EF6"}],ze=[{value:`app/Admin\r
+\u251C\u2500\u2500 Controllers\r
+\u2502   \u251C\u2500\u2500 AuthController.php\r
+\u2502   \u2514\u2500\u2500 HomeController.php\r
+\u251C\u2500\u2500 bootstrap.php\r
 \u2514\u2500\u2500 routes.php
 `,paraId:0},{value:`config/admin.php
 `,paraId:0},{value:"\u524D\u7AEF\u6253\u5305\u6587\u4EF6\u9ED8\u8BA4\u4F4D\u7F6E\u4E3A ",paraId:1,tocIndex:2},{value:"public/admin/",paraId:1,tocIndex:2}],ye={},Ye={title:"Docs",toc:"menu",filename:"docs/index.md",hero:{title:"Slow Admin",description:"\u57FA\u4E8E Laravel\u3001 Ant Design Pro\u3001 amis\u5F00\u53D1\u7684\u540E\u53F0\u6846\u67B6\u3002",actions:[{text:"\u7ACB\u5373\u4E0A\u624B",link:"/"},{text:"Gitee",link:"https://gitee.com/slowlyo/slow-admin"}]},keywords:["laravel admin","slow admin","php\u540E\u53F0\u6846\u67B6","php admin","amis","antd","antd pro","php","react"],features:[{title:"\u8D85\u591A\u7EC4\u4EF6",emoji:"\u{1F388}",description:"\u5B8C\u6574\u652F\u6301 amis 120 \u4F59\u4E2A\u7EC4\u4EF6\uFF0C\u544A\u522B\u524D\u7AEF\u3002<br>PHP \u7C7B\u540D\u5BF9\u5E94amis\u7EC4\u4EF6\u540D,\u65B9\u6CD5\u540D\u5BF9\u5E94\u7EC4\u4EF6\u5C5E\u6027\u540D\uFF0C\u66F4\u6613\u7528\uFF0C\u5B66\u4E60\u6210\u672C\u66F4\u4F4E\u3002"},{title:"\u5F00\u7BB1\u5373\u7528",emoji:"\u{1F4E6}",description:"\u5DF2\u96C6\u6210\u767B\u5F55\u3001\u7528\u6237\u7BA1\u7406\u3001\u83DC\u5355\u7BA1\u7406\u3001\u89D2\u8272\u7BA1\u7406\u3001\u6743\u9650\u7BA1\u7406\uFF0C\u4EE3\u7801\u751F\u6210\u5668\uFF0C\u4EAB\u53D7\u4E24\u5206\u949F\u5F00\u53D1\u4E00\u4E2A\u529F\u80FD\u7684\u5FEB\u611F\u3002"},{title:"\u7075\u6D3B\u642D\u914D",emoji:"\u{1F3A8}",description:"\u540E\u7AEF\u4EE3\u7801\u5373\u53EF\u751F\u6210\u6240\u9700\u9875\u9762\uFF0C\u5988\u5988\u518D\u4E5F\u4E0D\u7528\u62C5\u5FC3\u6211\u4E0D\u4F1A\u5199 JS \u4E86\u3002"}]},tt=[],ct=[],vt=null,T={},q={"docs/docs/crud-dialog-action":{frontmatter:l,toc:p,texts:d,demos:s},"docs/docs/dev-code-generator":{frontmatter:b,toc:h,texts:E,demos:m},"docs/docs/crud-controller":{frontmatter:g,toc:w,texts:R,demos:x},"docs/docs/helper-function":{frontmatter:A,toc:N,texts:k,demos:O},"docs/docs/complex-page":{frontmatter:L,toc:_,texts:D,demos:F},"docs/docs/crud-service":{frontmatter:Q,toc:ae,texts:Ee,demos:K},"docs/change-log/index":{frontmatter:X,toc:V,texts:ue,demos:re},"docs/docs/views-begin":{frontmatter:U,toc:ee,texts:he,demos:W},"docs/docs/views-build":{frontmatter:ie,toc:ke,texts:Ze,demos:G},"docs/docs/views-run":{frontmatter:Ae,toc:Xe,texts:ce,demos:Te},"docs/docs/base-use":{frontmatter:me,toc:wt,texts:Vt,demos:de},"docs/docs/crud-diy":{frontmatter:Wt,toc:Yt,texts:nr,demos:Tt},"docs/docs/install":{frontmatter:Ke,toc:Ve,texts:Re,demos:Pe},"docs/docs/index":{frontmatter:be,toc:H,texts:oe,demos:gt},"docs/docs/dir":{frontmatter:ve,toc:Qe,texts:ze,demos:le},"docs/index":{frontmatter:Ye,toc:tt,texts:ct,demos:ye}},Ie=Object.entries(q).reduce(function(Le,Be){var Lt=i()(Be,2),Ct=Lt[0],Qt=Lt[1];return Object.values(Qt.demos).forEach(function(xr){xr.routeId=Ct}),Object.assign(Le,Qt.demos),delete Qt.demos,Le},{})},94726:function(f,y,t){"use strict";t.d(y,{Ac:function(){return me},ql:function(){return D.ql},rU:function(){return _},OL:function(){return w},Q$:function(){return wt},m8:function(){return Vt.m},fp:function(){return i.fp},Ov:function(){return F.Ov},TH:function(){return i.TH},pC:function(){return i.pC},UO:function(){return i.UO},Qt:function(){return K.Q},lr:function(){return O}});var o=t(62435),i=t(96974),n=t(55648);function s(){return s=Object.assign||function(H){for(var oe=1;oe<arguments.length;oe++){var le=arguments[oe];for(var ve in le)Object.prototype.hasOwnProperty.call(le,ve)&&(H[ve]=le[ve])}return H},s.apply(this,arguments)}function l(H,oe){if(H==null)return{};var le={},ve=Object.keys(H),Qe,ze;for(ze=0;ze<ve.length;ze++)Qe=ve[ze],!(oe.indexOf(Qe)>=0)&&(le[Qe]=H[Qe]);return le}const p=["onClick","reloadDocument","replace","state","target","to"],d=["aria-current","caseSensitive","className","end","style","to","children"];function m(H,oe){if(!H){typeof console!="undefined"&&console.warn(oe);try{throw new Error(oe)}catch(le){}}}function b(H){let{basename:oe,children:le,window:ve}=H,Qe=useRef();Qe.current==null&&(Qe.current=createBrowserHistory({window:ve}));let ze=Qe.current,[ye,Ye]=useState({action:ze.action,location:ze.location});return useLayoutEffect(()=>ze.listen(Ye),[ze]),createElement(Router,{basename:oe,children:le,location:ye.location,navigationType:ye.action,navigator:ze})}function h(H){let{basename:oe,children:le,window:ve}=H,Qe=useRef();Qe.current==null&&(Qe.current=createHashHistory({window:ve}));let ze=Qe.current,[ye,Ye]=useState({action:ze.action,location:ze.location});return useLayoutEffect(()=>ze.listen(Ye),[ze]),createElement(Router,{basename:oe,children:le,location:ye.location,navigationType:ye.action,navigator:ze})}function E(H){let{basename:oe,children:le,history:ve}=H;const[Qe,ze]=useState({action:ve.action,location:ve.location});return useLayoutEffect(()=>ve.listen(ze),[ve]),createElement(Router,{basename:oe,children:le,location:Qe.location,navigationType:Qe.action,navigator:ve})}function x(H){return!!(H.metaKey||H.altKey||H.ctrlKey||H.shiftKey)}const g=(0,o.forwardRef)(function(oe,le){let{onClick:ve,reloadDocument:Qe,replace:ze=!1,state:ye,target:Ye,to:tt}=oe,ct=l(oe,p),vt=(0,i.oQ)(tt),T=R(tt,{replace:ze,state:ye,target:Ye});function q(Ie){ve&&ve(Ie),!Ie.defaultPrevented&&!Qe&&T(Ie)}return(0,o.createElement)("a",s({},ct,{href:vt,onClick:q,ref:le,target:Ye}))}),w=(0,o.forwardRef)(function(oe,le){let{"aria-current":ve="page",caseSensitive:Qe=!1,className:ze="",end:ye=!1,style:Ye,to:tt,children:ct}=oe,vt=l(oe,d),T=(0,i.TH)(),q=(0,i.WU)(tt),Ie=T.pathname,Le=q.pathname;Qe||(Ie=Ie.toLowerCase(),Le=Le.toLowerCase());let Be=Ie===Le||!ye&&Ie.startsWith(Le)&&Ie.charAt(Le.length)==="/",Lt=Be?ve:void 0,Ct;typeof ze=="function"?Ct=ze({isActive:Be}):Ct=[ze,Be?"active":null].filter(Boolean).join(" ");let Qt=typeof Ye=="function"?Ye({isActive:Be}):Ye;return(0,o.createElement)(g,s({},vt,{"aria-current":Lt,className:Ct,ref:le,style:Qt,to:tt}),typeof ct=="function"?ct({isActive:Be}):ct)});function R(H,oe){let{target:le,replace:ve,state:Qe}=oe===void 0?{}:oe,ze=(0,i.s0)(),ye=(0,i.TH)(),Ye=(0,i.WU)(H);return(0,o.useCallback)(tt=>{if(tt.button===0&&(!le||le==="_self")&&!x(tt)){tt.preventDefault();let ct=!!ve||(0,n.Ep)(ye)===(0,n.Ep)(Ye);ze(H,{replace:ct,state:Qe})}},[ye,ze,Ye,ve,Qe,le,H])}function O(H){let oe=(0,o.useRef)(A(H)),le=(0,i.TH)(),ve=(0,o.useMemo)(()=>{let ye=A(le.search);for(let Ye of oe.current.keys())ye.has(Ye)||oe.current.getAll(Ye).forEach(tt=>{ye.append(Ye,tt)});return ye},[le.search]),Qe=(0,i.s0)(),ze=(0,o.useCallback)((ye,Ye)=>{Qe("?"+A(ye),Ye)},[Qe]);return[ve,ze]}function A(H){return H===void 0&&(H=""),new URLSearchParams(typeof H=="string"||Array.isArray(H)||H instanceof URLSearchParams?H:Object.keys(H).reduce((oe,le)=>{let ve=H[le];return oe.concat(Array.isArray(ve)?ve.map(Qe=>[le,Qe]):[[le,ve]])},[]))}var N=t(58096),k=t(49647),F=t(34162),L=["prefetch"];function _(H){var oe=H.prefetch,le=(0,k.Z)(H,L),ve=(0,F.Ov)(),Qe=typeof H.to=="string"?H.to:H.to.pathname;return o.createElement(g,(0,N.Z)({onMouseEnter:function(){var ye;return oe&&Qe&&((ye=ve.preloadRoute)===null||ye===void 0?void 0:ye.call(ve,Qe))}},le),H.children)}var D=t(70405),K=t(59918);function Q(H){return Q=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(oe){return typeof oe}:function(oe){return oe&&typeof Symbol=="function"&&oe.constructor===Symbol&&oe!==Symbol.prototype?"symbol":typeof oe},Q(H)}function ae(){"use strict";ae=function(){return H};var H={},oe=Object.prototype,le=oe.hasOwnProperty,ve=typeof Symbol=="function"?Symbol:{},Qe=ve.iterator||"@@iterator",ze=ve.asyncIterator||"@@asyncIterator",ye=ve.toStringTag||"@@toStringTag";function Ye(Pt,ft,Zt){return Object.defineProperty(Pt,ft,{value:Zt,enumerable:!0,configurable:!0,writable:!0}),Pt[ft]}try{Ye({},"")}catch(Pt){Ye=function(Zt,rr,Ft){return Zt[rr]=Ft}}function tt(Pt,ft,Zt,rr){var Ft=ft&&ft.prototype instanceof T?ft:T,dr=Object.create(Ft.prototype),hr=new Xt(rr||[]);return dr._invoke=function(Jr,vn,Rr){var sn="suspendedStart";return function(Qn,Ya){if(sn==="executing")throw new Error("Generator is already running");if(sn==="completed"){if(Qn==="throw")throw Ya;return Tn()}for(Rr.method=Qn,Rr.arg=Ya;;){var si=Rr.delegate;if(si){var oa=Ht(si,Rr);if(oa){if(oa===vt)continue;return oa}}if(Rr.method==="next")Rr.sent=Rr._sent=Rr.arg;else if(Rr.method==="throw"){if(sn==="suspendedStart")throw sn="completed",Rr.arg;Rr.dispatchException(Rr.arg)}else Rr.method==="return"&&Rr.abrupt("return",Rr.arg);sn="executing";var Sa=ct(Jr,vn,Rr);if(Sa.type==="normal"){if(sn=Rr.done?"completed":"suspendedYield",Sa.arg===vt)continue;return{value:Sa.arg,done:Rr.done}}Sa.type==="throw"&&(sn="completed",Rr.method="throw",Rr.arg=Sa.arg)}}}(Pt,Zt,hr),dr}function ct(Pt,ft,Zt){try{return{type:"normal",arg:Pt.call(ft,Zt)}}catch(rr){return{type:"throw",arg:rr}}}H.wrap=tt;var vt={};function T(){}function q(){}function Ie(){}var Le={};Ye(Le,Qe,function(){return this});var Be=Object.getPrototypeOf,Lt=Be&&Be(Be(Ln([])));Lt&&Lt!==oe&&le.call(Lt,Qe)&&(Le=Lt);var Ct=Ie.prototype=T.prototype=Object.create(Le);function Qt(Pt){["next","throw","return"].forEach(function(ft){Ye(Pt,ft,function(Zt){return this._invoke(ft,Zt)})})}function xr(Pt,ft){function Zt(Ft,dr,hr,Jr){var vn=ct(Pt[Ft],Pt,dr);if(vn.type!=="throw"){var Rr=vn.arg,sn=Rr.value;return sn&&Q(sn)=="object"&&le.call(sn,"__await")?ft.resolve(sn.__await).then(function(Qn){Zt("next",Qn,hr,Jr)},function(Qn){Zt("throw",Qn,hr,Jr)}):ft.resolve(sn).then(function(Qn){Rr.value=Qn,hr(Rr)},function(Qn){return Zt("throw",Qn,hr,Jr)})}Jr(vn.arg)}var rr;this._invoke=function(Ft,dr){function hr(){return new ft(function(Jr,vn){Zt(Ft,dr,Jr,vn)})}return rr=rr?rr.then(hr,hr):hr()}}function Ht(Pt,ft){var Zt=Pt.iterator[ft.method];if(Zt===void 0){if(ft.delegate=null,ft.method==="throw"){if(Pt.iterator.return&&(ft.method="return",ft.arg=void 0,Ht(Pt,ft),ft.method==="throw"))return vt;ft.method="throw",ft.arg=new TypeError("The iterator does not provide a 'throw' method")}return vt}var rr=ct(Zt,Pt.iterator,ft.arg);if(rr.type==="throw")return ft.method="throw",ft.arg=rr.arg,ft.delegate=null,vt;var Ft=rr.arg;return Ft?Ft.done?(ft[Pt.resultName]=Ft.value,ft.next=Pt.nextLoc,ft.method!=="return"&&(ft.method="next",ft.arg=void 0),ft.delegate=null,vt):Ft:(ft.method="throw",ft.arg=new TypeError("iterator result is not an object"),ft.delegate=null,vt)}function Kr(Pt){var ft={tryLoc:Pt[0]};1 in Pt&&(ft.catchLoc=Pt[1]),2 in Pt&&(ft.finallyLoc=Pt[2],ft.afterLoc=Pt[3]),this.tryEntries.push(ft)}function Ur(Pt){var ft=Pt.completion||{};ft.type="normal",delete ft.arg,Pt.completion=ft}function Xt(Pt){this.tryEntries=[{tryLoc:"root"}],Pt.forEach(Kr,this),this.reset(!0)}function Ln(Pt){if(Pt){var ft=Pt[Qe];if(ft)return ft.call(Pt);if(typeof Pt.next=="function")return Pt;if(!isNaN(Pt.length)){var Zt=-1,rr=function Ft(){for(;++Zt<Pt.length;)if(le.call(Pt,Zt))return Ft.value=Pt[Zt],Ft.done=!1,Ft;return Ft.value=void 0,Ft.done=!0,Ft};return rr.next=rr}}return{next:Tn}}function Tn(){return{value:void 0,done:!0}}return q.prototype=Ie,Ye(Ct,"constructor",Ie),Ye(Ie,"constructor",q),q.displayName=Ye(Ie,ye,"GeneratorFunction"),H.isGeneratorFunction=function(Pt){var ft=typeof Pt=="function"&&Pt.constructor;return!!ft&&(ft===q||(ft.displayName||ft.name)==="GeneratorFunction")},H.mark=function(Pt){return Object.setPrototypeOf?Object.setPrototypeOf(Pt,Ie):(Pt.__proto__=Ie,Ye(Pt,ye,"GeneratorFunction")),Pt.prototype=Object.create(Ct),Pt},H.awrap=function(Pt){return{__await:Pt}},Qt(xr.prototype),Ye(xr.prototype,ze,function(){return this}),H.AsyncIterator=xr,H.async=function(Pt,ft,Zt,rr,Ft){Ft===void 0&&(Ft=Promise);var dr=new xr(tt(Pt,ft,Zt,rr),Ft);return H.isGeneratorFunction(ft)?dr:dr.next().then(function(hr){return hr.done?hr.value:dr.next()})},Qt(Ct),Ye(Ct,ye,"Generator"),Ye(Ct,Qe,function(){return this}),Ye(Ct,"toString",function(){return"[object Generator]"}),H.keys=function(Pt){var ft=[];for(var Zt in Pt)ft.push(Zt);return ft.reverse(),function rr(){for(;ft.length;){var Ft=ft.pop();if(Ft in Pt)return rr.value=Ft,rr.done=!1,rr}return rr.done=!0,rr}},H.values=Ln,Xt.prototype={constructor:Xt,reset:function(ft){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(Ur),!ft)for(var Zt in this)Zt.charAt(0)==="t"&&le.call(this,Zt)&&!isNaN(+Zt.slice(1))&&(this[Zt]=void 0)},stop:function(){this.done=!0;var ft=this.tryEntries[0].completion;if(ft.type==="throw")throw ft.arg;return this.rval},dispatchException:function(ft){if(this.done)throw ft;var Zt=this;function rr(Rr,sn){return hr.type="throw",hr.arg=ft,Zt.next=Rr,sn&&(Zt.method="next",Zt.arg=void 0),!!sn}for(var Ft=this.tryEntries.length-1;Ft>=0;--Ft){var dr=this.tryEntries[Ft],hr=dr.completion;if(dr.tryLoc==="root")return rr("end");if(dr.tryLoc<=this.prev){var Jr=le.call(dr,"catchLoc"),vn=le.call(dr,"finallyLoc");if(Jr&&vn){if(this.prev<dr.catchLoc)return rr(dr.catchLoc,!0);if(this.prev<dr.finallyLoc)return rr(dr.finallyLoc)}else if(Jr){if(this.prev<dr.catchLoc)return rr(dr.catchLoc,!0)}else{if(!vn)throw new Error("try statement without catch or finally");if(this.prev<dr.finallyLoc)return rr(dr.finallyLoc)}}}},abrupt:function(ft,Zt){for(var rr=this.tryEntries.length-1;rr>=0;--rr){var Ft=this.tryEntries[rr];if(Ft.tryLoc<=this.prev&&le.call(Ft,"finallyLoc")&&this.prev<Ft.finallyLoc){var dr=Ft;break}}dr&&(ft==="break"||ft==="continue")&&dr.tryLoc<=Zt&&Zt<=dr.finallyLoc&&(dr=null);var hr=dr?dr.completion:{};return hr.type=ft,hr.arg=Zt,dr?(this.method="next",this.next=dr.finallyLoc,vt):this.complete(hr)},complete:function(ft,Zt){if(ft.type==="throw")throw ft.arg;return ft.type==="break"||ft.type==="continue"?this.next=ft.arg:ft.type==="return"?(this.rval=this.arg=ft.arg,this.method="return",this.next="end"):ft.type==="normal"&&Zt&&(this.next=Zt),vt},finish:function(ft){for(var Zt=this.tryEntries.length-1;Zt>=0;--Zt){var rr=this.tryEntries[Zt];if(rr.finallyLoc===ft)return this.complete(rr.completion,rr.afterLoc),Ur(rr),vt}},catch:function(ft){for(var Zt=this.tryEntries.length-1;Zt>=0;--Zt){var rr=this.tryEntries[Zt];if(rr.tryLoc===ft){var Ft=rr.completion;if(Ft.type==="throw"){var dr=Ft.arg;Ur(rr)}return dr}}throw new Error("illegal catch attempt")},delegateYield:function(ft,Zt,rr){return this.delegate={iterator:Ln(ft),resultName:Zt,nextLoc:rr},this.method==="next"&&(this.arg=void 0),vt}},H}function Ee(H,oe,le){return oe in H?Object.defineProperty(H,oe,{value:le,enumerable:!0,configurable:!0,writable:!0}):H[oe]=le,H}function re(H,oe){var le=Object.keys(H);if(Object.getOwnPropertySymbols){var ve=Object.getOwnPropertySymbols(H);oe&&(ve=ve.filter(function(Qe){return Object.getOwnPropertyDescriptor(H,Qe).enumerable})),le.push.apply(le,ve)}return le}function X(H){for(var oe=1;oe<arguments.length;oe++){var le=arguments[oe]!=null?arguments[oe]:{};oe%2?re(Object(le),!0).forEach(function(ve){Ee(H,ve,le[ve])}):Object.getOwnPropertyDescriptors?Object.defineProperties(H,Object.getOwnPropertyDescriptors(le)):re(Object(le)).forEach(function(ve){Object.defineProperty(H,ve,Object.getOwnPropertyDescriptor(le,ve))})}return H}function V(H,oe,le,ve,Qe,ze,ye){try{var Ye=H[ze](ye),tt=Ye.value}catch(ct){le(ct);return}Ye.done?oe(tt):Promise.resolve(tt).then(ve,Qe)}function ue(H){return function(){var oe=this,le=arguments;return new Promise(function(ve,Qe){var ze=H.apply(oe,le);function ye(tt){V(ze,ve,Qe,ye,Ye,"next",tt)}function Ye(tt){V(ze,ve,Qe,ye,Ye,"throw",tt)}ye(void 0)})}}function W(H,oe){(oe==null||oe>H.length)&&(oe=H.length);for(var le=0,ve=new Array(oe);le<oe;le++)ve[le]=H[le];return ve}function U(H,oe){if(!!H){if(typeof H=="string")return W(H,oe);var le=Object.prototype.toString.call(H).slice(8,-1);if(le==="Object"&&H.constructor&&(le=H.constructor.name),le==="Map"||le==="Set")return Array.from(H);if(le==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(le))return W(H,oe)}}function ee(H,oe){var le=typeof Symbol!="undefined"&&H[Symbol.iterator]||H["@@iterator"];if(!le){if(Array.isArray(H)||(le=U(H))||oe&&H&&typeof H.length=="number"){le&&(H=le);var ve=0,Qe=function(){};return{s:Qe,n:function(){return ve>=H.length?{done:!0}:{done:!1,value:H[ve++]}},e:function(ct){throw ct},f:Qe}}throw new TypeError(`Invalid attempt to iterate non-iterable instance.
