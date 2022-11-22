@@ -1,10 +1,10 @@
 import {defineConfig} from 'dumi'
 
 export default defineConfig({
+  base: '/slow-admin-doc/',
+  publicPath: '/slow-admin-doc/',
   themeConfig: {
     name: 'slow admin',
-    base: '/slow-admin-doc',
-    publicPath: '/slow-admin-doc/',
     logo: '/logo.png',
     footer: '<br>',
     nav: [
