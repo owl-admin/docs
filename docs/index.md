@@ -3,8 +3,8 @@ hero:
   title: Slow Admin
   description: 基于 Laravel、 Ant Design Pro、 amis开发的后台框架。
   actions:
-    - text: 立即上手
-      link: /
+    - text: 快速开始
+      link: /docs/install
     - text: Gitee
       link: https://gitee.com/slowlyo/slow-admin
 keywords: ['laravel admin', 'slow admin', 'php后台框架', 'php admin', 'amis', 'antd', 'antd pro', 'php', 'react']
