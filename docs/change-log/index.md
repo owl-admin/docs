@@ -11,8 +11,13 @@ title: 更新记录
 #### 更新后需要重新发布前端资源
 
 ```shell
-php artisan admin:pulish --assets --force
+php artisan admin:publish --assets --force
 ```
+
+:::warning
+--force 参数会覆盖你自行修改的前端文件, 请注意备份
+:::
+
 
 <br><br>
 
