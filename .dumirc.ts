@@ -17,6 +17,10 @@ export default defineConfig({
         link: '/change-log',
       },
       {
+        title: '常见问题 🤔',
+        link: '/issue',
+      },
+      {
         title: '演示站点 👀',
         link: 'http://admin-demo.slowlyo.top',
       }
