@@ -26,3 +26,21 @@ public function image(): Attribute
     );
 }
 ```
+
+---
+
+### 🐛 编辑 / 详情页面数据回显失败?
+
+#### 原因:
+
+amis 的 bug <br>
+<a href="https://github.com/baidu/amis/issues/4055" target="_blank">
+#4055: form表单initApi，服务端返回的data中包含no、status字段时，客户端处理异常
+</a>
+
+#### 解决方案:
+
+1. 更改字段名
+2. 使用 `属性修改器`
+3. 将编辑和详情操作改成 [弹窗模式](/docs/crud-dialog-action)
+4. 等待 amis 修复
