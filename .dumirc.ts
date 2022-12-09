@@ -9,19 +9,19 @@ export default defineConfig({
     footer: '<br>',
     nav: [
       {
-        title: '文档 📖',
+        title: '📖 文档',
         link: '/docs',
       },
       {
-        title: '更新记录 🌵',
+        title: '🌵 更新记录',
         link: '/change-log',
       },
       {
-        title: '常见问题 🤔',
+        title: '🤔 常见问题',
         link: '/issue',
       },
       {
-        title: '演示站点 👀',
+        title: '👀 演示站点',
         link: 'http://admin-demo.slowlyo.top',
       }
     ]
