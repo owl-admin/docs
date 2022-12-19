@@ -1,5 +1,5 @@
 ---
-group: 入门
+group: 基本使用
 title: 目录结构
 order: 1
 ---

@@ -1,5 +1,5 @@
 ---
-group: CRUD
+group: 基本使用
 title: 弹窗操作
 order: 4
 ---
@@ -12,7 +12,7 @@ order: 4
 public function list(): Page
 {
 	// ...
-	
+
 	// 更改 controller 中 list() 方法的返回值
 	// 覆盖 list 的 toolbar 属性
 	// 给 createButton() 方法添加参数 (默认没有)

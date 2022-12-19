@@ -16,14 +16,7 @@ title: 常见问题
 // 你的文件/图片字段
 public function image(): Attribute
 {
-    $storage = Storage::disk(config('admin.upload.disk'));
-
-    return Attribute::make(
-        // 获取时, 拼接域名
-        get: fn($value) => $storage->url($value),
-        // 保存时, 去掉域名
-        set: fn($value) => str_replace($storage->url(''), '', $value)
-    );
+    return file_upload_handle();
 }
 ```
 
@@ -35,7 +28,7 @@ public function image(): Attribute
 
 amis 的 bug <br>
 <a href="https://github.com/baidu/amis/issues/4055" target="_blank">
-#4055: form表单initApi，服务端返回的data中包含no、status字段时，客户端处理异常
+#4055: form 表单 initApi，服务端返回的 data 中包含 no、status 字段时，客户端处理异常
 </a>
 
 #### 解决方案:
