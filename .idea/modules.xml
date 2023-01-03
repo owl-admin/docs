@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/slow-admin-doc-dumi.iml" filepath="$PROJECT_DIR$/.idea/slow-admin-doc-dumi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/slow-admin-doc.iml" filepath="$PROJECT_DIR$/.idea/slow-admin-doc.iml" />
     </modules>
   </component>
 </project>
