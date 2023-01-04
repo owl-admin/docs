@@ -12,7 +12,7 @@
 | update()  | 编辑数据的保存逻辑   |
 | destroy() | 删除数据的逻辑     |
 
-就是 resource 路由对应的那几个方法, 如果你还不知道请看 [文档](https://learnku.com/docs/laravel/9.x/controllers/12212#restful-naming-resource-routes)
+就是 resource 路由对应的那几个方法, 如果你还不知道请看 [文档](https://learnku.com/docs/laravel/9.x/controllers/12212#resource-controllers)
 
 ?> 当默认的方法不满足你的需求时, 可以在你的 controller 重写这几个方法
 
