@@ -1,7 +1,7 @@
 # Slow Admin
 
-基于 `Laravel` 和 `amis` 开发的后台框架。
-完整支持 `amis` 组件120余个
+基于 `Laravel`、`Ant Design Pro` 和 `amis` 的后台框架, 友好的组件使用体验, 可轻松实现复杂页面, 内置代码生成器, 低学习成本,
+让开发者快速搭建后台管理系统
 
 #### Laravel
 
@@ -49,7 +49,8 @@ amis 是一个低代码前端框架，它使用 JSON 配置来生成页面，可
 
 #### QQ群
 
-754544686
+754544686 &emsp;
+[点击加入](https://jq.qq.com/?_wv=1027&k=5La4Ir6c)
 
 <br>
 <br>
