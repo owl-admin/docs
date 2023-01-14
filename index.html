@@ -11,6 +11,8 @@
 </head>
 <body>
 <nav>
+    <a href="#/docs/">文档</a>
+    <a href="#/extensions/">扩展</a>
     <a href="http://admin-demo.slowlyo.top/admin" target="_blank">Demo</a>
 </nav>
 <div id="app"></div>
@@ -25,6 +27,9 @@
         auto2top: true,
         coverpage: true,
         basePath: "/slow-admin-doc/",
+        alias: {
+            "/_sidebar.md": "/docs/_sidebar.md",
+        },
         // 全文搜索
         search: {
             placeholder: "搜索一下~",
@@ -51,6 +56,16 @@
             style: "flat",
         },
     }
+
+    const changeAppName = () => {
+        let hash = window.location.hash
+        let appNameLink = document.querySelector(".app-name-link")
+
+        appNameLink.innerHTML = hash == "#/extensions/" ? "Slow Admin 扩展" : "Slow Admin"
+    }
+
+    window.onload = () => changeAppName()
+    window.onhashchange = () => changeAppName()
 </script>
 <!-- Docsify v4 -->
 <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
@@ -70,7 +85,7 @@
 <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
 <!--侧边栏折叠-->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"/>
-<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"/>-->
+<!--<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>-->
 </body>
 </html>
