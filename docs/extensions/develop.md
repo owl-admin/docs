@@ -138,9 +138,8 @@ let enabled = extensionIsEnable(name)
 
 ```php
 protected $middleware = [
-    'middle' => [ // 注册中间件
-        LogOperation::class,
-    ],
+    LogOperation::class,
+    // ...
 ];
 ```
 
