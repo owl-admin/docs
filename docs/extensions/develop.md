@@ -110,12 +110,12 @@ BannerServiceProvider::trans('title');
 ```
     ├── resources
     │   └── admin-views
-    │       └── extensions
-    │           └── slowlyo
-    │               ├── Banner
-    │               │   ├── index.less
-    │               │   └── index.tsx
-    │               └── other.js
+    │       └── src
+    │           └── extensions
+    │               └── slowlyo
+    │                   ├── Banner
+    │                   │   └── index.vue
+    │                   └── other.js
 ```
 
 在文档中说明如何使用你的前端文件。
@@ -123,12 +123,13 @@ BannerServiceProvider::trans('title');
 #### 前端获取扩展启用状态
 
 ```js   
-import {extensionIsEnable} from "@/utils/setting"
+import {settings} from "@/utils";
+import {useAppStore} from "@/store";
 
 // 注意此处扩展名以 . 分隔
 let name = "slowlyo.banner"
 
-let enabled = extensionIsEnable(name)
+let enabled = settings.setStore(useAppStore()).extensionIsEnable(name)
 ````
 
 

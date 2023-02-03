@@ -19,8 +19,10 @@ php artisan admin:publish --views
 
 ### 记得先安装依赖
 
+
 ```shell
-npm install
+# 如果你没有pnpm, 请先安装pnpm (npm i -g pnpm)
+pnpm install
 ```
 
 ### 部分命令
@@ -28,13 +30,13 @@ npm install
 #### 运行
 
 ```shell
-npm run start
+pnpm run start
 ```
 
 #### 打包
 
 ```shell
-npm run build
+pnpm run build
 ```
 
 ?> 打包后将打包文件 (默认在 `dist` 目录下), 复制/移动到 `public/admin` 下即可
