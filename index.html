@@ -66,6 +66,21 @@
 
     window.onload = () => changeAppName()
     window.onhashchange = () => changeAppName()
+
+    // 复制文本
+    window.copyText = (text) => {
+        return new Promise((resolve, reject) => {
+            let input = document.createElement("input")
+            input.value = text
+            document.body.appendChild(input)
+            input.select()
+            if (document.execCommand("copy")) {
+                document.execCommand("copy")
+                resolve("复制成功")
+            }
+            document.body.removeChild(input)
+        })
+    }
 </script>
 <script src="static/extension-card.js"></script>
 <!-- Docsify v4 -->

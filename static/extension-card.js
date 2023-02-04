@@ -9,7 +9,7 @@ extensionCardTemplate.innerHTML = `
     }
     .extension-card-info {
         display: flex;
-        width: 90%;
+        width: 85%;
     }
     
     .text-overflow {
@@ -106,7 +106,8 @@ class ExtensionCard extends HTMLElement {
         if (composer) {
             this.extensionCardComposer.classList.remove("hide-box")
             this.extensionCardComposer.addEventListener("click", () => {
-                navigator.clipboard.writeText(composer).then(() => {
+                // navigator.clipboard.writeText(composer).then(() => {
+                window.copyText(composer).then(() => {
                     this.extensionCardComposer.innerHTML = "已复制"
                     setTimeout(() => {
                         this.extensionCardComposer.innerHTML = "复制命令"
