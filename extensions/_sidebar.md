@@ -1,2 +1,3 @@
-* [说明](/extensions/README.md)
-* [登录保护](/extensions/login-guard.md)
+* [扩展列表](/extensions/README.md)
+* [如何在此处添加我的扩展信息?](/extensions/explain.md)
+* 

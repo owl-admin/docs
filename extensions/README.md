@@ -1,9 +1,22 @@
-## 如何在此处添加我的扩展信息?
-
-[fork 本项目](https://gitee.com/slowlyo/slow-admin-doc)
-
-复制 `extension-template.md` 更改为你的扩展名称，然后在 `extensions/_sidebar.md` 中添加你的扩展信息，然后提交PR即可。
-
-## 为什么采用这种方式管理扩展信息?
-
-目前使用人数较少，所以采用手动添加的方式，后续如果人数增多，会考虑为扩展模块做个服务端。
+<div>
+<extension-card 
+    name="登录保护" 
+    extension-homepage="https://gitee.com/slowlyo/slow-login-guard"
+    author="slowlyo"
+    author-homepage="https://gitee.com/slowlyo"
+    description="登录保护，防止暴力破解密码"
+    composer="composer require slowlyo/slow-login-guard"
+    zip="https://gitee.com/slowlyo/slow-login-guard/repository/archive/master.zip"
+> 
+</extension-card>
+<extension-card
+    name="后台功能-通知公告管理"
+    extension-homepage="https://gitee.com/slowlyo/slow-module-notice"
+    author="slowlyo"
+    author-homepage="https://gitee.com/slowlyo"
+    description="增加通知公告管理"
+    composer="composer require slowlyo/slow-notice"
+    zip="https://gitee.com/slowlyo/slow-module-notice/repository/archive/master.zip"
+>
+</extension-card>
+</div>
