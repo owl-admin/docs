@@ -28,7 +28,7 @@ extensionCardTemplate.innerHTML = `
     
     .extension-card-name {
         color: #42b983;
-        width: 200px;
+        width: 300px;
         padding-right: 10px;
         font-weight: bold;
     }
