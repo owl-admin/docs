@@ -19,4 +19,14 @@
     zip="https://gitee.com/slowlyo/slow-module-notice/repository/archive/master.zip"
 >
 </extension-card>
+<extension-card
+    name="数据字典"
+    extension-homepage="https://gitee.com/slowlyo/slow-dict"
+    author="slowlyo"
+    author-homepage="https://gitee.com/slowlyo"
+    description="增加数据字典功能"
+    composer="composer require slowlyo/slow-dict"
+    zip="https://gitee.com/slowlyo/slow-dict/repository/archive/master.zip"
+>
+</extension-card>
 </div>
