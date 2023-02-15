@@ -20,4 +20,5 @@
     * [代码生成器](/docs/modules/code-generator.md)
     * [系统设置](/docs/modules/settings.md)
 * [常见问题](/docs/issue.md)
-* [更新记录](/docs/changelog.md)
+
+[//]: # (* [更新记录]&#40;/docs/changelog.md&#41;)

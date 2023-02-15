@@ -33,3 +33,17 @@ amis 的 bug <br>
 2. 使用 `属性修改器`
 3. 将编辑和详情操作改成 [弹窗模式](/docs/crud-dialog-action)
 4. 等待 amis 修复
+
+---
+
+### 🐛 Status 组件, 设置 map / labelMap 属性后, 影响到其他 Status ?
+
+#### 原因:
+
+数据域污染
+
+#### 解决方案:
+
+暂无解决方案
+
+使用 status 组件时, 如果需要自定义 map / labelMap , 请用 mapping / tpl 代替
