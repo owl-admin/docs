@@ -9,8 +9,6 @@ export default defineConfig({
     cleanUrls: true,
     head: [
         ["link", {rel: "icon", href: "https://slowlyo.gitee.io/static/images/slow-admin/logo.png"}],
-        // 扩展卡片
-        ["script", {src: "/js/extension-card.js"}],
         // 图片预览
         ["link", {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"}],
         ["script", {src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"}],
@@ -53,8 +51,8 @@ export default defineConfig({
             },
             {
                 text: "扩展",
-                link: "/ext/",
-                activeMatch: "^/ext/",
+                link: "/extensions/",
+                activeMatch: "^/extensions/",
             },
             {
                 text: "Demo",
@@ -108,10 +106,10 @@ export default defineConfig({
                     link: "/guide/issue",
                 },
             ],
-            "/ext/": [
+            "/extensions/": [
                 {
                     text: "扩展列表",
-                    link: "/ext/",
+                    link: "/extensions/",
                 },
                 {
                     text: "如何在此处添加我的扩展信息?",
