@@ -6,7 +6,7 @@ hero:
   text: 快速且灵活的后台管理系统
   tagline: 基于 laravel 、amis 和 vue3.0 的后台管理系统
   image:
-    src: /public/images/logo.png
+    src: /images/logo.png
     alt: Slow Admin
     width: 240
   actions:

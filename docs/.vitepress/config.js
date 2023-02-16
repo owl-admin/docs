@@ -27,7 +27,7 @@ export default defineConfig({
         outline: "deep",
         outlineTitle: "页面目录",
         lastUpdatedText: "最后一次更新",
-        logo: "/public/images/logo-min.png",
+        logo: "/images/logo-min.png",
         lang: "zh-CN",
         docFooter: {
             prev: "上一页",
