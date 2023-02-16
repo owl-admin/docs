@@ -113,7 +113,7 @@ export default defineConfig({
                 },
                 {
                     text: "如何在此处添加我的扩展信息?",
-                    link: "/ext/explain",
+                    link: "/extensions/explain",
                 },
             ],
         },
