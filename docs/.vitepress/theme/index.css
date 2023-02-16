@@ -1,7 +1,7 @@
 :root {
     --vp-c-brand: #1890FF;
     --vp-c-brand-light: #40a9ff;
-    --vp-c-green-lighter: #e6fffb;
+    --vp-c-green-lighter: transparent;
     --vp-c-green-dark: #096dd9;
     --vp-c-green-darker: #0050b3;
 
@@ -31,4 +31,21 @@
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 0, 0.2);
+}
+
+/*暗色模式进度条*/
+.dark ::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover{
+    background: rgb(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f1f1f;
 }
