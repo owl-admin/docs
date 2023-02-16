@@ -8,7 +8,7 @@ export default defineConfig({
     lang: "zh-CN",
     cleanUrls: true,
     head: [
-        ["link", {rel: "icon", href: "https://slowlyo.gitee.io/static/images/slow-admin/login-min.png"}],
+        ["link", {rel: "icon", href: "https://slowlyo.gitee.io/static/images/slow-admin/logo.png"}],
         // 扩展卡片
         ["script", {src: "/js/extension-card.js"}],
         // 图片预览
@@ -27,7 +27,7 @@ export default defineConfig({
         outline: "deep",
         outlineTitle: "页面目录",
         lastUpdatedText: "最后一次更新",
-        logo: "https://slowlyo.gitee.io/static/images/slow-admin/login-min.png",
+        logo: "https://slowlyo.gitee.io/static/images/slow-admin/logo.png",
         lang: "zh-CN",
         docFooter: {
             prev: "上一页",
