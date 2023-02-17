@@ -111,32 +111,7 @@ BannerServiceProvider::trans('title');
 
 ### 前端
 
-在扩展的前端目录下创建你的文件, 例如:
-
-```
-    ├── resources
-    │   └── admin-views
-    │       └── src
-    │           └── extensions
-    │               └── slowlyo
-    │                   ├── Banner
-    │                   │   └── index.vue
-    │                   └── other.js
-```
-
-在文档中说明如何使用你的前端文件。
-
-#### 前端获取扩展启用状态
-
-```js   
-import {settings} from "@/utils";
-import {useAppStore} from "@/store";
-
-// 注意此处扩展名以 . 分隔
-let name = "slowlyo.banner"
-
-let enabled = settings.setStore(useAppStore()).extensionIsEnable(name)
-````
+你可以在服务提供者中使用 `Admin::js()` 方法来动态加载你的前端文件 [`register()` / `init()`]
 
 
 ### 中间件

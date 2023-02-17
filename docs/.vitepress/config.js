@@ -83,6 +83,7 @@ export default defineConfig({
                     items: [
                         {text: "开始", link: "/guide/views/begin"},
                         {text: "注意事项", link: "/guide/views/remind"},
+                        {text: "动态加载资源", link: "/guide/views/dynamic-assets"},
                     ],
                 },
                 {
