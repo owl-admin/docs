@@ -29,7 +29,7 @@ php artisan admin:publish --views
 
 ```shell
 # 如果你没有pnpm, 请先安装pnpm (npm i -g pnpm)
-pnpm install
+pnpm i
 ```
 
 ## 部分命令
@@ -39,7 +39,7 @@ pnpm install
 #### 运行
 
 ```shell
-pnpm run start
+pnpm run dev
 ```
 
 #### 打包
