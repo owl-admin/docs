@@ -33,4 +33,14 @@ import ExtensionCard from "./components/extension-card/index.vue"
     zip="https://gitee.com/slowlyo/slow-dict/repository/archive/master.zip"
 >
 </extension-card>
+<extension-card
+    name="amis json 解析"
+    home-page="https://gitee.com/slowlyo/slow-amis-json-parse"
+    author="slowlyo"
+    author-home-page="https://gitee.com/slowlyo"
+    description="将 amis json schema 转换成 php 代码"
+    composer="composer require slowlyo/slow-amis-json-parse"
+    zip="https://gitee.com/slowlyo/slow-amis-json-parse/repository/archive/master.zip"
+>
+</extension-card>
 </div>
