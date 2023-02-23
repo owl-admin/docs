@@ -23,9 +23,9 @@
 			</div>
 			&emsp;
 			<div class="extension-card-composer cursor-pointer"
-			     @click="openUrl(composer)"
+			     @click="copyText(composer)"
 			     :class="{'hide-box': !composer}">
-				复制命令
+				{{ showCopyText }}
 			</div>
 		</div>
 	</div>
@@ -33,8 +33,28 @@
 
 <script setup>
 
+import {ref} from "vue"
+
 const openUrl = (url) => {
 	window.open(url)
+}
+
+const showCopyText = ref("复制命令")
+
+const copyText = (text) => {
+	const input = document.createElement("input")
+	input.setAttribute("readonly", "readonly")
+	input.setAttribute("value", text)
+	document.body.appendChild(input)
+	input.select()
+	if (document.execCommand("copy")) {
+		document.execCommand("copy")
+		showCopyText.value = "已复制"
+		setTimeout(() => {
+			showCopyText.value = "复制命令"
+		}, 1000)
+	}
+	document.body.removeChild(input)
 }
 
 defineProps({
