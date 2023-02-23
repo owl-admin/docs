@@ -1,26 +1,30 @@
 <template>
 	<div class="extension-card">
 		<div class="extension-card-info">
-			<div class="extension-card-name text-overflow cursor-pointer"
+			<div class="extension-card-name cursor-pointer"
 			     title="打开扩展主页"
 			     @click="openUrl(homePage)">
 				{{ name }}
 			</div>
-			<div class="extension-card-author text-overflow cursor-pointer"
+			<div class="extension-card-author cursor-pointer"
 			     title="打开作者主页"
 			     @click="openUrl(authorHomePage)">
 				{{ author }}
 			</div>
-			<div class="extension-card-description text-overflow">
-				{{ description }}
-			</div>
 		</div>
+		
+		<div class="extension-card-description">
+			{{ description }}
+		</div>
+		
 		<div class="extension-card-install">
-			<div class="extension-card-zip cursor-pointer" @click="openUrl(zip)">
+			<div class="extension-card-zip cursor-pointer" @click="openUrl(zip)" :class="{'hide-box': !zip}">
 				zip下载
 			</div>
 			&emsp;
-			<div class="extension-card-composer cursor-pointer" @click="openUrl(composer)">
+			<div class="extension-card-composer cursor-pointer"
+			     @click="openUrl(composer)"
+			     :class="{'hide-box': !composer}">
 				复制命令
 			</div>
 		</div>
@@ -46,14 +50,21 @@ defineProps({
 
 <style>
 .extension-card {
-	display: flex;
-	justify-content: space-between;
 	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+}
+
+.extension-card:hover {
+	box-shadow: 0 0 10px #e8e8e8;
+	transform: scale(1.01);
+	transition: all 0.3s;
 }
 
 .extension-card-info {
 	display: flex;
-	width: 85%;
+	justify-content: space-between;
 }
 
 .text-overflow {
@@ -71,27 +82,30 @@ defineProps({
 }
 
 .extension-card-name {
-	color: #42b983;
-	width: 300px;
+	color: var(--vp-c-brand);
 	padding-right: 10px;
 	font-weight: bold;
 }
 
 .extension-card-author {
-	width: 200px;
 	padding-right: 10px;
 	overflow: hidden;
 	text-decoration: underline;
+	font-size: .8rem;
 }
 
 .extension-card-description {
 	padding-right: 10px;
-	width: 100%;
+	margin-top: 10px;
+	font-size: .8rem;
+	text-indent: 2em;
 }
 
 .extension-card-install {
-	color: #1890FF;
+	color: var(--vp-c-brand);
 	display: flex;
+	justify-content: end;
+	font-size: .8rem;
 }
 
 .hide-box {
