@@ -26,7 +26,7 @@ title: 设置设置
 public function set($key, $value = null) { }
 
 // eg
-settings()->set('site_name', 'Slow Admin');
+settings()->set('site_name', 'Owl Admin');
 ```
 
 ### setMany - 批量保存设置
@@ -41,8 +41,8 @@ public function setMany(array $data) { }
 
 // eg
 settings()->setMany([
-    'site_name' => 'Slow Admin',
-    'site_description' => 'Slow Admin is a laravel admin package',
+    'site_name' => 'Owl Admin',
+    'site_description' => 'Owl Admin is a laravel admin package',
 ]);
 ```
 

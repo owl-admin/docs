@@ -28,17 +28,17 @@ composer create-project --prefer-dist laravel/laravel 项目名称
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=slow_admin
+DB_DATABASE=owl_admin
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-安装`slow_admin`
+安装`owl_admin`
 
 ```shell
 cd {项目名称}
 
-composer require slowlyo/slow-admin
+composer require slowlyo/owl-admin
 ```
 
 然后运行下面的命令来发布资源：
