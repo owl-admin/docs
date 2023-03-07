@@ -43,4 +43,14 @@ import ExtensionCard from "./components/extension-card/index.vue"
     zip="https://gitee.com/slowlyo/owl-amis-json-parse/repository/archive/master.zip"
 >
 </extension-card>
+<extension-card
+    name="微信用户管理"
+    home-page="https://gitee.com/slowlyo/owl-wechat-user"
+    author="slowlyo"
+    author-home-page="https://gitee.com/slowlyo"
+    description="基础会员管理, 分表 (含微信小程序授权登录)"
+    composer="composer require slowlyo/owl-wechat-user"
+    zip="https://gitee.com/slowlyo/owl-wechat-user/repository/archive/master.zip"
+>
+</extension-card>
 </div>
