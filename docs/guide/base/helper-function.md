@@ -19,7 +19,7 @@ Page::make()->title('title')->body('content');
 加密字符串
 
 ```php
-admin_encode(string $str, $key = null):string
+admin_encode(string $str):string
 ```
 
 ## admin_decode()
@@ -27,7 +27,7 @@ admin_encode(string $str, $key = null):string
 解密字符串
 
 ```php
-admin_decode(string $str, $key = null):string
+admin_decode(string $str):string
 ```
 
 ## array2tree()

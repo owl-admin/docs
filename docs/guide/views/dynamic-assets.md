@@ -55,13 +55,13 @@ Admin::css([
 
 ```php
 // 加载单个style
-Admin::style($style);
+Admin::styles($style);
 // 加载多个style
-Admin::style([$style1, $style2]);
+Admin::styles([$style1, $style2]);
 
 // eg:
-Admin::style('.box { color: red; }');
-Admin::style([
+Admin::styles('.box { color: red; }');
+Admin::styles([
     '.box { color: red; }',
     '.box2 { color: blue; }',
 ]);

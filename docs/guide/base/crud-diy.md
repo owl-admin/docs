@@ -49,10 +49,10 @@ class AdminRoleController extends AdminController
 	// 以上地方都需要这个 queryPath 来生成
 	// 具体的使用方式可以自行查看 Slowlyo\SlowAdmin\Traits\QueryPath.php
 	// 一般来说不用修改
-    protected string $queryPath = 'admin_roles';
+    protected string $queryPath = 'admin_roles'; // 2.0.4 版本以后可以不用定义此属性
 
 	// 代码生成器中填写的功能名称
-	// 用作页面标题
+	// 用作页面标题 (关闭多页签模式时显示)
     protected string $pageTitle = '角色';
 
 	// 该方法实现了列表页的显示, 以及获取列表数据
@@ -60,15 +60,7 @@ class AdminRoleController extends AdminController
     {
 		// 返回列表数据
         if ($this->actionOfGetData()) {
-			// 此处的->query() 等效于 AdminRole::query()
-            $items = $this->service
-                ->query()
-                ->paginate($request->input('perPage', 20))
-                ->items();
-            $total = $this->service->query()->count();
-
-			// amis 的 crud 组件需要的两个参数
-            return $this->response()->success(compact('items', 'total'));
+            return $this->response()->success($this->service->list());
         }
 
 		// 返回页面结构
@@ -157,5 +149,23 @@ class AdminRoleService extends AdminService
 
 	// 几乎所有的数据库操作都在 Service 中
 	// 不满足的地方, 在此处重写即可
+	
+	// 列表数据
+    public function list()
+    
+    // 详情获取数据
+    public function getDetail($id)
+    
+    // 编辑获取数据
+    public function getEditData($id)
+    
+    // 修改保存
+    public function update($id, $data)
+    
+    // 新增保存
+    public function store($data)
+    
+    // 删除
+    public function delete($ids)
 }
 ```
