@@ -49,7 +49,7 @@ Admin::css([
 ]);
 ```
 
-### style()
+### styles()
 
 加载 style，支持单个和多个。
 
