@@ -150,6 +150,16 @@ $except = BannerServiceProvider::setting('except');
 $except = BannerServiceProvider::setting('except.value');
 ```
 
+### 数据库迁移
+
+在 `extensions/扩展名/database/migrations` 目录下创建迁移文件
+
+扩展启用时会自动执行迁移文件, 卸载时会自动回滚
+
+### 其他
+
+基础的服务提供者中提供了 `customInitBefore` 和 `customInitAfter` 两个方法, 用于扩展的自定义初始化操作
+
 ### 发布到 Packagist.org
 
 参考 [Packagist 中文文档](https://learnku.com/docs/composer/2018)

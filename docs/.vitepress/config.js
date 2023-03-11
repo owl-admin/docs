@@ -79,6 +79,7 @@ export default defineConfig({
                         {text: "弹窗操作", link: "/guide/base/crud-dialog-action"},
                         {text: "自定义业务逻辑", link: "/guide/base/crud-diy"},
                         {text: "组件的使用", link: "/guide/base/base-use"},
+                        {text: "数据导出", link: "/guide/base/data-export"},
                     ],
                 },
                 {
