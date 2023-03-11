@@ -7,7 +7,10 @@ title: 数据导出
 框架提供了基础的数据导出功能, 可以很方便的实现导出数据到 .xlsx 文件
 
 ::: warning 注意
-此功能依赖于 [laravel-excel](https://docs.laravel-excel.com) ( maatwebsite/excel )
+此功能依赖于 [laravel-excel](https://docs.laravel-excel.com) ( maatwebsite/excel )<br>
+
+如果 `maatwebsite/excel` 安装时报错, 请先安装 `psr/simple-cache:^2.0`<br>
+相关 [issue](https://github.com/SpartnerNL/Laravel-Excel/issues/3815)
 :::
 
 ## 使用
