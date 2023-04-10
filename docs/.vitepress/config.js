@@ -27,8 +27,8 @@ export default defineConfig({
         logo: "https://slowlyo.gitee.io/static/images/owl-admin/logo.png",
         lang: "zh-CN",
         docFooter: {
-            prev: "上一页",
-            next: "下一页",
+            prev: "上一篇",
+            next: "下一篇",
         },
         editLink: {
             pattern: "https://gitee.com/slowlyo/owl-admin-doc/docs/:path",
@@ -54,9 +54,8 @@ export default defineConfig({
                 activeMatch: "^/guide/",
             },
             {
-                text: "扩展",
-                link: "/extensions/",
-                activeMatch: "^/extensions/",
+                text: "常见问题",
+                link: "https://gitee.com/slowlyo/owl-admin/issues?assignee_id=&author_id=&branch=&collaborator_ids=&issue_search=&label_ids=198700653&label_text=&milestone_id=&priority=&private_issue=&program_id=&project_id=slowlyo%2Fowl-admin&project_type=&scope=&single_label_id=&single_label_text=&sort=&state=all&target_project=",
             },
             {
                 text: "Demo",
@@ -106,20 +105,6 @@ export default defineConfig({
                         {text: "代码生成器", link: "/guide/modules/code-generator"},
                         {text: "系统设置", link: "/guide/modules/settings"},
                     ],
-                },
-                {
-                    text: "常见问题",
-                    link: "/guide/issue",
-                },
-            ],
-            "/extensions/": [
-                {
-                    text: "扩展列表",
-                    link: "/extensions/",
-                },
-                {
-                    text: "如何在此处添加我的扩展信息?",
-                    link: "/extensions/explain",
                 },
             ],
         },
