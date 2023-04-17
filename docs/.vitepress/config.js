@@ -50,13 +50,14 @@ export default defineConfig({
         nav: [
             {
                 text: "文档",
-                link: "/guide/",
+                // link: "/guide/",
+                link: "https://learnku.com/docs/owl-admin",
                 activeMatch: "^/guide/",
             },
-            {
-                text: "常见问题",
-                link: "https://gitee.com/slowlyo/owl-admin/issues?assignee_id=&author_id=&branch=&collaborator_ids=&issue_search=&label_ids=198700653&label_text=&milestone_id=&priority=&private_issue=&program_id=&project_id=slowlyo%2Fowl-admin&project_type=&scope=&single_label_id=&single_label_text=&sort=&state=all&target_project=",
-            },
+            // {
+            //     text: "常见问题",
+            //     link: "https://gitee.com/slowlyo/owl-admin/issues?assignee_id=&author_id=&branch=&collaborator_ids=&issue_search=&label_ids=198700653&label_text=&milestone_id=&priority=&private_issue=&program_id=&project_id=slowlyo%2Fowl-admin&project_type=&scope=&single_label_id=&single_label_text=&sort=&state=all&target_project=",
+            // },
             {
                 text: "Demo",
                 link: "http://admin-demo.slowlyo.top/admin",
