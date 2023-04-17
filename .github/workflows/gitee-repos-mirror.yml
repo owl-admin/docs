@@ -1,20 +1,9 @@
-name: Sync And Deploy
-on:
-  workflow_dispatch: { }
-  push:
-    branches:
-      - master
+name: Sync To Gitee
+on: page_build
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/configure-pages@v2
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: docs/.vitepress/dist
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v1
       - name: Sync Mirror
         uses: wearerequired/git-mirror-action@master
         env:
