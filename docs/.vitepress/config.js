@@ -21,7 +21,6 @@ export default defineConfig({
         },
     },
     base: "/owl-admin-doc/",
-    outDir: "../dist",
     themeConfig: {
         outline: "deep",
         lastUpdatedText: "最后一次更新",

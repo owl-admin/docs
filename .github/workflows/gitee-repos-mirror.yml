@@ -8,13 +8,6 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/configure-pages@v2
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v1
       - name: Sync Mirror
         uses: wearerequired/git-mirror-action@master
         env:
@@ -22,3 +15,29 @@ jobs:
         with:
           source-repo: "git@github.com:Slowlyo/owl-admin-doc.git"
           destination-repo: "git@gitee.com:Slowlyo/owl-admin-doc.git"
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - run: npm ci
+      - name: Build
+        run: npm run docs:build
+      - uses: actions/configure-pages@v2
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs/.vitepress/dist
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v1
