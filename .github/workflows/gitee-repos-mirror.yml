@@ -9,7 +9,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
           source-repo: "git@github.com:Slowlyo/owl-admin-doc.git"
-          destination-repo: "git@gitee.com:Slowlyo/owl-admin-doc.git"
+          destination-repo: "git@gitee.com:slowlyo/owl-admin-doc.git"
       - name: Build Gitee Pages
         uses: yanglbme/gitee-pages-action@main
         with:
