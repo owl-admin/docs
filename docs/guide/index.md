@@ -28,7 +28,8 @@ amis 是一个低代码前端框架，它使用 JSON 配置来生成页面，可
 
 - [《Laravel 9 中文文档》](https://learnku.com/docs/laravel/9.x/installation/12200)
 - [《amis》](https://aisuda.bce.baidu.com/amis/zh-CN/docs/index)
-- [《Owl Admin》](https://slowlyo.gitee.io/owl-admin-doc)
+- [《框架文档: Gitee Pages》](https://slowlyo.gitee.io/owl-admin-doc)
+- [《框架文档: GitHub Pages》](https://slowlyo.github.io/owl-admin-doc)
 
 ## 功能
 
