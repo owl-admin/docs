@@ -86,7 +86,7 @@ export default defineConfig({
                     text: "表单",
                     collapsible: true,
                     items: [
-                        {text: "Form介绍", link: "/form/form"},
+                        {text: "Form介绍", link: "/guide/form/form"},
                     ],
                 },
                 {
