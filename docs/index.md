@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Owl Admin
-  text: 快速且灵活的后台管理系统
+  text: 快速且灵活的后台框架
   tagline: 基于 laravel 和 amis 的后台管理系统
   image:
     src: https://slowlyo.gitee.io/static/images/owl-admin/logo-lg.png
@@ -14,8 +14,8 @@ hero:
       text: 快速开始
       link: https://learnku.com/docs/owl-admin
     - theme: alt
-      text: Gitee
-      link: https://gitee.com/slowlyo/owl-admin
+      text: GitHub
+      link: https://github.com/Slowlyo/owl-admin
 features:
   - icon: 💡
     title: 快且灵活
