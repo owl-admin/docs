@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: https://learnku.com/docs/owl-admin
+      link: http://doc.slowlyo.top/web/#/6
     - theme: alt
       text: GitHub
       link: https://github.com/Slowlyo/owl-admin
