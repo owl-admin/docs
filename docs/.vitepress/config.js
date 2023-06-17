@@ -49,12 +49,12 @@ export default defineConfig({
         nav: [
             {
                 text: "文档",
-                link: "https://learnku.com/docs/owl-admin",
+                link: "http://doc.slowlyo.top/web/#/6",
                 activeMatch: "^/guide/",
             },
             {
                 text: "论坛",
-                link: "https://github.com/Slowlyo/owl-admin/discussions",
+                link: "http://admin-discuss.slowlyo.top/",
             },
             {
                 text: "Demo",
