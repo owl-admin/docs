@@ -1,1 +1,0 @@
-import{_ as t,c as d,o as e,a as r}from"./app.32ae7deb.js";const a="/pay.jpg",b=JSON.parse('{"title":"为什么要打赏？","description":"","frontmatter":{},"headers":[],"relativePath":"donate/index.md","lastUpdated":1687860242000}'),o={name:"donate/index.md"},s=r("",9),_=[s];function n(i,h,l,c,p,m){return e(),d("div",null,_)}const f=t(o,[["render",n]]);export{b as __pageData,f as default};
