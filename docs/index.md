@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: http://doc.slowlyo.top/web/#/6
+      link: http://doc.owladmin.com
     - theme: alt
       text: GitHub
       link: https://github.com/Slowlyo/owl-admin

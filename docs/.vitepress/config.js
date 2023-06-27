@@ -49,16 +49,16 @@ export default defineConfig({
         nav: [
             {
                 text: "文档",
-                link: "http://doc.slowlyo.top/web/#/6",
+                link: "http://doc.owladmin.com",
                 activeMatch: "^/guide/",
             },
             {
                 text: "论坛",
-                link: "http://admin-discuss.slowlyo.top/",
+                link: "http://discuss.owladmin.com",
             },
             {
                 text: "Demo",
-                link: "http://admin-demo.slowlyo.top/admin",
+                link: "http://demo.owladmin.com",
             },
         ],
     },
