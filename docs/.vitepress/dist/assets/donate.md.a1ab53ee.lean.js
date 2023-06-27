@@ -1,1 +1,0 @@
-import{_ as t,c as d,o as a,a as e}from"./app.90fc4c90.js";const r="/pay.jpg",u=JSON.parse('{"title":"为什么要打赏？","description":"","frontmatter":{},"headers":[],"relativePath":"donate.md","lastUpdated":1687858807000}'),o={name:"donate.md"},s=e("",9),_=[s];function l(n,c,h,i,p,m){return a(),d("div",null,_)}const b=t(o,[["render",l]]);export{u as __pageData,b as default};

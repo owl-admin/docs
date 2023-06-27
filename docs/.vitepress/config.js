@@ -61,7 +61,7 @@ export default defineConfig({
             },
             {
                 text: "打赏",
-                link: "/donate",
+                link: "/donate/",
             },
         ],
     },
