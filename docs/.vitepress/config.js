@@ -30,10 +30,10 @@ export default defineConfig({
             prev: "上一篇",
             next: "下一篇",
         },
-        editLink: {
-            pattern: "https://gitee.com/slowlyo/owl-admin-doc/docs/:path",
-            text: "提交改进",
-        },
+        // editLink: {
+        //     pattern: "https://gitee.com/slowlyo/owl-admin-doc/docs/:path",
+        //     text: "提交改进",
+        // },
         socialLinks: [
             {
                 icon: {
@@ -50,7 +50,6 @@ export default defineConfig({
             {
                 text: "文档",
                 link: "http://doc.owladmin.com",
-                activeMatch: "^/guide/",
             },
             {
                 text: "论坛",
@@ -59,6 +58,10 @@ export default defineConfig({
             {
                 text: "Demo",
                 link: "http://demo.owladmin.com",
+            },
+            {
+                text: "打赏",
+                link: "/donate",
             },
         ],
     },
