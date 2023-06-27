@@ -5,7 +5,7 @@
 
 <br>
 
-![](/pay.jpg)
+<img src="/pay.jpg" style="border-radius: 4px; width: 30rem">
 
 <br>
 
