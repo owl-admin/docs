@@ -20,7 +20,7 @@ export default defineConfig({
             })
         },
     },
-    base: "/",
+    // base: "/",
     themeConfig: {
         outline: "deep",
         lastUpdatedText: "最后一次更新",
