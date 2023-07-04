@@ -52,10 +52,6 @@ export default defineConfig({
                 link: "http://doc.owladmin.com",
             },
             {
-                text: "论坛",
-                link: "http://discuss.owladmin.com",
-            },
-            {
                 text: "Demo",
                 link: "http://demo.owladmin.com",
             },
