@@ -2,7 +2,7 @@
 
 <br>
 
-### __创建一个新用户__
+## 创建一个新用户
 
 ```bash
 # 执行后, 根据提示输入用户名, 密码即可创建一个新用户.
@@ -12,7 +12,7 @@ php artisan admin:create-user
 
 <br>
 
-### __清理代码生成器已经生成的内容__
+## 清理代码生成器已经生成的内容
 
 ```bash
 # 此处 id 为代码生成器生成的 id
@@ -23,7 +23,7 @@ php artisan admin:gen-code-clear {--id=}
 
 <br>
 
-### __生成路由__
+## 生成路由
 
 ```bash
 # 根据代码生成记录生成路由文件, 生成的路由文件在 `/routes/admin.php`
@@ -35,7 +35,7 @@ php artisan admin:gen-route {--excluded=}
 
 <br>
 
-### __安装框架__
+## 安装框架
 
 ```bash
 # 该命令会初始化框架目录结构及数据库
@@ -45,7 +45,7 @@ php artisan admin:install
 
 <br>
 
-### __发布框架资源__
+## 发布框架资源
 
 ```bash
 # 可选参数:
@@ -65,7 +65,7 @@ php artisan admin:publish
 
 <br>
 
-### __更改用户密码__
+## 更改用户密码
 
 ```bash
 # 执行后, 根据提示输入用户名, 密码即可.
@@ -75,7 +75,7 @@ php artisan admin:reset-password
 
 <br>
 
-### __更新框架__
+## 更新框架
 
 ```bash
 # 更新框架, 会自动发布资源
@@ -87,7 +87,7 @@ php artisan admin:update {--v=}
 
 <br>
 
-### __初始化模块__
+## 初始化模块
 
 ```bash
 # 初始化模块, 会自动发布资源
@@ -97,12 +97,3 @@ php artisan admin:update {--v=}
 php artisan admin-module:init {--module=}
 ```
 
-<br>
-
-### __更新模块__
-
-```bash
-# 更新所有模块中的框架资源
-
-php artisan admin-module:update
-```

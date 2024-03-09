@@ -37,11 +37,11 @@ $page->body([
 ]);
 ```
 
-> 在你熟悉了 `amis` 之后, 你会发现原来用后端代码组页面这么简单<br> 你可以在 `owl  admin` 中找到几乎所有的 `amis` 组件
+> 在你熟悉了 `amis` 之后, 你会发现原来用后端代码构建页面这么简单<br> 你可以在 `owl  admin` 中找到几乎所有的 `amis` 组件
 
 <br>
 
-## __没找到你想要的组件?__
+## 没找到你想要的组件?
 
 ```php
 \Slowlyo\SlowAdmin\Renderers\Component::make()->setType('page')->title('我是标题');
@@ -61,10 +61,10 @@ amis('page')->title('我是标题');
 
 <br>
 
-#### 💡小提示
-> 你可以放心的在每一个继承了 `Slowlyo\SlowAdmin\Renderers` 类的组件类后面调用方法
-> 方法名对应了 `amis` 组建的属性名, 参数对应了 `amis` 属性的值
-> 在组件的基类中使用了 `__call()` 方法来实现自动添加属性
+> [!tip]
+> 你可以放心的在每一个继承了 `Slowlyo\SlowAdmin\Renderers` 类的组件类后面调用方法 <br>
+> 方法名对应了 `amis` 组建的属性名, 参数对应了 `amis` 属性的值 <br>
+> 在组件的基类中使用了 `__call()` 方法来实现自动添加属性 <br>
 > 即使方法不存在, 或者该组件没有这个属性, 你的代码也不会报错, 只是效果出不来罢了~
 
 

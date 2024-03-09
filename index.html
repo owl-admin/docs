@@ -8,26 +8,69 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+    <style>
+        .sidebar ul, .sidebar ul li{
+            padding-left: 8px;
+        }
+    </style>
 </head>
 <body>
 <div id="app"></div>
+
+<script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 <script>
     window.$docsify = {
-        name         : '<b>OwlAdmin</b>',
-        nameLink     : 'https://owladmin.com',
-        repo         : 'slowlyo/owl-admin-doc',
-        loadNavbar   : true,
-        loadSidebar  : true,
-        basePath     : '/docs',
-        homepage     : 'README.md',
-        subMaxLevel  : 2,
-        auto2top     : true,
-        themeColor   : '#1677FF',
-        mergeNavbar  : true,
-        formatUpdated: '{MM}/{DD} {HH}:{mm}',
+        name        : '<b>Owl Admin</b>',
+        nameLink    : 'https://owladmin.com',
+        repo        : 'slowlyo/owl-admin-doc',
+        loadNavbar  : true,
+        loadSidebar : true,
+        basePath    : '/docs',
+        homepage    : 'README.md',
+        subMaxLevel : 3,
+        auto2top    : true,
+        themeColor  : '#1677FF',
+        routerMode  : 'history',
+        mergeNavbar : true,
+        notFoundPage: true,
+        search      : {placeholder: '搜索', noData: '没有找到结果', hideOtherSidebarContent: true},
+        plugins     : [
+            EditOnGithubPlugin.create('https://github.com/slowlyo/owl-admin-doc/blob/master/docs/', null, '📝 编辑此页'),
+            (hook, vm) => {
+                hook.beforeEach((html) => html + '\n----\n')
+            }
+        ],
+        timeUpdater : {
+            text         : '> 最后更新时间: {docsify-updated}',
+            formatUpdated: '{YYYY}/{MM}/{DD}',
+        },
+        // [!NOTE] / [!TIP] / [!WARNING] / [!ATTENTION] (style: callout, flat)
+        'flexible-alerts': {
+            attention: {
+                label: 'DANGER'
+            }
+        },
+        pagination       : {previousText: '上一页', nextText: '下一页', crossChapter: true, crossChapterText: true},
+        copyCode         : {buttonText: 'Copy', errorText: 'Error', successText: 'Copied'},
+        count            : {countable: true, fontsize: '0.9em', color: 'rgb(90,90,90)', language: 'chinese'}
     }
 </script>
 <!-- Docsify v4 -->
 <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
+<script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
