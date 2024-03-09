@@ -4,7 +4,7 @@
 
 <br>
 
-### 1. 在 `CRUD` 的工具栏添加两个按钮
+### 在 `CRUD` 的工具栏添加两个按钮
 
 
 ```php
@@ -68,7 +68,7 @@ public function downloadImportTemplate($path)
 
 <br>
 
-### 2.实现导入接口
+### 实现导入接口
 
 ```php
 // file: app/Admin/routes.php
