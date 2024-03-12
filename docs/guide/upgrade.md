@@ -36,7 +36,7 @@ php artisan admin:publish --assets --config --lang --force
 
 ## __发布文件命令__
 
-> [!note]
+> [!tip]
 > 运行 `admin:update` 后一般不需要运行 `admin:publish` 命令
 
 发布所有文件, 并强制覆盖原有文件
