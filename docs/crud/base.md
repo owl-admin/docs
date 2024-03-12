@@ -16,6 +16,7 @@
 
 通过这些方法, 组成了一个完整的 CRUD 功能
 
+> [!tip]
 > 当默认的方法不满足你的需求时, 可以在你的 controller 重写这几个方法
 
 <br>
@@ -25,7 +26,7 @@
 1. 在 `app/Admin/routes.php` 中注册一个 `resource` 路由
 
 ```php
-    $router->resource('book', \App\Admin\Controllers\BookController::class);
+$router->resource('book', \App\Admin\Controllers\BookController::class);
 ```
 
 2. 新建对应的控制器 `app/Admin/Controllers/BookController.php` 并继承 `AdminController`

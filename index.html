@@ -8,10 +8,38 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fontsource/roboto@5.0.12/400.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.19/400.min.css">
     <style>
+        body {
+            font-family: 'JetBrains Mono, Roboto, sans-serif';
+        }
+
         .sidebar ul, .sidebar ul li {
             padding-left: 8px;
+        }
+
+        .markdown-section pre, .markdown-section pre > code {
+            background: #272822;
+            color: #f8f8f2;
+            border: none;
+        }
+
+        pre {
+            border-radius: .5rem;
+        }
+
+        .markdown-section code {
+            background: #f7f7f7;
+            border: 1px solid #e4e4e4;
+            border-radius: .5rem;
+            color: #515151;
+        }
+
+        .search input:focus {
+            box-shadow: none !important;
+            border-color: transparent !important;
         }
     </style>
 </head>
@@ -51,9 +79,7 @@
         },
         // [!NOTE] / [!TIP] / [!WARNING] / [!ATTENTION] (style: callout, flat)
         'flexible-alerts': {
-            attention: {
-                label: 'DANGER'
-            }
+            attention: {label: 'DANGER'}
         },
         pagination       : {previousText: '上一页', nextText: '下一页', crossChapter: true, crossChapterText: true},
         copyCode         : {buttonText: 'Copy', errorText: 'Error', successText: 'Copied'},
