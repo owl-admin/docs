@@ -14,7 +14,7 @@
     * [Amis](theory/amis.md)
     * [框架](theory/frame.md)
 
-* 原理
+* CRUD
 
     * [基础概念](crud/base.md)
     * [增](crud/create.md)
@@ -45,21 +45,3 @@
 
     * [代码生成器](modules/code-generator.md)
     * [设置](modules/setting.md)
-
-* 自定义组件
-
-    * [图标 Iconify](custom-components/iconify.md)
-    * [富文本编辑器 WangEditor](custom-components/wangeditor.md)
-    * [水印 Watermark](custom-components/watermark.md)
-
-* 示例
-
-    * [自定义登录页](examples/custom-login.md)
-    * [自定义用户菜单](examples/custom-user-menu.md)
-    * [自定义后台路径](examples/custom-admin-path.md)
-    * [Excel 导入](examples/excel-import.md)
-    * [模型关联数据展示](examples/model-relation.md)
-    * [在顶部操作栏添加内容](examples/top-bar.md)
-    * [动态添加菜单](examples/dynamic-add-menu.md)
-    * [组件封装](examples/component-encapsulation.md)
-    * [条件组合查询](examples/condition-builder.md)
