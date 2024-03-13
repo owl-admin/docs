@@ -78,27 +78,29 @@
     }
 
     window.$docsify = {
-        name        : '<b>Owl Admin</b>',
-        nameLink    : '/',
-        repo        : 'slowlyo/owl-admin-doc',
-        loadNavbar  : true,
-        loadSidebar : true,
-        basePath    : '/docs',
-        homepage    : 'README.md',
-        subMaxLevel : 3,
-        auto2top    : true,
-        themeColor  : '#1677FF',
-        routerMode  : 'hash',
-        mergeNavbar : true,
-        notFoundPage: true,
-        search      : {placeholder: '搜索', noData: '没有找到结果', hideOtherSidebarContent: true},
-        plugins     : [
+        name         : '<b>Owl Admin</b>',
+        nameLink     : '/',
+        repo         : 'slowlyo/owl-admin-doc',
+        loadNavbar   : true,
+        loadSidebar  : true,
+        autoHeader   : true,
+        basePath     : '/docs',
+        homepage     : 'README.md',
+        subMaxLevel  : 3,
+        auto2top     : true,
+        themeColor   : '#1677FF',
+        routerMode   : 'hash',
+        mergeNavbar  : true,
+        notFoundPage : true,
+        executeScript: true,
+        search       : {placeholder: '搜索', noData: '没有找到结果', hideOtherSidebarContent: true},
+        plugins      : [
             EditOnGithubPlugin.create('https://github.com/slowlyo/owl-admin-doc/blob/master/docs/', null, '📝 编辑此页'),
             (hook, vm) => {
                 hook.beforeEach((html) => html + '\n----\n')
             }
         ],
-        timeUpdater : {
+        timeUpdater  : {
             text         : '> 最后更新时间: {docsify-updated}',
             formatUpdated: '{YYYY}/{MM}/{DD}',
         },

@@ -1,7 +1,7 @@
 * [指南]()
-* [示例](examples/custom-login.md)
-* [FAQ](faq/file-handle.md)
-* [自定义组件](custom-components/iconify.md)
+* [示例](examples/)
+* [FAQ](faq/)
+* [自定义组件](custom-components/)
 * [组件文档](https://aisuda.bce.baidu.com/amis/zh-CN/components/page)
 *
 * |
