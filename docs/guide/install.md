@@ -7,6 +7,8 @@
 
 ## __开始安装__
 
+### 安装 `laravel`
+
 首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`
 ，请务必先阅读 [文档](https://learnku.com/docs/laravel/9.x/installation/12200) ！
 
@@ -34,7 +36,11 @@ locale如下设置
 'locale' => 'zh_CN',
 ```
 
-安装`owl_admin`
+> [!warning|label:注意]
+> 如果你使用的是 laravel 11 的话 <br>
+> 还需要执行 `php artisan install:api`
+
+### 安装 `owl-admin`
 
 ```bash
 cd {项目名称}
