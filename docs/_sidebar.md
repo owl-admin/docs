@@ -8,6 +8,7 @@
     * [助手函数](guide/helper.md)
     * [组件的使用](guide/component-use.md)
     * [内置命令](guide/artisan.md)
+    * [接口文档](guide/api.md)
 
 * 原理
 
