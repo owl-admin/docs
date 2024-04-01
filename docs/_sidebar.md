@@ -46,3 +46,6 @@
 
     * [代码生成器](modules/code-generator.md)
     * [设置](modules/setting.md)
+    * [页面管理](modules/pages.md)
+    * [动态关联](modules/relationships.md)
+    * [动态 API](modules/api.md)
