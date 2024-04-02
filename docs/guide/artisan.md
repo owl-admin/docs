@@ -97,3 +97,25 @@ php artisan admin:update {--v=}
 php artisan admin-module:init {--module=}
 ```
 
+<br>
+
+## 检查环境
+
+```bash
+# 检查环境, 可协助发现某些问题
+# 可选参数:
+#    --zh :  中文提示
+
+php artisan admin:check
+# php artisan admin:check --zh
+```
+
+<br>
+
+## 生成 IDE Helper 文件
+
+```bash
+# helper 文件会放在 config('admin.directory') 目录下
+php artisan admin:ide-helper
+```
+
