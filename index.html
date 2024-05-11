@@ -11,10 +11,16 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fontsource/roboto@5.0.12/400.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.19/400.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            color: #000000E0;
+            font-size: 14px;
+        }
+
+        p{
+            /*line-height: 2;*/
+            line-height: 22px;
         }
 
         .sidebar ul, .sidebar ul li {
@@ -33,10 +39,11 @@
         }
 
         .markdown-section code {
-            background: #f7f7f7;
+            background: #fafafa;
             border: 1px solid #e4e4e4;
-            border-radius: .5rem;
+            border-radius: .3rem;
             color: #515151;
+            padding: 2px 4px;
         }
 
         .search input:focus {
@@ -72,23 +79,11 @@
 <body>
 <div id="app"></div>
 
-<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 <script>
     if (typeof navigator.serviceWorker !== 'undefined' && location.hostname != 'localhost') {
         navigator.serviceWorker.register('sw.js')
     }
-
-    const gitalk = new Gitalk({
-        clientID: '286ea97e8128a383fd6a',
-        clientSecret: '965591dbaa03230ec02ecf7a26bb032828602e44',
-        repo: 'owl-admin-doc',
-        owner: 'slowlyo',
-        admin: ['slowlyo'],
-        id: location.hash,
-        // facebook-like distraction free mode
-        distractionFreeMode: false
-    })
 
     window.$docsify = {
         name         : '<b>Owl Admin</b>',
@@ -150,6 +145,5 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
 <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
 </body>
 </html>
