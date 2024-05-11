@@ -1,4 +1,4 @@
-## __form 方法构建新增表单__
+## form 方法构建新增表单
 
 - 页面模式下
     - 通过访问 `create` 路由, 进入到 `AdminController` 方法中的 `create` 方法
@@ -27,7 +27,7 @@ public function form($isEdit)
 
 <br>
 
-## __store 方法处理新增表单提交__
+## store 方法处理新增表单提交
 
 - 提交的流程
     - 前端渲染新增表单 (里面包含了提交的路径)

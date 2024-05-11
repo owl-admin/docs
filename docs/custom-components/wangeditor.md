@@ -1,4 +1,4 @@
-### __WangEditor__
+### WangEditor
 _可能会更好用的富文本编辑器~_
 
 | 属性名 | 说明 |
@@ -39,7 +39,7 @@ _可能会更好用的富文本编辑器~_
 
 <br>
 
-### __示例__
+### 示例
 
 ```php
 use Slowlyo\OwlAdmin\Renderers\WangEditor;

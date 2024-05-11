@@ -1,4 +1,4 @@
-## __创建模块__
+## 创建模块
 
 这个命令会创建 `owl-admin` 所需的文件和目录, 以及相关的数据库及基础数据
 建议首字母大写, 使用大驼峰格式
@@ -10,7 +10,7 @@ php artisan admin-module:init <module-name>
 # eg: php artisan admin-module:init Master Store
 ```
 
-## __更改配置文件__
+## 更改配置文件
 
 ```php
 // file: config/admin.php
@@ -23,7 +23,7 @@ php artisan admin-module:init <module-name>
 ]
 ```
 
-## __配置 `composer.json`__
+## 配置 `composer.json`
 
 配置模块目录(admin-modules)自动加载
 

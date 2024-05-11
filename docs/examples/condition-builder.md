@@ -2,7 +2,7 @@
 
 在 `OwlAdmin` 中，可以使用 `ConditionBuilder` 组件来灵活的构建条件组合查询。
 
-## __使用__
+## 使用
 
 ### 1. 在 `Model` 中引入 `ConditionBuilderScopeTrait`
 
@@ -76,7 +76,7 @@ public function list(): Page
 
 <br>
 
-## __扩展__
+## 扩展
 
 在准备扩展前，请先确保读懂了 `ConditionBuilderScopeTrait` 的实现，以及 `ConditionBuilder` 组件的使用
 

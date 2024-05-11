@@ -1,10 +1,10 @@
-## __创建扩展__
+## 创建扩展
 
 在扩展管理中使用 `创建扩展` 来生成一个扩展的骨架。
 
 配置相应的报名及命名空间，然后点击 `确认` 即可。
 
-### __格式__
+### 格式
 
 - 包名: 作者名/扩展名 (例如: slowlyo/banner)
 - 命名空间: 作者名\扩展名 (例如: Slowlyo\Banner)
@@ -32,17 +32,17 @@
 
 <br>
 
-## __配置__
+## 配置
 
-### __logo__
+### logo
 
 在插件根目录下添加 `logo.png` 文件，用于在扩展管理中展示。
 
-### __文档__
+### 文档
 
 根目录的 `README.md` 文件, 会在扩展管理中展示。
 
-### __composer.json__
+### composer.json
 
 | 字段          | 说明                |
 |-------------|-------------------|
@@ -54,14 +54,14 @@
 
 <br>
 
-## __功能开发__
+## 功能开发
 
-### __路由__
+### 路由
 
 你可以在 `extensions/扩展名/src/Http/routes.php` 文件中定义扩展的路由。
 > 注意避免重复
 
-### __菜单__
+### 菜单
 
 在`src/BannerServiceProvider.php` 中添加 `$menu` 属性:
 
@@ -84,7 +84,7 @@ protected $menu = [
 ];
 ```
 
-### __语言包__
+### 语言包
 
 在扩展目录下创建 `lang` 目录, 逻辑与laravel的语言包一致, 例如:
 
@@ -104,12 +104,12 @@ use Slowlyo\Banner\BannerServiceProvider;
 BannerServiceProvider::trans('title');
 ```
 
-### __前端__
+### 前端
 
 你可以在服务提供者中使用 `Admin::js()` 方法来动态加载你的前端文件 [`register()` / `init()`]
 
 
-### __中间件__
+### 中间件
 
 在`src/BannerServiceProvider.php` 中添加 `$middleware` 属性:
 
@@ -120,7 +120,7 @@ protected $middleware = [
 ];
 ```
 
-### __扩展配置__
+### 扩展配置
 
 在`src/BannerServiceProvider.php` 中有以下方法, 依葫芦画瓢即可:
 
@@ -145,16 +145,16 @@ $except = BannerServiceProvider::setting('except');
 $except = BannerServiceProvider::setting('except.value');
 ```
 
-### __数据库迁移__
+### 数据库迁移
 
 在 `extensions/扩展名/database/migrations` 目录下创建迁移文件
 
 扩展启用时会自动执行迁移文件, 卸载时会自动回滚
 
-### __其他__
+### 其他
 
 基础的服务提供者中提供了 `customInitBefore` 和 `customInitAfter` 两个方法, 用于扩展的自定义初始化操作
 
-### __发布到 Packagist.org__
+### 发布到 Packagist.org
 
 参考 [Packagist 中文文档](https://learnku.com/docs/composer/2018)

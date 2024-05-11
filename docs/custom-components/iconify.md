@@ -1,4 +1,4 @@
-### __SvgIcon__
+### SvgIcon
 _用于显示 iconify 图标_
 
 | 属性名  | 说明 |
@@ -8,7 +8,7 @@ _用于显示 iconify 图标_
 
 <br>
 
-### __示例__
+### 示例
 
 ```php
 use Slowlyo\OwlAdmin\Renderers\WangEditor;

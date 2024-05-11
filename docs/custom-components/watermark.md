@@ -1,4 +1,4 @@
-### __Watermark__
+### Watermark
 
 _antd 水印组件_
 
@@ -17,7 +17,7 @@ _antd 水印组件_
 
 <br>
 
-### __示例__
+### 示例
 
 ```php
 amis()->Watermark()->body(

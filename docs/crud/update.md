@@ -1,4 +1,4 @@
-## __form 方法构建编辑表单__
+## form 方法构建编辑表单
 
 - 页面模式下
     - 通过访问 `edit` 路由, 进入到 `AdminController` 方法中的 `edit` 方法
@@ -27,7 +27,7 @@ public function form($isEdit)
 
 <br>
 
-## __update 方法处理编辑表单提交__
+## update 方法处理编辑表单提交
 
 - 提交的流程
     - 前端渲染编辑表单 (里面包含了提交的路径)
@@ -77,7 +77,7 @@ public function update($primaryKey, $data): bool
 }
 ```
 
-## __数据回显__
+## 数据回显
 
 - 请求数据的 `api` 会携带 `_action=getData` 的参数, 从而调用 `service` 中的 `getEditData` 方法
 - 如果是弹窗模式, 编辑表单可以从列表中获取数据并回显

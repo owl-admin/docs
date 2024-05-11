@@ -8,7 +8,7 @@
 
 内置以下方法:
 
-## __set - 保存设置__
+## set - 保存设置
 
 ```php
 /**
@@ -24,7 +24,7 @@ settings()->set('site_name', 'Owl Admin');
 ```
 <br>
 
-## __setMany - 批量保存设置__
+## setMany - 批量保存设置
 
 ```php
 /**
@@ -42,7 +42,7 @@ settings()->setMany([
 ```
 <br>
 
-## __adminSetMany - 批量保存设置并返回后台响应格式数据__
+## adminSetMany - 批量保存设置并返回后台响应格式数据
 
 ```php
 /**
@@ -61,7 +61,7 @@ public function store(Request $request)
 ```
 <br>
 
-## __all - 以数组形式返回所有设置__
+## all - 以数组形式返回所有设置
 
 ```php
 /**
@@ -74,7 +74,7 @@ settings()->all();
 ```
 <br>
 
-## __get - 获取设置项__
+## get - 获取设置项
 
 ```php
 /**
@@ -91,7 +91,7 @@ settings()->get('site_name');
 ```
 <br>
 
-## __arrayGet - 获取设置项中的某个值__
+## arrayGet - 获取设置项中的某个值
 
 ```php
 /**
@@ -108,7 +108,7 @@ settings()->arrayGet('site_info', 'title.zh.value');
 ```
 <br>
 
-## __clearCache - 清除指定设置项的缓存__
+## clearCache - 清除指定设置项的缓存
 
 ```php
 /**

@@ -21,7 +21,7 @@
 
 <br>
 
-### __开发一个新功能的步骤__
+### 开发一个新功能的步骤
 
 1. 在 `app/Admin/routes.php` 中注册一个 `resource` 路由
 
@@ -52,6 +52,6 @@ __使用代码生成器可以由系统自动处理以上步骤, 只需要自行�
 
 <br>
 
-## __Service__
+## Service
 
 - 控制器中的 `service` 属性, 会根据你在自己的控制器中定义的 `serviceName` 属性, 在 `AdminController` 初始化时, 自动初始化为对应的 `service` 实例

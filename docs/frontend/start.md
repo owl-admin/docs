@@ -12,7 +12,7 @@
 
 <br>
 
-## __发布前端文件__
+## 发布前端文件
 
 ```bash
 php artisan admin:publish --views
@@ -21,7 +21,7 @@ php artisan admin:publish --views
 执行后会将前端需要的文件发布至 `resources/admin-views` 下
 这是一个标准的前端项目结构
 
-### __记得先安装依赖__
+### 记得先安装依赖
 
 ```bash
 # 如果你没有pnpm, 请先安装pnpm (npm i -g pnpm)
@@ -30,10 +30,10 @@ pnpm i
 
 <br>
 
-## __部分命令__
+## 部分命令
 
 
-#### __运行__
+#### 运行
 
 ```bash
 pnpm run dev
@@ -42,7 +42,7 @@ pnpm run dev
 > [!tip]
 > 如果遇到跨域问题, 可在 `.env` 文件中配置你自己的域名
 
-#### __打包__
+#### 打包
 
 ```bash
 pnpm run build
