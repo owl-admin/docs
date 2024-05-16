@@ -12,5 +12,5 @@
     * [GitHub](https://github.com/slowlyo/owl-admin)
     * [Gitee](https://gitee.com/slowlyo/owl-admin)
 * 交流
-    * [论坛](https://github.com/slowlyo/owl-admin/discussions)
+    * [论坛](https://github.com/orgs/owl-admin/discussions)
     * [QQ群](https://jq.qq.com/?_wv=1027&k=5La4Ir6c)
