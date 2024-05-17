@@ -44,6 +44,8 @@ public function list()
                 amis()->TextControl('keyword', __('admin.keyword'))
             )
         )
+        // 判断是否可以批量操作
+        ->itemCheckableOn('${items[index].state > 0}')
         // 表格列
         ->columns([
             amis()->TableColumn('id', 'ID')->sortable(),
