@@ -39,10 +39,10 @@ public function list()
         // 筛选器
         ->filter(
             // baseFilter 方法中配置了一个基础的表单
-            $this->baseFilter()->body(
+            $this->baseFilter()->body([
                 // 这里边配置筛选的表单项
                 amis()->TextControl('keyword', __('admin.keyword'))
-            )
+            ])
         )
         // 表格列
         ->columns([
