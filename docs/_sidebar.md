@@ -35,6 +35,10 @@
     * [页面管理](modules/pages.md)
     * [动态关联](modules/relationships.md)
     * [动态 API](modules/api.md)
+* 自定义组件
+    * [Iconify 图标](custom-components/iconify.md)
+    * [WangEditor 富文本编辑器](custom-components/wangeditor.md)
+    * [Watermark 水印](custom-components/watermark.md)
 * 常见问题
     * [图片 / 文件, 回显失败](faq/file-handle.md)
     * [页面数据回显失败, 提示 fetchFailed](faq/fetch-failed.md)
@@ -51,7 +55,3 @@
     * [动态添加菜单](examples/dynamic-add-menu.md)
     * [组件封装](examples/component-encapsulation.md)
     * [条件组合查询](examples/condition-builder.md)
-* 自定义组件
-    * [Iconify 图标](custom-components/iconify.md)
-    * [WangEditor 富文本编辑器](custom-components/wangeditor.md)
-    * [Watermark 水印](custom-components/watermark.md)

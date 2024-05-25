@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fontsource/roboto@5.0.12/400.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.19/400.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"/>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             color: #000000E0;
         }
 
-        p{
+        p {
             line-height: 2;
             /*line-height: 24px;*/
         }
@@ -35,7 +35,7 @@
         }
 
         pre {
-            border-radius: .5rem;
+            border-radius: 6px;
         }
 
         .markdown-section code {
@@ -72,7 +72,23 @@
         }
 
         .alert.flat {
-            border-radius: .5rem !important;
+            border-radius: 6px !important;
+        }
+
+        .docsify-copy-code-button {
+            top: 5px !important;
+            right: 5px !important;
+            border-radius: 6px !important;
+            padding: 6px 10px !important;
+        }
+
+        .docsify-copy-code-button .error, .docsify-copy-code-button .success {
+            border-radius: 6px !important;
+            padding: 6px 10px !important;
+        }
+
+        .docsify-copy-code-button.error .error, .docsify-copy-code-button.success .success {
+            font-size: 14px !important;
         }
     </style>
 </head>
@@ -146,5 +162,6 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
 <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
 </body>
 </html>
