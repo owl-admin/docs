@@ -55,3 +55,4 @@
     * [动态添加菜单](examples/dynamic-add-menu.md)
     * [组件封装](examples/component-encapsulation.md)
     * [条件组合查询](examples/condition-builder.md)
+    * [前后端独立部署](examples/independent-deployment.md)
