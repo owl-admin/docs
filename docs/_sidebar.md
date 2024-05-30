@@ -56,3 +56,4 @@
     * [组件封装](examples/component-encapsulation.md)
     * [条件组合查询](examples/condition-builder.md)
     * [前后端独立部署](examples/independent-deployment.md)
+* [更新记录](CHANGELOG.md)
