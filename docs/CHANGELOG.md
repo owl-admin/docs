@@ -1,3 +1,25 @@
+# v3.7.3
+
+> 2024-06-02 21:11:10 
+
+### 更新内容
+
+- feat: ❗ 调整排序字段为 `custom_order`
+- fix: 部分样式问题修复
+    
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+- 更新: `php artisan admin:update --v=373`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.7.3)
+
+<br>
+<br>
+<br>
+
 # v3.7.2
 
 > 2024-05-26 21:30:21 
