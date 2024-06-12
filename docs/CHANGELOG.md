@@ -1,3 +1,43 @@
+# v3.8.2
+
+> 2024-06-11 23:17:01 
+
+### 更新内容
+
+- feat: `amis` 版本更新为 `6.5.0`
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+- 发布前端资源: `php artisan admin:publish --assets --force`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.2)
+
+<br>
+<br>
+<br>
+
+# v3.8.1
+
+> 2024-06-11 23:15:54 
+
+### 更新内容
+
+- fix: 代码生成器, 切换路径时更新对应文件路径 
+- fix: 菜单管理, 父级菜单不能选择自己
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.1)
+
+<br>
+<br>
+<br>
+
 # v3.8.0
 
 > 2024-06-10 01:50:09 
