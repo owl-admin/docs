@@ -1,3 +1,22 @@
+# v3.8.3
+
+> 2024-06-13 09:39:19 
+
+### 更新内容
+
+- feat: 新增/修改/详情, 支持抽屉模式
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.3)
+
+<br>
+<br>
+<br>
+
 # v3.8.2
 
 > 2024-06-11 23:17:01 

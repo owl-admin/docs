@@ -1,5 +1,8 @@
 ### 使用
 
+- 使用场景
+    - 零代码实现某些简单的接口
+    - 如: 从某个表查询 `options` 列表, 配合 `amis` 的 `select` / `radios`等选项组件的 `source` 属性实现动态选项
 - 添加一条 api 记录
 - 路由信息将会被注册到 `routes/admin.php` 文件中
     - 可以使用 '/admin-api/路径' 来访问你的 api
