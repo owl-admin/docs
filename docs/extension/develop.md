@@ -84,6 +84,30 @@ protected $menu = [
 ];
 ```
 
+### 字典
+
+在`src/BannerServiceProvider.php` 中添加 `$dict` 属性:
+
+```php
+protected $dict = [
+    [
+        'key' => 'goods.state',
+        'value' => '商品状态',
+        'parent'=>'',
+    ],
+    [
+        'parent'=>'goods.state',
+        'key'=>'enable',
+        'value'=>'启用'
+    ],
+    [
+        'parent'=>'goods.state',
+        'key'=>'disable',
+        'value'=>'禁用'
+    ],
+];
+```
+
 ### 语言包
 
 在扩展目录下创建 `lang` 目录, 逻辑与laravel的语言包一致, 例如:
