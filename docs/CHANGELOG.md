@@ -1,3 +1,185 @@
+# v3.9.1
+
+> 2024-07-09 14:26:17 
+
+### 更新内容
+
+- feat: 导出文件下载 api 增加校验
+- 
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.9.1)
+
+<br>
+<br>
+<br>
+
+# v3.9.0
+
+> 2024-07-08 17:21:11 
+
+### 更新内容
+
+- feat: 扩展菜单支持自定义排序 by @khs1001 in https://github.com/slowlyo/owl-admin/pull/132
+- feat: 扩展菜单父级支持根据url路径对应 by @khs1001 in https://github.com/slowlyo/owl-admin/pull/133
+- feat: `amis` 升级 [v6.6.0](https://github.com/baidu/amis/releases/tag/6.6.0)
+- feat: 代码生成器增加克隆记录功能 🌟
+- feat: 移除行内按钮的默认图标 ❗️
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+- 发布前端资源: `php artisan admin:publish --assets --force`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.9.0)
+
+<br>
+<br>
+<br>
+
+# v3.8.10
+
+> 2024-07-03 15:07:34 
+
+### 更新内容
+
+- fix: 代码模板内容统一
+- feat: 调整默认分页控件
+- feat: `config` 部分配置默认从 `env` 取值
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+- 发布配置文件: `php artisan admin:publish --config --force` (可选)
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.10)
+
+<br>
+<br>
+<br>
+
+# v3.8.9
+
+> 2024-07-01 09:39:13 
+
+### 更新内容
+
+- feat: 调整保存角色权限的路由
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.9)
+
+<br>
+<br>
+<br>
+
+# v3.8.8
+
+> 2024-06-29 16:21:40 
+
+### 更新内容
+
+- feat: 调整 `service` 中的 `$tableColumn` (#127 )
+- fix: 修复滚动区域样式异常
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+- 发布前端资源: `php artisan admin:publish --assets --force`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.8)
+
+<br>
+<br>
+<br>
+
+# v3.8.7
+
+> 2024-06-27 14:53:53 
+
+## What's Changed
+* 修复扩展卸载列表不更新bug by @maliang in https://github.com/slowlyo/owl-admin/pull/129
+
+
+**Full Changelog**: https://github.com/slowlyo/owl-admin/compare/v3.8.6...v3.8.7
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.7)
+
+<br>
+<br>
+<br>
+
+# v3.8.6
+
+> 2024-06-22 14:06:00 
+
+### 更新内容
+
+- feat: 优化 update 方法主键获取逻辑
+
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.6)
+
+<br>
+<br>
+<br>
+
+# v3.8.5
+
+> 2024-06-20 17:49:14 
+
+### 更新内容
+
+- feat: 多语言设置区分模块
+- feat: 扩展查询增加缓存机制
+
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.5)
+
+<br>
+<br>
+<br>
+
+# v3.8.4
+
+> 2024-06-13 22:57:26 
+
+### 更新内容
+
+fix: 模块配置文件补充
+
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.8.4)
+
+<br>
+<br>
+<br>
+
 # v3.8.3
 
 > 2024-06-13 09:39:19 
