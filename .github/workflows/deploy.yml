@@ -18,12 +18,15 @@ jobs:
       - name: Build with dumi
         run: npm run build
 
-      - name: Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: ssh scp ssh pipelines
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
-          server: ${{ secrets.ftp_server }}
-          username: owladmin
-          password: ${{ secrets.ftp_password }}
-          local-dir: ./dist/
-          server-dir: ./docs/
-          dangerous-clean-slate: true
+          host: ${{ secrets.server_host }}
+          user: ${{ secrets.server_user }}
+          pass: ${{ secrets.server_pwd }}
+          port: ${{ secrets.server_port }}
+          connect_timeout: 10s
+          first_ssh: |
+            rm -rf /www/wwwroot/admin/docs
+          scp: |
+            './dist/*' => /www/wwwroot/admin/docs/
