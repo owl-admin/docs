@@ -17,4 +17,6 @@ export default defineConfig({
             },
         },
     },
+    // 百度统计
+    analytics: {baidu: '12f470dfb27fc3e59676c7397bf99dd8'},
 })
