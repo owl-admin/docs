@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92304c5a-c89d-4763-951c-d4852183e94a" name="更改" comment="feat: github actions">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -235,15 +234,7 @@
       <workItem from="1718242883575" duration="601000" />
       <workItem from="1720508111809" duration="45000" />
       <workItem from="1720524722871" duration="1930000" />
-      <workItem from="1720526674530" duration="29907000" />
-    </task>
-    <task id="LOCAL-00020" summary="update">
-      <option name="closed" value="true" />
-      <created>1711955614579</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1711955614579</updated>
+      <workItem from="1720526674530" duration="30813000" />
     </task>
     <task id="LOCAL-00021" summary="update">
       <option name="closed" value="true" />
@@ -629,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720590451780</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="feat: github actions">
+      <option name="closed" value="true" />
+      <created>1720591498791</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1720591498791</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
