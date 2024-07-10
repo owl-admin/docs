@@ -18,19 +18,14 @@ jobs:
 #      - name: Build with dumi
 #        run: npm run build
 
-      - name: debug1
-        run: echo "secret" "${{ secrets.github_token }}"
-      - name: debug2
-        run: echo "secret" "${{ secrets.GITHUB_TOKEN }}"
-
-#      - name: Deploy
-#        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-#        with:
-#          server: ${{ secrets.ftp_server }}
-#          username: owladmin
-#          password: ${{ secrets.ftp_password }}
-#          server-dir: ./docs
-#          exclude: |
-#            **/.git*
-#            **/.git*/**
-#            **/node_modules/**
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.ftp_server }}
+          username: owladmin
+          password: ${{ secrets.ftp_password }}
+          server-dir: ./docs
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
