@@ -1,6 +1,6 @@
 ---
 hero:
-  title: Owl Admin t
+  title: Owl Admin
   description: 快速且灵活的后台框架
   actions:
     - text: 快速开始
