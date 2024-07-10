@@ -21,9 +21,9 @@ jobs:
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp://47.242.69.232:21
+          server: ${{ env.FTP_PASSWORD }}
           username: owladmin
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: ${{ env.FTP_PASSWORD }}
           server-dir: ./docs
           exclude: |
             **/.git*
