@@ -1,3 +1,8 @@
+---
+nav: 示例
+title: 自定义用户菜单
+---
+
 1. 自行实现 `\App\Admin\Controllers\AuthController` 中的 `currentUser()`
 
 2.  覆盖 `current-user` 路由

@@ -1,3 +1,8 @@
+---
+nav: 示例
+title: Excel 导入
+---
+
 > 这里举例一种 Excel 导入的写法, 或许不是最佳实现, 仅作参考~
 
 > 数据量不大的情况下, 使用 [InputExcel](https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-excel) 也是个不错的主意~

@@ -1,0 +1,3 @@
+:where(.css-dev-only-do-not-override-kb7vo9).site-tabs-top >.site-tabs-nav::before, :where(.css-dev-only-do-not-override-kb7vo9).site-tabs-bottom >.site-tabs-nav::before, :where(.css-dev-only-do-not-override-kb7vo9).site-tabs-top >div>.site-tabs-nav::before, :where(.css-dev-only-do-not-override-kb7vo9).site-tabs-bottom >div>.site-tabs-nav::before{
+    border-bottom: none;
+}

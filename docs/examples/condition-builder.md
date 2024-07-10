@@ -1,3 +1,8 @@
+---
+nav: 示例
+title: 条件组合查询
+---
+
 > v3.0.3 新增
 
 在 `OwlAdmin` 中，可以使用 `ConditionBuilder` 组件来灵活的构建条件组合查询。

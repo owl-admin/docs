@@ -1,3 +1,8 @@
+---
+nav: 常见问题
+title: 如何设置中文
+---
+
 在 `config/app.php` 中更改配置:
 
 ```diff
