@@ -19,7 +19,7 @@ jobs:
 #        run: npm run build
 
       - name: debug
-        run: echo "secret" "${{ secrets.ftp_server }}" "${{ env.ftp_server }}"
+        run: echo "secret" "${{ secrets.FTP_SERVER }}" "${{ env.FTP_SERVER }}"
 
 #      - name: Deploy
 #        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
