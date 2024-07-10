@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92304c5a-c89d-4763-951c-d4852183e94a" name="更改" comment="dumi">
+    <list default="true" id="92304c5a-c89d-4763-951c-d4852183e94a" name="更改" comment="feat: github actions">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +222,7 @@
       <workItem from="1718242883575" duration="601000" />
       <workItem from="1720508111809" duration="45000" />
       <workItem from="1720524722871" duration="1930000" />
-      <workItem from="1720526674530" duration="20783000" />
+      <workItem from="1720526674530" duration="21028000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -610,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720577388178</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="feat: github actions">
+      <option name="closed" value="true" />
+      <created>1720578327727</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1720578327727</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,6 +651,7 @@
     <MESSAGE value="optimized style" />
     <MESSAGE value="update" />
     <MESSAGE value="dumi" />
-    <option name="LAST_COMMIT_MESSAGE" value="dumi" />
+    <MESSAGE value="feat: github actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: github actions" />
   </component>
 </project>
