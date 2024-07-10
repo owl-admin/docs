@@ -220,15 +220,7 @@
       <workItem from="1718242883575" duration="601000" />
       <workItem from="1720508111809" duration="45000" />
       <workItem from="1720524722871" duration="1930000" />
-      <workItem from="1720526674530" duration="22989000" />
-    </task>
-    <task id="LOCAL-00012" summary="update">
-      <option name="closed" value="true" />
-      <created>1710214875294</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1710214875294</updated>
+      <workItem from="1720526674530" duration="23311000" />
     </task>
     <task id="LOCAL-00013" summary="update">
       <option name="closed" value="true" />
@@ -614,7 +606,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720580442650</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="feat: github actions">
+      <option name="closed" value="true" />
+      <created>1720580603885</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1720580603885</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
