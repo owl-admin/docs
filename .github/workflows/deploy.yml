@@ -18,8 +18,10 @@ jobs:
 #      - name: Build with dumi
 #        run: npm run build
 
-      - name: debug
-        run: echo "secret" "${{ secrets.FTP_SERVER }}" "${{ env.FTP_SERVER }}"
+      - name: debug1
+        run: echo "secret" "${{ secrets.github_token }}"
+      - name: debug2
+        run: echo "secret" "${{ secrets.GITHUB_TOKEN }}"
 
 #      - name: Deploy
 #        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
