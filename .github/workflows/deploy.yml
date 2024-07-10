@@ -12,21 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies .
+      - name: Install dependencies
         run: npm install
 
       - name: Build with dumi
         run: npm run build
 
       - name: Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: ${{ secrets.ftp_server }}
-          username: owladmin
+          host: ${{ secrets.ftp_server }}
+          user: owladmin
           password: ${{ secrets.ftp_password }}
-          local-dir: ./dist/
-          server-dir: ./docs/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          localDir: "dist"
+          remoteDir: "docs"
+#          options: "--delete --asci"
