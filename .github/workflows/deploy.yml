@@ -12,10 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: npm install
         run: npm install
 
-      - name: Build with dumi
+      - name: npm run build
         run: npm run build
 
       - name: ssh scp ssh pipelines
@@ -27,6 +27,12 @@ jobs:
           port: ${{ secrets.server_port }}
           connect_timeout: 10s
           first_ssh: |
-            rm -rf /www/wwwroot/admin/docs
+            mkdir -p /www/wwwroot/admin/docs_new
           scp: |
-            './dist/*' => /www/wwwroot/admin/docs/
+            './dist/*' => /www/wwwroot/admin/docs_new/
+          last_ssh: |
+            rm -rf /www/wwwroot/admin/docs
+            mv /www/wwwroot/admin/docs_new /www/wwwroot/admin/docs
+            rm -rf /www/wwwroot/admin/docs_new
+            chown -R www:www /www/wwwroot/admin/docs
+            chmod -R 755 /www/wwwroot/admin/docs
