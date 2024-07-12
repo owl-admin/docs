@@ -17,6 +17,9 @@ jobs:
       - name: npm install
         run: npm install
 
+      - name: build changelog.md
+        run: node buildChangelog.js ${{ secrets.workflow_token }}
+
       - name: npm run build
         run: npm run build
 
