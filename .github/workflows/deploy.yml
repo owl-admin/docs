@@ -1,45 +1,45 @@
-name: deploy
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: npm install
-        run: npm install
-
-      - name: npm run build
-        run: npm run build
-
-      - name: tar
-        run: tar -zcvf dist.tar.gz ./dist
-
-      - name: ssh scp ssh pipelines
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
-        with:
-          host: ${{ secrets.server_host }}
-          user: ${{ secrets.server_user }}
-          pass: ${{ secrets.server_pwd }}
-          port: ${{ secrets.server_port }}
-          connect_timeout: 10s
-          first_ssh: |
-            mkdir -p /www/wwwroot/admin/docs_new
-          scp: |
-            './dist.tar.gz' => /www/wwwroot/admin/docs_new/
-          last_ssh: |
-            tar -zxf /www/wwwroot/admin/docs_new/dist.tar.gz -C /www/wwwroot/admin/docs_new
-            rm -f /www/wwwroot/admin/docs_new/dist.tar.gz
-            rm -rf /www/wwwroot/admin/docs
-            mv /www/wwwroot/admin/docs_new/dist /www/wwwroot/admin/docs
-            rm -rf /www/wwwroot/admin/docs_new
-            chown -R www:www /www/wwwroot/admin/docs
-            chmod -R 755 /www/wwwroot/admin/docs
+#name: deploy
+#
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0
+#
+#      - name: npm install
+#        run: npm install
+#
+#      - name: npm run build
+#        run: npm run build
+#
+#      - name: tar
+#        run: tar -zcvf dist.tar.gz ./dist
+#
+#      - name: ssh scp ssh pipelines
+#        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+#        with:
+#          host: ${{ secrets.server_host }}
+#          user: ${{ secrets.server_user }}
+#          pass: ${{ secrets.server_pwd }}
+#          port: ${{ secrets.server_port }}
+#          connect_timeout: 10s
+#          first_ssh: |
+#            mkdir -p /www/wwwroot/admin/docs_new
+#          scp: |
+#            './dist.tar.gz' => /www/wwwroot/admin/docs_new/
+#          last_ssh: |
+#            tar -zxf /www/wwwroot/admin/docs_new/dist.tar.gz -C /www/wwwroot/admin/docs_new
+#            rm -f /www/wwwroot/admin/docs_new/dist.tar.gz
+#            rm -rf /www/wwwroot/admin/docs
+#            mv /www/wwwroot/admin/docs_new/dist /www/wwwroot/admin/docs
+#            rm -rf /www/wwwroot/admin/docs_new
+#            chown -R www:www /www/wwwroot/admin/docs
+#            chmod -R 755 /www/wwwroot/admin/docs
