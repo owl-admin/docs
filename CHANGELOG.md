@@ -1,3 +1,24 @@
+## v3.9.2
+
+> 2024-07-11 15:37:59 
+
+### 更新内容
+
+- Merge PR
+    - 调整组件注册和进入登录页面的顺序 by @wxfjamdc in https://github.com/slowlyo/owl-admin/pull/137
+    - Update AdminPermissionController.php by @MaleWeb in https://github.com/slowlyo/owl-admin/pull/138
+
+### 低版本升级步骤
+
+- 获取最新版本: `composer update slowlyo/owl-admin`
+- 发布前端资源: `php artisan admin:publish --assets --force`
+
+[View on GitHub](https://github.com/slowlyo/owl-admin/releases/tag/v3.9.2)
+
+<br>
+<br>
+<br>
+
 ## v3.9.1
 
 > 2024-07-09 14:26:17 
@@ -5,7 +26,7 @@
 ### 更新内容
 
 - feat: 导出文件下载 api 增加校验
-- 
+
 ### 低版本升级步骤
 
 - 获取最新版本: `composer update slowlyo/owl-admin`
