@@ -1,0 +1,17 @@
+name: GitHub Actions Build and Deploy
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [build-releases-doc]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # 添加其他步骤，如安装依赖、构建等
+
+      - name: test
+        run: echo "test"
