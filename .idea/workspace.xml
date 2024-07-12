@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92304c5a-c89d-4763-951c-d4852183e94a" name="更改" comment="feat: images">
-      <change beforePath="$PROJECT_DIR$/.dumirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.dumirc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+    <list default="true" id="92304c5a-c89d-4763-951c-d4852183e94a" name="更改" comment="feat: 优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,38 +91,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;Shell Script.serve.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/developer/php/admin/owl-admin-doc/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\PhpStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;writerside.last.selected.productowl-admin-doc&quot;: &quot;d&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "Shell Script.serve.executor": "Run",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/developer/php/admin/owl-admin-doc/.dumi/theme",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\JetBrains\\PhpStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true",
+    "writerside.last.selected.productowl-admin-doc": "d"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\developer\php\admin\owl-admin-doc\.dumi\theme" />
       <recent name="E:\developer\php\admin\owl-admin-doc\public" />
       <recent name="E:\developer\php\admin\owl-admin-doc\.dumi" />
       <recent name="E:\developer\php\admin\owl-admin-doc" />
       <recent name="E:\developer\php\admin\owl-admin-doc\docs" />
-      <recent name="E:\developer\php\admin\owl-admin-doc\docs\examples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\developer\php\admin\owl-admin-doc\docs\changelog" />
@@ -241,15 +236,7 @@
       <workItem from="1720524722871" duration="1930000" />
       <workItem from="1720526674530" duration="33331000" />
       <workItem from="1720619309661" duration="610000" />
-      <workItem from="1720619934099" duration="226000" />
-    </task>
-    <task id="LOCAL-00024" summary="update">
-      <option name="closed" value="true" />
-      <created>1712227172154</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1712227172154</updated>
+      <workItem from="1720619934099" duration="4556000" />
     </task>
     <task id="LOCAL-00025" summary="update">
       <option name="closed" value="true" />
@@ -635,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720593949506</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="feat: 优化">
+      <option name="closed" value="true" />
+      <created>1720620231946</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1720620231946</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,6 +667,7 @@
     <MESSAGE value="dumi" />
     <MESSAGE value="feat: github actions" />
     <MESSAGE value="feat: images" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: images" />
+    <MESSAGE value="feat: 优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 优化" />
   </component>
 </project>
