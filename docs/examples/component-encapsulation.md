@@ -1,6 +1,6 @@
 ---
 nav:
-    title: 示例
+    title: 开发示例
     order: 2
 title: 组件封装
 ---

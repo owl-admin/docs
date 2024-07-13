@@ -1,5 +1,5 @@
 ---
-nav: 示例
+nav: 开发示例
 title: Excel 导入
 ---
 

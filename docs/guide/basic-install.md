@@ -83,7 +83,7 @@ php artisan admin:install
 
 上述步骤操作完成之后就可以配置 web 服务了，注意需要把 web 目录也就是运行目录指向 public 目录
 
-如果用的是 nginx，还需要在配置中加上伪静态配置
+nginx 伪静态配置如下: 
 
 ```
 location / {
