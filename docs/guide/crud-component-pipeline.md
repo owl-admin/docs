@@ -177,7 +177,7 @@ AdminPipeline::through(
 框架内最适合的位置就是 bootstrap 中, 因为对组件的调整是全局性的, 所以推荐在这里统一处理
 :::
 
-## 可用的管道
+## Controller 可用的管道
 
 框架内定义了以下管道:
 
@@ -214,5 +214,38 @@ const PIPE_BASE_LIST = 'pipe_schema_base_list';
 const PIPE_EXPORT_ACTION = 'pipe_schema_export_action';
 ```
 
+## 给任意组件添加管道
 
-_如果看完这篇文档, 你还没有里面 Pipeline, 请点击_ <a href="https://www.baidu.com/s?wd=laravel%20pipeline" target="_blank">这里</a>
+### 原理
+
+在组件结构返回给前端前, 会调用 `AdminPipeline::handle` 方法
+```php
+\Slowlyo\OwlAdmin\Support\Cores\AdminPipeline::handle(static::class, $this->amisSchema);
+```
+
+### 使用
+
+你可以根据对应组件的类名来添加管道, 比如:
+
+给文本框组件添加默认的最大长度:
+```php
+<?php
+// file: app/Admin/bootstrap.php
+
+use Slowlyo\OwlAdmin\Support\Cores\AdminPipeline;
+
+AdminPipeline::through(
+    \Slowlyo\OwlAdmin\Renderers\TextControl::class,
+    [
+        // 由于原始参数传入了 amisSchema, 所以这里的 $schema 类型为数组
+        function ($schema, $next) {
+            $schema['maxLength'] = 200;
+        
+            // 进入下一个管道
+            return $next($schema);
+        },
+    ]
+);
+```
+
+_如果看完这篇文档, 你还没有理解 Pipeline, 请点击_ <a href="https://www.baidu.com/s?wd=laravel%20pipeline" target="_blank">这里</a>
