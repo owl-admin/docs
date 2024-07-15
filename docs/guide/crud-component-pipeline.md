@@ -160,6 +160,9 @@ AdminPipeline::through(
             // 比如: 
             $schema->label('创建'); // 修改 label
             $schema->level('success'); // 修改新增按钮的颜色为绿色
+            
+            // 甚至可以直接返回一个新对象, 比如:
+            $schema = amis()->DialogAction()->label('我是个按钮');
 
             // 进入下一个管道
             return $next($schema);
