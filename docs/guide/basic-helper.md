@@ -152,3 +152,10 @@ admin_abort($message = '', $data = [], $doNotDisplayToast = 0);
 // 如果条件成了, 则抛出异常
 admin_abort_if($flag, $message = '', $data = [], $doNotDisplayToast = 0);
 ```
+
+## admin_pipeline
+
+为了适配 laravel 9 , 框架内封装了 pipeline 函数
+```php
+admin_pipeline($passable)->through($pipes)->then(fn($i) => $i);
+```
