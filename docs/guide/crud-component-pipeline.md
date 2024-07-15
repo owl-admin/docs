@@ -20,7 +20,7 @@ $pipeline = new \Illuminate\Pipeline\Pipeline();
 $user = [
     'name' => '张三',
     'age' => 18,
-    'sex' => '男',
+    'gender' => '男',
 ];
 
 $result = $pipeline
@@ -33,8 +33,8 @@ $result = $pipeline
                 function ($user, $next){ // 这里也可以直接传入 闭包
                     // 这里的 $user 是上一个类传递过来的数据
                     
-                    // 假设: GenderTransition 类中, 将 sex 设置为了 女
-                    // 那么, 这个方法中 $user['sex'] = '女'
+                    // 假设: GenderTransition 类中, 将 gender 设置为了 女
+                    // 那么, 这个方法中 $user['gender'] = '女'
                     
                     // 再次给 $user 添加属性
                     $user['address'] = 'M78 星云';
@@ -61,7 +61,7 @@ array(4) {
   string(6) "张三"
   ["age"]=>
   int(18)
-  ["sex"]=>
+  ["gender"]=>
   string(1) "女"
   ["address"]=>
   string(15) "M78 星云 123456"
