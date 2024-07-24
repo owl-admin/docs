@@ -1,6 +1,6 @@
 ---
 nav: 指南
-group: 
+group:
     title: 基础
     order: 1
 title: 安装
@@ -74,8 +74,8 @@ php artisan admin:install
 
 :::info{title=Tips}
 执行这一步命令可能会报以下错误`Specified key was too long ... 767 bytes` <br>
-如果出现这个报错，请在`app/Providers/AppServiceProvider.php`文件的`boot`
-方法中加上代码`\Schema::defaultStringLength(191);`<br>
+如果出现这个报错，请在`config/database.php`文件的`'mysql'=>[...'engine' => null]` 这行配置
+修改成'mysql'=>[...'engine' => 'InnoDB']` 添加引擎<br>
 然后删除掉数据库中的所有数据表，再重新运行一遍`php artisan admin:install`命令即可。
 :::
 
@@ -83,7 +83,7 @@ php artisan admin:install
 
 上述步骤操作完成之后就可以配置 web 服务了，注意需要把 web 目录也就是运行目录指向 public 目录
 
-nginx 伪静态配置如下: 
+nginx 伪静态配置如下:
 
 ```
 location / {
@@ -101,7 +101,7 @@ location / {
 
 <Tree>
     <ul>
-        <li> 
+        <li>
             app
             <ul>
                 <li>
@@ -137,7 +137,7 @@ location / {
                 </li>
             </ul>
         </li>
-        <li> 
+        <li>
             config
             <ul>
                 <li>
@@ -146,7 +146,7 @@ location / {
                 </li>
             </ul>
         </li>
-        <li> 
+        <li>
             public
             <ul>
                 <li>
