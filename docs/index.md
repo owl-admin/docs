@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/
+      link: /guide/basic/install
     - theme: alt
-      text: GitHub
-      link: https://github.com/slowlyo/owl-admin
+      text: 介绍
+      link: /guide
   image:
     src: /logo-lg.png
     alt: OwlAdmin Logo
