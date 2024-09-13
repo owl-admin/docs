@@ -1,0 +1,11 @@
+[
+    "base",
+    "create",
+    "read",
+    "update",
+    "delete",
+    "service-rewrite",
+    "export",
+    "modal",
+    "component-pipeline"
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "text": "指南",
+        "link": "/guide/",
+        "activeMatch": "/guide/"
+    },
+    {
+        "text": "常见问题",
+        "link": "/faq/composer-repos",
+        "activeMatch": "/faq/"
+    },
+    {
+        "text": "更新日志",
+        "link": "/changelog",
+        "activeMatch": "/changelog"
+    },
+    {
+        "text": "Demo",
+        "link": "https://demo.owladmin.com"
+    },
+    {
+        "text": "更多文档",
+        "items": [
+            {
+                "text": "amis",
+                "link": "https://aisuda.bce.baidu.com/amis/zh-CN/components/page"
+            },
+            {
+                "text": "antd",
+                "link": "https://ant.design/index-cn"
+            },
+            {
+                "text": "laravel",
+                "link": "https://laravel.com/docs"
+            },
+            {
+                "text": "laravel 中文文档",
+                "link": "https://learnku.com/docs/laravel/11.x"
+            }
+        ]
+    }
+]

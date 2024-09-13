@@ -1,0 +1,47 @@
+[
+    {
+        "type": "file",
+        "name": "index",
+        "label": "介绍"
+    },
+    {
+        "type": "dir",
+        "name": "basic",
+        "label": "基础"
+    },
+    {
+        "type": "dir",
+        "name": "crud",
+        "label": "CRUD"
+    },
+    {
+        "type": "dir",
+        "name": "frontend",
+        "label": "前端"
+    },
+    {
+        "type": "dir",
+        "name": "extension",
+        "label": "扩展"
+    },
+    {
+        "type": "dir",
+        "name": "modules",
+        "label": "模块"
+    },
+    {
+        "type": "dir",
+        "name": "built-in",
+        "label": "内置功能"
+    },
+    {
+        "type": "dir",
+        "name": "extension-component",
+        "label": "额外组件"
+    },
+    {
+        "type": "dir",
+        "name": "examples",
+        "label": "开发示例"
+    }
+]
