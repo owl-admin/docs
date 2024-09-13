@@ -67,13 +67,12 @@ ${release.body}
 <br>
 `).join('\n')
 
-    const frontMatter = `
----
+    const frontMatter = `---
 footer: false
 sidebar: false
 ---
 
-    `
+`
 
     require('fs').writeFileSync('./docs/changelog/index.md', frontMatter + content)
 
