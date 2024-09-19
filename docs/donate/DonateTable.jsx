@@ -8,10 +8,10 @@ const DonateTable = () => {
 
     const columns = [
         {
-            title: '日期',
+            title    : '日期',
             dataIndex: 'date',
-            key: 'date',
-            render: (date) => <div>{ date.split(' ')[0] }</div>
+            key      : 'date',
+            render   : (date) => <div>{date.split(' ')[0]}</div>
         },
         {title: '金额', dataIndex: 'amount', key: 'amount'},
         {title: '昵称', dataIndex: 'nickname', key: 'nickname'},
