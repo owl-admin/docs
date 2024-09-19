@@ -10,6 +10,16 @@
         "activeMatch": "/faq/"
     },
     {
+        "text": "打赏",
+        "link": "/donate",
+        "activeMatch": "/donate"
+    },
+    {
+        "text": "扩展",
+        "link": "/ext",
+        "activeMatch": "/ext"
+    },
+    {
         "text": "更新日志",
         "link": "/changelog",
         "activeMatch": "/changelog"

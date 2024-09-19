@@ -8,6 +8,7 @@
     "preview": "rspress preview"
   },
   "dependencies": {
+    "antd": "^5.20.6",
     "rspress": "^1.29.0",
     "rspress-plugin-align-image": "^0.3.0"
   },
