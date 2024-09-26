@@ -47,10 +47,10 @@ class OptionsApi extends AdminBaseApi
     public function handle()
     {
         // getArgs 方法可以获取到创建的 api 的参数
-        return $this->service()->query()->get(
+        return $this->service()->query()->get([
             $this->getArgs('value_field') . ' as value',
             $this->getArgs('label_field') . ' as label'
-        );
+        ]);
     }
 
     // api 的参数配置, 返回数组格式的 amis 结构
