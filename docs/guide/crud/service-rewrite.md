@@ -9,8 +9,6 @@
 | __delete__ | 删除数据 |
 | __list__   | 查询数据 |
 
-
-
 ## 经常需要重写的方法
 
 | 方法               | 说明                           |
@@ -22,8 +20,7 @@
 | __saving__       | 保存前                          |
 | __saved__        | 保存后                          |
 | __deleted__      | 删除后                          |
-
-
+| __formatRows__   | 列表数据格式化                      |
 
 ## 方法列表
 
@@ -179,4 +176,13 @@ public function saved($model, $isEdit = false){}
  * @return void
  */
 public function deleted($ids){}
+
+/**
+ * 列表数据格式化
+ *
+ * @param array $rows
+ *
+ * @return array
+ */
+public function formatRows($rows){}
 ```
