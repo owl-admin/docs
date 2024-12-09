@@ -1,7 +1,7 @@
 # 动态加载资源
 
 :::info{title=注意}
-仅支持全局加载, 以下方法只能在 `app/admin/bootstrat.php` 中使用
+仅支持全局加载, 以下方法只能在 `app/admin/bootstrap.php` 中使用
 前端会在获取配置信息时, 将这些资源加载到页面中
 :::
 
