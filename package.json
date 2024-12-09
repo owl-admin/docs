@@ -8,12 +8,12 @@
     "preview": "rspress preview"
   },
   "dependencies": {
-    "antd": "5.20.6",
-    "react": "18.3.1",
-    "rspress":"1.37.0",
+    "antd": "^5.22.3",
+    "react": "^18.3.1",
+    "rspress": "^1.37.4",
     "rspress-plugin-align-image": "^0.3.0"
   },
   "devDependencies": {
-    "@types/node": "^16"
+    "@types/node": "^16.18.121"
   }
 }
