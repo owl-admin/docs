@@ -17,14 +17,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: npm install
-        run: npm install
+      - name: pnpm install
+        run: pnpm install
+
+      - name: install pnpm
+        run: npm install -g pnpm
 
       - name: build changelog.md
         run: node buildChangelog.js ${{ secrets.workflow_token }}
 
-      - name: npm run build
-        run: npm run build
+      - name: pnpm run build
+        run: pnpm run build
 
       - name: tar
         run: tar -zcvf dist.tar.gz ./dist
