@@ -5,7 +5,7 @@ services:
   framework:
     component: fc
     props:
-      region: cn-chengdu
+      region: cn-hongkong
       service:
         name: serverless-devs-application
       function:
