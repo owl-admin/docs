@@ -47,7 +47,7 @@ services:
     fc3_domain_0:
       component: fc3-domain
       props:
-        region: ${vars.region}
+        region: cn-chengdu
         domainName: auto
         protocol: HTTP
         routeConfig:
