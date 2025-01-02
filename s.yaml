@@ -4,6 +4,10 @@ access: default
 services:
   framework:
     component: fc
+    actions:
+      pre-deploy:
+        - run: npm install --production --registry=https://registry.npmmirror.com
+          path: ./
     props:
       region: cn-hongkong
       service:
