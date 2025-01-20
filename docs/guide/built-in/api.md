@@ -15,7 +15,7 @@
 
 ### 新建 api 模板
 
-- 可以在 [Owl Hub](https://owladmin.com/site#/hub) 中, 获取他人分享的 api 模板
+- 可以在 [GitHub Discussions](https://github.com/slowlyo/owl-admin/discussions/categories/%E5%8A%A8%E6%80%81-api-%E6%A8%A1%E6%9D%BF) 中, 获取他人分享的 api 模板
 - 手动创建
     - 在 `app/ApiTemplates` 目录下创建一个新的类
     - 继承 `Slowlyo\OwlAdmin\Support\Apis\AdminBaseApi` 类, 并实现 `handle` 方法
