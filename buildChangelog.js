@@ -1,5 +1,7 @@
 // node buildChangelog.js <token>
 
+const { request } = require('http')
+
 const formatDate = (isoDateStr) => {
     const date = new Date(isoDateStr)
 
@@ -78,3 +80,7 @@ sidebar: false
 
     console.log('done.')
 })
+
+// 复制 ./donate-data.json 到 ./docs/public/donate-data.json
+require('fs').copyFileSync('./donate-data.json', './docs/public/donate-data.json')
+
