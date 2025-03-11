@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { Table } from "antd";
 
-window.jsonpCallback = (data) => {
-  localStorage.setItem("owl-donate-data", JSON.stringify(data));
-};
-
 const DonateTable = () => {
   const url = "/donate-data.json";
 

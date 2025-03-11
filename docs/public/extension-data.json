@@ -1,0 +1,178 @@
+[
+  {
+    "name": "slowlyo/owl-dict",
+    "description": "OwlAdmin 数据字典扩展",
+    "url": "https://packagist.org/packages/slowlyo/owl-dict",
+    "repository": "https://github.com/Slowlyo/owl-dict",
+    "downloads": 2314,
+    "favers": 2
+  },
+  {
+    "name": "slowlyo/owl-operation-log",
+    "description": "OwlAdmin 扩展包，用于记录用户操作日志",
+    "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
+    "repository": "https://github.com/Slowlyo/owl-operation-log",
+    "downloads": 666,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-amis-json-parse",
+    "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
+    "url": "https://packagist.org/packages/slowlyo/owl-amis-json-parse",
+    "repository": "https://github.com/Slowlyo/owl-amis-json-parse",
+    "downloads": 656,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-system-backup",
+    "description": "Owl Admin 系统备份扩展",
+    "url": "https://packagist.org/packages/slowlyo/owl-system-backup",
+    "repository": "https://github.com/owl-admin/system-backup",
+    "downloads": 259,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-module-notice",
+    "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
+    "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
+    "repository": "https://gitee.com/slowlyo/owl-module-notice",
+    "downloads": 256,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-login-guard",
+    "description": "OwlAdmin扩展: 增加登录保护功能",
+    "url": "https://packagist.org/packages/slowlyo/owl-login-guard",
+    "repository": "https://gitee.com/slowlyo/owl-login-guard",
+    "downloads": 254,
+    "favers": 0
+  },
+  {
+    "name": "iwzh/owl-scheduling",
+    "description": "OwlAdmin扩展:方便管理 laravel 的定时任务",
+    "url": "https://packagist.org/packages/iwzh/owl-scheduling",
+    "repository": "https://gitee.com/wzhec/owl-scheduling",
+    "downloads": 240,
+    "favers": 1
+  },
+  {
+    "name": "slowlyo/owl-log-viewer",
+    "description": "更方便的查看laravel日志",
+    "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
+    "repository": "https://github.com/owl-admin/log-viewer",
+    "downloads": 216,
+    "favers": 2
+  },
+  {
+    "name": "slowlyo/owl-wechat-user",
+    "description": "OwlAdmin扩展: 微信用户管理, 包含微信小程序登录, 后台会员管理",
+    "url": "https://packagist.org/packages/slowlyo/owl-wechat-user",
+    "repository": "https://github.com/Slowlyo/owl-wechat-user",
+    "downloads": 133,
+    "favers": 0
+  },
+  {
+    "name": "mano-code/corps",
+    "description": "组织架构插件，包含钉钉、飞书、企业微信同步等",
+    "url": "https://packagist.org/packages/mano-code/corps",
+    "repository": "https://github.com/mano-php/corps",
+    "downloads": 133,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-menu-search",
+    "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
+    "url": "https://packagist.org/packages/slowlyo/owl-menu-search",
+    "repository": "https://github.com/owl-admin/menu-search",
+    "downloads": 129,
+    "favers": 1
+  },
+  {
+    "name": "slowlyo/owl-terminal",
+    "description": "方便在页面上执行一些命令~",
+    "url": "https://packagist.org/packages/slowlyo/owl-terminal",
+    "repository": "https://github.com/Slowlyo/owl-terminal",
+    "downloads": 107,
+    "favers": 1
+  },
+  {
+    "name": "owl-admin/components",
+    "description": "常用组件合集",
+    "url": "https://packagist.org/packages/owl-admin/components",
+    "repository": "https://github.com/owl-admin/components",
+    "downloads": 74,
+    "favers": 2
+  },
+  {
+    "name": "likeweb/core",
+    "description": "likeweb核心组件",
+    "url": "https://packagist.org/packages/likeweb/core",
+    "repository": "https://github.com/maliang/likeweb_core",
+    "downloads": 47,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-icon-cache",
+    "description": "让 iconify 图标可以离线使用",
+    "url": "https://packagist.org/packages/slowlyo/owl-icon-cache",
+    "repository": "https://github.com/slowlyo/owl-icon-cache",
+    "downloads": 32,
+    "favers": 0
+  },
+  {
+    "name": "slowlyo/owl-sku",
+    "description": "SKU 扩展",
+    "url": "https://packagist.org/packages/slowlyo/owl-sku",
+    "repository": "https://github.com/slowlyo/owl-sku",
+    "downloads": 27,
+    "favers": 1
+  },
+  {
+    "name": "itinysun/ddns",
+    "description": "DDNS服务器，支持腾讯云和阿里云，可以应用于群晖等场景",
+    "url": "https://packagist.org/packages/itinysun/ddns",
+    "repository": "https://github.com/Itinysun/ddns",
+    "downloads": 26,
+    "favers": 0
+  },
+  {
+    "name": "muyilongh/owl-wechat-user",
+    "description": "OwlAdmin扩展: 微信用户管理, 包含微信小程序登录, 后台会员管理",
+    "url": "https://packagist.org/packages/muyilongh/owl-wechat-user",
+    "repository": "https://github.com/muyilongh/owl-wechat-user",
+    "downloads": 23,
+    "favers": 0
+  },
+  {
+    "name": "hyperf-plus/ai-helper",
+    "description": "AI工具助手，生成amis",
+    "url": "https://packagist.org/packages/hyperf-plus/ai-helper",
+    "repository": "https://github.com/hyperf-plus/ai-helper",
+    "downloads": 22,
+    "favers": 1
+  },
+  {
+    "name": "uupt/corps",
+    "description": "组织架构插件，包含钉钉、飞书、企业微信同步等",
+    "url": "https://packagist.org/packages/uupt/corps",
+    "repository": "https://github.com/uu-open/corps",
+    "downloads": 14,
+    "favers": 1
+  },
+  {
+    "name": "ennnnny/owladmin-cloud-storage",
+    "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
+    "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
+    "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
+    "downloads": 9,
+    "favers": 0
+  },
+  {
+    "name": "szsuohong/cloud-storage",
+    "description": "支持 本地，七牛云，腾讯云，阿里云 OSS云存储功能，支持一键迁移，资源展示等功能。",
+    "url": "https://packagist.org/packages/szsuohong/cloud-storage",
+    "repository": "https://github.com/szsuohong/cloud-storage",
+    "downloads": 5,
+    "favers": 0
+  }
+]

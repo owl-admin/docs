@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - master
+  schedule:
+    - cron: "0 22 * * *"
 
 jobs:
   deploy:
@@ -23,8 +25,8 @@ jobs:
       - name: pnpm install
         run: pnpm install
 
-      - name: build changelog.md
-        run: node buildChangelog.js ${{ secrets.workflow_token }}
+      - name: generate data
+        run: node generateData.js ${{ secrets.workflow_token }}
 
       - name: pnpm run build
         run: pnpm run build
