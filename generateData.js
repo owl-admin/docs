@@ -117,10 +117,28 @@ sidebar: false
 
         await query(url);
 
-        // 排除 slowlyo/owl-admin, 并按 downloads 排序
-        data = data
-            .filter((item) => item.name !== "slowlyo/owl-admin")
-            .sort((a, b) => b.downloads - a.downloads);
+        // 处理数据
+        data = await Promise.all(
+            data
+                // 排除 slowlyo/owl-admin
+                .filter((item) => item.name !== "slowlyo/owl-admin")
+                // 获取最后一个版本的信息
+                .map(async (item) => {
+                    const url = `https://repo.packagist.org/p2/${item.name}.json`;
+                    const data = await fetch(url);
+                    const json = await data.json();
+
+                    const lastVersion = json.packages[item.name][0];
+
+                    item.last_version = lastVersion?.version;
+                    item.latest_update = lastVersion?.time ? formatDate(lastVersion.time) : null;
+
+                    return item;
+                })
+        );
+
+        // 按 downloads 排序
+        data = data.sort((a, b) => b.downloads - a.downloads);
 
         // 生成 ./docs/public/extension-data.json
         require("fs").writeFileSync(
