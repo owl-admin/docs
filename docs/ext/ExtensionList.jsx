@@ -33,7 +33,18 @@ const ExtensionList = () => {
 
     return (
         <List
-            header={<div>Total: {data.length}</div>}
+            header={
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div>总计: {data.length}</div>
+                    <div style={{ color: "#ccc" }}>
+                        数据来自&emsp;
+                        <a href="https://packagist.org/" target="_blank">
+                            Packagist
+                        </a>
+                        &emsp;每天 6:00 更新
+                    </div>
+                </div>
+            }
             dataSource={data}
             itemLayout="vertical"
             renderItem={(item) => (
