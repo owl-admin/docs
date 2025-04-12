@@ -63,7 +63,3 @@ $urlBtn = amis()
 // \Slowlyo\OwlAdmin\Admin::prependNav($msgBtn)->appendNav($urlBtn);
 ```
 
-效果如下:
-
-
-![追加 Nav 内容](https://cdn.learnku.com/uploads/images/202305/17/80143/66bcZ5L4aF.png!large)
