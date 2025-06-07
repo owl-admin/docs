@@ -32,6 +32,8 @@ jobs:
         run: node generateData.js ${{ secrets.workflow_token }}
 
       - name: Build
+        env:
+          RSPRESS_BASE: '/docs/'
         run: pnpm run build
 
       - name: Deploy to GitHub Pages

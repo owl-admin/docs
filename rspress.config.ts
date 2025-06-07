@@ -6,6 +6,7 @@ export default defineConfig({
     root: path.join(__dirname, 'docs'),
     title: 'OwlAdmin',
     description: 'OwlAdmin',
+    base: process.env.RSPRESS_BASE || '/',
     outDir: 'dist',
     icon: '/logo.png',
     logo: '/logo.png',
