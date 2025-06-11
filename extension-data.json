@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2459,
+    "downloads": 2461,
     "favers": 2,
     "last_version": "v1.3.2",
     "latest_update": "2024-07-08 11:05:14"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 883,
+    "downloads": 885,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -24,7 +24,7 @@
     "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
     "url": "https://packagist.org/packages/slowlyo/owl-amis-json-parse",
     "repository": "https://github.com/Slowlyo/owl-amis-json-parse",
-    "downloads": 713,
+    "downloads": 714,
     "favers": 0,
     "last_version": "v1.1.4",
     "latest_update": "2023-04-27 09:57:14"
@@ -74,7 +74,7 @@
     "description": "OwlAdmin扩展:方便管理 laravel 的定时任务",
     "url": "https://packagist.org/packages/iwzh/owl-scheduling",
     "repository": "https://gitee.com/wzhec/owl-scheduling",
-    "downloads": 284,
+    "downloads": 285,
     "favers": 1,
     "last_version": "1.0.2",
     "latest_update": "2023-05-12 10:57:41"
