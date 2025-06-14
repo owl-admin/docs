@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { Table } from "antd";
 
 const DonateTable = () => {
-  const url = "/donate-data.json";
+  const getBaseUrl = () => {
+    const isGithubIo = window.location.hostname.includes('github.io');
+    return isGithubIo ? '/docs' : '';
+  };
+
+  const url = `${getBaseUrl()}/donate-data.json`;
 
   const [data, setData] = useState([]);
 
