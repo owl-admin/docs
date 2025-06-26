@@ -8,7 +8,7 @@ const PayImage = () => {
 
   const imageUrl = `${getBaseUrl()}/pay.jpg`;
 
-  return <img src={imageUrl} width="500" alt="支付二维码" />;
+  return <img src={imageUrl} width="500" alt="支付二维码" style={{borderRadius: "10px"}} />;
 };
 
 export default PayImage; 
