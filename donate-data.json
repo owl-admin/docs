@@ -1,5 +1,10 @@
 [
   {
+    "amount": 20,
+    "date": "2025-07-03",
+    "nickname": "PHP架构师-快鱼吃慢鱼"
+  },
+  {
     "amount": 100,
     "date": "2025-06-14",
     "nickname": "Print_r( )",
@@ -8,7 +13,7 @@
   {
     "amount": 12,
     "date": "2025-06-10",
-    "nickname": "快鱼吃慢鱼"
+    "nickname": "PHP架构师-快鱼吃慢鱼"
   },
   {
     "amount": 6.66,
@@ -23,7 +28,7 @@
   {
     "amount": 20,
     "date": "2025-04-02",
-    "nickname": "快鱼吃慢鱼",
+    "nickname": "PHP架构师-快鱼吃慢鱼",
     "remark": ""
   },
   {
@@ -47,7 +52,7 @@
   {
     "amount": 8.88,
     "date": "2025-01-03",
-    "nickname": "2025年要发财的快鱼吃慢鱼",
+    "nickname": "PHP架构师-快鱼吃慢鱼",
     "remark": ""
   },
   {
