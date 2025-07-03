@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2483,
+    "downloads": 2485,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -24,7 +24,7 @@
     "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
     "url": "https://packagist.org/packages/slowlyo/owl-amis-json-parse",
     "repository": "https://github.com/Slowlyo/owl-amis-json-parse",
-    "downloads": 720,
+    "downloads": 721,
     "favers": 0,
     "last_version": "v1.1.4",
     "latest_update": "2023-04-27 09:57:14"
@@ -84,7 +84,7 @@
     "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
     "url": "https://packagist.org/packages/slowlyo/owl-menu-search",
     "repository": "https://github.com/owl-admin/menu-search",
-    "downloads": 210,
+    "downloads": 211,
     "favers": 1,
     "last_version": "v0.1.0",
     "latest_update": "2024-06-14 22:54:01"
@@ -141,6 +141,16 @@
     "latest_update": "2024-05-01 16:30:19"
   },
   {
+    "name": "ennnnny/owladmin-cloud-storage",
+    "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
+    "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
+    "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
+    "downloads": 49,
+    "favers": 0,
+    "last_version": "1.0.3",
+    "latest_update": "2025-02-20 10:50:46"
+  },
+  {
     "name": "likeweb/core",
     "description": "likeweb核心组件",
     "url": "https://packagist.org/packages/likeweb/core",
@@ -151,21 +161,11 @@
     "latest_update": "2023-03-14 16:55:06"
   },
   {
-    "name": "ennnnny/owladmin-cloud-storage",
-    "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
-    "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
-    "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
-    "downloads": 41,
-    "favers": 0,
-    "last_version": "1.0.3",
-    "latest_update": "2025-02-20 10:50:46"
-  },
-  {
     "name": "muyilongh/owl-wechat-user",
     "description": "OwlAdmin扩展: 微信用户管理, 包含微信小程序登录, 后台会员管理",
     "url": "https://packagist.org/packages/muyilongh/owl-wechat-user",
     "repository": "https://github.com/muyilongh/owl-wechat-user",
-    "downloads": 40,
+    "downloads": 41,
     "favers": 0,
     "last_version": "v1.0.5",
     "latest_update": "2024-09-28 11:52:40"
