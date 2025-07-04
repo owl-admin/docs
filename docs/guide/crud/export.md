@@ -1,10 +1,9 @@
 # 数据导出
 
-框架提供了基础的数据导出功能, 可以很方便的实现导出数据到 `.xlsx` 文件
+框架提供了便捷的数据导出功能，支持 Excel 和 CSV 格式导出。
 
-
-:::info 注意
-使用框架默认的导出功能, 你需要先安装 [fast-excel](https://github.com/rap2hpoutre/fast-excel) ( rap2hpoutre/fast-excel )
+:::info 依赖说明
+Excel 导出需要安装：`composer require rap2hpoutre/fast-excel`
 :::
 
 
@@ -54,10 +53,13 @@ protected function exportFileName()
 protected function exportMap($row)
 {
     return [
-        '姓名' => $row['name'],
-        '年龄' => $row['age'],
-        '性别' => $row['gender'],
-        '...'
+        'ID' => $row['id'],
+        '用户名' => $row['username'],
+        '真实姓名' => $row['real_name'],
+        '邮箱' => $row['email'],
+        '部门' => $row['department']['name'] ?? '',
+        '状态' => $row['status'] ? '启用' : '禁用',
+        '创建时间' => date('Y-m-d H:i:s', strtotime($row['created_at'])),
     ];
 }
 ```
@@ -91,3 +93,134 @@ protected function export()
     return $this->response()->success(compact('path'));
 }
 ```
+
+## 多格式导出
+
+支持导出为不同格式：
+
+```php
+protected function export()
+{
+    $format = request('format', 'xlsx'); // 支持 xlsx, csv
+    $filename = $this->exportFileName() . '-' . date('YmdHis');
+
+    $ids = request()->input('_ids');
+    $query = $this->service->listQuery()
+        ->when($ids, fn($query) => $query->whereIn($this->service->primaryKey(), explode(',', $ids)));
+
+    switch ($format) {
+        case 'csv':
+            return $this->exportCsv($query, $filename);
+        default:
+            return $this->exportExcel($query, $filename);
+    }
+}
+
+/**
+ * 导出 CSV
+ */
+protected function exportCsv($query, $filename)
+{
+    $path = "exports/{$filename}.csv";
+    $fullPath = storage_path("app/{$path}");
+
+    // 确保目录存在
+    $directory = dirname($fullPath);
+    if (!is_dir($directory)) {
+        mkdir($directory, 0755, true);
+    }
+
+    $file = fopen($fullPath, 'w');
+
+    // 添加 BOM 头，解决中文乱码
+    fwrite($file, "\xEF\xBB\xBF");
+
+    $isFirstRow = true;
+    $query->chunk(1000, function($rows) use ($file, &$isFirstRow) {
+        foreach ($rows as $row) {
+            $data = $this->exportMap($row->toArray());
+
+            if ($isFirstRow) {
+                fputcsv($file, array_keys($data)); // 写入表头
+                $isFirstRow = false;
+            }
+
+            fputcsv($file, array_values($data)); // 写入数据
+        }
+    });
+
+    fclose($file);
+
+    return $this->response()->success(['path' => $path]);
+}
+```
+
+## 大数据量处理
+
+处理大量数据时的优化方案：
+
+```php
+protected function export()
+{
+    $query = $this->service->listQuery();
+    $count = $query->count();
+
+    // 大数据量分块处理
+    if ($count > 5000) {
+        return $this->exportLargeData($query);
+    }
+
+    // 小数据量直接导出
+    return $this->exportNormal($query);
+}
+
+/**
+ * 大数据量导出
+ */
+protected function exportLargeData($query)
+{
+    $filename = $this->exportFileName() . '-' . date('YmdHis') . '.xlsx';
+    $path = "exports/{$filename}";
+    $fullPath = storage_path("app/{$path}");
+
+    $directory = dirname($fullPath);
+    if (!is_dir($directory)) {
+        mkdir($directory, 0755, true);
+    }
+
+    $isFirstChunk = true;
+    $chunkSize = 1000;
+
+    $query->chunk($chunkSize, function($rows) use (&$isFirstChunk, $fullPath) {
+        $data = $rows->map(function($row) {
+            return $this->exportMap($row->toArray());
+        })->toArray();
+
+        if ($isFirstChunk) {
+            fastexcel($data)->export($fullPath);
+            $isFirstChunk = false;
+        } else {
+            fastexcel($data)->appendTo($fullPath);
+        }
+    });
+
+    return $this->response()->success(['path' => $path]);
+}
+```
+
+## 最佳实践
+
+### 1. 性能优化
+- 大数据量使用分块处理（chunk）
+- 避免在 `exportMap` 中执行数据库查询
+- 预加载必要的关联关系
+
+### 2. 安全考虑
+- 控制导出数据量，避免内存溢出
+- 验证用户导出权限
+- 敏感数据脱敏处理
+
+### 3. 用户体验
+- 提供清晰的文件命名
+- 支持多种导出格式
+- 大文件导出时显示进度提示

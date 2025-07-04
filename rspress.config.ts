@@ -1,6 +1,7 @@
 import * as path from 'path'
 import {defineConfig} from 'rspress/config'
 import alignImage from 'rspress-plugin-align-image'
+import mermaid from 'rspress-plugin-mermaid'
 
 export default defineConfig({
     root: path.join(__dirname, 'docs'),
@@ -14,6 +15,7 @@ export default defineConfig({
     route: {cleanUrls: true},
     plugins: [
         alignImage(),
+        mermaid(),
     ],
     themeConfig: {
         lastUpdated: true,

@@ -6,6 +6,5 @@
     "delete",
     "service-rewrite",
     "export",
-    "modal",
     "component-pipeline"
 ]

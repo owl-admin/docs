@@ -1,161 +1,174 @@
-# 开发
+# 扩展开发快速入门
 
-## 创建扩展
+> 详细的开发指南请参考 [扩展开发指南](./development.md)
 
-在扩展管理中使用 `创建扩展` 来生成一个扩展的骨架。
+## 快速创建扩展
 
-配置相应的包名及命名空间，然后点击 `确认` 即可。
+### 使用管理界面创建
 
-### 格式
+1. 进入 `开发工具 > 扩展管理`
+2. 点击 `创建扩展` 按钮
+3. 填写扩展信息：
+   - **包名**：`vendor/package-name`（如：`slowlyo/banner`）
+   - **命名空间**：`Vendor\PackageName`（如：`Slowlyo\Banner`）
+4. 点击确认，系统自动生成扩展骨架
 
-- 包名: 作者名/扩展名 (例如: slowlyo/banner)
-- 命名空间: 作者名\扩展名 (例如: Slowlyo\Banner)
-
-扩展包创建完成后，会在 `extensions` 目录下生成一个扩展包的骨架，目录结构如下:
+### 目录结构
 
 ```
-.
-├── database
-│   └── migrations                       # 数据库迁移文件
-├── public
-│   └── extensions
-│       └── slowlyo
-│           └── banner                   # 扩展前端文件, 会发布到 public/extensions 目录下
-├── src
-│   ├── Http
-│   │   ├── Controllers
-│   │   │   └── BannerController.php     # 扩展控制器
-│   │   ├── Middleware                   # 扩展中间件
-│   │   └── routes.php                   # 扩展路由
-│   └── BannerServiceProvider.php        # 扩展服务提供者
-├── .gitignore
-├── composer.json                        # composer 配置文件, 需自行配置 alias/authors/description 等
-└── README.md                            # 扩展说明文档, 可在扩展管理中查看
+extensions/vendor/package-name/
+├── composer.json              # Composer 配置
+├── README.md                  # 扩展文档
+├── logo.png                   # 扩展图标（可选）
+├── src/
+│   ├── PackageNameServiceProvider.php  # 服务提供者
+│   └── Http/
+│       ├── Controllers/
+│       │   └── PackageNameController.php
+│       ├── Middleware/        # 中间件目录
+│       └── routes.php         # 路由文件
+├── database/
+│   └── migrations/            # 数据库迁移
+├── lang/                      # 语言包
+│   ├── zh_CN/
+│   └── en/
+└── public/
+    └── extensions/
+        └── vendor/
+            └── package-name/  # 静态资源
 ```
 
+## 核心文件说明
 
-## 配置
+### 服务提供者
 
-### logo
-
-在插件根目录下添加 `logo.png` 文件，用于在扩展管理中展示。
-
-### 文档
-
-根目录的 `README.md` 文件, 会在扩展管理中展示。
-
-### composer.json
-
-| 字段          | 说明                |
-|-------------|-------------------|
-| alias       | 扩展名称(在扩展管理中以这个为主) |
-| authors     | 作者信息              |
-| description | 描述信息              |
-| version     | 版本号               |
-| homepage    | 扩展主页              |
-
-## 功能开发
-
-### 路由
-
-你可以在 `extensions/扩展名/src/Http/routes.php` 文件中定义扩展的路由。
-> 注意避免重复
-
-### 菜单
-
-在`src/BannerServiceProvider.php` 中添加 `$menu` 属性:
+扩展的核心类，继承自 `Slowlyo\OwlAdmin\Extend\ServiceProvider`：
 
 ```php
-protected $menu = [
+<?php
+
+namespace Vendor\PackageName;
+
+use Slowlyo\OwlAdmin\Renderers\TextControl;
+use Slowlyo\OwlAdmin\Extend\ServiceProvider;
+
+class PackageNameServiceProvider extends ServiceProvider
+{
+    // 扩展配置表单
+    public function settingForm()
+    {
+        return $this->baseSettingForm()->body([
+            TextControl::make()
+                ->name('api_key')
+                ->label('API Key')
+                ->required(true),
+        ]);
+    }
+}
+```
+
+### 控制器
+
+```php
+<?php
+
+namespace Vendor\PackageName\Http\Controllers;
+
+use Slowlyo\OwlAdmin\Controllers\AdminController;
+
+class PackageNameController extends AdminController
+{
+    public function index()
+    {
+        $page = $this->basePage()->body([
+            amis()->Card()->header(['title' => '扩展页面'])
+        ]);
+
+        return $this->response()->success($page);
+    }
+}
+```
+
+### 路由定义
+
+在 `src/Http/routes.php` 中：
+
+```php
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Vendor\PackageName\Http\Controllers\PackageNameController;
+
+Route::get('package-name', [PackageNameController::class, 'index']);
+```
+
+## 常用功能
+
+### 菜单管理
+
+```php
+// 在服务提供者中导入菜单
+$this->importMenu([
     [
-        'parent'   => '',
-        'title'    => '轮播',
-        'url'      => '/banner',
-        'url_type' => '1',
-        'icon'     => 'fa fa-users',
-    ],
-    [
-        'parent'   => '轮播', // 此处父级菜单根据 title 查找
-        'title'    => '子菜单',
-        'url'      => '/banner/child',
-        'url_type' => '1',
-        'icon'     => 'fa fa-users',
-    ],
-];
+        'title' => '扩展菜单',
+        'url' => '/package-name',
+        'icon' => 'fa fa-cube',
+    ]
+]);
+```
+
+### 配置管理
+
+```php
+// 获取配置
+$value = $this->config('api_key');
+
+// 静态方法获取
+$value = static::setting('api_key');
+```
+
+### 静态资源
+
+```php
+// 加载 CSS/JS
+$this->loadCss('/css/style.css');
+$this->loadJs('/js/script.js');
 ```
 
 ### 语言包
 
-在扩展目录下创建 `lang` 目录, 逻辑与laravel的语言包一致, 例如:
-
-```
-.
-└── lang
-    ├── zh-CN
-    │   └── banner.php                    # 中文语言包
-    └── en
-        └── banner.php                    # 英文语言包
-```
-
-
-在控制器中可以通过下面的方法访问语言包内容，关于多语言的更多用法可以参考 laravel 官方文档
-
 ```php
-use Slowlyo\Banner\BannerServiceProvider;
-
-BannerServiceProvider::trans('title');
+// 使用翻译
+$message = static::trans('messages.hello');
 ```
 
-### 前端
+## 开发流程
 
-你可以在服务提供者中使用 `Admin::js()` 方法来动态加载你的前端文件 [`register()` / `init()`]
+1. **创建扩展骨架**
+2. **开发功能代码**
+3. **配置路由和菜单**
+4. **测试功能**
+5. **完善文档**
+6. **打包发布**
 
-### 中间件
+## 调试技巧
 
-在`src/BannerServiceProvider.php` 中添加 `$middleware` 属性:
+- 使用 `\Log::info()` 记录调试信息
+- 在开发环境启用详细错误信息
+- 查看系统日志排查问题
 
-```php
-protected $middleware = [
-    LogOperation::class,
-    // ...
-];
+## 发布扩展
+
+### 本地打包
+
+```bash
+zip -r package-name-v1.0.0.zip . -x "*.git*" "node_modules/*" "vendor/*"
 ```
 
-### 扩展配置
+### 发布到 Packagist
 
-在`src/BannerServiceProvider.php` 中有以下方法, 依葫芦画瓢即可:
+参考 [Packagist 文档](https://packagist.org/) 将扩展发布到 Composer 仓库。
 
-```php
-public function settingForm()
-{
-    return $this->baseSettingForm()->body([
-        TextControl::make()->name('value')->label('Value')->required(true),
-        // 继续添加你的配置项
-    ]);
-}
-```
+---
 
-你可以使用 `setting` 方法来获取配置项的值:
-
-```php
-use Slowlyo\Banner\BannerServiceProvider;
-
-// 读取配置参数
-$except = BannerServiceProvider::setting('except');
-// 支持多级配置
-$except = BannerServiceProvider::setting('except.value');
-```
-
-### 数据库迁移
-
-在 `extensions/扩展名/database/migrations` 目录下创建迁移文件
-
-扩展启用时会自动执行迁移文件, 卸载时会自动回滚
-
-### 其他
-
-基础的服务提供者中提供了 `customInitBefore` 和 `customInitAfter` 两个方法, 用于扩展的自定义初始化操作
-
-### 发布到 Packagist.org
-
-参考 [Packagist 中文文档](https://learnku.com/docs/composer/2018)
+更多详细信息请查看 [完整开发指南](./development.md)。

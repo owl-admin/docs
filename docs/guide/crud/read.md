@@ -1,173 +1,646 @@
-# 查
+# 查询功能详解
 
-## 列表
+## 查询流程概览
 
-- 前端会根据菜单路径, 访问对应的路由, 通过 `get` 请求, 访问到对应控制器的 `index` 方法
-- 这里通过 `_action` 参数, 让这个方法同时处理了 3 个功能
-    - 原因: 不需要额外的定义路由, 一个 `resource` 路由就可以满足所有 `CRUD` 的功能
+查询功能包括列表展示和详情查看两个核心部分：
+
+```mermaid
+sequenceDiagram
+    participant U as 用户
+    participant F as 前端 Amis
+    participant C as AdminController
+    participant S as AdminService
+    participant M as Model
+    participant D as 数据库
+
+    Note over U,D: 列表查询流程
+    U->>F: 访问列表页面
+    F->>C: GET /resource
+    C->>C: list() 构建页面结构
+    C->>F: 返回 CRUD 组件配置
+    F->>C: GET /resource?_action=getData
+    C->>S: list() 获取数据
+    S->>S: listQuery() 构建查询
+    S->>M: 执行查询
+    M->>D: SQL 查询
+    D->>M: 返回数据
+    M->>S: 返回结果
+    S->>C: 格式化数据
+    C->>F: JSON 响应
+    F->>U: 渲染列表
+
+    Note over U,D: 详情查询流程
+    U->>F: 点击查看详情
+    F->>C: GET /resource/{id}?_action=getData
+    C->>S: getDetail(id)
+    S->>M: 查询单条记录
+    M->>D: SQL 查询
+    D->>M: 返回数据
+    M->>S: 返回结果
+    S->>C: 返回详情数据
+    C->>F: JSON 响应
+    F->>U: 显示详情
+```
+
+## 列表功能详解
+
+### index 方法的多重职责
+
+`index` 方法通过 `_action` 参数处理不同类型的请求：
 
 ```php
 public function index()
 {
-    // 带有参数 ?_action=getData 的请求, 查询数据并返回
+    // 获取列表数据: ?_action=getData
     if ($this->actionOfGetData()) {
         return $this->response()->success($this->service->list());
     }
 
-    // 带有参数 ?_action=export 的请求, 处理导出
+    // 导出数据: ?_action=export
     if ($this->actionOfExport()) {
         return $this->export();
     }
 
-    // 没有携带 _action 参数的请求, 返回列表结构
-    return $this->response()->success($this->list()); // 这里调用了 list 方法
+    // 默认返回页面结构（无 _action 参数）
+    return $this->response()->success($this->list());
 }
 ```
 
+**请求类型对应关系：**
 
+| 请求类型      | URL 示例                        | 处理方法            | 返回内容     |
+|:----------|:------------------------------|:----------------|:---------|
+| 页面结构      | `/users`                      | `list()`        | CRUD 组件配置 |
+| 列表数据      | `/users?_action=getData`      | `service->list()` | 分页数据     |
+| 导出数据      | `/users?_action=export`       | `export()`      | 导出文件     |
+| 快速编辑      | `/users?_action=quickEdit`    | `quickEdit()`   | 操作结果     |
 
-- list 方法, 用于返回列表结构
+### list 方法构建页面结构
+
+`list` 方法负责构建完整的 CRUD 页面结构：
 
 ```php
 public function list()
 {
-    // baseCRUD 方法中, 配置了部分基础配置, 如果需要修改, 可以直接在后面覆盖
     $crud = $this->baseCRUD()
-        // CRUD 的顶部工具栏
-        ->headerToolbar([
-            $this->createButton(true), // 新增按钮
-            ...$this->baseHeaderToolBar(), // 工具栏内的其他操作按钮
-        ])
-        // 筛选器
-        ->filter(
-            // baseFilter 方法中配置了一个基础的表单
-            $this->baseFilter()->body([
-                // 这里边配置筛选的表单项
-                amis()->TextControl('keyword', __('admin.keyword'))
-            ])
-        )
-        // 判断是否可以批量操作
-        ->itemCheckableOn('${items[index].state > 0}')
-        // 表格列
-        ->columns([
-            amis()->TableColumn('id', 'ID')->sortable(),
-            amis()->TableColumn('name', __('admin.admin_user.name')),
-            
-            // 行操作按钮
-            $this->rowActions([
-                $this->rowEditButton(true), // 编辑按钮
-                $this->rowDeleteButton(), // 删除按钮
-            ]),
-        ]);
+        // 配置筛选器
+        ->filter($this->buildFilter())
+        // 配置头部工具栏
+        ->headerToolbar($this->buildHeaderToolbar())
+        // 配置表格列
+        ->columns($this->buildColumns())
+        // 配置批量操作
+        ->bulkActions($this->buildBulkActions())
+        // 配置底部工具栏
+        ->footerToolbar($this->buildFooterToolbar());
 
-    // baseList 方法中是基础的页面配置
     return $this->baseList($crud);
+}
+
+/**
+ * 构建筛选器
+ */
+protected function buildFilter()
+{
+    return $this->baseFilter()->body([
+        // 文本搜索
+        amis()->TextControl('keyword', '关键词')
+            ->size('md')
+            ->clearable()
+            ->placeholder('请输入关键词搜索'),
+
+        // 状态筛选
+        amis()->SelectControl('status', '状态')
+            ->options([
+                ['label' => '全部', 'value' => ''],
+                ['label' => '启用', 'value' => 1],
+                ['label' => '禁用', 'value' => 0],
+            ])
+            ->clearable(),
+
+        // 日期范围
+        amis()->DateRangeControl('created_at', '创建时间')
+            ->format('YYYY-MM-DD')
+            ->clearable(),
+
+        // 分类筛选
+        amis()->SelectControl('category_id', '分类')
+            ->source('/api/categories')
+            ->clearable(),
+    ]);
+}
+
+/**
+ * 构建头部工具栏
+ */
+protected function buildHeaderToolbar()
+{
+    return [
+        $this->createButton('dialog'),  // 新增按钮
+        'bulkActions',                  // 批量操作
+        amis('reload')->align('right'), // 刷新按钮
+        amis('filter-toggler')->align('right'), // 筛选器切换
+        $this->exportAction(),          // 导出按钮
+    ];
+}
+
+/**
+ * 构建表格列
+ */
+protected function buildColumns()
+{
+    return [
+        // 选择列
+        amis()->TableColumn('id', 'ID')
+            ->sortable()
+            ->width(80),
+
+        // 基础信息列
+        amis()->TableColumn('title', '标题')
+            ->searchable()
+            ->copyable(),
+
+        // 关联数据列
+        amis()->TableColumn('category.name', '分类')
+            ->placeholder('未分类'),
+
+        // 状态列（映射显示）
+        amis()->TableColumn('status', '状态')
+            ->type('mapping')
+            ->map([
+                '1' => '<span class="label label-success">启用</span>',
+                '0' => '<span class="label label-default">禁用</span>',
+            ]),
+
+        // 数值列
+        amis()->TableColumn('price', '价格')
+            ->type('number')
+            ->precision(2)
+            ->prefix('¥'),
+
+        // 时间列
+        amis()->TableColumn('created_at', '创建时间')
+            ->type('datetime')
+            ->format('YYYY-MM-DD HH:mm:ss')
+            ->sortable(),
+
+        // 操作列
+        $this->rowActions('dialog'),
+    ];
 }
 ```
 
-- Service 中的 list 方法, 用于查询数据
+### 高级列表配置
+
+#### 表格样式定制
+
+```php
+$crud = $this->baseCRUD()
+    // 表格样式
+    ->className('table-responsive')
+    ->tableClassName('table table-striped')
+
+    // 分页配置
+    ->perPage(20)
+    ->perPageAvailable([10, 20, 50, 100])
+    ->alwaysShowPagination()
+
+    // 头部固定
+    ->affixHeader(true)
+    ->affixHeaderOffset(50)
+
+    // 筛选器配置
+    ->filterTogglable(true)
+    ->filterDefaultVisible(false)
+
+    // 加载配置
+    ->loadDataOnce(false)
+    ->syncLocation(true);
+```
+
+#### 条件渲染
+
+```php
+amis()->TableColumn('actions', '操作')
+    ->type('operation')
+    ->buttons([
+        amis()->Button('编辑')
+            ->level('link')
+            ->visibleOn('${status == 1}'), // 仅启用状态显示
+
+        amis()->Button('删除')
+            ->level('link')
+            ->className('text-danger')
+            ->disabledOn('${is_system == 1}'), // 系统数据禁用删除
+    ]),
+```
+
+## 数据查询处理
+
+### Service 层查询方法
+
+#### list 方法（分页查询）
 
 ```php
 /**
- * 列表 获取数据
+ * 获取分页列表数据
  *
  * @return array
  */
 public function list()
 {
-    // 处理查询条件
     $query = $this->listQuery();
 
-    // 分页查询数据
-    $list  = $query->paginate(request()->input('perPage', 20));
-    $items = $list->items();
+    // 分页查询
+    $perPage = request()->input('perPage', 20);
+    $list = $query->paginate($perPage);
+
+    // 格式化数据
+    $items = $this->formatRows($list->items());
     $total = $list->total();
 
     return compact('items', 'total');
 }
+```
 
+#### listQuery 方法（查询构建）
+
+```php
 /**
- * 列表 获取查询 (大多数情况下, 只需要重写这个方法即可)
+ * 构建列表查询条件
  *
  * @return Builder
  */
 public function listQuery()
 {
-    $query = $this->query(); // 对应模型的 query 方法
+    $query = $this->query();
 
-    $this->sortable($query); // 处理排序
+    // 处理排序
+    $this->sortable($query);
 
-    $this->searchable($query); // 处理 CRUD 的 searchable 属性
+    // 自动加载关联关系
+    $this->loadRelations($query);
 
-    return $query; // 返回查询条件
+    // 处理搜索条件
+    $this->searchable($query);
+
+    // 添加自定义关联
+    $this->addRelations($query, 'list');
+
+    return $query;
 }
 ```
 
-
-
-## 详情
-
-- 页面模式下
-    - 通过访问 `xxx/{id}` 路由, 进入到 `AdminController` 方法中的 `show` 方法
-    - 在 `show` 方法中, 调用 `detail` 方法, 并返回新增页面的结构
-- 弹窗模式下
-    - 在访问 `rowShowButton` 方法时, 会调用 `detail` 方法, 并返回详情页面的结构
+#### 搜索条件处理
 
 ```php
 /**
- * 详情 (AdminController 中)
+ * 处理搜索条件
  *
- * @param $id
+ * @param Builder $query
+ */
+public function searchable($query)
+{
+    // 关键词搜索
+    $keyword = request('keyword');
+    if ($keyword) {
+        $query->where(function($q) use ($keyword) {
+            $q->where('title', 'like', "%{$keyword}%")
+              ->orWhere('description', 'like', "%{$keyword}%");
+        });
+    }
+
+    // 状态筛选
+    $status = request('status');
+    if ($status !== null && $status !== '') {
+        $query->where('status', $status);
+    }
+
+    // 分类筛选
+    $categoryId = request('category_id');
+    if ($categoryId) {
+        $query->where('category_id', $categoryId);
+    }
+
+    // 日期范围筛选
+    $createdAt = request('created_at');
+    if ($createdAt) {
+        $dates = explode(',', $createdAt);
+        if (count($dates) === 2) {
+            $query->whereBetween('created_at', [
+                $dates[0] . ' 00:00:00',
+                $dates[1] . ' 23:59:59',
+            ]);
+        }
+    }
+
+    // 价格范围筛选
+    $priceMin = request('price_min');
+    $priceMax = request('price_max');
+    if ($priceMin !== null) {
+        $query->where('price', '>=', $priceMin);
+    }
+    if ($priceMax !== null) {
+        $query->where('price', '<=', $priceMax);
+    }
+}
+```
+
+#### 排序处理
+
+```php
+/**
+ * 处理排序
  *
+ * @param Builder $query
+ */
+public function sortable($query)
+{
+    $orderBy = request('orderBy', $this->sortColumn());
+    $orderDir = request('orderDir', 'desc');
+
+    // 验证排序字段
+    $allowedColumns = ['id', 'title', 'created_at', 'updated_at', 'price'];
+    if (in_array($orderBy, $allowedColumns)) {
+        $query->orderBy($orderBy, $orderDir);
+    }
+
+    // 默认排序
+    if (!request('orderBy')) {
+        $query->orderBy('id', 'desc');
+    }
+}
+
+/**
+ * 默认排序字段
+ */
+public function sortColumn(): string
+{
+    return 'created_at';
+}
+```
+
+### 关联查询优化
+
+#### 预加载关联关系
+
+```php
+/**
+ * 添加关联关系
+ *
+ * @param Builder $query
+ * @param string $scene
+ */
+public function addRelations($query, string $scene = 'list')
+{
+    switch ($scene) {
+        case 'list':
+            $query->with([
+                'category:id,name',
+                'user:id,username',
+                'tags:id,name',
+            ]);
+            break;
+
+        case 'detail':
+            $query->with([
+                'category',
+                'user',
+                'tags',
+                'comments.user:id,username',
+            ]);
+            break;
+    }
+}
+```
+
+#### 动态关联加载
+
+```php
+/**
+ * 自动加载 TableColumn 中的关联关系
+ */
+protected function loadRelations($query)
+{
+    $relations = [];
+
+    // 从列配置中提取关联关系
+    foreach ($this->getTableColumns() as $column) {
+        if (str_contains($column, '.')) {
+            $relation = explode('.', $column)[0];
+            if (!in_array($relation, $relations)) {
+                $relations[] = $relation;
+            }
+        }
+    }
+
+    if (!empty($relations)) {
+        $query->with($relations);
+    }
+}
+```
+
+### 数据格式化
+
+#### formatRows 方法
+
+```php
+/**
+ * 格式化列表数据
+ *
+ * @param array $rows
+ * @return array
+ */
+public function formatRows(array $rows)
+{
+    return array_map(function($row) {
+        // 格式化价格
+        if (isset($row['price'])) {
+            $row['price_formatted'] = '¥' . number_format($row['price'], 2);
+        }
+
+        // 格式化状态
+        if (isset($row['status'])) {
+            $row['status_text'] = $row['status'] ? '启用' : '禁用';
+        }
+
+        // 添加计算字段
+        $row['days_since_created'] = now()->diffInDays($row['created_at']);
+
+        // 处理敏感信息
+        unset($row['password']);
+
+        return $row;
+    }, $rows);
+}
+```
+
+## 详情功能详解
+
+### show 方法处理
+
+```php
+/**
+ * 详情页面处理
+ *
+ * @param mixed $id
  * @return JsonResponse|JsonResource
- * @throws ContainerExceptionInterface
- * @throws NotFoundExceptionInterface
  */
 public function show($id)
 {
-    // 判断参数, 查询详情并返回
+    // 获取详情数据
     if ($this->actionOfGetData()) {
         return $this->response()->success($this->service->getDetail($id));
     }
 
-    $detail = amis()
-        ->Card()
+    // 构建详情页面
+    $detail = amis()->Card()
         ->className('base-form')
-        ->header(['title' => __('admin.detail')])
-        ->body($this->detail()) // 这里调用了 detail 方法
-        // 工具栏
-        ->toolbar([
-            $this->backButton() // 返回按钮
-        ]); 
+        ->header(['title' => admin_trans('admin.detail')])
+        ->body($this->detail($id))
+        ->toolbar([$this->backButton()]);
 
     $page = $this->basePage()->body($detail);
 
     return $this->response()->success($page);
 }
+```
 
+### detail 方法构建
+
+```php
 /**
- * 前端 amis 通过识别 detail 方法返回的结构来详情页面
- * 
- * @param bool $id 对应的主键
- * 
- * @return Form
+ * 构建详情页面结构
+ *
+ * @param mixed $id
+ * @return \Slowlyo\OwlAdmin\Renderers\Form
  */
 public function detail($id)
 {
     return $this->baseDetail()->body([
-        amis()->StaticExactControl()->name('id')->label('ID'),
+        // 基础信息组
+        amis()->GroupControl()->label('基础信息')->body([
+            amis()->StaticExactControl('id', 'ID'),
+            amis()->StaticExactControl('title', '标题'),
+            amis()->StaticExactControl('category.name', '分类'),
+        ]),
+
+        // 详细信息组
+        amis()->GroupControl()->label('详细信息')->body([
+            amis()->StaticExactControl('description', '描述')
+                ->type('html'),
+            amis()->StaticExactControl('price', '价格')
+                ->type('number')
+                ->precision(2)
+                ->prefix('¥'),
+        ]),
+
+        // 状态信息组
+        amis()->GroupControl()->label('状态信息')->body([
+            amis()->StaticExactControl('status', '状态')
+                ->type('mapping')
+                ->map([
+                    '1' => '<span class="label label-success">启用</span>',
+                    '0' => '<span class="label label-default">禁用</span>',
+                ]),
+            amis()->StaticExactControl('created_at', '创建时间')
+                ->type('datetime'),
+            amis()->StaticExactControl('updated_at', '更新时间')
+                ->type('datetime'),
+        ]),
+
+        // 关联数据组
+        amis()->GroupControl()->label('关联数据')->body([
+            amis()->StaticExactControl('tags', '标签')
+                ->type('each')
+                ->items(amis()->Tpl()->tpl('${name}')),
+        ]),
     ]);
 }
+```
 
+### Service 详情查询
+
+```php
 /**
- * 详情 获取数据 (Service 中)
+ * 获取详情数据
  *
- * @param $id
- *
- * @return Builder|Builder[]|\Illuminate\Database\Eloquent\Collection|Model|null
+ * @param mixed $id
+ * @return Model|null
  */
 public function getDetail($id)
 {
-    return $this->query()->find($id);
+    $query = $this->query();
+
+    // 添加关联关系
+    $this->addRelations($query, 'detail');
+
+    $model = $query->find($id);
+
+    if (!$model) {
+        admin_abort('记录不存在');
+    }
+
+    return $model;
+}
+```
+
+## 性能优化策略
+
+### 1. 查询优化
+
+```php
+// 使用索引
+public function listQuery()
+{
+    return $this->query()
+        ->select(['id', 'title', 'status', 'created_at']) // 只查询需要的字段
+        ->whereNotNull('status') // 利用索引
+        ->orderBy('created_at', 'desc'); // 确保 created_at 有索引
+}
+
+// 分页优化
+public function list()
+{
+    $query = $this->listQuery();
+
+    // 使用游标分页（适合大数据量）
+    if (request('cursor')) {
+        return $this->cursorPaginate($query);
+    }
+
+    // 标准分页
+    return $this->standardPaginate($query);
+}
+```
+
+### 2. 缓存策略
+
+```php
+public function list()
+{
+    $cacheKey = $this->buildCacheKey();
+
+    return cache()->remember($cacheKey, 300, function() {
+        return $this->queryData();
+    });
+}
+
+private function buildCacheKey(): string
+{
+    $params = request()->only(['page', 'perPage', 'keyword', 'status']);
+    return 'list:' . md5(serialize($params));
+}
+```
+
+### 3. 数据库连接优化
+
+```php
+// 读写分离
+public function listQuery()
+{
+    return $this->query()
+        ->connection('read') // 使用只读连接
+        ->where('status', 1);
 }
 ```
