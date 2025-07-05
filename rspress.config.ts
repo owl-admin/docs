@@ -38,4 +38,16 @@ export default defineConfig({
         searchNoResultsText: '未搜索到相关结果',
         searchSuggestedQueryText: '可更换不同的关键字后重试',
     },
+    builderConfig: {
+        html: {
+            tags:[
+                {
+                    tag: 'script',
+                    attrs: {
+                        src: 'https://hm.baidu.com/hm.js?3f9fe6710c2273ab44ee3fb8e165bcd4'
+                    }
+                }
+            ]
+        }
+    }
 })
