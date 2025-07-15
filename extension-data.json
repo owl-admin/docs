@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2491,
+    "downloads": 2496,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 937,
+    "downloads": 945,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -74,7 +74,7 @@
     "description": "OwlAdmin扩展:方便管理 laravel 的定时任务",
     "url": "https://packagist.org/packages/iwzh/owl-scheduling",
     "repository": "https://gitee.com/wzhec/owl-scheduling",
-    "downloads": 286,
+    "downloads": 287,
     "favers": 1,
     "last_version": "1.0.2",
     "latest_update": "2023-05-12 10:57:41"
@@ -171,6 +171,16 @@
     "latest_update": "2024-09-28 11:52:40"
   },
   {
+    "name": "hyperf-plus/ai-helper",
+    "description": "AI工具助手，生成amis",
+    "url": "https://packagist.org/packages/hyperf-plus/ai-helper",
+    "repository": "https://github.com/hyperf-plus/ai-helper",
+    "downloads": 33,
+    "favers": 1,
+    "last_version": "v1.0.2",
+    "latest_update": "2024-03-14 10:47:42"
+  },
+  {
     "name": "slowlyo/owl-sku",
     "description": "SKU 扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-sku",
@@ -179,16 +189,6 @@
     "favers": 1,
     "last_version": "v0.1.4",
     "latest_update": "2024-05-15 13:57:36"
-  },
-  {
-    "name": "hyperf-plus/ai-helper",
-    "description": "AI工具助手，生成amis",
-    "url": "https://packagist.org/packages/hyperf-plus/ai-helper",
-    "repository": "https://github.com/hyperf-plus/ai-helper",
-    "downloads": 32,
-    "favers": 1,
-    "last_version": "v1.0.2",
-    "latest_update": "2024-03-14 10:47:42"
   },
   {
     "name": "itinysun/ddns",
