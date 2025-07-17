@@ -34,23 +34,42 @@ jobs:
       - name: tar
         run: tar -zcvf dist.tar.gz ./dist
 
-      - name: ssh scp ssh pipelines
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      - name: Create deployment directory
+        uses: appleboy/ssh-action@v1.1.0
         with:
           host: ${{ secrets.server_host }}
-          user: ${{ secrets.server_user }}
-          pass: ${{ secrets.server_pwd }}
+          username: ${{ secrets.server_user }}
+          password: ${{ secrets.server_pwd }}
           port: ${{ secrets.server_port }}
-          connect_timeout: 10s
-          first_ssh: |
+          timeout: 10s
+          script: |
             mkdir -p /www/wwwroot/admin/docs_new
-          scp: |
-            './dist.tar.gz' => /www/wwwroot/admin/docs_new/
-          last_ssh: |
-            tar -zxf /www/wwwroot/admin/docs_new/dist.tar.gz -C /www/wwwroot/admin/docs_new
-            rm -f /www/wwwroot/admin/docs_new/dist.tar.gz
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.server_host }}
+          username: ${{ secrets.server_user }}
+          password: ${{ secrets.server_pwd }}
+          port: ${{ secrets.server_port }}
+          source: "./dist.tar.gz"
+          target: "/www/wwwroot/admin/docs_new/"
+
+      - name: Deploy and cleanup
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.server_host }}
+          username: ${{ secrets.server_user }}
+          password: ${{ secrets.server_pwd }}
+          port: ${{ secrets.server_port }}
+          timeout: 30s
+          script: |
+            cd /www/wwwroot/admin/docs_new
+            tar -zxf dist.tar.gz
+            rm -f dist.tar.gz
             rm -rf /www/wwwroot/admin/docs
-            mv /www/wwwroot/admin/docs_new/dist /www/wwwroot/admin/docs
+            mv dist /www/wwwroot/admin/docs
+            cd /
             rm -rf /www/wwwroot/admin/docs_new
             chown -R www:www /www/wwwroot/admin/docs
             chmod -R 755 /www/wwwroot/admin/docs
