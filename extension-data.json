@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2502,
+    "downloads": 2504,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 953,
+    "downloads": 954,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -145,7 +145,7 @@
     "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
     "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
     "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
-    "downloads": 56,
+    "downloads": 57,
     "favers": 0,
     "last_version": "1.0.3",
     "latest_update": "2025-02-20 10:50:46"
