@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 972,
+    "downloads": 973,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -125,7 +125,7 @@
     "description": "常用组件合集",
     "url": "https://packagist.org/packages/owl-admin/components",
     "repository": "https://github.com/owl-admin/components",
-    "downloads": 110,
+    "downloads": 111,
     "favers": 2,
     "last_version": "v0.2.1",
     "latest_update": "2024-07-05 21:35:37"
