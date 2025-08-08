@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 978,
+    "downloads": 982,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -24,7 +24,7 @@
     "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
     "url": "https://packagist.org/packages/slowlyo/owl-amis-json-parse",
     "repository": "https://github.com/Slowlyo/owl-amis-json-parse",
-    "downloads": 727,
+    "downloads": 730,
     "favers": 0,
     "last_version": "v1.1.4",
     "latest_update": "2023-04-27 09:57:14"
@@ -40,6 +40,16 @@
     "latest_update": "2023-03-10 20:07:10"
   },
   {
+    "name": "slowlyo/owl-log-viewer",
+    "description": "更方便的查看laravel日志",
+    "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
+    "repository": "https://github.com/owl-admin/log-viewer",
+    "downloads": 324,
+    "favers": 2,
+    "last_version": "1.0.0",
+    "latest_update": "2024-03-10 21:57:59"
+  },
+  {
     "name": "slowlyo/owl-system-backup",
     "description": "Owl Admin 系统备份扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-system-backup",
@@ -48,16 +58,6 @@
     "favers": 0,
     "last_version": "v0.3.1",
     "latest_update": "2024-05-22 10:58:47"
-  },
-  {
-    "name": "slowlyo/owl-log-viewer",
-    "description": "更方便的查看laravel日志",
-    "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
-    "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 320,
-    "favers": 2,
-    "last_version": "1.0.0",
-    "latest_update": "2024-03-10 21:57:59"
   },
   {
     "name": "slowlyo/owl-module-notice",
