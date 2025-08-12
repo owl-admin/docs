@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2524,
+    "downloads": 2526,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 993,
+    "downloads": 994,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -195,7 +195,7 @@
     "description": "BizAdmin扩展: 增加登录保护功能",
     "url": "https://packagist.org/packages/dagasmart/login-guard",
     "repository": "https://github.com/dagasmart/login-guard",
-    "downloads": 29,
+    "downloads": 31,
     "favers": 0,
     "last_version": "1.1.3",
     "latest_update": "2025-04-16 15:24:34"
