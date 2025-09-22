@@ -1,0 +1,24 @@
+# VCS and CI
+.git
+.github
+
+# Node related
+node_modules
+.pnpm-store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+/dist
+
+# Editors and OS
+.vscode
+.idea
+.DS_Store
+
+# Others
+*.log
+coverage
+.cache
