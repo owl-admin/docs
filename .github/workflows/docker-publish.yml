@@ -90,3 +90,8 @@ jobs:
         if: steps.dockerfile_check.outputs.exists != 'true'
         run: |
           echo "No Dockerfile found at path '${DOCKERFILE}'. Skipping Docker build and push."
+
+      - name: Notify hook
+        if: ${{ success() }}
+        run: |
+          curl -sS -X POST "http://hook.slowlyo.top/h/47fb4784-6f40-43da-9d6f-cd0eaca61333?signature=${{ secrets.HOOK_SECRET }}"
