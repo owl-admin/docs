@@ -80,9 +80,56 @@ const DonateTable = () => {
               box-shadow: 0 4px 12px rgba(255, 77, 79, 0.25);
             }
           }
+
+          /* 暗色主题动画（更柔和、更暗的光晕） */
+          @keyframes gold-glow-dark {
+            0% {
+              box-shadow: 0 4px 12px rgba(250, 173, 20, 0.15);
+            }
+            50% {
+              box-shadow: 0 6px 18px rgba(250, 173, 20, 0.35);
+            }
+            100% {
+              box-shadow: 0 4px 12px rgba(250, 173, 20, 0.15);
+            }
+          }
+          @keyframes red-glow-dark {
+            0% {
+              box-shadow: 0 4px 12px rgba(255, 77, 79, 0.18);
+            }
+            50% {
+              box-shadow: 0 6px 20px rgba(255, 77, 79, 0.4);
+            }
+            100% {
+              box-shadow: 0 4px 12px rgba(255, 77, 79, 0.18);
+            }
+          }
+
+          html.dark .donate-table .donate-card {
+            border-color: #303030 !important;
+            background: linear-gradient(145deg, #141414 0%, #1f1f1f 100%) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+          }
+          html.dark .donate-table .donate-card .nickname {
+            color: rgba(255, 255, 255, 0.88);
+          }
+          html.dark .donate-table .donate-card.normal .amount {
+            /* 默认保持品牌色，暗色下亮度足够 */
+          }
+          html.dark .donate-table .donate-card.premium {
+            border-color: #d89614 !important;
+            background: linear-gradient(145deg, #2a1f00 0%, #141414 100%) !important;
+            animation: gold-glow-dark 2.5s infinite ease-in-out !important;
+          }
+          html.dark .donate-table .donate-card.super-premium {
+            border-color: #ff7875 !important;
+            background: linear-gradient(145deg, #2a0f0e 0%, #141414 100%) !important;
+            animation: red-glow-dark 2.5s infinite ease-in-out !important;
+          }
         `}
       </style>
-      <List
+      <div className="donate-table">
+        <List
         grid={{
           gutter: 16,
           xs: 3,
@@ -123,6 +170,10 @@ const DonateTable = () => {
             ? premiumStyle
             : cardStyle;
 
+          const cardClassName = `donate-card ${
+            isSuperPremium ? "super-premium" : isPremium ? "premium" : "normal"
+          }`;
+
           const currentColor = isSuperPremium
             ? "#f5222d"
             : isPremium
@@ -156,6 +207,7 @@ const DonateTable = () => {
                   size="small"
                   hoverable
                   style={currentStyle}
+                  className={cardClassName}
                   bodyStyle={{
                     padding: "12px 8px",
                     textAlign: "center",
@@ -170,6 +222,7 @@ const DonateTable = () => {
                       textOverflow: "ellipsis",
                       marginBottom: "4px",
                     }}
+                    className="nickname"
                     title={item.nickname}
                   >
                     {item.nickname}
@@ -179,6 +232,7 @@ const DonateTable = () => {
                       fontSize: "13px",
                       color: currentColor,
                     }}
+                    className="amount"
                   >
                     ¥{item.amount}
                   </div>
@@ -188,6 +242,7 @@ const DonateTable = () => {
           );
         }}
       />
+      </div>
     </>
   );
 };
