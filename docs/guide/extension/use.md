@@ -37,7 +37,7 @@ Owl Admin 支持多种扩展安装方式：
 composer require vendor/package-name
 ```
 
-安装后扩展会自动注册到系统中。
+安装后扩展会自动注册到系统中（需在扩展的 `composer.json` 中配置 `extra.laravel.providers` 指向扩展的 ServiceProvider，详见“扩展配置指南”）。
 
 ### 3. 创建扩展
 
@@ -80,10 +80,11 @@ composer require vendor/package-name
 1. 点击扩展的 `卸载` 按钮
 2. 确认卸载操作
 3. 系统会自动：
-   - 回滚数据库迁移
-   - 删除静态资源
-   - 移除菜单项
-   - 清理配置数据
+   - 回滚数据库迁移（`ServiceProvider::runMigrations(true)`）
+   - 删除已发布的静态资源（`ServiceProvider::unpublishable()`）
+   - 移除菜单项（`ServiceProvider::flushMenu()`）
+
+说明：扩展配置（`Admin::setting()` 存储）不会在卸载时自动清理，如需清除，请在扩展的 `uninstall()` 中自行处理或手动清理。
 
 ## 扩展特性
 
@@ -92,16 +93,16 @@ composer require vendor/package-name
 系统会自动扫描以下位置的扩展：
 
 - `extensions/` 目录下的所有子目录
-- 通过 Composer 安装的包（包含 `extra.owl-admin` 配置）
+- 通过 Composer 安装的包（包含 `extra.owl-admin` 并通过 `extra.laravel.providers` 自动注册扩展的 ServiceProvider）
 
 ### 生命周期管理
 
 扩展支持完整的生命周期管理：
 
-- **安装**：运行数据库迁移，发布静态资源
-- **启用**：注册路由，加载中间件，导入菜单
-- **禁用**：停止功能，保留数据
-- **卸载**：完全清理，回滚变更
+- **安装**：运行数据库迁移，发布静态资源（`ServiceProvider::install()`）
+- **启用**：刷新菜单（`ServiceProvider::doEnable(true)`）；路由与中间件由扩展的 ServiceProvider 在系统启动时统一注册，启用后刷新页面即可生效
+- **禁用**：清理菜单（`ServiceProvider::doEnable(false)`），路由与中间件随扩展禁用而不执行初始化
+- **卸载**：完全清理（移除菜单、取消发布静态资源），回滚迁移
 
 ### 资源管理
 

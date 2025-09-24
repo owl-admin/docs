@@ -65,39 +65,19 @@ public function index()
 }
 ```
 
-**支持的动作类型：**
-- `getData` - 获取数据
-- `export` - 导出数据
-- `quickEdit` - 快速编辑
-- `quickEditItem` - 快速编辑单项
+**动作类型说明：**
+- `getData`（GET）和 `export`（GET）在 `index()` 中处理
+- `quickEdit`（POST）和 `quickEditItem`（POST）在 `store()` 中处理（表格内快速编辑）
 
 ### 页面构建方法
 
-控制器需要实现以下抽象方法来构建页面：
+控制器需在子类中实现以下方法（约定实现，用于页面构建）：
 
 ```php
-abstract class AdminController extends Controller
-{
-    /**
-     * 构建列表页面
-     * @return \Slowlyo\OwlAdmin\Renderers\Page
-     */
-    abstract protected function list();
-
-    /**
-     * 构建表单页面
-     * @param bool $isEdit 是否为编辑模式
-     * @return \Slowlyo\OwlAdmin\Renderers\Form
-     */
-    abstract protected function form($isEdit);
-
-    /**
-     * 构建详情页面
-     * @param mixed $id 记录ID
-     * @return \Slowlyo\OwlAdmin\Renderers\Form
-     */
-    abstract protected function detail($id);
-}
+// 需在继承 AdminController 的子类中实现
+protected function list() {}
+protected function form($isEdit) {}
+protected function detail($id) {}
 ```
 
 ## 服务层详解
@@ -136,7 +116,9 @@ AdminService 提供了完整的数据操作方法：
 
 ### 1. 路由注册
 
-在 `app/Admin/routes.php` 中注册 Resource 路由：
+推荐通过“代码生成器”勾选“生成路由&菜单”，系统会写入 `routes/admin.php` 并自动刷新路由（命令：`php artisan admin:gen-route`）。
+
+如需手动注册，可在 `routes/admin.php` 内添加 Resource 路由：
 
 ```php
 $router->resource('books', \App\Admin\Controllers\BookController::class);
@@ -319,8 +301,8 @@ class BookService extends AdminService
         // 清除相关缓存
         cache()->forget("book_category_{$model->category_id}");
 
-        // 记录操作日志
-        admin_log($isEdit ? '更新图书' : '创建图书', $model->toArray());
+        // 记录操作日志（示例）
+        logger()->info($isEdit ? '更新图书' : '创建图书', $model->toArray());
     }
 }
 ```
@@ -374,9 +356,9 @@ class Book extends Model
 **生成的文件包括：**
 - 控制器文件
 - 服务文件
-- 路由配置
+- 路由配置（写入 `routes/admin.php`）
 - 菜单配置
-- 权限配置
+（权限请在“系统-权限”中按需生成/分配）
 
 :::tip 提示
 使用代码生成器可以大大提高开发效率，生成后只需根据业务需求进行微调即可。

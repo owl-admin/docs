@@ -3,7 +3,7 @@
 动态关联功能允许您在不修改模型文件的情况下，通过可视化界面为 Eloquent 模型动态添加关联关系。该功能基于 Laravel 的 `resolveRelationUsing` 方法实现，支持所有标准的 Eloquent 关联类型。
 
 :::warning 前置要求
-在使用此功能前，请确保您已经熟练掌握了 [Laravel Eloquent ORM 关联关系](https://learnku.com/docs/laravel/9.x/eloquent-relationships/12252)
+在使用此功能前，请确保您已经熟练掌握了 [Laravel Eloquent ORM 关联关系](https://laravel.com/docs/11.x/eloquent-relationships)
 :::
 
 ## 功能特性
@@ -139,7 +139,7 @@ class User extends Model
 
 - **缓存键**：`admin_relationships`
 - **缓存驱动**：文件缓存
-- **自动更新**：配置变更时自动清除缓存
+- **自动更新**：保存/删除配置后系统会自动清除缓存（无需手动清理）
 - **异常处理**：缓存失败时降级到直接查询
 
 ### 参数构建
@@ -245,7 +245,7 @@ $roles = $user->roles; // 获取用户角色
 ## 注意事项
 
 :::warning 重要提醒
-- 动态关联在系统启动时注册，修改配置后需要清除缓存
+- 动态关联在系统启动时注册；配置保存/删除后缓存会自动清理并生效
 - 确保相关模型和数据表存在，否则可能导致错误
 - 复杂的关联关系建议在模型中直接定义，以获得更好的 IDE 支持
 - 多态关联需要确保数据表结构符合 Laravel 规范

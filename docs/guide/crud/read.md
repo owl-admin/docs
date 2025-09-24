@@ -68,12 +68,13 @@ public function index()
 
 **请求类型对应关系：**
 
-| 请求类型      | URL 示例                        | 处理方法            | 返回内容     |
-|:----------|:------------------------------|:----------------|:---------|
-| 页面结构      | `/users`                      | `list()`        | CRUD 组件配置 |
-| 列表数据      | `/users?_action=getData`      | `service->list()` | 分页数据     |
-| 导出数据      | `/users?_action=export`       | `export()`      | 导出文件     |
-| 快速编辑      | `/users?_action=quickEdit`    | `quickEdit()`   | 操作结果     |
+| 请求类型      | URL 示例                             | 处理方法                  | 返回内容     |
+|:----------|:-----------------------------------|:----------------------|:---------|
+| 页面结构      | `/users`                           | `list()`              | CRUD 组件配置 |
+| 列表数据      | `/users?_action=getData`           | `service->list()`     | 分页数据     |
+| 导出数据      | `/users?_action=export`            | `export()`            | 导出文件     |
+| 快速编辑      | `post:/users?_action=quickEdit`    | `service->quickEdit()`   | 操作结果     |
+| 快速编辑单项  | `post:/users?_action=quickEditItem` | `service->quickEditItem()` | 操作结果     |
 
 ### list 方法构建页面结构
 
@@ -207,7 +208,6 @@ $crud = $this->baseCRUD()
 
     // 头部固定
     ->affixHeader(true)
-    ->affixHeaderOffset(50)
 
     // 筛选器配置
     ->filterTogglable(true)
@@ -356,27 +356,30 @@ public function searchable($query)
  */
 public function sortable($query)
 {
-    $orderBy = request('orderBy', $this->sortColumn());
-    $orderDir = request('orderDir', 'desc');
-
-    // 验证排序字段
-    $allowedColumns = ['id', 'title', 'created_at', 'updated_at', 'price'];
-    if (in_array($orderBy, $allowedColumns)) {
-        $query->orderBy($orderBy, $orderDir);
-    }
-
-    // 默认排序
-    if (!request('orderBy')) {
-        $query->orderBy('id', 'desc');
+    // 当请求中包含 orderBy 与 orderDir 时使用请求排序，否则按默认字段倒序
+    if (request()->orderBy && request()->orderDir) {
+        $query->orderBy(request()->orderBy, request()->orderDir ?? 'asc');
+    } else {
+        $query->orderByDesc($this->sortColumn());
     }
 }
 
 /**
- * 默认排序字段
+ * 默认排序字段（与内置实现保持一致）
  */
-public function sortColumn(): string
+public function sortColumn()
 {
-    return 'created_at';
+    $updatedAtColumn = $this->getModel()->getUpdatedAtColumn();
+
+    if ($this->hasColumn($updatedAtColumn)) {
+        return $updatedAtColumn;
+    }
+
+    if ($this->hasColumn($this->getModel()->getKeyName())) {
+        return $this->getModel()->getKeyName();
+    }
+
+    return \Illuminate\Support\Arr::first($this->getTableColumns());
 }
 ```
 
@@ -416,29 +419,7 @@ public function addRelations($query, string $scene = 'list')
 
 #### 动态关联加载
 
-```php
-/**
- * 自动加载 TableColumn 中的关联关系
- */
-protected function loadRelations($query)
-{
-    $relations = [];
-
-    // 从列配置中提取关联关系
-    foreach ($this->getTableColumns() as $column) {
-        if (str_contains($column, '.')) {
-            $relation = explode('.', $column)[0];
-            if (!in_array($relation, $relations)) {
-                $relations[] = $relation;
-            }
-        }
-    }
-
-    if (!empty($relations)) {
-        $query->with($relations);
-    }
-}
-```
+AdminService 已内置 `loadRelations()`，会根据当前控制器 `list()` 返回的 `TableColumn` 配置中带点（`.`）的字段名自动推导并执行 `$query->with(...)`，无需手动重写。你仍可通过重写 `addRelations($query, 'list')` 追加自定义关联。
 
 ### 数据格式化
 
@@ -454,6 +435,11 @@ protected function loadRelations($query)
 public function formatRows(array $rows)
 {
     return array_map(function($row) {
+        // 兼容模型实例与数组
+        if ($row instanceof \Illuminate\Database\Eloquent\Model) {
+            $row = $row->toArray();
+        }
+
         // 格式化价格
         if (isset($row['price'])) {
             $row['price_formatted'] = '¥' . number_format($row['price'], 2);
@@ -464,8 +450,10 @@ public function formatRows(array $rows)
             $row['status_text'] = $row['status'] ? '启用' : '禁用';
         }
 
-        // 添加计算字段
-        $row['days_since_created'] = now()->diffInDays($row['created_at']);
+        // 添加计算字段（确保有 created_at）
+        if (!empty($row['created_at'])) {
+            $row['days_since_created'] = now()->diffInDays($row['created_at']);
+        }
 
         // 处理敏感信息
         unset($row['password']);
@@ -589,6 +577,8 @@ public function getDetail($id)
 
 ### 1. 查询优化
 
+> 注意：以下为“扩展示例，非内置”能力，示例中的 `cursorPaginate`、`standardPaginate` 等方法需自行实现。
+
 ```php
 // 使用索引
 public function listQuery()
@@ -616,6 +606,8 @@ public function list()
 
 ### 2. 缓存策略
 
+> 注意：以下为“扩展示例，非内置”能力，示例中的 `buildCacheKey`、`queryData` 需自行实现。
+
 ```php
 public function list()
 {
@@ -633,14 +625,6 @@ private function buildCacheKey(): string
 }
 ```
 
-### 3. 数据库连接优化
+### 3. 数据库连接优化（扩展示例）
 
-```php
-// 读写分离
-public function listQuery()
-{
-    return $this->query()
-        ->connection('read') // 使用只读连接
-        ->where('status', 1);
-}
-```
+建议通过 `config/database.php` 配置读写分离。如需在 Service 层使用特定连接，可在模型上切换连接后再构建查询（例如使用模型的 `setConnection()` 或 `on()` 方法），并确保与项目的全局数据库策略一致。

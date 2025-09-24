@@ -79,7 +79,7 @@ public function form()
 {
     return amis()->Form()
         ->title('用户信息')
-        ->api('/api/users')
+        ->api(admin_url('users', true))
         ->body([
             amis()->TextControl('username', '用户名')
                 ->required()
@@ -149,7 +149,7 @@ amis()->SelectControl('tags', '标签')
 
 // 远程数据源
 amis()->SelectControl('category_id', '分类')
-    ->source('/api/categories')
+    ->source(admin_url('categories', true))
     ->labelField('name')
     ->valueField('id')
     ->searchable();
@@ -186,13 +186,13 @@ amis()->DateRangeControl('date_range', '日期范围')
 
 ```php
 amis()->ImageControl('avatar', '头像')
-    ->receiver('/api/upload/image')
+    ->receiver(admin_url('upload_image', true))
     ->accept('.jpg,.jpeg,.png,.gif')
     ->maxSize(2 * 1024 * 1024) // 2MB
     ->crop(['aspectRatio' => 1]); // 1:1 裁剪
 
 amis()->FileControl('attachment', '附件')
-    ->receiver('/api/upload/file')
+    ->receiver(admin_url('upload_file', true))
     ->multiple()
     ->maxLength(5);
 ```
@@ -241,7 +241,7 @@ amis()->Button()
     ->label('删除')
     ->level('danger')
     ->actionType('ajax')
-    ->api('delete:/api/users/${id}')
+    ->api('delete:' . admin_url('users/${id}', true))
     ->confirmText('确定要删除吗？');
 ```
 
@@ -253,7 +253,7 @@ amis()->Button()
 public function list()
 {
     $crud = amis()->CRUD()
-        ->api('/api/users')
+        ->api(admin_url('users', true))
         ->columns([
             amis()->TableColumn('id', 'ID')->sortable(),
             amis()->TableColumn('username', '用户名'),
@@ -349,12 +349,12 @@ amis()->Button()
 ```php
 amis()->Form()->body([
     amis()->SelectControl('province', '省份')
-        ->source('/api/provinces')
+        ->source(admin_url('provinces', true))
         ->labelField('name')
         ->valueField('code'),
 
     amis()->SelectControl('city', '城市')
-        ->source('/api/cities?province=${province}')
+        ->source(admin_url('cities?province=${province}', true))
         ->labelField('name')
         ->valueField('code')
         ->visibleOn('${province}'), // 选择省份后才显示
@@ -485,7 +485,7 @@ $form->body([
 :::
 
 :::warning 注意
-- 组件权限控制在页面渲染前生效，无权限的组件会被置为空数组
+- 组件权限控制在页面渲染前生效，无权限的组件会返回替换值（默认空字符串 ''）
 - 使用远程数据源时注意接口的数据格式要求
 - 表单验证规则要与后端验证保持一致
 

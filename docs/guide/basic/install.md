@@ -11,11 +11,9 @@
 
 ### 安装 `laravel`
 
-首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`，请务必先阅读 [文档](https://learnku.com/docs/laravel/9.x/installation/12200) ！
+首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`，请务必先阅读 [文档](https://laravel.com/docs/11.x/installation) ！
 
 ```bash
-composer create-project --prefer-dist laravel/laravel 项目名称 9.*
-# 或
 composer create-project --prefer-dist laravel/laravel 项目名称
 ```
 
@@ -65,6 +63,10 @@ php artisan admin:publish
 php artisan admin:install
 ```
 
+:::info 说明
+`admin:install` 会执行数据库迁移；仅当管理员表为空时，会初始化默认管理员账号 `admin/admin`。不会清空已有数据表。
+:::
+
 :::info Tips
 执行这一步命令可能会报以下错误 `Specified key was too long ... 767 bytes` 
 
@@ -97,7 +99,7 @@ location / {
 
 另外注意文件权限设置 `755`, 否则可能报错
 
-启动服务后，在浏览器打开 `http://localhost/admin`，使用用户名 `admin` 和密码 `admin`登陆。
+启动服务后，在浏览器打开 `http://localhost/`（默认由后端路由返回内置前端页面），使用用户名 `admin` 和密码 `admin` 登陆。
 
 ## 目录结构
 

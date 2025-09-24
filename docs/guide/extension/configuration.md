@@ -33,6 +33,11 @@
     },
     "extra": {
         "owl-admin": "Vendor\\PackageName\\PackageNameServiceProvider",
+        "laravel": {
+            "providers": [
+                "Vendor\\PackageName\\PackageNameServiceProvider"
+            ]
+        },
         "alias": "扩展显示名称"
     }
 }
@@ -44,6 +49,7 @@
 |------|------|------|
 | `name` | 扩展包名，格式：`vendor/package-name` | ✓ |
 | `extra.owl-admin` | 服务提供者类名 | ✓ |
+| `extra.laravel.providers` | Laravel 包发现（Composer 安装时用于自动注册 Provider） | 建议 |
 | `extra.alias` | 扩展显示名称 | ✓ |
 | `description` | 扩展描述 | ✓ |
 | `version` | 版本号 | ✓ |
@@ -55,17 +61,16 @@
 
 ### 扩展目录配置
 
-在 `config/admin.php` 中配置扩展相关路径：
+在 `config/admin.php` 中配置扩展安装目录：
 
 ```php
 'extension' => [
-    // 扩展安装目录
+    // 扩展安装目录（本地扩展会被扫描加载）
     'dir' => base_path('extensions'),
-    
-    // 扩展静态资源发布目录
-    'assets_dir' => public_path('extensions'),
 ],
 ```
+
+说明：静态资源发布目录为固定路径 `public/extensions/{package-name}`（见 `Slowlyo\OwlAdmin\Extend\ServiceProvider::getPublishPath()`），不支持通过配置项自定义。
 
 ### 权限配置
 
@@ -425,10 +430,9 @@ public function customInitAfter()
 ### 数据库优化
 
 ```php
-// 在模型中添加索引
+// 在模型中添加索引（与本示例表结构一致）
 Schema::table('package_name_items', function (Blueprint $table) {
-    $table->index(['status', 'created_at']);
-    $table->index('user_id');
+    $table->index(['is_active', 'created_at']);
 });
 ```
 

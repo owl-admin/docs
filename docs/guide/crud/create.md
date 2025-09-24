@@ -41,12 +41,12 @@ sequenceDiagram
 /**
  * 构建表单结构
  *
- * @param bool $isEdit 是否为编辑模式
+ * @param bool $isEdit 是否为编辑模式（用于你自定义字段显示逻辑）
  * @return \Slowlyo\OwlAdmin\Renderers\Form
  */
 public function form($isEdit = false)
 {
-    return $this->baseForm($isEdit)->body([
+    return $this->baseForm()->body([
         // 基础信息分组
         amis()->GroupControl()->label('基础信息')->body([
             amis()->TextControl('title', '标题')
@@ -88,6 +88,8 @@ public function form($isEdit = false)
     ]);
 }
 ```
+
+提示：`baseForm(true)` 用于开启“提交成功后返回上一页”的行为，参数与是否编辑无关，可按需开启。
 
 ### 表单模式对比
 
@@ -550,10 +552,7 @@ public function store($data): bool
 
     } catch (\Exception $e) {
         DB::rollBack();
-        admin_log_error('用户创建失败', [
-            'error' => $e->getMessage(),
-            'data' => $data,
-        ]);
+        report($e); // 记录异常
         admin_abort('创建失败，请稍后重试');
     }
 }

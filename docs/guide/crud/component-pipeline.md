@@ -51,7 +51,7 @@ AdminPipeline::through($key, $pipes);
 // 执行管道处理
 AdminPipeline::handle($key, $passable, $callback);
 
-// 简化的执行方式（无回调）
+// 简化的执行方式（无需传入对象）
 AdminPipeline::tap($key, $callback);
 
 // 动态生成管道键名
@@ -150,6 +150,11 @@ AdminPipeline::through(
     [$processor]
 );
 ```
+
+## 处理器入参类型说明
+
+- 当使用“组件类名”作为键（例如 `\Slowlyo\OwlAdmin\Renderers\TextControl::class`）时，处理器接收的是“组件的 amisSchema 数组”。因此在处理器中应通过数组方式修改，例如：`$schema['maxLength'] = 200`。
+- 当使用内置的 `PIPE_*` 常量作为键（例如 `AdminPipeline::PIPE_CREATE_ACTION`）时，处理器接收的是“组件对象”（如 `DialogAction`、`LinkAction`、`Form` 等），可直接调用链式方法，例如：`$schema->label('创建')->level('success')`。
 
 ## 实际应用案例
 

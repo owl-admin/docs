@@ -220,14 +220,13 @@ admin_url('user/create', true); // /admin-api/user/create
 admin_path(string $path = ''): string
 
 // 使用示例
-admin_path();                    // App
-admin_path('Controllers');       // App/Controllers
-admin_path('Models/User.php');   // App/Models/User.php
+admin_path();                    // /path/to/app/Admin
+admin_path('Controllers');       // /path/to/app/Admin/Controllers
+admin_path('Models/User.php');   // /path/to/app/Admin/Models/User.php
 ```
 
 **功能说明：**
-- 基于 `config('admin.directory')` 配置
-- 自动首字母大写
+- 基于 `config('admin.directory')` 配置，返回绝对路径
 - 用于文件系统操作和类路径生成
 
 ### admin_extension_path()
@@ -269,7 +268,7 @@ owl_admin_path('config/admin.php');  // 框架配置文件路径
 
 ### table_columns()
 
-获取数据表的字段信息
+获取数据表的字段名列表
 
 ```php
 // 函数签名
@@ -277,12 +276,12 @@ table_columns(string $tableName): array
 
 // 使用示例
 $columns = table_columns('users');
-// 返回字段信息数组，包含字段名、类型、长度等
+// 返回字段名数组，例如：["id", "name", "created_at"]
 ```
 
 **功能说明：**
-- 基于 Laravel 的 Schema 门面实现
-- 返回完整的字段信息
+- 基于框架内部 `Database::getTableColumns()` 实现
+- 仅返回字段名数组
 - 常用于代码生成器和动态表单创建
 
 ## 文件处理函数
@@ -550,7 +549,7 @@ $result = admin_pipeline($data)
 // 创建带权限检查的表单
 if (admin_user()?->can('user.edit')) {
     $form = amis('form')
-        ->api(admin_url('api/users', true))
+        ->api(admin_url('users', true))
         ->body([
             amis('text')->name('name')->label(admin_trans('admin.name')),
             amis('select')->name('status')->label(admin_trans('admin.status'))

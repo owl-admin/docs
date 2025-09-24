@@ -24,7 +24,7 @@
 - **预览功能**：生成前可预览所有代码文件
 - **记录管理**：保存生成记录，支持导入/导出配置
 - **代码清理**：一键清理生成的代码文件
-- **版本控制**：支持代码的增量更新
+  
 
 ## 使用流程
 
@@ -69,9 +69,12 @@
 ### 4. 路由和菜单配置
 
 **路由设置**：
-- **路由前缀**：API 路由的前缀
-- **控制器命名空间**：控制器的命名空间
-- **中间件**：应用的中间件
+- 通过“生成路由 & 菜单”开关控制是否写入路由文件并生成菜单
+- 仅需填写以下信息：
+  - 路由：功能访问路径（如 `/users`）
+  - 菜单名称：在后台菜单中显示的名称
+  - 父级菜单：选择父级菜单位置
+  - 菜单图标：使用 Iconify 图标选择器
 
 **菜单配置**：
 - **菜单名称**：在后台菜单中显示的名称
@@ -143,9 +146,6 @@
 ```bash
 # 手动更新路由文件
 php artisan admin:gen-route
-
-# 清理无效路由
-php artisan admin:clean-route
 ```
 
 **手动配置**：
@@ -158,12 +158,14 @@ php artisan admin:clean-route
 生成的路由遵循标准 RESTful 规范：
 
 ```php
-// 自动生成的路由示例
+// 自动生成的路由示例（会被注册到 `/{prefix}` 分组下，默认 prefix 为 admin-api）
 Route::resource('users', UserController::class);
-Route::get('users/{id}/show', [UserController::class, 'show']);
-Route::post('users/store', [UserController::class, 'store']);
-Route::put('users/{id}', [UserController::class, 'update']);
-Route::delete('users/{id}', [UserController::class, 'destroy']);
+// 对应的典型 RESTful 端点：
+// GET    /{prefix}/users           -> index
+// POST   /{prefix}/users           -> store
+// GET    /{prefix}/users/{id}      -> show
+// PUT    /{prefix}/users/{id}      -> update
+// DELETE /{prefix}/users/{id}      -> destroy
 ```
 
 ## 数据库支持

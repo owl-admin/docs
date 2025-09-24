@@ -56,7 +56,8 @@ sequenceDiagram
  */
 public function form($isEdit = false)
 {
-    return $this->baseForm($isEdit)->body([
+    // 注意：baseForm 的参数用于控制“提交成功后返回上一页”，与是否编辑无关
+    return $this->baseForm()->body([
         // 基础信息分组
         amis()->GroupControl()->label('基础信息')->body([
             amis()->TextControl('title', '标题')
@@ -119,6 +120,8 @@ public function form($isEdit = false)
 }
 ```
 
+提示：如需在提交成功后返回上一页，可使用 `baseForm(true)` 开启“提交成功后返回上一页”的行为，该参数与 `$isEdit` 无关。
+
 ### 条件显示字段
 
 根据编辑状态动态显示不同字段：
@@ -167,7 +170,11 @@ public function edit($id)
     $form = amis()->Card()
         ->className('base-form')
         ->header(['title' => admin_trans('admin.edit')])
-        ->body($this->form(true)) // 传入 true 表示编辑模式
+        ->body(
+            $this->form(true)
+                ->api($this->getUpdatePath())
+                ->initApi($this->getEditGetDataPath())
+        ) // 传入 true 表示编辑模式
         ->toolbar([$this->backButton()]);
 
     $page = $this->basePage()->body($form);
@@ -412,7 +419,7 @@ private function logChanges($model)
         ];
     }
 
-    admin_log('更新记录', [
+    logger()->info('更新记录', [
         'model' => get_class($model),
         'id' => $model->getKey(),
         'changes' => $changeLog,
@@ -422,7 +429,7 @@ private function logChanges($model)
 
 ## 高级编辑功能
 
-### 批量编辑
+### 批量编辑（扩展示例，非内置）
 
 ```php
 /**
@@ -455,64 +462,21 @@ public function batchUpdate(Request $request)
 
 ### 快速编辑
 
-```php
-/**
- * 快速编辑（表格内编辑）
- */
-public function quickEdit($data): bool
-{
-    $id = $data['id'] ?? null;
-    $field = $data['name'] ?? null;
-    $value = $data['value'] ?? null;
-
-    if (!$id || !$field) {
-        admin_abort('参数错误');
-    }
-
-    // 验证字段是否允许快速编辑
-    $allowedFields = ['status', 'sort', 'title'];
-    if (!in_array($field, $allowedFields)) {
-        admin_abort('该字段不允许快速编辑');
-    }
-
-    $model = $this->query()->findOrFail($id);
-    $model->setAttribute($field, $value);
-
-    return $model->save();
-}
-```
-
-### 版本控制
+内置支持表格内快速编辑，无需新增控制器方法：
 
 ```php
-/**
- * 保存版本历史
- */
-public function saved($model, $isEdit = false)
-{
-    if ($isEdit && $model->wasChanged()) {
-        // 保存版本历史
-        $model->versions()->create([
-            'data' => $model->getOriginal(),
-            'changes' => $model->getChanges(),
-            'user_id' => admin_user()->id,
-            'created_at' => now(),
-        ]);
-    }
-}
+// 列配置：开启快速编辑（示例）
+amis()->TableColumn('status', '状态')
+    ->type('mapping')
+    ->map(['1' => '启用', '0' => '禁用'])
+    ->quickEdit(['type' => 'switch']);
 
-/**
- * 版本回滚
- */
-public function rollback($id, $versionId)
-{
-    $model = $this->query()->findOrFail($id);
-    $version = $model->versions()->findOrFail($versionId);
-
-    // 恢复到指定版本
-    $model->fill($version->data);
-    $model->save();
-
-    return true;
-}
+// 说明：
+// - `baseCRUD()` 已预置：
+//   ->quickSaveApi($this->getQuickEditPath())
+//   ->quickSaveItemApi($this->getQuickEditItemPath())
+// - Controller::store() 内部根据 `_action` 分支：
+//   `_action=quickEdit`     => AdminService::quickEdit($data)
+//   `_action=quickEditItem` => AdminService::quickEditItem($data)
+// - AdminService 已内置 `quickEdit/quickEditItem`，会调用 `update()` 完成持久化
 ```

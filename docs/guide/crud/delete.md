@@ -19,9 +19,9 @@ sequenceDiagram
     U->>F: 确认删除
     F->>C: DELETE /resource/{id}
     C->>S: delete(id)
-    S->>S: deleted(ids) 钩子
     S->>M: 执行删除
     M->>D: 删除记录
+    S->>S: deleted(ids) 钩子
     S->>C: 返回操作结果
     C->>F: JSON 响应
     F->>U: 显示操作结果
@@ -33,9 +33,9 @@ sequenceDiagram
     U->>F: 确认删除
     F->>C: DELETE /resource/{ids}
     C->>S: delete([id1,id2,...])
-    S->>S: deleted(ids) 钩子
     S->>M: 批量删除
     M->>D: 删除多条记录
+    S->>S: deleted(ids) 钩子
     S->>C: 返回操作结果
     C->>F: JSON 响应
     F->>U: 显示操作结果
@@ -53,22 +53,14 @@ public function list()
     $crud = $this->baseCRUD()
         // 配置批量操作
         ->bulkActions([
-            $this->bulkDeleteButton(), // 批量删除按钮
+            $this->bulkDeleteButton(), // 批量删除按钮（内置，使用 getBulkDeletePath）
 
-            // 自定义批量删除按钮
-            amis()->Button('批量删除')
+            // 自定义批量删除按钮（与内置效果一致）
+            amis()->Button()->label('批量删除')
                 ->level('danger')
                 ->actionType('ajax')
-                ->api('delete:' . $this->getDestroyPath())
+                ->api($this->getBulkDeletePath())
                 ->confirmText('确定要删除选中的记录吗？')
-                ->reload('window'),
-
-            // 批量软删除
-            amis()->Button('移至回收站')
-                ->level('warning')
-                ->actionType('ajax')
-                ->api('put:' . admin_url('trash/move'))
-                ->confirmText('确定要将选中记录移至回收站吗？')
                 ->reload('window'),
         ])
 
@@ -89,23 +81,14 @@ public function list()
             $this->rowActions([
                 $this->rowEditButton(true), // 编辑按钮
 
-                // 自定义删除按钮
-                amis()->Button('删除')
+                // 自定义删除按钮（内置路径辅助）
+                amis()->Button()->label('删除')
                     ->level('link')
                     ->className('text-danger')
                     ->actionType('ajax')
-                    ->api('delete:' . $this->getDestroyPath() . '/${id}')
+                    ->api($this->getDeletePath())
                     ->confirmText('确定要删除此记录吗？')
-                    ->visibleOn('${!is_system}') // 系统数据不显示删除按钮
-                    ->reload('window'),
-
-                // 软删除按钮
-                amis()->Button('移至回收站')
-                    ->level('link')
-                    ->className('text-warning')
-                    ->actionType('ajax')
-                    ->api('put:' . admin_url('trash/move/${id}'))
-                    ->confirmText('确定要将此记录移至回收站吗？')
+                    ->visibleOn('${!is_system}') // 示例条件
                     ->reload('window'),
             ]),
         ]);
@@ -132,11 +115,11 @@ public function list()
                 $this->rowEditButton(true),
 
                 // 根据权限和数据状态显示删除按钮
-                amis()->Button('删除')
+                amis()->Button()->label('删除')
                     ->level('link')
                     ->className('text-danger')
                     ->actionType('ajax')
-                    ->api('delete:' . $this->getDestroyPath() . '/${id}')
+                    ->api($this->getDeletePath())
                     ->confirmText('确定要删除此记录吗？')
                     ->visibleOn('${!is_system && can_delete}') // 多条件控制
                     ->reload('window'),
@@ -181,74 +164,39 @@ public function destroy($ids)
 }
 ```
 
-### Service 层删除实现
+### Service 层删除实现（内置默认行为）
+
+AdminService 默认实现的删除逻辑如下（见 `Slowlyo\OwlAdmin\Services\AdminService::delete()`）：
 
 ```php
-/**
- * 删除数据
- *
- * @param mixed $ids 单个ID或ID数组
- * @return bool|mixed
- */
-public function delete($ids)
+public function delete(string $ids)
 {
-    // 统一处理ID格式
-    if (is_string($ids)) {
-        $ids = explode(',', $ids);
-    }
-
-    if (!is_array($ids)) {
-        $ids = [$ids];
-    }
-
     DB::beginTransaction();
     try {
-        // 删除前验证
-        $this->validateDelete($ids);
+        $result = $this->query()->whereIn($this->primaryKey(), explode(',', $ids))->delete();
 
-        // 删除前钩子
-        $this->deleted($ids);
-
-        // 执行删除
-        $result = $this->performDelete($ids);
+        if ($result) {
+            $this->deleted($ids); // 删除后钩子
+        }
 
         DB::commit();
-        return $result;
-
     } catch (\Throwable $e) {
         DB::rollBack();
         admin_abort($e->getMessage());
     }
-}
 
-/**
- * 执行删除操作
- */
-protected function performDelete($ids)
-{
-    $query = $this->query()->whereIn($this->primaryKey(), $ids);
-
-    // 检查是否使用软删除
-    if ($this->usesSoftDeletes()) {
-        return $query->delete(); // 软删除
-    } else {
-        return $query->forceDelete(); // 硬删除
-    }
-}
-
-/**
- * 检查是否使用软删除
- */
-protected function usesSoftDeletes(): bool
-{
-    $model = $this->getModel();
-    return method_exists($model, 'bootSoftDeletes');
+    return $result;
 }
 ```
 
+说明：
+
+- 如果模型 `use SoftDeletes`，Eloquent 的 `delete()` 将执行软删除；否则为硬删除。
+- 如需“永久删除/恢复”等能力，请在业务 Service 中自定义扩展（见下文“扩展示例”）。
+
 ## 删除类型详解
 
-### 1. 软删除（推荐）
+### 1. 软删除（默认由 Eloquent 提供）
 
 软删除不会真正删除数据，而是标记为已删除状态：
 
@@ -262,59 +210,10 @@ class User extends Model
     protected $dates = ['deleted_at'];
 }
 
-// Service 中的软删除实现
-public function delete($ids)
-{
-    if (is_string($ids)) {
-        $ids = explode(',', $ids);
-    }
+// 默认：模型引入 SoftDeletes 后，调用 delete() 即为软删除
+// 如需额外校验/日志，可在 Service::deleted($ids) 或自定义 delete() 中扩展
 
-    // 软删除前验证
-    $models = $this->query()->whereIn($this->primaryKey(), $ids)->get();
-
-    foreach ($models as $model) {
-        if (!$this->canDelete($model)) {
-            admin_abort("记录 {$model->id} 不允许删除");
-        }
-    }
-
-    // 删除前钩子
-    $this->deleted($ids);
-
-    // 执行软删除
-    $result = $this->query()->whereIn($this->primaryKey(), $ids)->delete();
-
-    // 记录删除日志
-    admin_log('软删除记录', [
-        'model' => $this->modelName,
-        'ids' => $ids,
-        'count' => count($ids),
-    ]);
-
-    return $result;
-}
-
-/**
- * 恢复软删除的记录
- */
-public function restore($ids)
-{
-    if (is_string($ids)) {
-        $ids = explode(',', $ids);
-    }
-
-    $result = $this->query()
-        ->onlyTrashed()
-        ->whereIn($this->primaryKey(), $ids)
-        ->restore();
-
-    admin_log('恢复删除记录', [
-        'model' => $this->modelName,
-        'ids' => $ids,
-    ]);
-
-    return $result;
-}
+// 扩展示例：恢复/永久删除可在 Service 中自定义实现（非内置）
 
 /**
  * 永久删除
@@ -340,7 +239,7 @@ public function forceDelete($ids)
         ->whereIn($this->primaryKey(), $ids)
         ->forceDelete();
 
-    admin_log('永久删除记录', [
+    logger()->info('永久删除记录', [
         'model' => $this->modelName,
         'ids' => $ids,
     ]);
@@ -376,7 +275,7 @@ public function delete($ids)
     $result = $this->query()->whereIn($this->primaryKey(), $ids)->delete();
 
     // 记录删除日志（包含备份数据）
-    admin_log('硬删除记录', [
+    logger()->info('硬删除记录', [
         'model' => $this->modelName,
         'ids' => $ids,
         'backup_data' => $backupData,
@@ -479,17 +378,17 @@ public function list()
     $crud = $this->baseCRUD()
         // 配置批量操作
         ->bulkActions([
-            amis()->Button('批量删除')
+            amis()->Button()->label('批量删除')
                 ->level('danger')
                 ->actionType('ajax')
-                ->api('delete:' . $this->getDestroyPath())
+                ->api($this->getBulkDeletePath())
                 ->confirmText('确定要删除选中的记录吗？')
                 ->reload('window'),
 
-            amis()->Button('批量禁用')
+            amis()->Button()->label('批量禁用')
                 ->level('warning')
                 ->actionType('ajax')
-                ->api('put:' . $this->getUpdatePath())
+                ->api($this->getUpdatePath())
                 ->data(['status' => 0])
                 ->confirmText('确定要禁用选中的记录吗？')
                 ->reload('window'),
@@ -507,7 +406,7 @@ public function list()
 }
 ```
 
-### 批量删除实现
+### 批量删除实现（扩展示例，非内置）
 
 ```php
 /**
@@ -546,7 +445,7 @@ public function batchDelete($ids): bool
                 $successCount++;
             } catch (\Exception $e) {
                 $failedIds[] = $id;
-                admin_log_error("删除记录失败", [
+                logger()->error("删除记录失败", [
                     'id' => $id,
                     'error' => $e->getMessage(),
                 ]);
@@ -570,17 +469,18 @@ public function batchDelete($ids): bool
 
 ## 删除钩子函数
 
-### deleted 钩子（删除前）
+### deleted 钩子（删除后）
 
 ```php
 /**
- * 删除前处理
+ * 删除后处理
  *
  * @param array $ids 要删除的ID数组
  */
 public function deleted($ids)
 {
-    $models = $this->query()->whereIn($this->primaryKey(), $ids)->get();
+    // 若启用软删除，需要使用 withTrashed() 才能取到刚被删除的记录
+    $models = $this->query()->withTrashed()->whereIn($this->primaryKey(), $ids)->get();
 
     foreach ($models as $model) {
         // 清理上传文件
@@ -655,15 +555,13 @@ protected function cleanupCache($model)
 }
 ```
 
-## 回收站功能
-
-### 回收站列表
+## 回收站功能（扩展示例，非内置）
 
 ```php
 /**
  * 回收站控制器
  */
-class TrashController extends AdminController
+class TrashController extends AdminController // 示例：演示如何自建回收站模块
 {
     protected string $serviceName = TrashService::class;
 
@@ -671,20 +569,20 @@ class TrashController extends AdminController
     {
         $crud = $this->baseCRUD()
             ->headerToolbar([
-                amis()->Button('清空回收站')
+                amis()->Button()->label('清空回收站')
                     ->level('danger')
                     ->actionType('ajax')
                     ->api('delete:' . admin_url('trash/clear'))
                     ->confirmText('确定要清空回收站吗？此操作不可恢复！'),
             ])
             ->bulkActions([
-                amis()->Button('批量恢复')
+                amis()->Button()->label('批量恢复')
                     ->level('success')
                     ->actionType('ajax')
                     ->api('put:' . admin_url('trash/restore'))
                     ->confirmText('确定要恢复选中的记录吗？'),
 
-                amis()->Button('永久删除')
+                amis()->Button()->label('永久删除')
                     ->level('danger')
                     ->actionType('ajax')
                     ->api('delete:' . admin_url('trash/force-delete'))
@@ -700,14 +598,14 @@ class TrashController extends AdminController
                 amis()->TableColumn('actions', '操作')
                     ->type('operation')
                     ->buttons([
-                        amis()->Button('恢复')
+                        amis()->Button()->label('恢复')
                             ->level('success')
                             ->size('sm')
                             ->actionType('ajax')
                             ->api('put:' . admin_url('trash/restore/${id}'))
                             ->confirmText('确定要恢复此记录吗？'),
 
-                        amis()->Button('永久删除')
+                        amis()->Button()->label('永久删除')
                             ->level('danger')
                             ->size('sm')
                             ->actionType('ajax')
@@ -855,7 +753,7 @@ class UserService extends AdminService
     public function deleted($ids)
     {
         // 记录删除日志
-        admin_log('删除用户', [
+        logger()->info('删除用户', [
             'user_ids' => $ids,
             'operator' => admin_user()->username,
             'deleted_at' => now(),
@@ -895,7 +793,7 @@ class UserService extends AdminService
             }
         }
 
-        admin_log('恢复用户', ['user_ids' => $ids]);
+        logger()->info('恢复用户', ['user_ids' => $ids]);
 
         return $result;
     }
@@ -1019,7 +917,7 @@ public function deleted($ids)
 
     foreach ($models as $model) {
         // 详细记录删除信息
-        admin_log('删除记录', [
+        logger()->info('删除记录', [
             'model' => get_class($model),
             'id' => $model->getKey(),
             'data' => $model->toArray(),

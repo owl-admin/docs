@@ -8,7 +8,7 @@ AdminService 是 Owl Admin 框架的核心服务层，提供了完整的 CRUD �
 classDiagram
     class AdminService {
         +string modelName
-        +array request
+        +Request request
         +getModel() Model
         +query() Builder
         +list() array
@@ -802,7 +802,7 @@ protected function logOperation($model, $isEdit)
 {
     $action = $isEdit ? '更新' : '创建';
 
-    admin_log("{$action}记录", [
+    logger()->info("{$action}记录", [
         'model' => get_class($model),
         'id' => $model->getKey(),
         'title' => $model->title ?? $model->name ?? '',
@@ -965,7 +965,7 @@ protected function clearModelCache($model)
  */
 protected function logDeletion($model)
 {
-    admin_log('删除记录', [
+    logger()->info('删除记录', [
         'model' => get_class($model),
         'id' => $model->getKey(),
         'title' => $model->title ?? $model->name ?? '',
@@ -1273,7 +1273,7 @@ class UserService extends AdminService
         cache()->forget("user_roles_{$model->id}");
 
         // 记录操作日志
-        admin_log($isEdit ? '更新用户' : '创建用户', [
+        logger()->info($isEdit ? '更新用户' : '创建用户', [
             'user_id' => $model->id,
             'username' => $model->username,
             'real_name' => $model->real_name,
@@ -1347,7 +1347,7 @@ class UserService extends AdminService
             cache()->forget("user_permissions_{$user->id}");
 
             // 记录删除日志
-            admin_log('删除用户', [
+            logger()->info('删除用户', [
                 'user_id' => $user->id,
                 'username' => $user->username,
                 'operator' => admin_user()->username,

@@ -233,8 +233,10 @@ class SettingController extends AdminController
     {
         return $this->baseForm(false)
             ->redirect('')
+            // 也可改为 ->api(admin_url('_settings', true)) 使用内置保存接口
             ->api($this->getStorePath())
-            ->initApi('/admin/settings?_action=getData')
+            // 读取初始化数据，推荐使用内置接口 `GET /{prefix}/_settings`
+            ->initApi(admin_url('system/settings?_action=getData', true))
             ->body(
                 amis()->Tabs()->tabs([
                     amis()->Tab()->title('基本设置')->body([

@@ -1,6 +1,6 @@
 # 数据导出
 
-框架提供了便捷的数据导出功能，支持 Excel 和 CSV 格式导出。
+框架内置基于 FastExcel 的 Excel 导出能力；如需 CSV 或多格式导出，可通过重写 `export()` 自行扩展（见下文“扩展示例，非内置”）。
 
 :::info 依赖说明
 Excel 导出需要安装：`composer require rap2hpoutre/fast-excel`
@@ -48,18 +48,21 @@ protected function exportFileName()
 ### 导出列信息
 
 ```php
-// 在控制器中重写 exportMap 方法, $row 是数组格式
-// 该方法会被循环调用, 请不要在里面执行 IO 操作
+// 在控制器中重写 exportMap 方法
+// 注意：$row 可能是数组或 Eloquent 模型，请同时兼容
+// 该方法会被循环调用，请不要在里面执行 IO 操作
 protected function exportMap($row)
 {
+    $data = $row instanceof \Illuminate\Database\Eloquent\Model ? $row->toArray() : (array) $row;
+
     return [
-        'ID' => $row['id'],
-        '用户名' => $row['username'],
-        '真实姓名' => $row['real_name'],
-        '邮箱' => $row['email'],
-        '部门' => $row['department']['name'] ?? '',
-        '状态' => $row['status'] ? '启用' : '禁用',
-        '创建时间' => date('Y-m-d H:i:s', strtotime($row['created_at'])),
+        'ID' => data_get($data, 'id'),
+        '用户名' => data_get($data, 'username'),
+        '真实姓名' => data_get($data, 'real_name'),
+        '邮箱' => data_get($data, 'email'),
+        '部门' => data_get($data, 'department.name', ''),
+        '状态' => data_get($data, 'status') ? '启用' : '禁用',
+        '创建时间' => date('Y-m-d H:i:s', strtotime((string) data_get($data, 'created_at'))),
     ];
 }
 ```
@@ -94,9 +97,9 @@ protected function export()
 }
 ```
 
-## 多格式导出
+## 多格式导出（扩展示例，非内置）
 
-支持导出为不同格式：
+如下为自定义多格式导出的示例：
 
 ```php
 protected function export()
@@ -155,9 +158,9 @@ protected function exportCsv($query, $filename)
 }
 ```
 
-## 大数据量处理
+## 大数据量处理（扩展示例，非内置）
 
-处理大量数据时的优化方案：
+处理大量数据时的优化方案示例：
 
 ```php
 protected function export()

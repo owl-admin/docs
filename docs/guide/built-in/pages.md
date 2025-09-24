@@ -103,7 +103,7 @@ public function complexPage()
         admin_pages('embedded_content'),
 
         amis()->Divider(),
-        amis()->Button('操作按钮', 'primary'),
+        amis()->Button()->label('操作按钮')->level('primary'),
     ]);
 
     return $this->response()->success($page);

@@ -47,7 +47,7 @@ php artisan admin:install
 - 运行数据库迁移
 - 创建管理目录结构
 - 生成基础控制器文件
-- 创建路由和配置文件
+- 创建路由文件
 - 填充初始管理员数据
 
 ### 发布框架资源
@@ -217,7 +217,7 @@ php artisan admin:ide-helper
 **功能说明：**
 - 生成控制器和服务的类型提示
 - 提高 IDE 代码补全准确性
-- 文件保存在 `config('admin.directory')` 目录下
+- 文件保存在 `config('admin.directory')/.phpstorm.meta.php` 与项目根目录 `/_admin_ide_helper.php`
 
 ## 命令使用技巧
 
@@ -292,7 +292,7 @@ php artisan admin:publish --force
 :::
 
 :::warning 重要提醒
-- 执行 `admin:install` 会重置数据库，请谨慎使用
+- 执行 `admin:install` 会执行数据库迁移；仅当管理员表为空时初始化默认账号（`admin/admin`），不会清空已有数据表
 - `--force` 参数会覆盖现有文件，请确认后使用
 - 模块相关命令需要先安装对应模块
 

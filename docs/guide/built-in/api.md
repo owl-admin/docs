@@ -20,11 +20,12 @@
 
 ## 路由规则
 
-动态 API 创建后会自动注册路由：
+动态 API 创建后会自动注册路由（保存/删除后都会刷新 `routes/admin.php`）：
 
-- **管理后台访问**：`/admin-api/{路径}`
+- **默认前缀**：`admin.route.prefix`，默认为 `admin-api`
+- **管理后台访问**：`/{prefix}/{路径}`
 - **模块化访问**：`/{模块}-api/{路径}`
-- **可视化编辑器**：直接使用配置的路径，无需前缀
+- **可视化编辑器**：在内置前端中可直接使用配置的 `path`（前端会自动拼接前缀）；第三方调用需带上前缀
 
 
 ## 内置 API 模板
@@ -108,7 +109,7 @@ class CustomApi extends AdminBaseApi
             amis()->SelectControl('model', '数据模型')
                 ->required()
                 ->menuTpl('${label} <span class="text-gray-300 pl-2">${table}</span>')
-                ->source('/dev_tools/relation/model_options')
+                ->source(admin_url('dev_tools/relation/model_options', true))
                 ->searchable(),
             amis()->TextControl('fields', '查询字段')
                 ->placeholder('多个字段用逗号分隔，默认为 *')
@@ -248,16 +249,16 @@ class OptionsApi extends AdminBaseApi
             amis()->SelectControl('model', '数据模型')
                 ->required()
                 ->menuTpl('${label} <span class="text-gray-300 pl-2">${table}</span>')
-                ->source('/dev_tools/relation/model_options')
+                ->source(admin_url('dev_tools/relation/model_options', true))
                 ->searchable(),
             amis()->TextControl('value_field', 'Value 字段')
                 ->required()
                 ->value('id')
-                ->source('/dev_tools/relation/column_options?model=${model}'),
+                ->source(admin_url('dev_tools/relation/column_options?model=${model}', true)),
             amis()->TextControl('label_field', 'Label 字段')
                 ->required()
                 ->value('name')
-                ->source('/dev_tools/relation/column_options?model=${model}'),
+                ->source(admin_url('dev_tools/relation/column_options?model=${model}', true)),
             amis()->ComboControl('condition', '筛选条件')
                 ->items([
                     amis()->TextControl('field', '字段名'),
@@ -327,17 +328,17 @@ class StatisticsApi extends AdminBaseApi
             amis()->SelectControl('model', '数据模型')
                 ->required()
                 ->menuTpl('${label} <span class="text-gray-300 pl-2">${table}</span>')
-                ->source('/dev_tools/relation/model_options')
+                ->source(admin_url('dev_tools/relation/model_options', true))
                 ->searchable(),
             amis()->SelectControl('group_by', '分组字段')
-                ->source('/dev_tools/relation/column_options?model=${model}')
+                ->source(admin_url('dev_tools/relation/column_options?model=${model}', true))
                 ->description('不选择则返回总数'),
             amis()->TextControl('count_field', '统计字段')
                 ->value('*')
                 ->description('默认为 * (计数)'),
             amis()->TextControl('date_field', '日期字段')
                 ->value('created_at')
-                ->source('/dev_tools/relation/column_options?model=${model}'),
+                ->source(admin_url('dev_tools/relation/column_options?model=${model}', true)),
             amis()->DateRangeControl('date_range', '日期范围')
                 ->format('YYYY-MM-DD')
                 ->description('可选的日期筛选范围'),
@@ -499,7 +500,7 @@ public function argsSchema(): array
 
         // 使用动态数据源
         amis()->SelectControl('status', '状态')
-            ->source('/api/status-options'),
+            ->source(admin_url('status-options', true)),
     ];
 }
 ```
