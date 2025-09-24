@@ -85,6 +85,8 @@ jobs:
           secrets: |
             id=GH_TOKEN,env=WORKFLOW_TOKEN
           platforms: linux/amd64
+          build-args: |
+            BUILD_DATE=${{ github.run_number }}-${{ github.sha }}
 
       - name: Skip (no Dockerfile)
         if: steps.dockerfile_check.outputs.exists != 'true'

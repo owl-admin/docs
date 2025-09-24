@@ -15,10 +15,15 @@ RUN pnpm install --frozen-lockfile
 # Copy source
 COPY . .
 
+# Add build timestamp to break cache for data generation
+ARG BUILD_DATE
+ENV BUILD_DATE=${BUILD_DATE}
+
 # Generate data and build static site (read optional token via BuildKit secret)
 RUN --mount=type=secret,id=GH_TOKEN \
     sh -c 'TOKEN=""; \
       if [ -f /run/secrets/GH_TOKEN ]; then TOKEN=$(cat /run/secrets/GH_TOKEN); fi; \
+      echo "Build date: $BUILD_DATE"; \
       node generateData.js "$TOKEN" && pnpm run build'
 
 # Runtime stage
