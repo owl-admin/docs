@@ -10,6 +10,7 @@ classDiagram
         +string modelName
         +Request request
         +getModel() Model
+        +getCurrentModel() Model|null
         +query() Builder
         +list() array
         +store(data) bool
@@ -74,6 +75,12 @@ classDiagram
 | `formatRows($rows)` | 列表数据格式化 | 高 |
 | `getDetail($id)` | 获取详情数据 | 中 |
 | `getEditData($id)` | 获取编辑数据 | 中 |
+
+### 辅助方法
+
+| 方法 | 说明 | 使用场景 |
+|:-----|:-----|:---------|
+| `getCurrentModel()` | 获取新增/修改成功后缓存的当前模型实例 | 在 `saved()` 钩子或控制器后续逻辑中读取；批量快速编辑时为最后一次更新的实例 |
 
 ### 钩子方法
 

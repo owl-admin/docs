@@ -111,6 +111,7 @@ AdminService 提供了完整的数据操作方法：
 | **钩子**  | saving($data, $id) | 保存前钩子      | void       |
 |         | saved($model, $isEdit) | 保存后钩子   | void       |
 |         | deleted($ids)  | 删除后钩子          | void       |
+| **辅助**  | getCurrentModel() | 获取新增/修改成功后缓存的当前模型实例 | Model|null |
 
 ## 开发流程
 
