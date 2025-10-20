@@ -73,7 +73,9 @@ jobs:
         if: steps.dockerfile_check.outputs.exists == 'true'
         uses: docker/setup-buildx-action@v3
         with:
-          driver: docker
+          config-inline: |
+            [registry."docker.io"]
+              mirrors = ["docker.1panel.live", "docker.1ms.run", "dytt.online", "docker-0.unsee.tech", "lispy.org", "docker.xiaogenban1993.com", "666860.xyz", "hub.rat.dev", "docker.m.daocloud.io", "demo.52013120.xyz", "proxy.vvvv.ee", "registry.cyou"]
 
       - name: Log in to GHCR
         if: steps.dockerfile_check.outputs.exists == 'true'
@@ -106,6 +108,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           secrets: |
             id=GH_TOKEN,env=WORKFLOW_TOKEN
           platforms: linux/amd64
