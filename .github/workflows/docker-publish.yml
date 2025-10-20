@@ -46,15 +46,11 @@ jobs:
           IMAGE_LC=$(echo "${IMAGE}" | tr '[:upper:]' '[:lower:]')
           echo "image=${IMAGE_LC}" >> "$GITHUB_OUTPUT"
 
-      - name: Set up QEMU
-        if: steps.dockerfile_check.outputs.exists == 'true'
-        uses: docker/setup-qemu-action@v3
-
       - name: Set up Docker Buildx
         if: steps.dockerfile_check.outputs.exists == 'true'
         uses: docker/setup-buildx-action@v3
         with:
-          install: false
+          driver: docker
 
       - name: Log in to GHCR
         if: steps.dockerfile_check.outputs.exists == 'true'
@@ -87,8 +83,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ steps.prep.outputs.image }}:buildcache
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ steps.prep.outputs.image }}:buildcache,mode=max
           secrets: |
             id=GH_TOKEN,env=WORKFLOW_TOKEN
           platforms: linux/amd64
