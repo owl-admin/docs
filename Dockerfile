@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1.7
 # Build stage
 FROM node:18-alpine AS builder
 WORKDIR /app
