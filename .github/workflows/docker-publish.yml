@@ -83,8 +83,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ steps.prep.outputs.image }}:buildcache
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ steps.prep.outputs.image }}:buildcache,mode=max
           secrets: |
             id=GH_TOKEN,env=WORKFLOW_TOKEN
           platforms: linux/amd64
