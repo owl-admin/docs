@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1171,
+    "downloads": 1172,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -34,7 +34,7 @@
     "description": "更方便的查看laravel日志",
     "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
     "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 389,
+    "downloads": 390,
     "favers": 2,
     "last_version": "1.0.0",
     "latest_update": "2024-03-10 21:57:59"
@@ -135,7 +135,7 @@
     "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
     "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
     "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
-    "downloads": 82,
+    "downloads": 85,
     "favers": 0,
     "last_version": "1.0.3",
     "latest_update": "2025-02-20 10:50:46"
