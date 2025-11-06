@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrspress_doc_template=self.webpackChunkrspress_doc_template||[]).push([["2063"],{1002:function(e,s,t){t.r(s),t.d(s,{default:()=>a});var r=t(2676);t(5271);let a=()=>{let e=`${window.location.hostname.includes("github.io")?"/docs":""}/pay.jpg`;return(0,r.jsx)("img",{src:e,width:"500",alt:"支付二维码",style:{borderRadius:"10px"}})}}}]);
