@@ -5,7 +5,7 @@ import {
     HeartOutlined,
     ExportOutlined,
 } from "@ant-design/icons";
-import { Tag } from "antd";
+import { Tag, Popover } from "antd";
 
 const ExtensionList = () => {
     const [data, setData] = useState([]);
@@ -123,10 +123,12 @@ const ExtensionList = () => {
                         </Space>
                     }
                     actions={[
-                        <Space>
-                            <DownloadOutlined className="icon" />
-                            <span className="metric metric-downloads">{item.downloads}</span>
-                        </Space>,
+                        <Popover content="这只是下载量哦~ 安装扩展请点击右侧链接查看扩展文档">
+                            <Space>
+                                    <DownloadOutlined className="icon" />
+                                    <span className="metric metric-downloads">{item.downloads}</span>
+                            </Space>
+                        </Popover>,
                         <Space>
                             <HeartOutlined className="icon" />
                             <span className="metric metric-favers">{item.favers}</span>
