@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2672,
+    "downloads": 2675,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -111,6 +111,16 @@
     "latest_update": "2024-08-24 15:44:17"
   },
   {
+    "name": "owl-admin/components",
+    "description": "常用组件合集",
+    "url": "https://packagist.org/packages/owl-admin/components",
+    "repository": "https://github.com/owl-admin/components",
+    "downloads": 121,
+    "favers": 2,
+    "last_version": "v0.2.1",
+    "latest_update": "2024-07-05 21:35:37"
+  },
+  {
     "name": "slowlyo/owl-terminal",
     "description": "方便在页面上执行一些命令~",
     "url": "https://packagist.org/packages/slowlyo/owl-terminal",
@@ -119,16 +129,6 @@
     "favers": 1,
     "last_version": "v1.1.0",
     "latest_update": "2023-06-06 22:31:46"
-  },
-  {
-    "name": "owl-admin/components",
-    "description": "常用组件合集",
-    "url": "https://packagist.org/packages/owl-admin/components",
-    "repository": "https://github.com/owl-admin/components",
-    "downloads": 120,
-    "favers": 2,
-    "last_version": "v0.2.1",
-    "latest_update": "2024-07-05 21:35:37"
   },
   {
     "name": "ennnnny/owladmin-cloud-storage",
@@ -175,7 +175,7 @@
     "description": "SKU 扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-sku",
     "repository": "https://github.com/slowlyo/owl-sku",
-    "downloads": 41,
+    "downloads": 42,
     "favers": 1,
     "last_version": "v0.1.4",
     "latest_update": "2024-05-15 13:57:36"
