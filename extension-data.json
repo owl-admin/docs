@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2682,
+    "downloads": 2685,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1199,
+    "downloads": 1206,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -24,7 +24,7 @@
     "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
     "url": "https://packagist.org/packages/slowlyo/owl-amis-json-parse",
     "repository": "https://github.com/Slowlyo/owl-amis-json-parse",
-    "downloads": 763,
+    "downloads": 765,
     "favers": 0,
     "last_version": "v1.1.4",
     "latest_update": "2023-04-27 09:57:14"
@@ -34,7 +34,7 @@
     "description": "更方便的查看laravel日志",
     "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
     "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 402,
+    "downloads": 407,
     "favers": 2,
     "last_version": "1.0.0",
     "latest_update": "2024-03-10 21:57:59"
@@ -54,7 +54,7 @@
     "description": "Owl Admin 系统备份扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-system-backup",
     "repository": "https://github.com/owl-admin/system-backup",
-    "downloads": 326,
+    "downloads": 327,
     "favers": 0,
     "last_version": "v0.3.1",
     "latest_update": "2024-05-22 10:58:47"
@@ -84,7 +84,7 @@
     "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
     "url": "https://packagist.org/packages/slowlyo/owl-menu-search",
     "repository": "https://github.com/owl-admin/menu-search",
-    "downloads": 254,
+    "downloads": 259,
     "favers": 1,
     "last_version": "v0.1.0",
     "latest_update": "2024-06-14 22:54:01"
@@ -115,7 +115,7 @@
     "description": "常用组件合集",
     "url": "https://packagist.org/packages/owl-admin/components",
     "repository": "https://github.com/owl-admin/components",
-    "downloads": 123,
+    "downloads": 124,
     "favers": 2,
     "last_version": "v0.2.1",
     "latest_update": "2024-07-05 21:35:37"
