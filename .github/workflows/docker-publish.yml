@@ -77,7 +77,7 @@ jobs:
       - name: Build and push
         if: steps.dockerfile_check.outputs.exists == 'true'
         env:
-          WORKFLOW_TOKEN: ${{ secrets.workflow_token }}
+          WORKFLOW_TOKEN: ${{ secrets.workflow_token || secrets.GITHUB_TOKEN }}
         uses: docker/build-push-action@v5
         with:
           context: ${{ env.CONTEXT }}

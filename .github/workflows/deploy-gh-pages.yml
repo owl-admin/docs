@@ -34,7 +34,7 @@ jobs:
         run: pnpm install
 
       - name: Generate data
-        run: node generateData.js ${{ secrets.workflow_token }}
+        run: node generateData.js ${{ secrets.workflow_token || secrets.GITHUB_TOKEN }}
 
       - name: Build
         env:
