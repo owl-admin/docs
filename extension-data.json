@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2692,
+    "downloads": 2695,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -34,7 +34,7 @@
     "description": "更方便的查看laravel日志",
     "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
     "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 415,
+    "downloads": 416,
     "favers": 2,
     "last_version": "1.0.0",
     "latest_update": "2024-03-10 21:57:59"
