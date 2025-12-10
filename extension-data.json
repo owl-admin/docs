@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2734,
+    "downloads": 2737,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1262,
+    "downloads": 1263,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -34,7 +34,7 @@
     "description": "更方便的查看laravel日志",
     "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
     "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 443,
+    "downloads": 444,
     "favers": 2,
     "last_version": "1.0.0",
     "latest_update": "2024-03-10 21:57:59"
@@ -64,7 +64,7 @@
     "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
     "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
     "repository": "https://gitee.com/slowlyo/owl-module-notice",
-    "downloads": 325,
+    "downloads": 326,
     "favers": 0,
     "last_version": "v1.1.3",
     "latest_update": "2023-04-10 14:25:51"
@@ -74,7 +74,7 @@
     "description": "OwlAdmin扩展:方便管理 laravel 的定时任务",
     "url": "https://packagist.org/packages/iwzh/owl-scheduling",
     "repository": "https://gitee.com/wzhec/owl-scheduling",
-    "downloads": 313,
+    "downloads": 314,
     "favers": 1,
     "last_version": "1.0.2",
     "latest_update": "2023-05-12 10:57:41"
@@ -125,7 +125,7 @@
     "description": "方便在页面上执行一些命令~",
     "url": "https://packagist.org/packages/slowlyo/owl-terminal",
     "repository": "https://github.com/Slowlyo/owl-terminal",
-    "downloads": 121,
+    "downloads": 122,
     "favers": 1,
     "last_version": "v1.1.0",
     "latest_update": "2023-06-06 22:31:46"
