@@ -36,16 +36,15 @@ DB_PASSWORD=
 'locale' => 'zh_CN',
 ```
 
-:::warning{title=注意}
-如果你使用的是 laravel 11 + 的话 
-还需要执行 `php artisan install:api`
-:::
+### 安装 API 模块
+
+```bash
+php artisan install:api
+```
 
 ### 安装 `owl-admin`
 
 ```bash
-cd {项目名称}
-
 composer require slowlyo/owl-admin
 ```
 
