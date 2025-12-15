@@ -37,7 +37,7 @@ DB_PASSWORD=
 ```
 
 :::warning{title=注意}
-如果你使用的是 laravel 11 的话 
+如果你使用的是 laravel 11 + 的话 
 还需要执行 `php artisan install:api`
 :::
 
