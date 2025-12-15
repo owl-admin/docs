@@ -2,12 +2,14 @@
   {
     "amount": 20,
     "date": "2025-11-27",
-    "nickname": "*琳"
+    "nickname": "*琳",
+    "remark": ""
   },
   {
     "amount": 88,
     "date": "2025-09-30",
-    "nickname": "tanqm"
+    "nickname": "tanqm",
+    "remark": ""
   },
   {
     "amount": 9.9,
@@ -18,7 +20,8 @@
   {
     "amount": 30,
     "date": "2025-07-05",
-    "nickname": "Print_r( )"
+    "nickname": "Print_r( )",
+    "remark": ""
   },
   {
     "amount": 66,
@@ -29,7 +32,8 @@
   {
     "amount": 20,
     "date": "2025-07-03",
-    "nickname": "PHP架构师-快鱼吃慢鱼"
+    "nickname": "PHP架构师-快鱼吃慢鱼",
+    "remark": ""
   },
   {
     "amount": 100,
@@ -40,17 +44,20 @@
   {
     "amount": 12,
     "date": "2025-06-10",
-    "nickname": "PHP架构师-快鱼吃慢鱼"
+    "nickname": "PHP架构师-快鱼吃慢鱼",
+    "remark": ""
   },
   {
     "amount": 6.66,
     "date": "2025-06-02",
-    "nickname": "**星"
+    "nickname": "**星",
+    "remark": ""
   },
   {
     "amount": 6.66,
     "date": "2025-04-28",
-    "nickname": "**兵"
+    "nickname": "**兵",
+    "remark": ""
   },
   {
     "amount": 20,
