@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2758,
+    "downloads": 2761,
     "favers": 2,
     "last_version": "v1.3.3",
     "latest_update": "2025-05-22 16:04:12"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1305,
+    "downloads": 1309,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -24,7 +24,7 @@
     "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
     "url": "https://packagist.org/packages/slowlyo/owl-amis-json-parse",
     "repository": "https://github.com/Slowlyo/owl-amis-json-parse",
-    "downloads": 774,
+    "downloads": 777,
     "favers": 0,
     "last_version": "v1.1.4",
     "latest_update": "2023-04-27 09:57:14"
@@ -64,7 +64,7 @@
     "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
     "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
     "repository": "https://gitee.com/slowlyo/owl-module-notice",
-    "downloads": 329,
+    "downloads": 330,
     "favers": 0,
     "last_version": "v1.1.3",
     "latest_update": "2023-04-10 14:25:51"
