@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2783,
+    "downloads": 2785,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1320,
+    "downloads": 1321,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -171,6 +171,16 @@
     "latest_update": "2023-03-14 16:55:06"
   },
   {
+    "name": "dagasmart/login-guard",
+    "description": "BizAdmin扩展: 增加登录保护功能",
+    "url": "https://packagist.org/packages/dagasmart/login-guard",
+    "repository": "https://github.com/dagasmart/login-guard",
+    "downloads": 45,
+    "favers": 0,
+    "last_version": "1.1.3",
+    "latest_update": "2025-04-16 15:24:34"
+  },
+  {
     "name": "slowlyo/owl-sku",
     "description": "SKU 扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-sku",
@@ -179,16 +189,6 @@
     "favers": 1,
     "last_version": "v0.1.4",
     "latest_update": "2024-05-15 13:57:36"
-  },
-  {
-    "name": "dagasmart/login-guard",
-    "description": "BizAdmin扩展: 增加登录保护功能",
-    "url": "https://packagist.org/packages/dagasmart/login-guard",
-    "repository": "https://github.com/dagasmart/login-guard",
-    "downloads": 44,
-    "favers": 0,
-    "last_version": "1.1.3",
-    "latest_update": "2025-04-16 15:24:34"
   },
   {
     "name": "hyperf-plus/ai-helper",
