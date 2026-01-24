@@ -238,5 +238,14 @@
     "favers": 1,
     "last_version": "1.0.1",
     "latest_update": "2025-05-21 18:33:06"
+  },
+  {
+    "name": "fanxd/owl-minio",
+    "description": "OwlAdmin MinIO 扩展。基于 OwlAdmin + AMIS 构建，用于弥补 MinIO 新版控制台在桶管理、权限管理等方面的不足，提供完整的 Bucket / Object 可视化管理能力。支持桶创建与删除、PUBLIC / PRIVATE / CUSTOM 权限识别与安全切换、文件上传与删除、图片预览及访问 URL 自动生成，适用于企业后台 业务、素材管理等场景。",
+    "url": "https://packagist.org/packages/fanxd/owl-minio",
+    "repository": "https://github.com/Fanxd/owl-minio",
+    "downloads": 0,
+    "favers": 0,
+    "latest_update": null
   }
 ]
