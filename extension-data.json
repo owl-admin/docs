@@ -161,16 +161,6 @@
     "latest_update": "2024-09-28 11:52:40"
   },
   {
-    "name": "likeweb/core",
-    "description": "likeweb核心组件",
-    "url": "https://packagist.org/packages/likeweb/core",
-    "repository": "https://github.com/maliang/likeweb_core",
-    "downloads": 49,
-    "favers": 0,
-    "last_version": "0.1.0",
-    "latest_update": "2023-03-14 16:55:06"
-  },
-  {
     "name": "dagasmart/login-guard",
     "description": "BizAdmin扩展: 增加登录保护功能",
     "url": "https://packagist.org/packages/dagasmart/login-guard",
@@ -230,6 +220,16 @@
     "latest_update": null
   },
   {
+    "name": "fanxd/owl-minio",
+    "description": "OwlAdmin MinIO 扩展。基于 OwlAdmin + AMIS 构建，用于弥补 MinIO 新版控制台在桶管理、权限管理等方面的不足，提供完整的 Bucket / Object 可视化管理能力。支持桶创建与删除、PUBLIC / PRIVATE / CUSTOM 权限识别与安全切换、文件上传与删除、图片预览及访问 URL 自动生成，适用于企业后台 业务、素材管理等场景。",
+    "url": "https://packagist.org/packages/fanxd/owl-minio",
+    "repository": "https://github.com/Fanxd/owl-minio",
+    "downloads": 6,
+    "favers": 0,
+    "last_version": "v1.0.1",
+    "latest_update": "2026-01-25 21:08:14"
+  },
+  {
     "name": "zhumingchen/owl-admin-dev",
     "description": "The skeleton application for the OwlAdmin framework.",
     "url": "https://packagist.org/packages/zhumingchen/owl-admin-dev",
@@ -238,14 +238,5 @@
     "favers": 1,
     "last_version": "1.0.1",
     "latest_update": "2025-05-21 18:33:06"
-  },
-  {
-    "name": "fanxd/owl-minio",
-    "description": "OwlAdmin MinIO 扩展。基于 OwlAdmin + AMIS 构建，用于弥补 MinIO 新版控制台在桶管理、权限管理等方面的不足，提供完整的 Bucket / Object 可视化管理能力。支持桶创建与删除、PUBLIC / PRIVATE / CUSTOM 权限识别与安全切换、文件上传与删除、图片预览及访问 URL 自动生成，适用于企业后台 业务、素材管理等场景。",
-    "url": "https://packagist.org/packages/fanxd/owl-minio",
-    "repository": "https://github.com/Fanxd/owl-minio",
-    "downloads": 0,
-    "favers": 0,
-    "latest_update": null
   }
 ]
