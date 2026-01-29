@@ -230,6 +230,16 @@
     "latest_update": "2026-01-25 21:08:14"
   },
   {
+    "name": "fanxd/owl-knowledge",
+    "description": "Owl Admin 扩展，用于管理知识库、分类以及 AI 驱动的知识场景，支持多租户和可见性控制",
+    "url": "https://packagist.org/packages/fanxd/owl-knowledge",
+    "repository": "https://github.com/Fanxd/owl-knowledge",
+    "downloads": 1,
+    "favers": 0,
+    "last_version": "1.0.0",
+    "latest_update": "2026-01-29 15:07:01"
+  },
+  {
     "name": "zhumingchen/owl-admin-dev",
     "description": "The skeleton application for the OwlAdmin framework.",
     "url": "https://packagist.org/packages/zhumingchen/owl-admin-dev",
