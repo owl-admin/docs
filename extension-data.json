@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2803,
+    "downloads": 2804,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1343,
+    "downloads": 1345,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -44,7 +44,7 @@
     "description": "OwlAdmin扩展: 增加登录保护功能",
     "url": "https://packagist.org/packages/slowlyo/owl-login-guard",
     "repository": "https://gitee.com/slowlyo/owl-login-guard",
-    "downloads": 351,
+    "downloads": 352,
     "favers": 0,
     "last_version": "v1.1.1",
     "latest_update": "2023-03-10 20:07:10"
@@ -64,7 +64,7 @@
     "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
     "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
     "repository": "https://gitee.com/slowlyo/owl-module-notice",
-    "downloads": 332,
+    "downloads": 333,
     "favers": 0,
     "last_version": "v1.1.3",
     "latest_update": "2023-04-10 14:25:51"
@@ -74,7 +74,7 @@
     "description": "OwlAdmin扩展:方便管理 laravel 的定时任务",
     "url": "https://packagist.org/packages/iwzh/owl-scheduling",
     "repository": "https://gitee.com/wzhec/owl-scheduling",
-    "downloads": 318,
+    "downloads": 319,
     "favers": 1,
     "last_version": "1.0.2",
     "latest_update": "2023-05-12 10:57:41"
@@ -135,7 +135,7 @@
     "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
     "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
     "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
-    "downloads": 94,
+    "downloads": 95,
     "favers": 0,
     "last_version": "1.0.3",
     "latest_update": "2025-02-20 10:50:46"
@@ -230,6 +230,16 @@
     "latest_update": "2026-01-25 21:08:14"
   },
   {
+    "name": "zhumingchen/owl-admin-dev",
+    "description": "The skeleton application for the OwlAdmin framework.",
+    "url": "https://packagist.org/packages/zhumingchen/owl-admin-dev",
+    "repository": "https://github.com/zmc576700954/owl-admin-dev",
+    "downloads": 1,
+    "favers": 1,
+    "last_version": "1.0.1",
+    "latest_update": "2025-05-21 18:33:06"
+  },
+  {
     "name": "fanxd/owl-knowledge",
     "description": "Owl Admin 扩展，用于管理知识库、分类以及 AI 驱动的知识场景，支持多租户和可见性控制",
     "url": "https://packagist.org/packages/fanxd/owl-knowledge",
@@ -238,15 +248,5 @@
     "favers": 0,
     "last_version": "1.0.0",
     "latest_update": "2026-01-29 15:07:01"
-  },
-  {
-    "name": "zhumingchen/owl-admin-dev",
-    "description": "The skeleton application for the OwlAdmin framework.",
-    "url": "https://packagist.org/packages/zhumingchen/owl-admin-dev",
-    "repository": "https://github.com/zmc576700954/owl-admin-dev",
-    "downloads": 0,
-    "favers": 1,
-    "last_version": "1.0.1",
-    "latest_update": "2025-05-21 18:33:06"
   }
 ]
