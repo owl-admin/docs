@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2804,
+    "downloads": 2805,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -44,7 +44,7 @@
     "description": "OwlAdmin扩展: 增加登录保护功能",
     "url": "https://packagist.org/packages/slowlyo/owl-login-guard",
     "repository": "https://gitee.com/slowlyo/owl-login-guard",
-    "downloads": 352,
+    "downloads": 353,
     "favers": 0,
     "last_version": "v1.1.1",
     "latest_update": "2023-03-10 20:07:10"
@@ -175,7 +175,7 @@
     "description": "SKU 扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-sku",
     "repository": "https://github.com/slowlyo/owl-sku",
-    "downloads": 45,
+    "downloads": 46,
     "favers": 1,
     "last_version": "v0.1.4",
     "latest_update": "2024-05-15 13:57:36"
