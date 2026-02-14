@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2806,
+    "downloads": 2808,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -215,7 +215,7 @@
     "description": "支持 本地，七牛云，腾讯云，阿里云 OSS云存储功能，支持一键迁移，资源展示等功能。",
     "url": "https://packagist.org/packages/szsuohong/cloud-storage",
     "repository": "https://github.com/szsuohong/cloud-storage",
-    "downloads": 8,
+    "downloads": 9,
     "favers": 0,
     "latest_update": null
   },
