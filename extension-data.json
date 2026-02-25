@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2809,
+    "downloads": 2810,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1347,
+    "downloads": 1350,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -44,10 +44,20 @@
     "description": "OwlAdmin扩展: 增加登录保护功能",
     "url": "https://packagist.org/packages/slowlyo/owl-login-guard",
     "repository": "https://gitee.com/slowlyo/owl-login-guard",
-    "downloads": 355,
+    "downloads": 356,
     "favers": 0,
     "last_version": "v1.1.1",
     "latest_update": "2023-03-10 20:07:10"
+  },
+  {
+    "name": "slowlyo/owl-module-notice",
+    "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
+    "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
+    "repository": "https://gitee.com/slowlyo/owl-module-notice",
+    "downloads": 336,
+    "favers": 0,
+    "last_version": "v1.1.3",
+    "latest_update": "2023-04-10 14:25:51"
   },
   {
     "name": "slowlyo/owl-system-backup",
@@ -58,16 +68,6 @@
     "favers": 0,
     "last_version": "v0.3.1",
     "latest_update": "2024-05-22 10:58:47"
-  },
-  {
-    "name": "slowlyo/owl-module-notice",
-    "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
-    "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
-    "repository": "https://gitee.com/slowlyo/owl-module-notice",
-    "downloads": 334,
-    "favers": 0,
-    "last_version": "v1.1.3",
-    "latest_update": "2023-04-10 14:25:51"
   },
   {
     "name": "iwzh/owl-scheduling",
@@ -84,7 +84,7 @@
     "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
     "url": "https://packagist.org/packages/slowlyo/owl-menu-search",
     "repository": "https://github.com/owl-admin/menu-search",
-    "downloads": 302,
+    "downloads": 303,
     "favers": 1,
     "last_version": "v0.1.0",
     "latest_update": "2024-06-14 22:54:01"
@@ -135,7 +135,7 @@
     "description": "支持 本地，腾讯云、阿里云等OSS云存储功能，支持一键迁移，资源展示等功能。",
     "url": "https://packagist.org/packages/ennnnny/owladmin-cloud-storage",
     "repository": "https://github.com/ennnnny/owladmin-cloud-storage",
-    "downloads": 95,
+    "downloads": 96,
     "favers": 0,
     "last_version": "1.0.3",
     "latest_update": "2025-02-20 10:50:46"
@@ -145,7 +145,7 @@
     "description": "让 iconify 图标可以离线使用",
     "url": "https://packagist.org/packages/slowlyo/owl-icon-cache",
     "repository": "https://github.com/slowlyo/owl-icon-cache",
-    "downloads": 81,
+    "downloads": 82,
     "favers": 0,
     "last_version": "v0.1.0",
     "latest_update": "2024-05-01 16:30:19"
@@ -155,7 +155,7 @@
     "description": "OwlAdmin扩展: 微信用户管理, 包含微信小程序登录, 后台会员管理",
     "url": "https://packagist.org/packages/muyilongh/owl-wechat-user",
     "repository": "https://github.com/muyilongh/owl-wechat-user",
-    "downloads": 55,
+    "downloads": 56,
     "favers": 0,
     "last_version": "v1.0.5",
     "latest_update": "2024-09-28 11:52:40"
