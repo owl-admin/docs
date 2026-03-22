@@ -161,6 +161,16 @@
     "latest_update": "2024-09-28 11:52:40"
   },
   {
+    "name": "dagasmart/login-guard",
+    "description": "BizAdmin扩展: 增加登录保护功能",
+    "url": "https://packagist.org/packages/dagasmart/login-guard",
+    "repository": "https://github.com/dagasmart/login-guard",
+    "downloads": 49,
+    "favers": 0,
+    "last_version": "1.1.3",
+    "latest_update": "2025-04-16 15:24:34"
+  },
+  {
     "name": "slowlyo/owl-sku",
     "description": "SKU 扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-sku",
@@ -169,16 +179,6 @@
     "favers": 1,
     "last_version": "v0.1.4",
     "latest_update": "2024-05-15 13:57:36"
-  },
-  {
-    "name": "dagasmart/login-guard",
-    "description": "BizAdmin扩展: 增加登录保护功能",
-    "url": "https://packagist.org/packages/dagasmart/login-guard",
-    "repository": "https://github.com/dagasmart/login-guard",
-    "downloads": 47,
-    "favers": 0,
-    "last_version": "1.1.3",
-    "latest_update": "2025-04-16 15:24:34"
   },
   {
     "name": "hyperf-plus/ai-helper",
