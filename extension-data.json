@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1381,
+    "downloads": 1383,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -90,6 +90,16 @@
     "latest_update": "2024-06-14 22:54:01"
   },
   {
+    "name": "owl-admin/components",
+    "description": "常用组件合集",
+    "url": "https://packagist.org/packages/owl-admin/components",
+    "repository": "https://github.com/owl-admin/components",
+    "downloads": 138,
+    "favers": 2,
+    "last_version": "v0.2.1",
+    "latest_update": "2024-07-05 21:35:37"
+  },
+  {
     "name": "slowlyo/owl-wechat-user",
     "description": "OwlAdmin扩展: 微信用户管理, 包含微信小程序登录, 后台会员管理",
     "url": "https://packagist.org/packages/slowlyo/owl-wechat-user",
@@ -99,16 +109,6 @@
     "abandoned": true,
     "last_version": "v0.2.1",
     "latest_update": "2023-07-14 16:07:53"
-  },
-  {
-    "name": "owl-admin/components",
-    "description": "常用组件合集",
-    "url": "https://packagist.org/packages/owl-admin/components",
-    "repository": "https://github.com/owl-admin/components",
-    "downloads": 137,
-    "favers": 2,
-    "last_version": "v0.2.1",
-    "latest_update": "2024-07-05 21:35:37"
   },
   {
     "name": "mano-code/corps",
