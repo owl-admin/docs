@@ -151,6 +151,16 @@
     "latest_update": "2024-05-01 16:30:19"
   },
   {
+    "name": "dagasmart/login-guard",
+    "description": "BizAdmin扩展: 增加登录保护功能",
+    "url": "https://packagist.org/packages/dagasmart/login-guard",
+    "repository": "https://github.com/dagasmart/login-guard",
+    "downloads": 58,
+    "favers": 0,
+    "last_version": "1.1.3",
+    "latest_update": "2025-04-16 15:24:34"
+  },
+  {
     "name": "muyilongh/owl-wechat-user",
     "description": "OwlAdmin扩展: 微信用户管理, 包含微信小程序登录, 后台会员管理",
     "url": "https://packagist.org/packages/muyilongh/owl-wechat-user",
@@ -159,16 +169,6 @@
     "favers": 0,
     "last_version": "v1.0.5",
     "latest_update": "2024-09-28 11:52:40"
-  },
-  {
-    "name": "dagasmart/login-guard",
-    "description": "BizAdmin扩展: 增加登录保护功能",
-    "url": "https://packagist.org/packages/dagasmart/login-guard",
-    "repository": "https://github.com/dagasmart/login-guard",
-    "downloads": 55,
-    "favers": 0,
-    "last_version": "1.1.3",
-    "latest_update": "2025-04-16 15:24:34"
   },
   {
     "name": "slowlyo/owl-sku",
