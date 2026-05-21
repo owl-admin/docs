@@ -17,6 +17,7 @@ php artisan admin:create-user
 - 支持选择多个角色
 - 密码会自动加密存储
 - 创建成功后会显示确认信息
+- 可通过 `--username`、`--password`、`--name`、`--roles` 非交互创建
 
 ### 重置用户密码
 
@@ -31,6 +32,7 @@ php artisan admin:reset-password
 - 支持用户名自动补全
 - 需要二次确认密码
 - 密码会自动加密存储
+- 可通过 `--username`、`--password` 非交互重置
 
 ## 框架管理命令
 
@@ -60,6 +62,8 @@ php artisan admin:publish [选项]
 
 **可选参数：**
 - `--force`：强制覆盖已存在的文件
+- `--yes`：确认执行高风险覆盖
+- `--dry-run`：预览发布标签，不写入文件
 - `--lang`：仅发布语言文件
 - `--views`：发布前端源码（通常不需要）
 - `--assets`：仅发布静态资源文件
@@ -87,6 +91,9 @@ php artisan admin:update [--v=版本号]
 
 **可选参数：**
 - `--v`：指定版本号（根据 GitHub release 填写）
+- `--yes`：确认执行全部升级
+- `--list`：查看当前可执行的版本升级脚本
+- `--dry-run`：预览升级范围，不执行升级
 
 **使用示例：**
 ```bash
@@ -95,6 +102,9 @@ php artisan admin:update
 
 # 更新到指定版本
 php artisan admin:update --v=257
+
+# 查看可执行升级脚本
+php artisan admin:update --list
 ```
 
 **功能说明：**
@@ -114,6 +124,7 @@ php artisan admin:gen-route [--excluded=排除ID]
 
 **可选参数：**
 - `--excluded`：排除的记录ID，多个用逗号分隔
+- `--dry-run`：预览生成内容，不写入 `routes/admin.php`
 
 **使用示例：**
 ```bash
@@ -122,6 +133,9 @@ php artisan admin:gen-route
 
 # 排除指定记录
 php artisan admin:gen-route --excluded=1,2,3
+
+# 预览生成结果
+php artisan admin:gen-route --dry-run
 ```
 
 **功能说明：**
@@ -129,6 +143,8 @@ php artisan admin:gen-route --excluded=1,2,3
 - 包含代码生成器创建的资源路由
 - 包含自定义 API 路由
 - 自动排除未启用的菜单
+- 控制器或 API 模板缺失时会输出 warning
+- 执行完成后会输出生成和跳过数量
 
 :::warning 注意
 代码生成器的清理功能已从命令行移至 Web 界面，请在开发工具 > 代码生成器页面中使用清理功能。
@@ -147,10 +163,10 @@ php artisan admin-module:init 模块名 [模块名2 ...]
 **使用示例：**
 ```bash
 # 初始化单个模块
-php artisan admin-module:init Master
+php artisan admin-module:init Master --force
 
 # 初始化多个模块
-php artisan admin-module:init Master User Product
+php artisan admin-module:init Master User Product --force
 ```
 
 **功能说明：**
@@ -170,7 +186,10 @@ php artisan admin-module:init-db 模块名 [模块名2 ...]
 **使用示例：**
 ```bash
 # 初始化模块数据库
-php artisan admin-module:init-db Master
+php artisan admin-module:init-db Master --force
+
+# 只重新填充默认数据
+php artisan admin-module:init-db Master --seed-only
 ```
 
 **功能说明：**
@@ -204,6 +223,142 @@ php artisan admin:check
 
 # 中文检查
 php artisan admin:check --zh
+```
+
+### 运行健康检查
+
+```bash
+# 检查后台运行环境、核心数据表、菜单配置和前端资源
+
+php artisan admin:doctor
+```
+
+**检查项目：**
+- APP_KEY 配置
+- 数据库连接
+- 核心数据表
+- 菜单 URL 重复
+- 首页菜单数量
+- 菜单父级关系
+- 前端资源发布状态
+
+## 运维命令
+
+### 查看数据库连接
+
+```bash
+# 查看 OwlAdmin 当前使用的数据库连接
+
+php artisan admin:db info
+```
+
+**功能说明：**
+- 默认读取 `admin.database.connection`
+- 可通过 `--connection=` 指定连接
+- 输出连接名、驱动、主机、端口、库名和表前缀
+
+### 查看数据表
+
+```bash
+# 查看当前连接下的数据表
+
+php artisan admin:db tables
+```
+
+### 查看表结构
+
+```bash
+# 查看指定表字段
+
+php artisan admin:db columns admin_menus
+```
+
+### 执行只读查询
+
+```bash
+# 执行只读 SQL
+
+php artisan admin:db query "select id,title,url from admin_menus"
+```
+
+**使用说明：**
+- 仅允许 `select`、`show`、`describe`、`desc`、`explain`、`pragma`
+- `select` 未指定 `limit` 时会自动追加 `limit 50`
+- 可通过 `--limit=` 调整默认返回行数
+
+### 查看菜单树
+
+```bash
+# 查看系统菜单树
+
+php artisan admin:menu list
+```
+
+### 查看菜单详情
+
+```bash
+# 查看指定菜单完整字段
+
+php artisan admin:menu show 1
+```
+
+### 创建菜单
+
+```bash
+# 创建路由菜单
+
+php artisan admin:menu create --title=demo --url=/demo --icon=mdi:view-dashboard
+```
+
+**常用参数：**
+- `--title=`：菜单标题
+- `--url=`：菜单 URL
+- `--parent=`：父级菜单 ID
+- `--icon=`：菜单图标
+- `--type=`：URL 类型，`1` 路由，`2` 外链，`3` iframe，`4` 页面
+- `--order=`：排序值
+- `--visible=`：是否显示
+- `--home=`：是否首页
+
+### 更新菜单
+
+```bash
+# 更新菜单标题和地址
+
+php artisan admin:menu update 1 --title=dashboard --url=/dashboard
+```
+
+### 删除菜单
+
+```bash
+# 删除菜单，存在子菜单时会拒绝删除
+
+php artisan admin:menu delete 1
+
+# 跳过确认
+php artisan admin:menu delete 1 --force
+```
+
+### 导出菜单
+
+```bash
+# 输出到终端
+
+php artisan admin:menu export
+
+# 导出到 JSON 文件
+php artisan admin:menu export --file=menus.json
+```
+
+### 导入菜单
+
+```bash
+# 从 JSON 文件导入菜单
+
+php artisan admin:menu import --file=menus.json
+
+# 跳过确认
+php artisan admin:menu import --file=menus.json --force
 ```
 
 ### 生成 IDE 辅助文件
@@ -297,4 +452,3 @@ php artisan admin:publish --force
 - 模块相关命令需要先安装对应模块
 
 :::
-
