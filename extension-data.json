@@ -238,15 +238,5 @@
     "favers": 0,
     "last_version": "1.0.0",
     "latest_update": "2026-01-29 15:07:01"
-  },
-  {
-    "name": "zhumingchen/owl-admin-dev",
-    "description": "The skeleton application for the OwlAdmin framework.",
-    "url": "https://packagist.org/packages/zhumingchen/owl-admin-dev",
-    "repository": "https://github.com/zmc576700954/owl-admin-dev",
-    "downloads": 1,
-    "favers": 1,
-    "last_version": "1.0.1",
-    "latest_update": "2025-05-21 18:33:06"
   }
 ]
