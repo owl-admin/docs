@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2866,
+    "downloads": 2867,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -34,7 +34,7 @@
     "description": "更方便的查看laravel日志",
     "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
     "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 504,
+    "downloads": 505,
     "favers": 2,
     "last_version": "1.0.0",
     "latest_update": "2024-03-10 21:57:59"
@@ -74,7 +74,7 @@
     "description": "OwlAdmin扩展:方便管理 laravel 的定时任务",
     "url": "https://packagist.org/packages/iwzh/owl-scheduling",
     "repository": "https://gitee.com/wzhec/owl-scheduling",
-    "downloads": 326,
+    "downloads": 327,
     "favers": 1,
     "last_version": "1.0.2",
     "latest_update": "2023-05-12 10:57:41"
@@ -145,7 +145,7 @@
     "description": "让 iconify 图标可以离线使用",
     "url": "https://packagist.org/packages/slowlyo/owl-icon-cache",
     "repository": "https://github.com/slowlyo/owl-icon-cache",
-    "downloads": 88,
+    "downloads": 89,
     "favers": 0,
     "last_version": "v0.1.0",
     "latest_update": "2024-05-01 16:30:19"
