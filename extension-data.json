@@ -84,10 +84,10 @@
     "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
     "url": "https://packagist.org/packages/slowlyo/owl-menu-search",
     "repository": "https://github.com/owl-admin/menu-search",
-    "downloads": 312,
+    "downloads": 313,
     "favers": 1,
-    "last_version": "v0.1.0",
-    "latest_update": "2024-06-14 22:54:01"
+    "last_version": "v0.1.1",
+    "latest_update": "2026-08-24 21:17:57"
   },
   {
     "name": "owl-admin/components",
