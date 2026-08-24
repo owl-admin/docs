@@ -286,6 +286,23 @@ public function doEnable($enable = true)
 }
 ```
 
+### 请求级钩子
+
+```php
+use Slowlyo\OwlAdmin\Admin;
+
+public function requestBoot(): void
+{
+    Admin::prependNav(
+        amis()->Button()->label('扩展入口')->level('link')
+    );
+}
+```
+
+`requestBoot()` 在每次后台请求中执行，调用顺序是：请求状态重置 → 应用级 `Admin::bootstrap()` → 扩展 `requestBoot()` → 控制器。它只对已启用扩展调用，适合恢复动态导航、脚本、样式和请求级 Context。
+
+该方法必须保持幂等；不要在这里注册路由、执行迁移或重复添加全局监听器。基类已提供空实现，不需要调用 `parent::requestBoot()`。
+
 ## 最佳实践
 
 ### 1. 命名规范

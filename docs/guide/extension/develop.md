@@ -64,8 +64,31 @@ class PackageNameServiceProvider extends ServiceProvider
                 ->required(true),
         ]);
     }
+
+    // 每次后台请求重新注册动态资源
+    public function requestBoot(): void
+    {
+        // 例如：重新注入顶部导航、请求级脚本或样式
+    }
 }
 ```
+
+### 请求级钩子
+
+需要在每次后台请求中重新注入动态导航、脚本、样式或 Context 时，在服务提供者中实现：
+
+```php
+use Slowlyo\OwlAdmin\Admin;
+
+public function requestBoot(): void
+{
+    Admin::prependNav(
+        amis()->Button()->label('扩展入口')->level('link')
+    );
+}
+```
+
+该方法只对已启用扩展调用，并且应保持幂等。它会在请求状态重置和应用级 `Admin::bootstrap()` 之后、控制器执行之前运行。
 
 ### 控制器
 
