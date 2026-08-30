@@ -5,8 +5,8 @@ WORKDIR /app
 # Install pnpm
 RUN npm install -g pnpm
 
-# Only copy lockfile and package manifest first for better cache
-COPY package.json pnpm-lock.yaml ./
+# 先复制依赖清单与构建脚本白名单，保留缓存层
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install deps
 RUN pnpm install --frozen-lockfile
