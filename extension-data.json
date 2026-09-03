@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1438,
+    "downloads": 1439,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -94,7 +94,7 @@
     "description": "常用组件合集",
     "url": "https://packagist.org/packages/owl-admin/components",
     "repository": "https://github.com/owl-admin/components",
-    "downloads": 141,
+    "downloads": 142,
     "favers": 2,
     "last_version": "v0.2.1",
     "latest_update": "2024-07-05 21:35:37"
@@ -224,7 +224,7 @@
     "description": "OwlAdmin MinIO 扩展。基于 OwlAdmin + AMIS 构建，用于弥补 MinIO 新版控制台在桶管理、权限管理等方面的不足，提供完整的 Bucket / Object 可视化管理能力。支持桶创建与删除、PUBLIC / PRIVATE / CUSTOM 权限识别与安全切换、文件上传与删除、图片预览及访问 URL 自动生成，适用于企业后台 业务、素材管理等场景。",
     "url": "https://packagist.org/packages/fanxd/owl-minio",
     "repository": "https://github.com/Fanxd/owl-minio",
-    "downloads": 8,
+    "downloads": 9,
     "favers": 0,
     "last_version": "v1.0.1",
     "latest_update": "2026-01-25 21:08:14"
@@ -234,7 +234,7 @@
     "description": "Owl Admin 扩展，用于管理知识库、分类以及 AI 驱动的知识场景，支持多租户和可见性控制",
     "url": "https://packagist.org/packages/fanxd/owl-knowledge",
     "repository": "https://github.com/Fanxd/owl-knowledge",
-    "downloads": 4,
+    "downloads": 5,
     "favers": 0,
     "last_version": "1.0.0",
     "latest_update": "2026-01-29 15:07:01"
