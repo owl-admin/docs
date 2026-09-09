@@ -18,7 +18,7 @@ jobs:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH (docker pull + recreate)
+      - name: Deploy via SSH (ensure script + docker pull + recreate)
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -27,5 +27,28 @@ jobs:
           script_stop: true
           command_timeout: 20m
           script: |
+            set -euo pipefail
+            mkdir -p /opt/owladmin-deploy
+            cat > /opt/owladmin-deploy/deploy-docs.sh <<'EOF'
+            #!/bin/bash
+            set -euo pipefail
+            IMAGE="${IMAGE:-ghcr.io/owl-admin/docs:master}"
+            NAME="${NAME:-owladmin-docs}"
+            PORT_BIND="${PORT_BIND:-127.0.0.1:8089:80}"
+            echo "[deploy-docs] pull $IMAGE"
+            docker pull --platform linux/amd64 "$IMAGE"
+            echo "[deploy-docs] recreate $NAME"
+            docker rm -f "$NAME" 2>/dev/null || true
+            docker run -d --name "$NAME" --restart unless-stopped -p "$PORT_BIND" "$IMAGE"
+            for i in $(seq 1 20); do
+              code=$(curl -sS -o /dev/null -w "%{http_code}" --connect-timeout 3 http://127.0.0.1:8089/ || echo 000)
+              [[ "$code" == "200" ]] && break
+              sleep 1
+            done
+            echo "[deploy-docs] http=$code"
+            test "$code" = "200"
+            echo "[deploy-docs] done"
+            EOF
+            chmod 755 /opt/owladmin-deploy/deploy-docs.sh
             export IMAGE=ghcr.io/owl-admin/docs:master
             /opt/owladmin-deploy/deploy-docs.sh
