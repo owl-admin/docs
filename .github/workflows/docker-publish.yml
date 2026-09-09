@@ -100,5 +100,6 @@ jobs:
 
       - name: Notify hook
         if: ${{ success() }}
+        continue-on-error: true
         run: |
-          curl -sS -X POST "http://hook.slowlyo.top/h/47fb4784-6f40-43da-9d6f-cd0eaca61333?signature=${{ secrets.HOOK_SECRET }}"
+          curl -sS --connect-timeout 10 --max-time 20 -X POST "http://hook.slowlyo.top/h/47fb4784-6f40-43da-9d6f-cd0eaca61333?signature=${{ secrets.HOOK_SECRET }}" || echo "notify hook failed (ignored)"
