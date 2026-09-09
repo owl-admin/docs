@@ -18,7 +18,7 @@ jobs:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH (ensure script + docker pull + recreate)
+      - name: Deploy via SSH (docker pull + recreate)
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -29,26 +29,7 @@ jobs:
           script: |
             set -euo pipefail
             mkdir -p /opt/owladmin-deploy
-            cat > /opt/owladmin-deploy/deploy-docs.sh <<'EOF'
-            #!/bin/bash
-            set -euo pipefail
-            IMAGE="${IMAGE:-ghcr.io/owl-admin/docs:master}"
-            NAME="${NAME:-owladmin-docs}"
-            PORT_BIND="${PORT_BIND:-127.0.0.1:8089:80}"
-            echo "[deploy-docs] pull $IMAGE"
-            docker pull --platform linux/amd64 "$IMAGE"
-            echo "[deploy-docs] recreate $NAME"
-            docker rm -f "$NAME" 2>/dev/null || true
-            docker run -d --name "$NAME" --restart unless-stopped -p "$PORT_BIND" "$IMAGE"
-            for i in $(seq 1 20); do
-              code=$(curl -sS -o /dev/null -w "%{http_code}" --connect-timeout 3 http://127.0.0.1:8089/ || echo 000)
-              [[ "$code" == "200" ]] && break
-              sleep 1
-            done
-            echo "[deploy-docs] http=$code"
-            test "$code" = "200"
-            echo "[deploy-docs] done"
-            EOF
+            echo 'IyEvYmluL2Jhc2gKc2V0IC1ldW8gcGlwZWZhaWwKSU1BR0U9IiR7SU1BR0U6LWdoY3IuaW8vb3dsLWFkbWluL2RvY3M6bWFzdGVyfSIKTkFNRT0iJHtOQU1FOi1vd2xhZG1pbi1kb2NzfSIKUE9SVF9CSU5EPSIke1BPUlRfQklORDotMTI3LjAuMC4xOjgwODk6ODB9IgplY2hvICJbZGVwbG95LWRvY3NdIHB1bGwgJElNQUdFIgpkb2NrZXIgcHVsbCAtLXBsYXRmb3JtIGxpbnV4L2FtZDY0ICIkSU1BR0UiCmVjaG8gIltkZXBsb3ktZG9jc10gcmVjcmVhdGUgJE5BTUUiCmRvY2tlciBybSAtZiAiJE5BTUUiIDI+L2Rldi9udWxsIHx8IHRydWUKZG9ja2VyIHJ1biAtZCAtLW5hbWUgIiROQU1FIiAtLXJlc3RhcnQgdW5sZXNzLXN0b3BwZWQgLXAgIiRQT1JUX0JJTkQiICIkSU1BR0UiCmNvZGU9MDAwCmZvciBpIGluICQoc2VxIDEgNDApOyBkbwogIGNvZGU9JChjdXJsIC1zIC1vIC9kZXYvbnVsbCAtdyAiJXtodHRwX2NvZGV9IiAtLWNvbm5lY3QtdGltZW91dCAzIGh0dHA6Ly8xMjcuMC4wLjE6ODA4OS8gfHwgdHJ1ZSkKICBbWyAiJGNvZGUiID09ICIyMDAiIF1dICYmIGJyZWFrCiAgc2xlZXAgMQpkb25lCmVjaG8gIltkZXBsb3ktZG9jc10gaHR0cD0kY29kZSIKdGVzdCAiJGNvZGUiID0gIjIwMCIKZWNobyAiW2RlcGxveS1kb2NzXSBkb25lIgo=' | base64 -d > /opt/owladmin-deploy/deploy-docs.sh
             chmod 755 /opt/owladmin-deploy/deploy-docs.sh
             export IMAGE=ghcr.io/owl-admin/docs:master
             /opt/owladmin-deploy/deploy-docs.sh
