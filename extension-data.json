@@ -34,7 +34,7 @@
     "description": "更方便的查看laravel日志",
     "url": "https://packagist.org/packages/slowlyo/owl-log-viewer",
     "repository": "https://github.com/owl-admin/log-viewer",
-    "downloads": 510,
+    "downloads": 511,
     "favers": 2,
     "last_version": "1.0.0",
     "latest_update": "2024-03-10 21:57:59"
@@ -64,7 +64,7 @@
     "description": "Owl Admin 系统备份扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-system-backup",
     "repository": "https://github.com/owl-admin/system-backup",
-    "downloads": 349,
+    "downloads": 350,
     "favers": 0,
     "last_version": "v0.3.1",
     "latest_update": "2024-05-22 10:58:47"
