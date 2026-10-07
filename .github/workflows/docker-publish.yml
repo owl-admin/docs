@@ -76,8 +76,6 @@ jobs:
 
       - name: Build and push
         if: steps.dockerfile_check.outputs.exists == 'true'
-        env:
-          WORKFLOW_TOKEN: ${{ secrets.workflow_token || secrets.GITHUB_TOKEN }}
         uses: docker/build-push-action@v5
         with:
           context: ${{ env.CONTEXT }}
@@ -88,7 +86,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           secrets: |
-            id=GH_TOKEN,env=WORKFLOW_TOKEN
+            GH_TOKEN=${{ secrets.workflow_token || github.token }}
           platforms: linux/amd64
           build-args: |
             BUILD_DATE=${{ github.run_number }}-${{ github.sha }}
