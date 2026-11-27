@@ -4,7 +4,7 @@
     "description": "OwlAdmin 数据字典扩展",
     "url": "https://packagist.org/packages/slowlyo/owl-dict",
     "repository": "https://github.com/Slowlyo/owl-dict",
-    "downloads": 2906,
+    "downloads": 2907,
     "favers": 2,
     "last_version": "v1.3.4",
     "latest_update": "2025-12-30 16:50:54"
@@ -14,7 +14,7 @@
     "description": "OwlAdmin 扩展包，用于记录用户操作日志",
     "url": "https://packagist.org/packages/slowlyo/owl-operation-log",
     "repository": "https://github.com/Slowlyo/owl-operation-log",
-    "downloads": 1479,
+    "downloads": 1480,
     "favers": 0,
     "last_version": "v0.2.3",
     "latest_update": "2024-03-28 14:49:24"
@@ -44,7 +44,7 @@
     "description": "OwlAdmin扩展: 增加登录保护功能",
     "url": "https://packagist.org/packages/slowlyo/owl-login-guard",
     "repository": "https://gitee.com/slowlyo/owl-login-guard",
-    "downloads": 365,
+    "downloads": 366,
     "favers": 0,
     "last_version": "v1.1.1",
     "latest_update": "2023-03-10 20:07:10"
@@ -54,7 +54,7 @@
     "description": "OwlAdmin 扩展: 后台功能-通知公告管理",
     "url": "https://packagist.org/packages/slowlyo/owl-module-notice",
     "repository": "https://gitee.com/slowlyo/owl-module-notice",
-    "downloads": 357,
+    "downloads": 358,
     "favers": 0,
     "last_version": "v1.1.3",
     "latest_update": "2023-04-10 14:25:51"
@@ -84,7 +84,7 @@
     "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
     "url": "https://packagist.org/packages/slowlyo/owl-menu-search",
     "repository": "https://github.com/owl-admin/menu-search",
-    "downloads": 317,
+    "downloads": 318,
     "favers": 1,
     "last_version": "v0.1.1",
     "latest_update": "2026-08-24 21:17:57"
@@ -94,7 +94,7 @@
     "description": "常用组件合集",
     "url": "https://packagist.org/packages/owl-admin/components",
     "repository": "https://github.com/owl-admin/components",
-    "downloads": 148,
+    "downloads": 149,
     "favers": 2,
     "last_version": "v0.2.1",
     "latest_update": "2024-07-05 21:35:37"
